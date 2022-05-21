@@ -1,2 +1,2 @@
-# scripts
-miscellaneous scripts
+# Misc
+miscellaneous scripts, configs and dot files
