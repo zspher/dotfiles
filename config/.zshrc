@@ -30,37 +30,37 @@ setopt promptsubst
 # 1. Loading tmux first, to prevent jumps when tmux is loaded after .zshrc
 # 2. History plugin is loaded early (as it has some defaults) to prevent empty history stack for other plugins
 
-zinit lucid for \
-  atinit"HIST_STAMPS=dd.mm.yyyy" \
-        OMZL::history.zsh
+# zinit lucid for \
+#   atinit"HIST_STAMPS=dd.mm.yyyy" \
+#         OMZL::history.zsh
 
-zinit wait lucid for \
-	    OMZL::clipboard.zsh \
-	    OMZL::compfix.zsh \
-	    OMZL::completion.zsh \
-	    OMZL::correction.zsh \
-        wazum/zsh-directory-dot-expansion \
-	    OMZL::directories.zsh \
-	    OMZL::git.zsh \
-	    OMZL::grep.zsh \
-	    OMZL::key-bindings.zsh \
-	    OMZL::spectrum.zsh \
-	    OMZL::termsupport.zsh \
-    atload"alias gcd='gco dev'" \
-	    OMZP::git \
-	    OMZP::fzf \
-    atload"alias dcupb='docker-compose up --build'" \
-	    OMZP::docker-compose \
-    as"completion" \
-  OMZP::docker/_docker \
-  djui/alias-tips \
-  hlissner/zsh-autopair \
-  chriskempson/base16-shell \
-  atinit"
-        zstyle ':prezto:*:*' color 'yes'
-        zstyle ':prezto:module:utility' safe-ops 'no'
-    "\
-      PZTM::utility \
+# zinit wait lucid for \
+# 	    OMZL::clipboard.zsh \
+# 	    OMZL::compfix.zsh \
+# 	    OMZL::completion.zsh \
+# 	    OMZL::correction.zsh \
+#         wazum/zsh-directory-dot-expansion \
+# 	    OMZL::directories.zsh \
+# 	    OMZL::git.zsh \
+# 	    OMZL::grep.zsh \
+# 	    OMZL::key-bindings.zsh \
+# 	    OMZL::spectrum.zsh \
+# 	    OMZL::termsupport.zsh \
+#     atload"alias gcd='gco dev'" \
+# 	    OMZP::git \
+# 	    OMZP::fzf \
+#     atload"alias dcupb='docker-compose up --build'" \
+# 	    OMZP::docker-compose \
+#     as"completion" \
+#   OMZP::docker/_docker \
+#   djui/alias-tips \
+#   hlissner/zsh-autopair \
+#   chriskempson/base16-shell \
+#   atinit"
+#         zstyle ':prezto:*:*' color 'yes'
+#         zstyle ':prezto:module:utility' safe-ops 'no'
+#     "\
+#       PZTM::utility
 
 #####################
 # PLUGINS           #
@@ -93,14 +93,13 @@ zinit wait lucid for \
       zstyle :plugin:history-search-multi-word reset-prompt-protect 1" \
     bindmap"^R -> ^H" \
   zdharma-continuum/history-search-multi-word \
-    atclone"
-      local P=${${(M)OSTYPE:#*darwin*}:+g}
-      \${P}sed -i \
-      '/DIR/c\DIR 38;5;63;1' LS_COLORS; \
-      \${P}dircolors -b LS_COLORS > c.zsh" \
+  atclone"local P=${${(M)OSTYPE:#*darwin*}:+g}
+            \${P}sed -i \
+            '/DIR/c\DIR 38;5;63;1' LS_COLORS; \
+            \${P}dircolors -b LS_COLORS > c.zsh" \
+    atpull'%atclone' pick"c.zsh" nocompile'!' \
     atload'zstyle ":completion:*" list-colors “${(s.:.)LS_COLORS}”' \
-    atpull'%atclone' pick"c.zsh" nocompile'!' reset-prompt \
-  trapd00r/LS_COLORS
+        trapd00r/LS_COLORS
 
 #####################
 # PROGRAMS          #
@@ -129,7 +128,7 @@ SAVEHIST=2000
 export NO_AT_BRIDGE=1
 export FZF_DEFAULT_COMMAND="find . -path '*/\.*' -type d -prune -o -type f -print -o -type l -print 2> /dev/null | sed s/^..//"
 setopt auto_cd
-cdpath=( /run/media/zsphyr . ~ )
+cdpath=( /run/media/zsphyr/dev_work . ~ )
 source "$HOME/.aliases"
 
 # Load a few important annexes, without Turbo
