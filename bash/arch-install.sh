@@ -26,7 +26,9 @@ python=( python python-pip python-virtualenv pyenv )
 # tllocalmgr-git                | aur texlive package manager
 # biber                         | bibtex engine replacement
 # aur=( texlive-most-doc tllocalmgr-git)
-tex=( texlive-most biber )
+# perl-yaml-tiny                | for latexindent.pl
+# perl-file-homedir             | for latexindent.pl
+tex=( texlive-most biber perl-yaml-tiny perl-file-homedir)
 
 
 ### ------------------------------ javascript ----------------------------------- ###
