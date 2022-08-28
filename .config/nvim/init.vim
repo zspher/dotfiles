@@ -29,7 +29,7 @@ let mapleader=" "
 
 " Plugins
 
-call plug#begin("~/.vim/plugged")
+call plug#begin("~/.local/shared/nvim/plugged")
 Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
