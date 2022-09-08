@@ -30,37 +30,37 @@ setopt promptsubst
 # 1. Loading tmux first, to prevent jumps when tmux is loaded after .zshrc
 # 2. History plugin is loaded early (as it has some defaults) to prevent empty history stack for other plugins
 
-# zinit lucid for \
-#   atinit"HIST_STAMPS=dd.mm.yyyy" \
-#         OMZL::history.zsh
+zinit lucid for \
+  atinit"HIST_STAMPS=dd.mm.yyyy" \
+        OMZL::history.zsh
 
-# zinit wait lucid for \
-# 	    OMZL::clipboard.zsh \
-# 	    OMZL::compfix.zsh \
-# 	    OMZL::completion.zsh \
-# 	    OMZL::correction.zsh \
-#         wazum/zsh-directory-dot-expansion \
-# 	    OMZL::directories.zsh \
-# 	    OMZL::git.zsh \
-# 	    OMZL::grep.zsh \
-# 	    OMZL::key-bindings.zsh \
-# 	    OMZL::spectrum.zsh \
-# 	    OMZL::termsupport.zsh \
-#     atload"alias gcd='gco dev'" \
-# 	    OMZP::git \
-# 	    OMZP::fzf \
-#     atload"alias dcupb='docker-compose up --build'" \
-# 	    OMZP::docker-compose \
-#     as"completion" \
-#   OMZP::docker/_docker \
-#   djui/alias-tips \
-#   hlissner/zsh-autopair \
-#   chriskempson/base16-shell \
-#   atinit"
-#         zstyle ':prezto:*:*' color 'yes'
-#         zstyle ':prezto:module:utility' safe-ops 'no'
-#     "\
-#       PZTM::utility
+zinit wait lucid for \
+	    OMZL::clipboard.zsh \
+	    OMZL::compfix.zsh \
+	    OMZL::completion.zsh \
+	    OMZL::correction.zsh \
+        wazum/zsh-directory-dot-expansion \
+	    OMZL::directories.zsh \
+	    OMZL::git.zsh \
+	    OMZL::grep.zsh \
+	    OMZL::key-bindings.zsh \
+	    OMZL::spectrum.zsh \
+	    OMZL::termsupport.zsh \
+    atload"alias gcd='gco dev'" \
+	    OMZP::git \
+	    OMZP::fzf \
+    atload"alias dcupb='docker-compose up --build'" \
+	    OMZP::docker-compose \
+    as"completion" \
+        OMZP::docker/_docker \
+        djui/alias-tips \
+        hlissner/zsh-autopair \
+        chriskempson/base16-shell \
+    atinit"
+        zstyle ':prezto:*:*' color 'yes'
+        zstyle ':prezto:module:utility' safe-ops 'no'
+    "\
+        PZTM::utility
 
 #####################
 # PLUGINS           #
@@ -101,19 +101,6 @@ zinit wait lucid for \
     atload'zstyle ":completion:*" list-colors “${(s.:.)LS_COLORS}”' \
         trapd00r/LS_COLORS
 
-#####################
-# PROGRAMS          #
-#####################
-zinit wait'1' lucid light-mode for \
-    pick"z.sh" \
-  knu/z \
-    as'command' \
-    atinit'export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"' \
-    pick"**/n" \
-  tj/n \
-    from'gh-r' as'command' atinit'export PATH="$HOME/.yarn/bin:$PATH"' mv'yarn* -> yarn' pick"yarn/bin/yarn" bpick'*.tar.gz' \
-  yarnpkg/yarn
-
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=2000
@@ -124,12 +111,22 @@ SAVEHIST=2000
 # export DISPLAY="$HOST_IP:0.0"
 # export PULSE_SERVER="tcp:$HOST_IP"
 # export PDFVIEWER='wslview $(wslpath -w %s)'
+export HISTFILE="$XDG_STATE_HOME"/zsh/history 
 
 export NO_AT_BRIDGE=1
 export FZF_DEFAULT_COMMAND="find . -path '*/\.*' -type d -prune -o -type f -print -o -type l -print 2> /dev/null | sed s/^..//"
 setopt auto_cd
 cdpath=( /run/media/zsphyr/dev_work . ~ )
 source "$HOME/.aliases"
+alias wget='wget --hsts-file="$XDG_DATA_HOME/wget-hsts"'
+
+export LESS_TERMCAP_mb=$'\e[1;32m'
+export LESS_TERMCAP_md=$'\e[1;32m'
+export LESS_TERMCAP_me=$'\e[0m'
+export LESS_TERMCAP_se=$'\e[0m'
+export LESS_TERMCAP_so=$'\e[01;33m'
+export LESS_TERMCAP_ue=$'\e[0m'
+export LESS_TERMCAP_us=$'\e[1;4;31m'
 
 # Load a few important annexes, without Turbo
 # (this is currently required for annexes)
