@@ -71,3 +71,10 @@ pyenv
 cmake
 ninja
 gcc
+
+#--- tex/latex ---#
+texlive-most
+texlive-most-doc
+biber
+perl-yaml-tiny
+perl-file-home-dir 
