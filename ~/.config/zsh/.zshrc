@@ -102,22 +102,13 @@ zinit wait lucid for \
         trapd00r/LS_COLORS
 
 # Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
+HISTFILE="$XDG_STATE_HOME"/zsh/history 
 HISTSIZE=2000
 SAVEHIST=2000
 
-# ! wsl stuff
-# export HOST_IP=$(cat /etc/resolv.conf | grep nameserver | awk '{ print $2 }')
-# export DISPLAY="$HOST_IP:0.0"
-# export PULSE_SERVER="tcp:$HOST_IP"
-# export PDFVIEWER='wslview $(wslpath -w %s)'
-export HISTFILE="$XDG_STATE_HOME"/zsh/history 
-
-export NO_AT_BRIDGE=1
 export FZF_DEFAULT_COMMAND="find . -path '*/\.*' -type d -prune -o -type f -print -o -type l -print 2> /dev/null | sed s/^..//"
+
 setopt auto_cd
-cdpath=( /run/media/zsphyr/dev_work . ~ )
-source "$HOME/.aliases"
 alias wget='wget --hsts-file="$XDG_DATA_HOME/wget-hsts"'
 
 export LESS_TERMCAP_mb=$'\e[1;32m'
