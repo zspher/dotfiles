@@ -1,0 +1,7 @@
+[user]
+	email = 66728045+portus-zephyr@users.noreply.github.com
+	name = portus-zephyr
+[core]
+	editor = nvim
+[pull]
+	rebase = true
