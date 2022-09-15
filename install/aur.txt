@@ -11,6 +11,7 @@ webcord
 skan-page
 keepassxc
 thunderbird
+dbeaver
 
 #--- drivers ---#
 epson-inkjet-printer-201401w
@@ -28,15 +29,45 @@ touchegg
 manjaro-pipewire
 manjaro-settings-samba
 
-#--- utilities ---#
+#--- utilities (terminal) ---#
 yay
 neofetch
 nmap
 neovim
 bottom
 fzf
+git
+wget
+curl
+tldr
+openssh
+wget
+curl
 
 #--- ui ---#
 kwin-bismuth
 posy-cursors
 latte-dock
+
+##--- dev ---##
+
+#--- rust ---#
+rustup
+
+#--- java ---#
+jdk-openjdk
+
+#--- javascript ---#
+nodejs
+npm
+
+#--- python ---#
+python
+python-pip
+python-virtualenv
+pyenv
+
+#--- c++/c ---#
+cmake
+ninja
+gcc
