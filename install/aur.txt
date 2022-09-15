@@ -1,0 +1,42 @@
+#--- fonts ---#
+nerd-fonts-cascadia-code
+ttf-heuristica
+
+#--- applications ---#
+joplin-desktop
+masterpdfeditor-free
+nuclear-player-bin
+visual-studio-code-bin
+webcord
+skan-page
+keepassxc
+thunderbird
+
+#--- drivers ---#
+epson-inkjet-printer-201401w
+vulkan-intel
+imagescan
+
+#--- other ---# requires intervention
+auto-cpufreq
+thermald
+gtk3-classic
+lib32-gtk3-classic
+lsp-plugins-noicons
+rtw89-dkms-git
+touchegg
+manjaro-pipewire
+manjaro-settings-samba
+
+#--- utilities ---#
+yay
+neofetch
+nmap
+neovim
+bottom
+fzf
+
+#--- ui ---#
+kwin-bismuth
+posy-cursors
+latte-dock
