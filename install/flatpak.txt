@@ -1,9 +1,9 @@
 com.github.tchx84.Flatseal
 com.obsproject.Studio
 org.gimp.GIMP
-org.gimp.GIMP.Plugin.BIMP
-org.gimp.GIMP.Plugin.GMic
-org.gimp.GIMP.Plugin.Resynthesizer
+org.gimp.GIMP.Plugin.BIMP//2-40
+org.gimp.GIMP.Plugin.GMic//2-40
+org.gimp.GIMP.Plugin.Resynthesizer//2-40
 org.kde.krita
 org.linux_hardware.hw-probe
 org.gtk.Gtk3theme.Breeze
