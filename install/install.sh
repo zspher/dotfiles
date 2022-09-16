@@ -10,7 +10,7 @@ sed -e 's/#.*//; /^\s*$/d;' $INSTALL_FILE | while read -r line
 # s/ *$// right trim
 # /^$/d delete empty line
 # ! unintended behaviour: the last line will not be printed
-# ! so add extra space in the end
+# ! so add extra line in the end
 do
     $AUR_HELPER "${line}"
 done
