@@ -9,3 +9,4 @@ use [xdg-ninja](https://github.com/b3nj5m1n/xdg-ninja) to check the exports in [
 ### To install 
 - [vim-plug](https://github.com/junegunn/vim-plug)
 - [zinit](https://github.com/zdharma-continuum/zinit)
+- [photofimp](https://github.com/Diolinux/PhotoGIMP)
