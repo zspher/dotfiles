@@ -8,6 +8,7 @@ masterpdfeditor-free
 nuclear-player-bin
 visual-studio-code-bin
 webcord
+webcamoid
 skan-page
 keepassxc
 thunderbird
@@ -26,6 +27,7 @@ lib32-gtk3-classic
 lsp-plugins-noicons
 rtw89-dkms-git
 touchegg
+noisetorch
 manjaro-pipewire
 manjaro-settings-samba
 
