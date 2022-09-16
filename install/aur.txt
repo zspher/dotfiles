@@ -77,4 +77,6 @@ texlive-most
 texlive-most-doc
 biber
 perl-yaml-tiny
-perl-file-home-dir 
+perl-file-home-dir
+
+#--- end ---#
