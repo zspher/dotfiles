@@ -45,6 +45,7 @@ tldr
 openssh
 wget
 curl
+yt-dlp
 
 #--- ui ---#
 kwin-bismuth
@@ -73,6 +74,9 @@ pyenv
 cmake
 ninja
 gcc
+base-devel
+gdb
+mingw-w64-gcc
 
 #--- tex/latex ---#
 texlive-most
