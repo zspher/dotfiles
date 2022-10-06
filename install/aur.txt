@@ -9,10 +9,11 @@ nuclear-player-bin
 visual-studio-code-bin
 webcord
 webcamoid
-skan-page
+skanpage
 keepassxc
 thunderbird
 dbeaver
+brave-browser
 
 #--- drivers ---#
 epson-inkjet-printer-201401w
@@ -46,6 +47,7 @@ openssh
 wget
 curl
 yt-dlp
+kitty
 
 #--- ui ---#
 kwin-bismuth
