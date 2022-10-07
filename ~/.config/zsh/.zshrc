@@ -109,6 +109,7 @@ SAVEHIST=2000
 export FZF_DEFAULT_COMMAND="find . -path '*/\.*' -type d -prune -o -type f -print -o -type l -print 2> /dev/null | sed s/^..//"
 
 setopt auto_cd
+setopt auto_pushd
 cdpath=(. /run/media/$USER/drive2)
 alias wget='wget --hsts-file="$XDG_DATA_HOME/wget-hsts"'
 
