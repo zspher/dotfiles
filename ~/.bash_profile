@@ -41,7 +41,8 @@ export VIMINIT='let $MYVIMRC = !has("nvim") ? "$XDG_CONFIG_HOME/vim/vimrc" : "$X
 export XCURSOR_PATH=/usr/share/icons:${XDG_DATA_HOME}/icons
 export PYTHONSTARTUP="/etc/python/pythonrc"
 export WAKATIME_HOME="$XDG_CONFIG_HOME"/wakatime
-export WINEPREFIX="$XDG_DATA_HOME"/wine
+export WINEPREFIX="$XDG_DATA_HOME/wine"
+export IPYTHONDIR="${XDG_CONFIG_HOME}/ipython"
 export RANDFILE="$XDG_CONFIG_HOME/openssl/rnd"
 
 # **** theming **** #
