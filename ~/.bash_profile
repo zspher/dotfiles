@@ -15,7 +15,6 @@ export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/nv
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
 export XCURSOR_PATH=/usr/share/icons:${XDG_DATA_HOME}/icons 
 
-# mv ~/.gitconfig $XDG_CONFIG_HOME/git/config
 export GNUPGHOME="$XDG_DATA_HOME"/gnupg
 export GOPATH="$XDG_DATA_HOME"/go
 #export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
@@ -39,4 +38,16 @@ export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME"/npm/npmrc
 export GVIMINIT='let $MYGVIMRC = !has("nvim") ? "$XDG_CONFIG_HOME/vim/gvimrc" : "$XDG_CONFIG_HOME/nvim/init.gvim" | so $MYGVIMRC'
 export VIMINIT='let $MYVIMRC = !has("nvim") ? "$XDG_CONFIG_HOME/vim/vimrc" : "$XDG_CONFIG_HOME/nvim/init.vim" | so $MYVIMRC'
 
-# export GTK_THEME=Breeze-modified
+export XCURSOR_PATH=/usr/share/icons:${XDG_DATA_HOME}/icons
+export PYTHONSTARTUP="/etc/python/pythonrc"
+export WAKATIME_HOME="$XDG_CONFIG_HOME"/wakatime
+export WINEPREFIX="$XDG_DATA_HOME"/wine
+export RANDFILE="$XDG_CONFIG_HOME/openssl/rnd"
+
+# **** theming **** #
+export BAT_THEME="Catppuccin-mocha"
+export FZF_DEFAULT_OPTS=" \
+--color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
+--color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
+--color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
+export GTK_THEME=Catppuccin-Mocha-Compact-Mauve-Dark
