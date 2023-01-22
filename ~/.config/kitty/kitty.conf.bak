@@ -6,7 +6,7 @@
 #: individual font faces and even specify special fonts for particular
 #: characters.
 
-font_family      monospace
+font_family      CaskaydiaCove Nerd Font Mono
 bold_font        auto
 italic_font      auto
 bold_italic_font auto
@@ -187,8 +187,7 @@ box_drawing_scale 0.001, 1, 1.5, 2
 #: }}}
 
 #: Cursor customization {{{
-
-cursor #cccccc
+# cursor #cccccc
 
 #: Default cursor color. If set to the special value none the cursor
 #: will be rendered with a "reverse video" effect. It's color will be
@@ -197,15 +196,14 @@ cursor #cccccc
 #: program running in the terminal sets a cursor color, this takes
 #: precedence. Also, the cursor colors are modified if the cell
 #: background and foreground colors have very low contrast.
-
-cursor_text_color #111111
+# cursor_text_color #111111
 
 #: The color of text under the cursor. If you want it rendered with
 #: the background color of the cell underneath instead, use the
 #: special keyword: background. Note that if cursor is set to none
 #: then this option is ignored.
 
-cursor_shape block
+cursor_shape beam
 
 #: The cursor shape can be one of block, beam, underline. Note that
 #: when reloading the config this will be changed only if the cursor
@@ -250,8 +248,7 @@ scrollback_lines 2000
 #: is changed it will only affect newly created windows, not existing
 #: ones.
 
-scrollback_pager nvim -c 'setlocal nonumber nolist showtabline=0 foldcolumn=0|Man!' -c "autocmd VimEnter * normal G" -long-lines --RAW-CONTROL-CHARS +INPUT_LINE_NUMBER
-
+scrollback_pager nvim -c 'setlocal nonumber nolist showtabline=0 foldcolumn=0|Man!' -c "autocmd VimEnter * normal G" -
 #: Program with which to view scrollback in a new window. The
 #: scrollback buffer is passed as STDIN to this program. If you change
 #: it, make sure the program you use can handle ANSI escape sequences
@@ -262,7 +259,7 @@ scrollback_pager nvim -c 'setlocal nonumber nolist showtabline=0 foldcolumn=0|Ma
 #: set to 0 if there is no cursor, for example, when showing the last
 #: command output.
 
-scrollback_pager_history_size 0
+scrollback_pager_history_size 15
 
 #: Separate scrollback history size (in MB), used only for browsing
 #: the scrollback buffer with pager. This separate buffer is not
@@ -316,8 +313,7 @@ mouse_hide_wait 3.0
 #: typing text. Disabled by default on macOS as getting it to work
 #: robustly with the ever-changing sea of bugs that is Cocoa is too
 #: much effort.
-
-url_color #0087bd
+# url_color #0087bd
 url_style curly
 
 #: The color and style for highlighting URLs on mouse-over. url_style
@@ -346,7 +342,7 @@ detect_urls yes
 #: URLs under the mouse cursor. By default, all characters that are
 #: legal in URLs are allowed.
 
-copy_on_select no
+copy_on_select yes
 
 #: Copy to clipboard or a private buffer on select. With this set to
 #: clipboard, selecting text with the mouse will cause the text to be
@@ -624,8 +620,7 @@ visual_bell_duration 0.0
 
 #: The visual bell duration (in seconds). Flash the screen when a bell
 #: occurs for the specified number of seconds. Set to zero to disable.
-
-visual_bell_color none
+# visual_bell_color none
 
 #: The color used by visual bell. Set to none will fall back to
 #: selection background color. If you feel that the visual bell is too
@@ -664,9 +659,9 @@ bell_path none
 
 #: Window layout {{{
 
-remember_window_size  yes
-initial_window_width  640
-initial_window_height 400
+remember_window_size  no
+initial_window_width  100c
+initial_window_height 25c
 
 #: If enabled, the window size will be remembered so that new
 #: instances of kitty will have the same size as the previous
@@ -736,17 +731,14 @@ placement_strategy center
 #: this option. Using a value of center means the cell area will be
 #: placed centrally. A value of top-left means the padding will be
 #: only at the bottom and right edges.
-
-active_border_color #00ff00
+# active_border_color #00ff00
 
 #: The color for the border of the active window. Set this to none to
 #: not draw borders around the active window.
-
-inactive_border_color #cccccc
+# inactive_border_color #cccccc
 
 #: The color for the border of inactive windows.
-
-bell_border_color #ff5a00
+# bell_border_color #ff5a00
 
 #: The color for the border of inactive windows in which a bell has
 #: occurred.
@@ -835,7 +827,7 @@ confirm_os_window_close -1
 
 #: Tab bar {{{
 
-tab_bar_edge bottom
+tab_bar_edge top
 
 #: The edge to show the tab bar on, top or bottom.
 
@@ -850,7 +842,7 @@ tab_bar_margin_height 0.0 0.0
 #: The second number is the margin between the tab bar and the
 #: contents of the current tab.
 
-tab_bar_style fade
+tab_bar_style powerline
 
 #: The tab bar style, can be one of:
 
@@ -881,7 +873,7 @@ tab_bar_align left
 #: The horizontal alignment of the tab bar, can be one of: left,
 #: center, right.
 
-tab_bar_min_tabs 2
+tab_bar_min_tabs 1
 
 #: The minimum number of tabs that must exist before the tab bar is
 #: shown.
@@ -908,7 +900,7 @@ tab_separator " ┇"
 #: The separator between tabs in the tab bar when using separator as
 #: the tab_bar_style.
 
-tab_powerline_style angled
+tab_powerline_style slanted
 
 #: The powerline separator style between tabs in the tab bar when
 #: using powerline as the tab_bar_style, can be one of: angled,
@@ -921,7 +913,8 @@ tab_activity_symbol none
 #: leading or trailing spaces, surround the text with quotes. See
 #: tab_title_template for how this is rendered.
 
-tab_title_template "{fmt.fg.red}{bell_symbol}{activity_symbol}{fmt.fg.tab}{title}"
+# tab_title_template "{fmt.fg.red}{bell_symbol}{activity_symbol}{fmt.fg.tab}{sup.index}{title}"
+tab_title_template {title}{' :{}:'.format(num_windows) if num_windows > 1 else ''}{sub.index}
 
 #: A template to render the tab title. The default just renders the
 #: title with optional symbols for bell and activity. If you wish to
@@ -962,22 +955,19 @@ active_tab_title_template none
 
 #: Template to use for active tabs. If not specified falls back to
 #: tab_title_template.
-
-active_tab_foreground   #000
-active_tab_background   #eee
+# active_tab_foreground   #000
+# active_tab_background   #eee
 active_tab_font_style   bold-italic
-inactive_tab_foreground #444
-inactive_tab_background #999
+# inactive_tab_foreground #444
+# inactive_tab_background #999
 inactive_tab_font_style normal
 
 #: Tab bar colors and styles.
-
-tab_bar_background none
+# tab_bar_background none
 
 #: Background color for the tab bar. Defaults to using the terminal
 #: background color.
-
-tab_bar_margin_color none
+# tab_bar_margin_color none
 
 #: Color for the tab bar margin area. Defaults to using the terminal
 #: background color.
@@ -985,13 +975,12 @@ tab_bar_margin_color none
 #: }}}
 
 #: Color scheme {{{
-
-foreground #dddddd
-background #000000
+# foreground #dddddd
+# background #000000
 
 #: The foreground and background colors.
 
-background_opacity 1.0
+background_opacity 0.9
 
 #: The opacity of the background. A number between zero and one, where
 #: one is opaque and zero is fully transparent. This will only work if
@@ -1026,7 +1015,7 @@ background_image_linear no
 #: When background image is scaled, whether linear interpolation
 #: should be used.
 
-dynamic_background_opacity no
+dynamic_background_opacity yes
 
 #: Allow changing of the background_opacity dynamically, using either
 #: keyboard shortcuts (increase_background_opacity and
@@ -1046,9 +1035,8 @@ dim_opacity 0.75
 
 #: How much to dim text that has the DIM/FAINT attribute set. One
 #: means no dimming and zero means fully dimmed (i.e. invisible).
-
-selection_foreground #000000
-selection_background #fffacd
+# selection_foreground #000000
+# selection_background #fffacd
 
 #: The foreground and background colors for text selected with the
 #: mouse. Setting both of these to none will cause a "reverse video"
@@ -1063,68 +1051,54 @@ selection_background #fffacd
 #: The 256 terminal colors. There are 8 basic colors, each color has a
 #: dull and bright version, for the first 16 colors. You can set the
 #: remaining 240 colors as color16 to color255.
-
-color0 #000000
-color8 #767676
+# color0 #000000
+# color8 #767676
 
 #: black
-
-color1 #cc0403
-color9 #f2201f
+# color1 #cc0403
+# color9 #f2201f
 
 #: red
-
-color2  #19cb00
-color10 #23fd00
+# color2  #19cb00
+# color10 #23fd00
 
 #: green
-
-color3  #cecb00
-color11 #fffd00
+# color3  #cecb00
+# color11 #fffd00
 
 #: yellow
-
-color4  #0d73cc
-color12 #1a8fff
+# color4  #0d73cc
+# color12 #1a8fff
 
 #: blue
-
-color5  #cb1ed1
-color13 #fd28ff
+# color5  #cb1ed1
+# color13 #fd28ff
 
 #: magenta
-
-color6  #0dcdcd
-color14 #14ffff
+# color6  #0dcdcd
+# color14 #14ffff
 
 #: cyan
-
-color7  #dddddd
-color15 #ffffff
+# color7  #dddddd
+# color15 #ffffff
 
 #: white
-
-mark1_foreground black
+# mark1_foreground black
 
 #: Color for marks of type 1
-
-mark1_background #98d3cb
+# mark1_background #98d3cb
 
 #: Color for marks of type 1 (light steel blue)
-
-mark2_foreground black
+# mark2_foreground black
 
 #: Color for marks of type 2
-
-mark2_background #f2dcd3
+# mark2_background #f2dcd3
 
 #: Color for marks of type 1 (beige)
-
-mark3_foreground black
+# mark3_foreground black
 
 #: Color for marks of type 3
-
-mark3_background #f274bc
+# mark3_background #f274bc
 
 #: Color for marks of type 3 (violet)
 
@@ -1402,16 +1376,14 @@ term xterm-kitty
 #: }}}
 
 #: OS specific tweaks {{{
-
-wayland_titlebar_color system
+# wayland_titlebar_color system
 
 #: The color of the kitty window's titlebar on Wayland systems with
 #: client side window decorations such as GNOME. A value of system
 #: means to use the default system color, a value of background means
 #: to use the background color of the currently active window and
 #: finally you can use an arbitrary color, such as #12af59 or red.
-
-macos_titlebar_color system
+# macos_titlebar_color system
 
 #: The color of the kitty window's titlebar on macOS. A value of
 #: system means to use the default system color, light or dark can
@@ -1945,6 +1917,12 @@ map shift+cmd+i     set_tab_title
 #:     map ctrl+alt+1 goto_tab 1
 #:     map ctrl+alt+2 goto_tab 2
 
+map ctrl+alt+1 goto_tab 1
+map ctrl+alt+2 goto_tab 2
+map ctrl+alt+3 goto_tab 3
+map ctrl+alt+4 goto_tab 4
+map ctrl+alt+5 goto_tab 5
+map ctrl+alt+6 goto_tab 6
 #: Just as with new_window above, you can also pass the name of
 #: arbitrary commands to run when using new_tab and new_tab_with_cwd.
 #: Finally, if you want the new tab to open next to the current tab
@@ -2239,3 +2217,9 @@ map shift+cmd+/ open_url https://sw.kovidgoyal.net/kitty/
 
 #: }}}
 
+
+
+# BEGIN_KITTY_THEME
+# Catppuccin Kitty Mocha
+include current-theme.conf
+# END_KITTY_THEME
