@@ -13,9 +13,9 @@ source $ZINIT[BIN_DIR]/zinit.zsh \
 #####################
 
 zinit lucid for \
-    as"command" \
-    from"gh-r" \
-    atinit'export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"' atload'eval "$(starship init zsh)"' \
+        as"command" \
+        from"gh-r" \
+        atinit'export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"' atload'eval "$(starship init zsh)"' \
     starship/starship
 
 ##########################
@@ -35,73 +35,65 @@ zinit lucid for \
         OMZL::history.zsh
 
 zinit wait lucid for \
-	    OMZL::clipboard.zsh \
-	    OMZL::compfix.zsh \
-	    OMZL::completion.zsh \
-	    OMZL::correction.zsh \
-        wazum/zsh-directory-dot-expansion \
-	    OMZL::directories.zsh \
-	    OMZL::git.zsh \
-	    OMZL::grep.zsh \
-	    OMZL::key-bindings.zsh \
-	    OMZL::spectrum.zsh \
-	    OMZL::termsupport.zsh \
-    atload"alias gcd='gco dev'" \
-	    OMZP::git \
-	    OMZP::fzf \
-    atload"alias dcupb='docker-compose up --build'" \
-	    OMZP::docker-compose \
-    as"completion" \
-        OMZP::docker/_docker \
-        djui/alias-tips \
-        hlissner/zsh-autopair \
-        chriskempson/base16-shell \
-    atinit"
-        zstyle ':prezto:*:*' color 'yes'
-        zstyle ':prezto:module:utility' safe-ops 'no'
-    "\
-        PZTM::utility
+    OMZL::clipboard.zsh \
+    OMZL::compfix.zsh \
+    OMZL::completion.zsh \
+    OMZL::correction.zsh \
+    wazum/zsh-directory-dot-expansion \
+    OMZL::directories.zsh \
+    OMZL::git.zsh \
+    OMZL::grep.zsh \
+    OMZL::key-bindings.zsh \
+    OMZL::spectrum.zsh \
+    OMZL::termsupport.zsh \
+        atload"alias gcd='gco dev'" \
+    OMZP::git \
+    OMZP::fzf \
+        atload"alias dcupb='docker-compose up --build'" \
+    OMZP::docker-compose \
+        as"completion" \
+    OMZP::docker/_docker \
+    djui/alias-tips \
+    hlissner/zsh-autopair \
+    chriskempson/base16-shell \
+        atinit"
+            zstyle ':prezto:*:*' color 'yes'
+            zstyle ':prezto:module:utility' safe-ops 'no'" \
+    PZTM::utility
 
 #####################
 # PLUGINS           #
 #####################
 zinit wait lucid for \
-    light-mode atinit"ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20" atload"_zsh_autosuggest_start" \
-  zsh-users/zsh-autosuggestions \
-    light-mode atinit"
-      typeset -gA FAST_HIGHLIGHT; FAST_HIGHLIGHT[git-cmsg-len]=100;
-      zpcompinit; zpcdreplay" \
-  zdharma-continuum/fast-syntax-highlighting \
-    atpull'zinit creinstall -q .' \
-    atinit"
-      zstyle ':completion:*' completer _expand _complete _ignored _approximate
-      zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
-      zstyle ':completion:*' menu select=2
-      zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %p%s'
-      zstyle ':completion:*:*:*:*:processes' command 'ps -u $USER -o pid,user,comm,cmd -w -w'
-      zstyle ':completion:*:descriptions' format '-- %d --'
-      zstyle ':completion:*:processes' command 'ps -au$USER'
-      zstyle ':completion:complete:*:options' sort false
-      zstyle ':fzf-tab:complete:_zlua:*' query-string input
-      zstyle ':fzf-tab:complete:cd:*' extra-opts --preview=$extract'exa -1 --color=always ${~ctxt[hpre]}$in'
-      zstyle ':fzf-tab:complete:kill:argument-rest' extra-opts --preview=$extract'ps --pid=$in[(w)1] -o cmd --no-headers -w -w' --preview-window=down:3:wrap" \
-    blockf light-mode \
-  zsh-users/zsh-completions \
-    atinit"
-      zstyle :history-search-multi-word page-size 10
-      zstyle :history-search-multi-word highlight-color fg=red,bold
-      zstyle :plugin:history-search-multi-word reset-prompt-protect 1" \
-    bindmap"^R -> ^H" \
-  zdharma-continuum/history-search-multi-word \
-  atclone"local P=${${(M)OSTYPE:#*darwin*}:+g}
+        light-mode atinit"ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20" atload"_zsh_autosuggest_start" \
+    zsh-users/zsh-autosuggestions \
+        light-mode atinit"
+            typeset -gA FAST_HIGHLIGHT; FAST_HIGHLIGHT[git-cmsg-len]=100;
+            zpcompinit; zpcdreplay" \
+    zdharma-continuum/fast-syntax-highlighting \
+        atpull'zinit creinstall -q .' \
+        atinit"
+            zstyle ':completion:*' completer _expand _complete _ignored _approximate
+            zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+            zstyle ':completion:*' menu select=2
+            zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %p%s'
+            zstyle ':completion:*:*:*:*:processes' command 'ps -u $USER -o pid,user,comm,cmd -w -w'
+            zstyle ':completion:*:descriptions' format '-- %d --'
+            zstyle ':completion:*:processes' command 'ps -au$USER'
+            zstyle ':completion:complete:*:options' sort false
+            zstyle ':fzf-tab:complete:_zlua:*' query-string input
+            zstyle ':fzf-tab:complete:cd:*' extra-opts --preview=$extract'exa -1 --color=always ${~ctxt[hpre]}$in'
+            zstyle ':fzf-tab:complete:kill:argument-rest' extra-opts --preview=$extract'ps --pid=$in[(w)1] -o cmd --no-headers -w -w' --preview-window=down:3:wrap" \
+        blockf light-mode \
+    zsh-users/zsh-completions \
+        atclone"local P=${${(M)OSTYPE:#*darwin*}:+g}
             \${P}sed -i \
             '/DIR/c\DIR 38;5;63;1' LS_COLORS; \
             \${P}dircolors -b LS_COLORS > c.zsh" \
-    atpull'%atclone' pick"c.zsh" nocompile'!' \
-    atload'zstyle ":completion:*" list-colors “${(s.:.)LS_COLORS}”' \
-        trapd00r/LS_COLORS
+        atpull'%atclone' pick"c.zsh" nocompile'!' \
+        atload'zstyle ":completion:*" list-colors “${(s.:.)LS_COLORS}”' \
+    trapd00r/LS_COLORS
 
-# Lines configured by zsh-newuser-install
 HISTFILE="$XDG_STATE_HOME"/zsh/history 
 HISTSIZE=2000
 SAVEHIST=2000
