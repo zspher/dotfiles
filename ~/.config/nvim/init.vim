@@ -23,6 +23,8 @@ set ttyfast                 " Speed up scrolling in Vim
 " set spell                 " enable spell check (may need to download language package)
 " set noswapfile            " disable creating swap file
 " set backupdir=~/.cache/vim " Directory to store backup files.
+set number relativenumber   " set hybrid line number
+set nu rnu 
 
 nnoremap <SPACE> <Nop>
 let mapleader=" " 
@@ -34,5 +36,7 @@ Plug 'wakatime/vim-wakatime'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 call plug#end()
 
+colorscheme catppuccin-mocha
