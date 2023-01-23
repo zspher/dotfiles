@@ -1,12 +1,12 @@
 # Misc
-miscellaneous scripts, configs and dot files
+miscellaneous scripts, configs,  dotfiles and desktop tweaks
 
 ## Desktop
 
-### Notes
-use [xdg-ninja](https://github.com/b3nj5m1n/xdg-ninja) to check the exports in [.bash_profile](~/.bash_profile)
+### GTK
 
-### To install 
-- [vim-plug](https://github.com/junegunn/vim-plug)
-- [zinit](https://github.com/zdharma-continuum/zinit)
-- [photofimp](https://github.com/Diolinux/PhotoGIMP)
+- [GTK Border](desktop/gtk-border/) - adds a border window decoration like in WM (i3) to gtk applications
+
+### KDE
+- [KDE Rules](desktop/kde-rules/) -  some kde rules
+- [Latte Dock](desktop/latte-dock/Upper%20Bar.layout.latte) - a latte dock config
