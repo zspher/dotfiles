@@ -7,7 +7,7 @@ $shell$character"""
 [shell]
 fish_indicator = "🐟 "
 powershell_indicator = ">_"
-bash_indicator = "$_"
+bash_indicator = '\$_'
 zsh_indicator = "z "
 unknown_indicator = "⁇"
 style = "cyan bold"
