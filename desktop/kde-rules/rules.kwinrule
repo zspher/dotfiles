@@ -14,5 +14,5 @@ wmclassmatch=3
 Description=use system border
 noborderrule=2
 types=1
-wmclass=^(resolve|steam).*$
+wmclass=^(?!easyeffects|com|krunner).*$
 wmclassmatch=3

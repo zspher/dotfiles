@@ -4,40 +4,6 @@ headerbar .title, window, headerbar, decoration {
     border-radius: 0 0 0 0;
 }
 
-/* * case: pamac-tk, paperwork */
-deck > box {
-    border: 4px solid @link_color_breeze;
-}
-
-deck > box:backdrop {
-    border: 4px solid @theme_unfocused_bg_color_breeze;
-}
-
-/* * case: clamTK */
-window > headerbar {
-    border-left: 4px solid @link_color_breeze;
-    border-right: 4px solid @link_color_breeze;
-    border-top: 4px solid @link_color_breeze;
-}
-
-window > headerbar:backdrop {
-    border-left: 4px solid @theme_unfocused_bg_color_breeze;
-    border-right: 4px solid @theme_unfocused_bg_color_breeze;
-    border-top: 4px solid @theme_unfocused_bg_color_breeze;
-}
-
-window {
-    border-left: 4px solid @link_color_breeze;
-    border-right: 4px solid @link_color_breeze;
-    border-bottom: 4px solid @link_color_breeze;
-}
-
-window:backdrop {
-    border-left: 4px solid @theme_unfocused_bg_color_breeze;
-    border-right: 4px solid @theme_unfocused_bg_color_breeze;
-    border-bottom: 4px solid @theme_unfocused_bg_color_breeze;
-}
-
 /* * case: flatseal */
 
 deck > leaflet > box:nth-child(1) {
