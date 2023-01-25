@@ -45,6 +45,7 @@ export WAKATIME_HOME="$XDG_CONFIG_HOME"/wakatime
 export WINEPREFIX="$XDG_DATA_HOME/wine"
 export IPYTHONDIR="${XDG_CONFIG_HOME}/ipython"
 export RANDFILE="$XDG_CONFIG_HOME/openssl/rnd"
+export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc   
 
 # **** theming **** #
 export BAT_THEME="Catppuccin-mocha"
