@@ -1,6 +1,6 @@
 @import 'colors.css';
 
-headerbar .title, window, headerbar, decoration {
+window, headerbar, decoration, decoration-overlay {
     border-radius: 0 0 0 0;
 }
 
