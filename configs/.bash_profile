@@ -30,6 +30,7 @@ export TEXMFCONFIG=$XDG_CONFIG_HOME/texlive/texmf-config
 export HISTFILE="$XDG_STATE_HOME"/zsh/history  
 
 alias wget='wget --hsts-file="$XDG_DATA_HOME/wget-hsts"'
+alias nvidia-settings='nvidia-settings --config="$XDG_CONFIG_HOME/nvidia/settings"'
 export WINEPREFIX="$XDG_DATA_HOME"/wine
 export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
 export _Z_DATA="$XDG_DATA_HOME/z"
@@ -46,6 +47,7 @@ export WINEPREFIX="$XDG_DATA_HOME/wine"
 export IPYTHONDIR="${XDG_CONFIG_HOME}/ipython"
 export RANDFILE="$XDG_CONFIG_HOME/openssl/rnd"
 export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc   
+export NODE_REPL_HISTORY="$XDG_DATA_HOME"/node_repl_history 
 
 # **** theming **** #
 export BAT_THEME="Catppuccin-mocha"
