@@ -26,7 +26,7 @@ local config = {
   },
 
   -- Set colorscheme to use
-  colorscheme = "default_theme",
+  colorscheme = "catppuccin",
 
   -- Add highlight groups in any theme
   highlights = {
@@ -239,6 +239,7 @@ local config = {
       --     require("lsp_signature").setup()
       --   end,
       -- },
+      "catppuccin/nvim",
     },
     -- All other entries override the require("<key>").setup({...}) call for default plugins
     ["null-ls"] = function(config) -- overrides `require("null-ls").setup(config)`
@@ -269,6 +270,9 @@ local config = {
     ["mason-nvim-dap"] = { -- overrides `require("mason-nvim-dap").setup(...)`
       -- ensure_installed = { "python" },
     },
+    toggleterm = {
+      direction = 'horizontal'
+    }
   },
 
   -- LuaSnip Options
