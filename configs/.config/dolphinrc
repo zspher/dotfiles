@@ -1,9 +1,15 @@
 [$Version]
 update_info=dolphin_detailsmodesettings.upd:rename-leading-padding
 
+[DetailsMode]
+PreviewSize=160
+
 [General]
 Version=202
 ViewPropsTimestamp=2023,1,27,11,41,9.46
+
+[IconsMode]
+PreviewSize=112
 
 [KFileDialog Settings]
 Places Icons Auto-resize=false
@@ -15,6 +21,3 @@ eDP-1 Width 1920x1080 eDP-1=447
 
 [MainWindow]
 ToolBarsMovable=Disabled
-
-[Search]
-Location=Everywhere

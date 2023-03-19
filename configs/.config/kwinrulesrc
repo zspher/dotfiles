@@ -1,0 +1,44 @@
+[$Version]
+update_info=kwinrules.upd:replace-placement-string-to-enum,kwinrules.upd:use-virtual-desktop-ids
+
+[1]
+Description=use system border
+noborderrule=2
+types=1
+wmclass=^(?!easyeffects|com|krunner).*$
+wmclassmatch=3
+
+[2]
+Description=bismuth geometery size
+ignoregeometry=true
+ignoregeometryrule=2
+minsize=1,1
+minsizerule=2
+placement=1
+placementrule=2
+types=1
+wmclass=^(?!krunner).*$
+wmclassmatch=3
+
+[General]
+count=2
+rules=1,2
+
+[a029bbed-0e9f-4611-953c-21e9656a4980]
+Description=bismuth geometery size
+ignoregeometry=true
+ignoregeometryrule=2
+minsize=1,1
+minsizerule=2
+placement=1
+placementrule=2
+types=1
+wmclass=^(?!krunner).*$
+wmclassmatch=3
+
+[b82956a5-2483-482b-b7dc-03638f5fcbf0]
+Description=use system border
+noborderrule=2
+types=1
+wmclass=^(?!easyeffects|com|krunner).*$
+wmclassmatch=3
