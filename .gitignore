@@ -1,9 +1,9 @@
 *.lock
 
 # zsh
-.zcompdump
+**/.zcompdump
 
 .config/konsave/profile/
 
 # spicetify
-.config/spicetify/Extracted
+**/.config/spicetify/Extracted/**
