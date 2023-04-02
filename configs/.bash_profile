@@ -14,7 +14,7 @@ export XDG_CACHE_HOME="$HOME/.cache"
 
 export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/nv
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
-export XCURSOR_PATH=/usr/share/icons:${XDG_DATA_HOME}/icons 
+export XCURSOR_PATH=/usr/share/icons:${XDG_DATA_HOME}/icons
 
 export GNUPGHOME="$XDG_DATA_HOME"/gnupg
 export GOPATH="$XDG_DATA_HOME"/go
@@ -26,11 +26,12 @@ export PYTHONSTARTUP="${XDG_CONFIG_HOME}/python/pythonrc"
 export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
 export TEXMFHOME=$XDG_DATA_HOME/texmf
 export TEXMFVAR=$XDG_CACHE_HOME/texlive/texmf-var
-export TEXMFCONFIG=$XDG_CONFIG_HOME/texlive/texmf-config
-export HISTFILE="$XDG_STATE_HOME"/zsh/history  
-
 alias wget='wget --hsts-file="$XDG_DATA_HOME/wget-hsts"'
 alias nvidia-settings='nvidia-settings --config="$XDG_CONFIG_HOME/nvidia/settings"'
+alias irssi='irssi --config="$XDG_CONFIG_HOME/irssi/config" --home="$XDG_DATA_HOME/irssi"'
+export TEXMFCONFIG=$XDG_CONFIG_HOME/texlive/texmf-config
+export HISTFILE="$XDG_STATE_HOME"/zsh/history
+
 export WINEPREFIX="$XDG_DATA_HOME"/wine
 export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
 export _Z_DATA="$XDG_DATA_HOME/z"
@@ -46,8 +47,12 @@ export WAKATIME_HOME="$XDG_CONFIG_HOME"/wakatime
 export WINEPREFIX="$XDG_DATA_HOME/wine"
 export IPYTHONDIR="${XDG_CONFIG_HOME}/ipython"
 export RANDFILE="$XDG_CONFIG_HOME/openssl/rnd"
-export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc   
-export NODE_REPL_HISTORY="$XDG_DATA_HOME"/node_repl_history 
+export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
+export NODE_REPL_HISTORY="$XDG_DATA_HOME"/node_repl_history
+
+export SSB_HOME="$XDG_DATA_HOME"/zoom
+export VAGRANT_HOME="$XDG_DATA_HOME"/vagrant
+export GRADLE_USER_HOME="$XDG_DATA_HOME"/gradle
 
 # **** theming **** #
 export BAT_THEME="Catppuccin-mocha"

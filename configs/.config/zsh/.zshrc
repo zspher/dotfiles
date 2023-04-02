@@ -105,6 +105,7 @@ setopt auto_pushd
 cdpath=(. /run/media/$USER/drive2)
 alias wget='wget --hsts-file="$XDG_DATA_HOME/wget-hsts"'
 alias nvidia-settings='nvidia-settings --config="$XDG_CONFIG_HOME/nvidia/settings"'
+alias irssi='irssi --config="$XDG_CONFIG_HOME/irssi/config" --home="$XDG_DATA_HOME/irssi"'
 
 export LESS_TERMCAP_mb=$'\e[1;32m'
 export LESS_TERMCAP_md=$'\e[1;32m'
