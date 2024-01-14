@@ -16,34 +16,27 @@
     ...
   } @ inputs: let
     inherit (nixpkgs) lib;
-    utils = import ./lib/HM.nix;
-    inherit (import ./config.nix) username system hostname keys;
+    data = {inherit (import ./config) username system hostname keys;};
+    inherit (data) system;
   in {
     nixosConfigurations = {
-      "pi" = lib.nixosSystem {
+      "pi" = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit data;};
         modules = [
-          ./system
-          {
-            networking.hostName = hostname;
-            users.users = {
-              "${username}" = {
-                initialPassword = "defaultPass";
-                isNormalUser = true;
-                openssh.authorizedKeys = {inherit keys;};
-                extraGroups = ["wheel" "networkmanager"];
-              };
-            };
-          }
+          ./system/pi.nix
+          ./system/base.nix
+          {system.stateVersion = "23.11";}
         ];
       };
     };
     homeConfigurations = {
-      basic = utils.mkHMuser {
-        inherit username;
+      basic = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages."${system}";
+        specialArgs = {inherit data;};
         modules = [
           ./configs/applications.nix
           ./configs/neovim
+          {home.stateVersion = "23.11";}
         ];
       };
     };
