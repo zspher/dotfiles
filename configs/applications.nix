@@ -1,3 +1,7 @@
 {pkgs, ...}: {
-  home.packages = with pkgs; [btop kitty clang];
+  home.packages = with pkgs; [
+    btop
+    kitty
+    gcc
+  ];
 }
