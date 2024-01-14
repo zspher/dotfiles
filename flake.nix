@@ -15,12 +15,28 @@
     home-manager,
     ...
   } @ inputs: let
-    inherit (self) inputs;
     inherit (nixpkgs) lib;
     utils = import ./lib/HM.nix;
-    inherit (import ./config.nix) username system;
+    inherit (import ./config.nix) username system hostname keys;
   in {
-    nixosConfigurations = {};
+    nixosConfigurations = {
+      "pi" = lib.nixosSystem {
+        modules = [
+          ./system
+          {
+            networking.hostName = hostname;
+            users.users = {
+              "${username}" = {
+                initialPassword = "defaultPass";
+                isNormalUser = true;
+                openssh.authorizedKeys = {inherit keys;};
+                extraGroups = ["wheel" "networkmanager"];
+              };
+            };
+          }
+        ];
+      };
+    };
     homeConfigurations = {
       basic = utils.mkHMuser {
         inherit username;
