@@ -18,12 +18,12 @@
     inherit (self) inputs;
     inherit (nixpkgs) lib;
     utils = import ./lib/HM.nix;
-    system = "";
+    inherit (import ./config.nix) username system;
   in {
     nixosConfigurations = {};
     homeConfigurations = {
       basic = utils.mkHMuser {
-        username = "faust";
+        inherit username;
         pkgs = nixpkgs.legacyPackages."${system}";
         modules = [
           ./configs/applications.nix
