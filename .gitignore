@@ -1,5 +1,3 @@
-*.lock
-
 # zsh
 **/.zcompdump
 
