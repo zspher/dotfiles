@@ -5,9 +5,6 @@
 }: let
   inherit (data) username keys hostname;
 in {
-  import = [
-    /etc/nixos/hardware-configuration.nix
-  ];
   networking.hostName = hostname;
   users.users = {
     "${username}" = {
