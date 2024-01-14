@@ -1,6 +1,7 @@
 {
   pkgs,
   config,
+  ...
 }: let
   neovim_src = ./nvim;
 in {
