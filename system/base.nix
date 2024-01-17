@@ -8,6 +8,7 @@ in {
   networking.hostName = hostname;
   networking.networkmanager.enable = true;
   users.users = {
+    root.hashedPassword = "!";
     "${username}" = {
       initialPassword = "defaultPass";
       isNormalUser = true;
