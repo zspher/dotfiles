@@ -6,6 +6,7 @@
   inherit (data) username keys hostname;
 in {
   networking.hostName = hostname;
+  networking.networkmanager.enable = true;
   users.users = {
     "${username}" = {
       initialPassword = "defaultPass";
@@ -35,5 +36,14 @@ in {
   ];
   services = {
     openssh.enable = true;
+    avahi = {
+      ipv6 = true;
+      enable = true;
+      nssmdns4 = true;
+      nssmdns6 = true;
+      publish.enable = true;
+      publish.userServices = true;
+      publish.domain = true;
+    };
   };
 }
