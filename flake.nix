@@ -35,7 +35,7 @@
         extraSpecialArgs = {inherit data;};
         modules = [
           ./configs/applications.nix
-          ./configs/neovim
+          ./configs/base.nix
           {home.stateVersion = "23.11";}
         ];
       };
