@@ -3,6 +3,9 @@
   config,
   ...
 }: {
+  xdg.configFile.nvim.source =
+    config.lib.file.mkOutOfStoreSymlink
+    "${config.home.homeDirectory}/dotfiles/configs/neovim/nvim";
   programs = {
     neovim = {
       enable = true;
