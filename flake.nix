@@ -32,7 +32,7 @@
     homeConfigurations = {
       basic = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages."${system}";
-        specialArgs = {inherit data;};
+        extraSpecialArgs = {inherit data;};
         modules = [
           ./configs/applications.nix
           ./configs/neovim
