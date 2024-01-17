@@ -6,5 +6,9 @@
     btop
     kitty
     gcc
+
+    lazygit
+    ripgrep
+    fd
   ];
 }
