@@ -46,5 +46,11 @@ in {
       publish.userServices = true;
       publish.domain = true;
     };
+    syncthing = {
+      enable = true;
+      overrideDevices = false;
+      overrideFolders = false;
+      openDefaultPorts = true;
+    };
   };
 }
