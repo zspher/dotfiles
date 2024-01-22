@@ -20,6 +20,14 @@
     inherit (data) system;
   in {
     nixosConfigurations = {
+      "pc" = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs data;};
+        modules = [
+          ./system/base.nix
+          ./system/pc.nix
+          {system.stateVersion = "23.11";}
+        ];
+      };
       "pi" = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit data;};
         modules = [
