@@ -33,6 +33,9 @@ in {
     wget
     curl
     home-manager
+
+    gcc
+    clang
   ];
   services = {
     openssh.enable = true;
