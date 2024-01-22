@@ -3,9 +3,8 @@
   data,
   ...
 }: let
-  inherit (data) username keys hostname;
+  inherit (data) username keys;
 in {
-  networking.hostName = hostname;
   networking.networkmanager.enable = true;
   users.users = {
     root.hashedPassword = "!";
