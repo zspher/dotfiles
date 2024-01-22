@@ -12,6 +12,5 @@
       generic-extlinux-compatible.enable = true;
     };
   };
-  hardware.enableRedistributableFirmware = true;
   networking.hostName = "ns-200";
 }

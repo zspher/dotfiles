@@ -52,4 +52,5 @@ in {
       openDefaultPorts = true;
     };
   };
+  hardware.enableRedistributableFirmware = true;
 }
