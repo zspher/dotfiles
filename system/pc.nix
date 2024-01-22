@@ -49,8 +49,5 @@
   nixpkgs.hostPlatform = "x86_64-linux";
 
   networking.hostName = "c-100";
-  programs.hyprland = {
-    enable = true;
-    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
-  };
+  programs.hyprland.enable = true;
 }
