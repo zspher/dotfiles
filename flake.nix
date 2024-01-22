@@ -43,7 +43,7 @@
         extraSpecialArgs = {inherit data;};
         modules = [
           ./configs/applications.nix
-          ./configs/base.nix
+          ./configs/home-manager.nix
           {home.stateVersion = "23.11";}
         ];
       };
