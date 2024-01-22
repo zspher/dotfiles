@@ -9,12 +9,16 @@ in {
   users.users = {
     root.hashedPassword = "!";
     "${username}" = {
+      shell = pkgs.zsh;
       initialPassword = "defaultPass";
       isNormalUser = true;
       openssh.authorizedKeys = {inherit keys;};
       extraGroups = ["wheel" "networkmanager"];
     };
   };
+
+  # nix/nixos
+  hardware.enableRedistributableFirmware = true;
   nixpkgs = {
     overlays = [];
     config.allowUnfree = true;
@@ -28,6 +32,9 @@ in {
     experimental-features = "nix-command flakes";
     auto-optimise-store = true;
   };
+
+  # programs
+  programs.zsh.enable = true;
   environment.systemPackages = with pkgs; [
     git
     wget
@@ -37,6 +44,8 @@ in {
     gcc
     clang
   ];
+
+  # services
   services = {
     openssh.enable = true;
     avahi = {
@@ -55,5 +64,4 @@ in {
       openDefaultPorts = true;
     };
   };
-  hardware.enableRedistributableFirmware = true;
 }
