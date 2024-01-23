@@ -92,6 +92,39 @@
       };
 
       windowrulev2 = [
+        "bordercolor rgba($skyAlpha), floating:1"
+        "bordercolor rgba($blueAlpha), fullscreen:1"
+        "bordercolor rgba($overlay2Alpha), xwayland:1, floating:0, fullscreen:0"
+
+        "float, class:^(org.kde.polkit-kde-authentication-agent-1)$"
+
+        "workspace 1, class:obsidian"
+        "workspace 2, class:brave-browser"
+        "workspace 3, class:Code"
+        "workspace 3, class:kitty, title:nvim"
+        "workspace 4, class:WebCord"
+
+        "float, title:^(Floating Window \- Show Me The Key)$"
+        "noborder, title:^(Floating Window \- Show Me The Key)$"
+        "move 100%-320 100%-200, title:^(Floating Window \- Show Me The Key)$"
+        "nofocus, title:^(Floating Window \- Show Me The Key)$"
+        "noanim, title:^(Floating Window \- Show Me The Key)$"
+        "pin, title:^(Floating Window \- Show Me The Key)$"
+
+        "float, title:^(Unlock Database \- KeePassXC)$"
+
+        "float, class:^(net.code\-industry.masterpdfeditor4)$"
+        "tile, title:^(.*Master PDF Editor.*)$"
+      ];
+
+      layerrule = [
+        "noanim, ^(rofi)$"
+        "ignorezero, ^(rofi)$"
+        "blur, ^(rofi)$"
+        "noanim, ^(anyrun)$"
+        "blur, ^(anyrun)$"
+      ];
+
       ## keybinds
 
       "$mainMod" = "SUPER";
