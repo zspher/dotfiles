@@ -17,6 +17,47 @@
 
       general = {
         gaps_in = 5;
+        gaps_out = 10;
+        border_size = 2;
+        "col.active_border" = "rgba($mauveAlpha) rgba($blueAlpha) 60deg";
+        "col.inactive_border" = "rgba($mantleAlpha)";
+        layout = "dwindle";
+      };
+
+      decoration = {
+        rounding = 10;
+        blur = {
+          enabled = true;
+          size = 3;
+          passes = 1;
+          new_optimizations = true;
+        };
+
+        drop_shadow = false;
+        shadow_range = 8;
+        shadow_render_power = 2;
+        shadow_offset = "2 3";
+        "col.shadow_inactive" = "rgba($crustAlpha)";
+        "col.shadow" = "rgba($mauveAlpha)";
+      };
+
+      animations = {
+        enabled = true;
+
+        bezier = [
+          "easeInSine, 0.12, 0, 0.39, 0"
+          "easeOutSine, 0.61, 1, 0.88, 1"
+          "easeOutExpo, 0.16, 1, 0.3, 1"
+        ];
+
+        animation = [
+          "windows, 1, 7, easeOutExpo"
+          "windowsOut, 1, 7, default, popin 80%"
+          "border, 1, 10, default"
+          "borderangle, 1, 8, default"
+          "fade, 1, 7, easeOutSine"
+          "workspaces, 1, 5, default"
+        ];
       };
 
       dwindle.pseudotile = true;
@@ -24,6 +65,21 @@
       master.new_is_master = true;
 
       gestures.workspace_swipe = true;
+
+      group = {
+        "col.border_active" = "rgba($mauveAlpha) rgba($blueAlpha) 60deg";
+        "col.border_inactive" = "rgba($surface0Alpha)";
+        "col.border_locked_active" = "rgba($blueAlpha)";
+        "col.border_locked_inactive" = "rgba($mantleAlpha)";
+
+        groupbar = {
+          render_titles = false;
+          "col.active" = "rgba($mauveAlpha)";
+          "col.inactive" = "rgba($surface0Alpha)";
+          "col.locked_active" = "rgba($blueAlpha)";
+          "col.locked_inactive" = "rgba($mantleAlpha)";
+        };
+      };
 
       xwayland = {
         force_zero_scaling = true;
@@ -35,6 +91,7 @@
         force_default_wallpaper = 0;
       };
 
+      windowrulev2 = [
       ## keybinds
 
       "$mainMod" = "SUPER";
