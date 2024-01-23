@@ -57,4 +57,5 @@
     # ffmpegthumbnailer
     # udiskie
   ];
+  services.blueman-applet.enable = true;
 }

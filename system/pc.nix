@@ -50,4 +50,5 @@
 
   networking.hostName = "c-100";
   programs.hyprland.enable = true;
+  services.blueman.enable = true;
 }
