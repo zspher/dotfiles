@@ -5,12 +5,56 @@
     ./git.nix
   ];
   home.packages = with pkgs; [
-    btop
-    kitty
-    gcc
+    # internet
+    brave # TODO: cfg
+    inetutils
+    rclone # TODO: cfg
+    webcord
+    yt-dlp
 
-    lazygit
-    ripgrep
+    # multimedia
+    grimblast
+    hyprpicker
+    kdeconnect-kde
+    timg
+    qimgv
+
+    # utilities
+    ark
+    bat
+    blueman
+    brightnessctl
+    dolphin
     fd
+    filelight
+    font-manager
+    jq
+    kitty #  TODO: cfg
+    lazygit
+    nwg-displays
+    pavucontrol
+    playerctl
+    ripgrep
+    rsync
+    xdotool
+
+    # utilities: diagnostics
+    btop # TODO: cfg
+    nvtop
+    s-tui
+    wev
+
+    # security
+    keepassxc
+    # polkit-kde-agent
+
+    # kimageformats
+    # ffmpegthumbs
+    # kdegraphics-thumbnailers
+    # libheif
+    # resvg
+    # kde-cli-tools
+    # ffmpegthumbnailer
+    # udiskie
   ];
 }

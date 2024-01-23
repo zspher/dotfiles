@@ -43,6 +43,7 @@ in {
 
     gcc
     clang
+    gparted
   ];
 
   # services
