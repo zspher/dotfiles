@@ -5,7 +5,7 @@ in {
     ./neovim
     ./gpg.nix
     ./git.nix
-    ./anyrun.nix
+    ./anyrun
   ];
   home.packages = with pkgs; [
     # internet
