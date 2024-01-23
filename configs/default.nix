@@ -1,4 +1,6 @@
-{pkgs, ...}: {
+{pkgs, ...}: let
+  nwg-displays = pkgs.nwg-displays.override {hyprlandSupport = true;};
+in {
   imports = [
     ./neovim
     ./gpg.nix
