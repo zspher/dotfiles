@@ -8,6 +8,11 @@
     };
     hyprland.url = "github:hyprwm/Hyprland";
     hyprland-plugins.url = "github:hyprwm/hyprland-plugins";
+
+    anyrun = {
+      url = "github:Kirottu/anyrun";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs = {
     self,
@@ -40,7 +45,7 @@
     homeConfigurations = {
       basic = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages."${system}";
-        extraSpecialArgs = {inherit data;};
+        extraSpecialArgs = {inherit inputs data;};
         modules = [
           ./configs
           ./configs/hyprland
