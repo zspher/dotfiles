@@ -8,10 +8,31 @@
         kb_layout = "us";
         kb_options = "caps:swapescape";
         follow_mouse = 1;
+
+        touchpad.natural_scroll = true;
+
+        scroll_method = "on_button_down";
+        sensitivity = 0;
       };
 
       general = {
         gaps_in = 5;
+      };
+
+      dwindle.pseudotile = true;
+      dwindle.preserve_split = true;
+      master.new_is_master = true;
+
+      gestures.workspace_swipe = true;
+
+      xwayland = {
+        force_zero_scaling = true;
+      };
+
+      misc = {
+        vrr = 1;
+        vfr = true;
+        force_default_wallpaper = 0;
       };
 
       ## keybinds
