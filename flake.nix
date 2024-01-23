@@ -42,8 +42,8 @@
         pkgs = nixpkgs.legacyPackages."${system}";
         extraSpecialArgs = {inherit data;};
         modules = [
+          ./configs
           ./configs/hyprland
-          ./configs/applications.nix
           ./configs/home-manager.nix
           {home.stateVersion = "23.11";}
         ];
