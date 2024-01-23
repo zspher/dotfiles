@@ -15,7 +15,6 @@
     # multimedia
     grimblast
     hyprpicker
-    kdeconnect-kde
     timg
     qimgv
 
@@ -58,4 +57,8 @@
     # udiskie
   ];
   services.blueman-applet.enable = true;
+  services.kdeconnect = {
+    enable = true;
+    indicator = true;
+  };
 }
