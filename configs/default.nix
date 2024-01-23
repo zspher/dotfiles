@@ -1,6 +1,4 @@
-{pkgs, ...}: let
-  nwg-displays = pkgs.nwg-displays.override {hyprlandSupport = true;};
-in {
+{pkgs, ...}: {
   imports = [
     ./neovim
     ./gpg.nix
@@ -33,7 +31,7 @@ in {
     jq
     kitty #  TODO: cfg
     lazygit
-    nwg-displays
+    (nwg-displays.override {hyprlandSupport = true;})
     pavucontrol
     playerctl
     ripgrep
