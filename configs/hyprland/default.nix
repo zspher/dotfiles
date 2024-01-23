@@ -261,5 +261,9 @@
 
   xdg.configFile = {
     "hypr/themes".source = ./themes;
+    "hypr/scripts" = {
+      source = ./scripts;
+      recursive = true;
+    };
   };
 }
