@@ -33,5 +33,24 @@
       dynamic_background_opacity = true;
     };
 
+    keybindings = {
+      "shift+alt+enter" = "launch --cwd=current";
+      "shift+alt+t" = "new_tab_with_cwd";
+
+      "ctrl+alt+1" = "goto_tab 1";
+      "ctrl+alt+2" = "goto_tab 2";
+      "ctrl+alt+3" = "goto_tab 3";
+      "ctrl+alt+4" = "goto_tab 4";
+      "ctrl+alt+5" = "goto_tab 5";
+      "ctrl+alt+6" = "goto_tab 6";
+      "ctrl+alt+7" = "goto_tab 7";
+      "ctrl+alt+8" = "goto_tab 8";
+      "ctrl+alt+9" = "goto_tab 9";
+
+      "ctrl+alt+m" = "toggle_layout stack";
+      "ctrl+alt+l" = "toggle_layout tall";
+      "ctrl+alt+f" = "toggle_layout fat";
+      "ctrl+alt+g" = "toggle_layout grid";
+    };
   };
 }
