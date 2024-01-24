@@ -49,8 +49,12 @@
   nixpkgs.hostPlatform = "x86_64-linux";
 
   networking.hostName = "c-100";
-  programs.hyprland.enable = true;
 
-  services.blueman.enable = true;
   programs.kdeconnect.enable = true;
+  programs.hyprland.enable = true;
+  services.blueman.enable = true;
+
+  fonts.packages = with pkgs; [
+    (nerdfonts.override {fonts = ["CascadiaMono"];})
+  ];
 }
