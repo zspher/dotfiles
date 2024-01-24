@@ -4,6 +4,7 @@
     ./gpg.nix
     ./git.nix
     ./anyrun
+    ./zsh
   ];
   home.packages = with pkgs; [
     # internet
