@@ -99,7 +99,7 @@
         "float, class:^(org.kde.polkit-kde-authentication-agent-1)$"
 
         "workspace 1, class:obsidian"
-        "workspace 2, class:brave-browser"
+        "workspace 2, class:Brave-browser"
         "workspace 3, class:Code"
         "workspace 3, class:kitty, title:nvim"
         "workspace 4, class:WebCord"
