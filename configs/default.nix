@@ -5,6 +5,7 @@
     ./git.nix
     ./anyrun
     ./zsh
+    ./starship.nix
   ];
   home.packages = with pkgs; [
     # internet
