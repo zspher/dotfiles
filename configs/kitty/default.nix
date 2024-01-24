@@ -1,6 +1,7 @@
 {...}: {
   programs.kitty = {
     enable = true;
+    extraConfig = builtins.readFile ./themes/catppuccin-mod.conf;
     settings = {
       disable_ligatures = "always";
 
