@@ -23,21 +23,24 @@
 
     # utilities
     ark
-    bat
-    blueman
-    brightnessctl
     dolphin
-    fd
     filelight
     font-manager
-    jq
     kitty #  TODO: cfg
-    lazygit
     (nwg-displays.override {hyprlandSupport = true;})
     pavucontrol
+
+    # utilities: terminal
+    bat
+    brightnessctl
+    fd
+    jq
+    lazygit
+    lsd
     playerctl
     ripgrep
     rsync
+    xdg-ninja
     xdotool
 
     # utilities: diagnostics
