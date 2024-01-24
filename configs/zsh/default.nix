@@ -20,6 +20,7 @@
       [ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
       source "''${ZINIT_HOME}/zinit.zsh"
     '';
+    completionInit = "";
     initExtra = builtins.readFile ./plugins.zsh;
   };
 }
