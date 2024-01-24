@@ -6,6 +6,7 @@
     ./anyrun
     ./zsh
     ./starship.nix
+    ./kitty
   ];
   home.packages = with pkgs; [
     # internet
@@ -26,7 +27,6 @@
     dolphin
     filelight
     font-manager
-    kitty #  TODO: cfg
     (nwg-displays.override {hyprlandSupport = true;})
     pavucontrol
 
