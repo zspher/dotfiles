@@ -8,6 +8,7 @@
     ./starship.nix
     ./kitty
     ./wakatime.nix
+    ./cargo.nix
   ];
   home.packages = with pkgs; [
     # internet
