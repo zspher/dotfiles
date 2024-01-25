@@ -1,4 +1,7 @@
-zinit lucid for "jeffreytse/zsh-vi-mode" 
+zinit lucid for \
+    atload"
+    zvm_bindkey vicmd 'gd' run-help"\
+    "jeffreytse/zsh-vi-mode"
 
 zinit wait'1a' lucid for \
     "OMZP::fzf" \
