@@ -18,15 +18,17 @@
       withNodeJs = true;
     };
   };
-  home = {
-    packages = with pkgs; [
-      #-- lua
-      lua-language-server
-      stylua
+  home.packages = with pkgs; [
+    cargo
+    gnumake
+    cmake
 
-      #-- nix
-      alejandra
-      nil
-    ];
-  };
+    #-- lua
+    lua-language-server
+    stylua
+
+    #-- nix
+    alejandra
+    nil
+  ];
 }
