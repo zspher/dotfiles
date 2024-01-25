@@ -13,6 +13,7 @@ in {
       initialPassword = "defaultPass";
       isNormalUser = true;
       openssh.authorizedKeys = {inherit keys;};
+
       extraGroups = ["wheel" "networkmanager"];
     };
   };
@@ -49,6 +50,7 @@ in {
   # services
   services = {
     openssh.enable = true;
+    openssh.settings.PermitRootLogin = "no";
     avahi = {
       ipv6 = true;
       enable = true;
