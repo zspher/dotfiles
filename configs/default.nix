@@ -7,6 +7,7 @@
     ./zsh
     ./starship.nix
     ./kitty
+    ./wakatime.nix
   ];
   home.packages = with pkgs; [
     # internet
