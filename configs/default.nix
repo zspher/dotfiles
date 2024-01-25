@@ -40,7 +40,6 @@
     playerctl
     ripgrep
     rsync
-    xdg-ninja
     xdotool
 
     # utilities: diagnostics
