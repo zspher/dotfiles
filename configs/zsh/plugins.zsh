@@ -2,6 +2,7 @@ zinit lucid for \
     "OMZL::key-bindings.zsh"
 
 zinit wait'1a' lucid for \
+    "OMZP::fzf" \
     "hlissner/zsh-autopair" \
         atinit"
             zstyle ':zim:termtitle' format '%~'"\

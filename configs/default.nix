@@ -9,6 +9,7 @@
     ./kitty
     ./wakatime.nix
     ./cargo.nix
+    ./fzf.nix
   ];
   home.packages = with pkgs; [
     # internet
