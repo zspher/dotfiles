@@ -1,5 +1,4 @@
-zinit lucid for \
-    "OMZL::key-bindings.zsh"
+zinit lucid for "jeffreytse/zsh-vi-mode" 
 
 zinit wait'1a' lucid for \
     "OMZP::fzf" \
