@@ -38,3 +38,11 @@ zinit wait'1b' lucid for \
             zstyle ':completion:*:*:kill:*' list-colors '=(#b) #([0-9]#)*( *[a-z])*=34=31=33'
             zstyle ':completion:complete:*:options' sort false" \
     "zsh-users/zsh-completions"
+
+zinit wait'1c' lucid for \
+        atinit"
+            zstyle ':fzf-tab:*' switch-group ',' '.'
+            zstyle ':fzf-tab:complete:_zlua:*' query-string input"\
+        atinit'
+            zstyle ":completion:*" list-colors "${(s.:.)LS_COLORS}"'\
+    "Aloxaf/fzf-tab"
