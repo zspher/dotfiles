@@ -3,9 +3,10 @@ zinit lucid for \
     zvm_bindkey vicmd 'gd' run-help"\
     "jeffreytse/zsh-vi-mode"
 
-zinit wait'1a' lucid for \
-    "OMZP::fzf" \
-    "hlissner/zsh-autopair" \
+zinit wait lucid for \
+    "OMZP::fzf"
+
+zinit wait lucid for \
         atinit"
             zstyle ':zim:termtitle' format '%~'"\
     "zimfw/termtitle" \
@@ -22,14 +23,27 @@ zinit wait'1a' lucid for \
             alias lt='ll --tree'"\
     "PZTM::utility" \
         atinit"zstyle ':zim:input' double-dot-expand yes" \
-    "zimfw/input"
+    "zimfw/input" \
+    "hlissner/zsh-autopair"
 
-zinit wait'1b' lucid for \
-        atinit"zicompinit; zicdreplay" \
-    "zdharma-continuum/fast-syntax-highlighting" \
+zinit wait lucid for \
+        atinit"
+            zicompinit;
+            zstyle ':fzf-tab:*' switch-group ',' '.'
+            zstyle ':fzf-tab:complete:_zlua:*' query-string input"\
+        atinit'
+            zstyle ":completion:*" list-colors "${(s.:.)LS_COLORS}"'\
+    "Aloxaf/fzf-tab"
+
+zinit wait lucid for \
+        light-mode atinit"
+            ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20" \
         atload"_zsh_autosuggest_start" \
     "zsh-users/zsh-autosuggestions" \
-        blockf atpull'zinit creinstall -q .' \
+        light-mode atinit"
+            typeset -gA FAST_HIGHLIGHT; FAST_HIGHLIGHT[git-cmsg-len]=100;zicdreplay" \
+    "zdharma-continuum/fast-syntax-highlighting" \
+        atpull'zinit creinstall -q .' \
         atinit"
             zstyle ':completion:*' completer _expand _complete _ignored _approximate
             zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
@@ -40,12 +54,5 @@ zinit wait'1b' lucid for \
             zstyle ':completion:*:processes' command 'ps -au$USER'
             zstyle ':completion:*:*:kill:*' list-colors '=(#b) #([0-9]#)*( *[a-z])*=34=31=33'
             zstyle ':completion:complete:*:options' sort false" \
+        blockf light-mode \
     "zsh-users/zsh-completions"
-
-zinit wait'1c' lucid for \
-        atinit"
-            zstyle ':fzf-tab:*' switch-group ',' '.'
-            zstyle ':fzf-tab:complete:_zlua:*' query-string input"\
-        atinit'
-            zstyle ":completion:*" list-colors "${(s.:.)LS_COLORS}"'\
-    "Aloxaf/fzf-tab"
