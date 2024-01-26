@@ -10,6 +10,7 @@
     ./wakatime.nix
     ./cargo.nix
     ./fzf.nix
+    ./btop.nix
   ];
   home.packages = with pkgs; [
     # internet
@@ -46,7 +47,6 @@
     xdotool
 
     # utilities: diagnostics
-    btop # TODO: cfg
     nvtop
     s-tui
     wev
