@@ -11,6 +11,8 @@
     ./cargo.nix
     ./fzf.nix
     ./btop.nix
+
+    ./theme.nix
   ];
   home.packages = with pkgs; [
     # internet

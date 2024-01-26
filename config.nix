@@ -7,4 +7,7 @@ else {
   keys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILgO9M53gSwDCnfPMUNctkcLmqwVtvnzskbjyGVspNp5 zspher@ls-2000"
   ];
+  theme.name = "catppuccin";
+  theme.variant = "mocha";
+  theme.accent = "mauve";
 }
