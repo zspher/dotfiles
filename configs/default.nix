@@ -12,7 +12,7 @@
     ./fzf.nix
     ./btop.nix
 
-    ./theme.nix
+    ./catppuccin.nix
   ];
   home.packages = with pkgs; [
     # internet
