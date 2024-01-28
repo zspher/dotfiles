@@ -54,27 +54,40 @@ in {
       description = "Main accent to use for catppuccin";
     };
 
-    kitty =
+    kitty.enable =
       mkEnableOption "kitty integration"
       // {
         default = true;
       };
 
-    btop =
+    btop.enable =
       mkEnableOption "btop integration"
       // {
         default = true;
       };
 
-    starship =
+    starship.enable =
       mkEnableOption "starship integration"
       // {
         default = true;
       };
 
-    kvantum = mkEnableOption "kvantum integration";
+    kvantum.enable = mkEnableOption "kvantum integration";
 
-    gtk = mkEnableOption "gtk integration";
+    gtk = {
+      enable = mkEnableOption "gtk integration";
+      package = mkOption {
+        type = types.package;
+        default = pkgs.catppuccin-gtk;
+        defaultText = literalExpression "pkgs.catppuccin-gtk";
+        description = "The package to use for catppuccin gtk theme";
+      };
+      finalPackage = mkOption {
+        type = types.package;
+        readOnly = true;
+        description = "The resulting catppuccin gtk theme package";
+      };
+    };
   };
 
   config = let
@@ -97,17 +110,17 @@ in {
           home.packages = [cfg.finalPackage];
 
           programs.kitty.theme =
-            mkIf cfg.kitty (mkDefault "Catppuccin-${upperFirst cfg.variant}");
+            mkIf cfg.kitty.enable (mkDefault "Catppuccin-${upperFirst cfg.variant}");
 
           programs.btop.settings.color_theme =
-            mkIf cfg.btop (mkDefault "catppuccin_${cfg.variant}");
-          xdg.configFile."btop/themes" = mkIf cfg.btop {
+            mkIf cfg.btop.enable (mkDefault "catppuccin_${cfg.variant}");
+          xdg.configFile."btop/themes" = mkIf cfg.btop.enable {
             source = "${cfg.finalPackage}/btop";
             recursive = true;
           };
 
           programs.starship.settings =
-            mkIf cfg.starship
+            mkIf cfg.starship.enable
             (mkDefault (
               {palette = "catppuccin_${cfg.variant}";}
               // builtins.fromTOML (
@@ -117,7 +130,7 @@ in {
             ));
         }
 
-        (mkIf cfg.kvantum {
+        (mkIf cfg.kvantum.enable {
           qt = {
             style.name = "kvantum";
           };
@@ -130,7 +143,11 @@ in {
           };
         })
 
-        (mkIf cfg.gtk {
+        (mkIf cfg.gtk.enable {
+          theme.catppuccin.gtk.finalPackage = cfg.gtk.package.override {
+            accents = [cfg.accent];
+            variant = cfg.variant;
+          };
           gtk = {
             theme.name = lib.concatStrings [
               "Catppuccin-"
@@ -139,10 +156,7 @@ in {
               "${upperFirst cfg.accent}-"
               "${upperFirst cfg.type}"
             ];
-            theme.package = pkgs.catppuccin-gtk.override {
-              accents = [cfg.accent];
-              variant = cfg.variant;
-            };
+            theme.package = cfg.gtk.finalPackage;
           };
         })
       ]
