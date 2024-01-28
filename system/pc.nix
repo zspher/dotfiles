@@ -1,8 +1,12 @@
 {
   pkgs,
   inputs,
+  data,
   ...
-}: {
+}: let
+  inherit (data) username keys;
+in {
+  # kernel
   boot = {
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
@@ -18,6 +22,7 @@
     kernelModules = ["kvm-intel"];
   };
 
+  # hardware
   fileSystems = {
     "/" = {
       device = "/dev/disk/by-label/nixos";
@@ -48,13 +53,59 @@
 
   nixpkgs.hostPlatform = "x86_64-linux";
 
+  # networking & services
   networking.hostName = "c-100";
+  networking.networkmanager.dns = "dnsmasq";
+  networking.nameservers = ["1.1.1.1"];
 
+  # TODO: pls remove when services.warp-svc becomes available
+  systemd.packages = [pkgs.cloudflare-warp];
+  systemd.targets.multi-user.wants = ["warp-svc.service"];
+
+  services = {
+    syncthing = {
+      enable = true;
+      overrideDevices = false;
+      overrideFolders = false;
+      openDefaultPorts = true;
+    };
+  };
+
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    jack.enable = true;
+  };
+
+  # programs
   programs.kdeconnect.enable = true;
   programs.hyprland.enable = true;
   services.blueman.enable = true;
+  programs.zsh.enable = true;
 
+  # fonts
   fonts.packages = with pkgs; [
     (nerdfonts.override {fonts = ["CascadiaMono"];})
+
   ];
+  environment.systemPackages = with pkgs; [
+    gcc
+    clang
+    gparted
+  ];
+
+  # user
+  users.users = {
+    "${username}" = {
+      shell = pkgs.zsh;
+      initialPassword = "defaultPass";
+      isNormalUser = true;
+      openssh.authorizedKeys = {inherit keys;};
+
+      extraGroups = ["wheel" "networkmanager"];
+    };
+  };
 }

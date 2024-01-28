@@ -28,7 +28,7 @@
       "pc" = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs data;};
         modules = [
-          ./system/base.nix
+          ./system
           ./system/pc.nix
           {system.stateVersion = "23.11";}
         ];
@@ -36,8 +36,8 @@
       "pi" = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit data;};
         modules = [
+          ./system
           ./system/pi.nix
-          ./system/base.nix
           {system.stateVersion = "23.11";}
         ];
       };
