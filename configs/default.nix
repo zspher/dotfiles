@@ -12,7 +12,7 @@
     ./fzf.nix
     ./btop.nix
 
-    ./catppuccin.nix
+    ./look-and-feel.nix
   ];
   home.packages = with pkgs; [
     # internet
