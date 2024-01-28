@@ -28,6 +28,11 @@ in {
       default = "mocha";
       description = "Sets catppuccin theme variant";
     };
+    type = mkOption {
+      type = types.enum ["dark" "light"];
+      readOnly = true;
+      description = "ligth or dark theme";
+    };
     accent = mkOption {
       type = types.enum [
         "rosewater"
@@ -48,44 +53,98 @@ in {
       default = "mauve";
       description = "Main accent to use for catppuccin";
     };
-    kittyIntegration =
+
+    kitty =
       mkEnableOption "kitty integration"
       // {
         default = true;
       };
-    btopIntegration =
+
+    btop =
       mkEnableOption "btop integration"
       // {
         default = true;
       };
-    starshipIntegration =
+
+    starship =
       mkEnableOption "starship integration"
       // {
         default = true;
       };
+
+    kvantum = mkEnableOption "kvantum integration";
+
+    gtk = mkEnableOption "gtk integration";
   };
 
-  config = mkIf cfg.enable {
-    theme.catppuccin.finalPackage = cfg.package.override {
-      accent = cfg.accent;
-      variant = cfg.variant;
-    };
-    home.packages = [cfg.finalPackage];
+  config = let
+    kvantum-theme = "Catppuccin-${upperFirst cfg.variant}-${upperFirst cfg.accent}";
+  in
+    mkIf cfg.enable (
+      mkMerge [
+        {
+          theme.catppuccin.finalPackage = cfg.package.override {
+            accent = cfg.accent;
+            variant = cfg.variant;
+          };
 
-    programs.kitty.theme = mkIf cfg.kittyIntegration "Catppuccin-${upperFirst cfg.variant}";
+          theme.catppuccin.type = (
+            if builtins.elem cfg.variant ["frappe" "macchiato" "mocha"]
+            then "dark"
+            else "light"
+          );
 
-    programs.btop.settings.color_theme = mkIf cfg.btopIntegration "catppuccin_${cfg.variant}";
-    xdg.configFile."btop/themes" = mkIf cfg.btopIntegration {
-      source = "${cfg.finalPackage}/btop";
-      recursive = true;
-    };
+          home.packages = [cfg.finalPackage];
 
-    programs.starship.settings =
-      mkIf cfg.starshipIntegration
-      ({palette = "catppuccin_${cfg.variant}";}
-        // builtins.fromTOML (
-          builtins.readFile
-          "${cfg.finalPackage}/starship/${cfg.variant}.toml"
-        ));
-  };
+          programs.kitty.theme =
+            mkIf cfg.kitty (mkDefault "Catppuccin-${upperFirst cfg.variant}");
+
+          programs.btop.settings.color_theme =
+            mkIf cfg.btop (mkDefault "catppuccin_${cfg.variant}");
+          xdg.configFile."btop/themes" = mkIf cfg.btop {
+            source = "${cfg.finalPackage}/btop";
+            recursive = true;
+          };
+
+          programs.starship.settings =
+            mkIf cfg.starship
+            (mkDefault (
+              {palette = "catppuccin_${cfg.variant}";}
+              // builtins.fromTOML (
+                builtins.readFile
+                "${cfg.finalPackage}/starship/${cfg.variant}.toml"
+              )
+            ));
+        }
+
+        (mkIf cfg.kvantum {
+          qt = {
+            style.name = "kvantum";
+          };
+          xdg.configFile."Kvantum/kvantum.kvconfig".text = generators.toINI {} {
+            General.theme = "${kvantum-theme}#";
+          };
+          xdg.configFile."Kvantum/${kvantum-theme}#/${kvantum-theme}#.kvconfig".source = pkgs.substitute {
+            src = "${cfg.finalPackage}/share/Kvantum/${kvantum-theme}/${kvantum-theme}.kvconfig";
+            replacements = ["--replace" "translucent_windows=false" "translucent_windows=true"];
+          };
+        })
+
+        (mkIf cfg.gtk {
+          gtk = {
+            theme.name = lib.concatStrings [
+              "Catppuccin-"
+              "${upperFirst cfg.variant}-"
+              "Standard-"
+              "${upperFirst cfg.accent}-"
+              "${upperFirst cfg.type}"
+            ];
+            theme.package = pkgs.catppuccin-gtk.override {
+              accents = [cfg.accent];
+              variant = cfg.variant;
+            };
+          };
+        })
+      ]
+    );
 }
