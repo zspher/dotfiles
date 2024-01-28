@@ -1,0 +1,90 @@
+#--- fonts ---#
+nerd-fonts-cascadia-code
+ttf-heuristica
+
+#--- applications ---#
+joplin-desktop
+masterpdfeditor-free
+nuclear-player-bin
+visual-studio-code-bin
+webcord
+webcamoid
+skanpage
+keepassxc
+thunderbird
+dbeaver
+brave-browser
+
+#--- drivers ---#
+epson-inkjet-printer-201401w
+vulkan-intel
+imagescan
+
+#--- other ---# requires intervention
+auto-cpufreq
+thermald
+gtk3-classic
+lib32-gtk3-classic
+lsp-plugins-noicons
+rtw89-dkms-git
+touchegg
+noisetorch
+manjaro-pipewire
+manjaro-settings-samba
+
+#--- utilities (terminal) ---#
+yay
+neofetch
+nmap
+neovim
+bottom
+fzf
+git
+wget
+curl
+tldr
+openssh
+wget
+curl
+yt-dlp
+kitty
+
+#--- ui ---#
+kwin-bismuth
+posy-cursors
+latte-dock
+
+##--- dev ---##
+
+#--- rust ---#
+rustup
+
+#--- java ---#
+jdk-openjdk
+
+#--- javascript ---#
+nodejs
+npm
+
+#--- python ---#
+python
+python-pip
+python-virtualenv
+pyenv
+
+#--- c++/c ---#
+cmake
+ninja
+gcc
+base-devel
+gdb
+mingw-w64-gcc
+
+#--- tex/latex ---#
+texlive-most
+texlive-most-doc
+biber
+perl-yaml-tiny
+perl-file-home-dir
+
+#--- end ---#
