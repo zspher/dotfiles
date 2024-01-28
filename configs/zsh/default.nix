@@ -14,6 +14,10 @@
     sessionVariables = {
       LS_COLORS = "$(vivid generate catppuccin-mocha)";
     };
+    shellAliases = {
+      wget = "wget --hsts-file=\"$XDG_DATA_HOME/wget-hsts\"";
+    };
+
     initExtraFirst = "WORDCHARS=$WORDCHARS:s:/:";
     initExtraBeforeCompInit = ''
       ZINIT_HOME="''${XDG_DATA_HOME:-''${HOME}/.local/share}/zinit/zinit.git"
