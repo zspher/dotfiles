@@ -21,7 +21,7 @@
     ...
   } @ inputs: let
     inherit (nixpkgs) lib;
-    data = {inherit (import ./config.nix) username system hostname keys theme;};
+    data = {inherit (import ./config.nix) username system hostname keys;};
     inherit (data) system;
   in {
     nixosConfigurations = {
