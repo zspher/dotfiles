@@ -13,6 +13,7 @@
       url = "github:Kirottu/anyrun";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    catppuccin.url = "github:zspher/ctp-nix";
   };
   outputs = {
     self,

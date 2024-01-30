@@ -1,20 +1,25 @@
 {
   pkgs,
   config,
+  inputs,
   ...
 }: {
   imports = [
-    ../modules/home-manager/catppuccin.nix
+    inputs.catppuccin.homeManagerModules.catppuccin
+    ../modules/home-manager/catppuccin
   ];
   theme.catppuccin = {
     enable = true;
     variant = "mocha";
     accent = "mauve";
     kvantum.enable = true;
-    gtk.enable = true;
   };
+  catppuccin.flavour = "mocha";
+  catppuccin.accent = "mauve";
   gtk = {
     enable = true;
+    catppuccin.enable = true;
+
     font.name = "NotoSans Nerd Font";
     font.size = 10;
 
@@ -33,6 +38,11 @@
     name = "Posy_Cursor";
     size = 32;
   };
+
+  programs.btop.catppuccin.enable = true;
+  programs.kitty.catppuccin.enable = true;
+  programs.lazygit.catppuccin.enable = true;
+  programs.starship.catppuccin.enable = true;
   #programs.qtct = {
   #  enable = true;
   #  iconTheme.package = pkgs.papairus-icon-theme;
