@@ -2,7 +2,6 @@
   programs.kitty = {
     enable = true;
     font.name = "CaskaydiaMono Nerd Font";
-    extraConfig = "color4  #89B4FA";
     settings = {
       disable_ligatures = "always";
 
