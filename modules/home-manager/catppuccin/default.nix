@@ -60,7 +60,7 @@ in {
 
   config = let
     kvantum-theme = "Catppuccin-${upperFirst cfg.variant}-${upperFirst cfg.accent}";
-    colors = import ./colors.nix cfg.variant;
+    colors = import ./colors.nix {variant = cfg.variant;};
   in
     mkIf cfg.enable (
       mkMerge [
@@ -92,14 +92,16 @@ in {
           };
         })
 
-        #(mkIf cfg.anyrun.enable {
-        #  programs.anyrun.extraCss = builtins.readFile pkgs.substitute {
-        #    src = ./template.css;
-        #    replacements =
-        #      builtins.concatMap (x: ["--replace" "#{{${x}}}" "${colors.x}"])
-        #      (builtins.attrNames colors);
-        #  };
-        #})
+        (mkIf (cfg.anyrun.enable && config.programs.anyrun.enable) {
+          programs.anyrun.extraCss = let
+            replace = builtins.concatMap (x: ["--replace" "#{{${x}}}" "${colors.${x}}"]) (builtins.attrNames colors);
+          in
+            builtins.readFile (pkgs.substitute
+              {
+                src = ./anyrun-template.css;
+                replacements = [replace];
+              });
+        })
       ]
     );
 }

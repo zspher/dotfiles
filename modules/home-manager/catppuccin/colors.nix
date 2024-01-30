@@ -1,4 +1,4 @@
-{variant ? ["mocha"]}: let
+{variant ? "mocha"}: let
   validVariants = ["latte" "frappe" "macchiato" "mocha"];
 
   colors = {

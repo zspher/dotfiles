@@ -13,6 +13,7 @@
     variant = "mocha";
     accent = "mauve";
     kvantum.enable = true;
+    anyrun.enable = true;
   };
   catppuccin.flavour = "mocha";
   catppuccin.accent = "mauve";

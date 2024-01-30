@@ -36,5 +36,4 @@
       )
     '';
   };
-  xdg.configFile."anyrun/style.css".source = ./style.css;
 }

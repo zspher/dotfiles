@@ -3,7 +3,7 @@
     ./neovim
     ./gpg.nix
     ./git.nix
-    ./anyrun
+    ./anyrun.nix
     ./zsh
     ./starship.nix
     ./kitty
