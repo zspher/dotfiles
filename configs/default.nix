@@ -11,6 +11,7 @@
     ./cargo.nix
     ./fzf.nix
     ./btop.nix
+    ./lazygit.nix
 
     ./look-and-feel.nix
   ];
@@ -41,7 +42,6 @@
     brightnessctl
     fd
     jq
-    lazygit
     lsd
     playerctl
     ripgrep
