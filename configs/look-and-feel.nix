@@ -43,6 +43,7 @@
   programs.kitty.catppuccin.enable = true;
   programs.lazygit.catppuccin.enable = true;
   programs.starship.catppuccin.enable = true;
+  wayland.windowManager.hyprland.catppuccin.enable = true;
   #programs.qtct = {
   #  enable = true;
   #  iconTheme.package = pkgs.papairus-icon-theme;

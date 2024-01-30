@@ -2,8 +2,6 @@
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
-      source = "~/.config/hypr/themes/mocha.conf";
-
       input = {
         kb_layout = "us";
         kb_options = "caps:swapescape";
@@ -19,8 +17,8 @@
         gaps_in = 5;
         gaps_out = 10;
         border_size = 2;
-        "col.active_border" = "rgba($mauveAlpha) rgba($blueAlpha) 60deg";
-        "col.inactive_border" = "rgba($mantleAlpha)";
+        "col.active_border" = "rgb($mauveAlpha) rgb($blueAlpha) 60deg";
+        "col.inactive_border" = "rgb($mantleAlpha)";
         layout = "dwindle";
       };
 
@@ -37,8 +35,8 @@
         shadow_range = 8;
         shadow_render_power = 2;
         shadow_offset = "2 3";
-        "col.shadow_inactive" = "rgba($crustAlpha)";
-        "col.shadow" = "rgba($mauveAlpha)";
+        "col.shadow_inactive" = "rgb($crustAlpha)";
+        "col.shadow" = "rgb($mauveAlpha)";
       };
 
       animations = {
@@ -67,17 +65,17 @@
       gestures.workspace_swipe = true;
 
       group = {
-        "col.border_active" = "rgba($mauveAlpha) rgba($blueAlpha) 60deg";
-        "col.border_inactive" = "rgba($surface0Alpha)";
-        "col.border_locked_active" = "rgba($blueAlpha)";
-        "col.border_locked_inactive" = "rgba($mantleAlpha)";
+        "col.border_active" = "rgb($mauveAlpha) rgb($blueAlpha) 60deg";
+        "col.border_inactive" = "rgb($surface0Alpha)";
+        "col.border_locked_active" = "rgb($blueAlpha)";
+        "col.border_locked_inactive" = "rgb($mantleAlpha)";
 
         groupbar = {
           render_titles = false;
-          "col.active" = "rgba($mauveAlpha)";
-          "col.inactive" = "rgba($surface0Alpha)";
-          "col.locked_active" = "rgba($blueAlpha)";
-          "col.locked_inactive" = "rgba($mantleAlpha)";
+          "col.active" = "rgb($mauveAlpha)";
+          "col.inactive" = "rgb($surface0Alpha)";
+          "col.locked_active" = "rgb($blueAlpha)";
+          "col.locked_inactive" = "rgb($mantleAlpha)";
         };
       };
 
@@ -92,9 +90,9 @@
       };
 
       windowrulev2 = [
-        "bordercolor rgba($skyAlpha), floating:1"
-        "bordercolor rgba($blueAlpha), fullscreen:1"
-        "bordercolor rgba($overlay2Alpha), xwayland:1, floating:0, fullscreen:0"
+        "bordercolor rgb($skyAlpha), floating:1"
+        "bordercolor rgb($blueAlpha), fullscreen:1"
+        "bordercolor rgb($overlay2Alpha), xwayland:1, floating:0, fullscreen:0"
 
         "float, class:^(org.kde.polkit-kde-authentication-agent-1)$"
 
