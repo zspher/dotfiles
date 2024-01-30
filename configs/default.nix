@@ -46,6 +46,7 @@
     playerctl
     ripgrep
     rsync
+    wl-clipboard-rs
     xdotool
 
     # utilities: diagnostics
@@ -71,4 +72,5 @@
     enable = true;
     indicator = true;
   };
+  services.copyq.enable = true; # TODO: cfg
 }
