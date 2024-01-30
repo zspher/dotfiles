@@ -1,8 +1,21 @@
 # Misc
-miscellaneous scripts, configs,  dotfiles and desktop tweaks
 
-## Desktop
+miscellaneous scripts, configs, dotfiles and desktop tweaks (_now with nix_)
 
-- [window Border](desktop/gtk-border/README.md) - adds a border window decoration like in WM (i3) to applications in KDE
+## Important commands
 
-- [Latte Dock](desktop/latte-dock/Upper%20Bar.layout.latte) - a latte dock config
+- view nixos system history
+
+```sh
+nix profile history --profile /nix/var/nix/profiles/system
+```
+
+- delete nixos generations
+
+```sh
+sudo nix profile wipe-history --profile /nix/var/nix/profiles/system
+```
+
+```sh
+sudo nix store gc --debug
+```
