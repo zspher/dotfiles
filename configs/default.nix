@@ -28,6 +28,14 @@
     ./look-and-feel.nix
   ];
   home.packages = with pkgs; [
+    # documents
+    calibre
+    libreoffice-fresh
+    masterpdfeditor4
+    obsidian
+    okular
+    #skanpage
+    vscode-fhs
 
     # internet
     inetutils
