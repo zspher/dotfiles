@@ -1,18 +1,24 @@
 {pkgs, ...}: {
   imports = [
-    ./neovim
-    ./gpg.nix
-    ./git.nix
+    # utilities
     ./anyrun.nix
-    ./zsh
-    ./starship.nix
     ./dolphin.nix
+    ./gpg.nix
     ./kitty
     ./wakatime.nix
-    ./cargo.nix
-    ./fzf.nix
+
+    # utilities: terminal
     ./btop.nix
+    ./fzf.nix
+    ./git.nix
     ./lazygit.nix
+    ./neovim
+    ./starship.nix
+    ./zsh
+
+    # dev
+    ./cargo.nix
+
     # internet
     ./brave.nix
 
@@ -21,7 +27,7 @@
   home.packages = with pkgs; [
     # internet
     inetutils
-    rclone # TODO: cfg
+    # rclone # cfg
     webcord
     yt-dlp
 
