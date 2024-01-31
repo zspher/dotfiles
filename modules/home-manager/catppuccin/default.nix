@@ -89,10 +89,11 @@ in {
           xdg.configFile."Kvantum/kvantum.kvconfig".text = generators.toINI {} {
             General.theme = "${kvantum-theme}#";
           };
-          xdg.configFile."Kvantum/${kvantum-theme}#/${kvantum-theme}#.kvconfig".source = pkgs.substitute {
-            src = "${cfg.finalPackage}/share/Kvantum/${kvantum-theme}/${kvantum-theme}.kvconfig";
-            replacements = ["--replace" "translucent_windows=false" "translucent_windows=true"];
-          };
+          xdg.configFile."Kvantum/${kvantum-theme}#/${kvantum-theme}#.kvconfig".source = "${cfg.finalPackage}/share/Kvantum/${kvantum-theme}/${kvantum-theme}.kvconfig";
+          #xdg.configFile."Kvantum/${kvantum-theme}#/${kvantum-theme}#.kvconfig".source = pkgs.substitute {
+          #  src = "${cfg.finalPackage}/share/Kvantum/${kvantum-theme}/${kvantum-theme}.kvconfig";
+          #  replacements = ["--replace" "translucent_windows=false" "translucent_windows=true"];
+          #};
         })
 
         (mkIf (cfg.anyrun.enable && config.programs.anyrun.enable) {
