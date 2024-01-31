@@ -6,6 +6,7 @@
     ./anyrun.nix
     ./zsh
     ./starship.nix
+    ./dolphin.nix
     ./kitty
     ./wakatime.nix
     ./cargo.nix
@@ -31,7 +32,6 @@
 
     # utilities
     ark
-    dolphin
     filelight
     font-manager
     (nwg-displays.override {hyprlandSupport = true;})
@@ -57,15 +57,6 @@
     # security
     keepassxc
     # polkit-kde-agent
-
-    # kimageformats
-    # ffmpegthumbs
-    # kdegraphics-thumbnailers
-    # libheif
-    # resvg
-    # kde-cli-tools
-    # ffmpegthumbnailer
-    # udiskie
   ];
   services.blueman-applet.enable = true;
   services.kdeconnect = {
