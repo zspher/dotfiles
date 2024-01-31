@@ -22,9 +22,13 @@
     # internet
     ./brave.nix
 
+    # security
+    ./kde-polkit-agent.nix
+
     ./look-and-feel.nix
   ];
   home.packages = with pkgs; [
+
     # internet
     inetutils
     # rclone # cfg
@@ -63,7 +67,6 @@
 
     # security
     keepassxc
-    # polkit-kde-agent
   ];
   services.blueman-applet.enable = true;
   services.kdeconnect = {
