@@ -12,6 +12,7 @@
     enable = true;
     kvantum.enable = true;
     anyrun.enable = true;
+    kde.enable = true;
   };
   catppuccin.flavour = "mocha";
   catppuccin.accent = "mauve";

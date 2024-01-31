@@ -10,6 +10,9 @@ with lib; let
   veryBigNum = 100000;
   upperFirst = str: (lib.strings.toUpper (builtins.substring 0 1 str)) + (builtins.substring 1 veryBigNum str);
 in {
+  imports = [
+    ./kde.nix
+  ];
   options.theme.catppuccin = {
     enable = mkEnableOption "catppuccin";
     package = mkOption {
