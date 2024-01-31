@@ -25,7 +25,7 @@ in {
     };
     variant = mkOption {
       type = types.enum ["latte" "frappe" "macchiato" "mocha"];
-      default = "mocha";
+      default = config.catppuccin.flavour;
       description = "Sets catppuccin theme variant";
     };
     type = mkOption {
@@ -50,7 +50,7 @@ in {
         "blue"
         "lavender"
       ];
-      default = "mauve";
+      default = config.catppuccin.accent;
       description = "Main accent to use for catppuccin";
     };
 

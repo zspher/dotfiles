@@ -10,8 +10,6 @@
   ];
   theme.catppuccin = {
     enable = true;
-    variant = "mocha";
-    accent = "mauve";
     kvantum.enable = true;
     anyrun.enable = true;
   };
