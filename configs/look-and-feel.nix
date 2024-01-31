@@ -24,7 +24,10 @@
     font.size = 10;
 
     iconTheme.package = pkgs.papirus-icon-theme;
-    iconTheme.name = "Papirus-Dark";
+    iconTheme.name =
+      if config.catppuccin.flavour == "latte"
+      then "Papirus-Light"
+      else "Papirus-Dark";
 
     gtk2.configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
   };
