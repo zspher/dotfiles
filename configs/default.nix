@@ -13,12 +13,13 @@
     ./fzf.nix
     ./btop.nix
     ./lazygit.nix
+    # internet
+    ./brave.nix
 
     ./look-and-feel.nix
   ];
   home.packages = with pkgs; [
     # internet
-    brave # TODO: cfg
     inetutils
     rclone # TODO: cfg
     webcord
