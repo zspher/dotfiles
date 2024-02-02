@@ -48,6 +48,7 @@ in {
   swapDevices = [
     {device = "/dev/disk/by-uuid/f2cb2ead-1cb7-46f3-b7b0-e4e84fa49025";}
   ];
+  zramSwap.enable = true;
 
   hardware.cpu.intel.updateMicrocode = true;
 
