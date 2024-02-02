@@ -11,6 +11,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     catppuccin.url = "github:zspher/ctp-nix";
+    spicetify-nix = {
+      url = "github:the-argus/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs = {
     self,

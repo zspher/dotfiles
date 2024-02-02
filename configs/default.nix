@@ -24,6 +24,9 @@
     # internet
     ./brave.nix
 
+    # multimedia
+    ./spicetify.nix
+
     # security
     ./kde-polkit-agent.nix
 
