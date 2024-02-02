@@ -80,6 +80,7 @@ in {
     pulse.enable = true;
     jack.enable = true;
   };
+  services.udisks2.enable = true;
 
   # programs
   programs.kdeconnect.enable = true;
@@ -90,7 +91,6 @@ in {
   # fonts
   fonts.packages = with pkgs; [
     (nerdfonts.override {fonts = ["CascadiaMono" "Noto"];})
-
   ];
   environment.systemPackages = with pkgs; [
     gcc
