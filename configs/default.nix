@@ -5,6 +5,7 @@
     ./dolphin.nix
     ./gpg.nix
     ./kitty
+    ./swaync.nix
     ./wakatime.nix
     ./waybar.nix
 
