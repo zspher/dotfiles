@@ -1,0 +1,408 @@
+* {
+  all: unset;
+  font-size: 12px;
+  font-family: Monospace;
+  transition: 200ms;
+}
+
+.floating-notifications.background .notification-row .notification-background {
+  border-radius: 12.6px;
+  margin: 8px 10px;
+  background-color: #{{mantle}};
+  color: #{{text}};
+  padding: 0;
+}
+
+.floating-notifications.background
+  .notification-row
+  .notification-background
+  .notification.low {
+  border: 2px solid alpha(#{{blue}}, 0.5);
+}
+
+.floating-notifications.background
+  .notification-row
+  .notification-background
+  .notification {
+  padding: 7px;
+  border-radius: 12.6px;
+  border: 2px solid #{{blue}};
+}
+
+.floating-notifications.background
+  .notification-row
+  .notification-background
+  .notification.critical {
+  border: 2px solid #{{red}};
+}
+
+.floating-notifications.background
+  .notification-row
+  .notification-background
+  .notification
+  .notification-content {
+  margin: 7px;
+}
+
+.floating-notifications.background
+  .notification-row
+  .notification-background
+  .notification
+  .notification-content
+  .summary {
+  color: #{{text}};
+}
+
+.floating-notifications.background
+  .notification-row
+  .notification-background
+  .notification
+  .notification-content
+  .time {
+  color: #{{subtext0}};
+}
+
+.floating-notifications.background
+  .notification-row
+  .notification-background
+  .notification
+  .notification-content
+  .body {
+  color: #{{text}};
+}
+
+.floating-notifications.background
+  .notification-row
+  .notification-background
+  .notification
+  > *:last-child
+  > * {
+  min-height: 3.4em;
+}
+
+.floating-notifications.background
+  .notification-row
+  .notification-background
+  .notification
+  > *:last-child
+  > *
+  .notification-action {
+  border-radius: 7px;
+  color: #{{text}};
+  background-color: #{{surface0}};
+  margin: 7px;
+}
+
+.floating-notifications.background
+  .notification-row
+  .notification-background
+  .notification
+  > *:last-child
+  > *
+  .notification-action:hover {
+  background-color: #{{surface1}};
+}
+
+.floating-notifications.background
+  .notification-row
+  .notification-background
+  .notification
+  > *:last-child
+  > *
+  .notification-action:active {
+  background-color: #{{surface2}};
+}
+
+.floating-notifications.background
+  .notification-row
+  .notification-background
+  .close-button {
+  margin: 7px;
+  padding: 2px;
+  border-radius: 6.3px;
+  color: #{{base}};
+  background-color: #{{red}};
+}
+
+.floating-notifications.background
+  .notification-row
+  .notification-background
+  .close-button:hover {
+  background-color: #{{maroon}};
+}
+
+.floating-notifications.background
+  .notification-row
+  .notification-background
+  .close-button:active {
+  background-color: #{{pink}};
+}
+
+.control-center {
+  border-radius: 12.6px;
+  background-color: #{{mantle}};
+  color: #{{text}};
+  padding: 14px;
+  border: 1px solid #{{surface0}};
+}
+
+.control-center .widget-title > label {
+  color: #{{text}};
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.control-center .control-center-clear-all {
+  border-radius: 7px;
+  color: #{{text}};
+  background-color: #{{surface0}};
+  padding: 8px;
+}
+
+.control-center .control-center-clear-all:hover {
+  background-color: #{{surface1}};
+}
+
+.control-center .control-center-clear-all:active {
+  background-color: #{{surface2}};
+}
+
+.control-center .notification-row .notification-background {
+  border-radius: 7px;
+  color: #{{text}};
+  background-color: #{{base}};
+  margin-top: 14px;
+}
+
+.control-center .notification-row .notification-background .notification {
+  padding: 7px;
+  border-radius: 7px;
+  border: 2px solid #{{blue}};
+}
+
+.control-center .notification-row .notification-background .notification.low {
+  border: 2px solid alpha(#{{blue}}, 0.5);
+}
+
+.control-center
+  .notification-row
+  .notification-background
+  .notification.critical {
+  border: 2px solid #{{red}};
+}
+
+.control-center
+  .notification-row
+  .notification-background
+  .notification
+  .notification-content {
+  margin: 7px;
+}
+
+.control-center
+  .notification-row
+  .notification-background
+  .notification
+  .notification-content
+  .summary {
+  color: #{{text}};
+}
+
+.control-center
+  .notification-row
+  .notification-background
+  .notification
+  .notification-content
+  .time {
+  color: #{{subtext0}};
+}
+
+.control-center
+  .notification-row
+  .notification-background
+  .notification
+  .notification-content
+  .body {
+  color: #{{text}};
+}
+
+.control-center
+  .notification-row
+  .notification-background
+  .notification
+  > *:last-child
+  > * {
+  min-height: 3.4em;
+}
+
+.control-center
+  .notification-row
+  .notification-background
+  .notification
+  > *:last-child
+  > *
+  .notification-action {
+  border-radius: 7px;
+  color: #{{text}};
+  background-color: #{{overlay0}};
+  margin: 7px;
+}
+
+.control-center
+  .notification-row
+  .notification-background
+  .notification
+  > *:last-child
+  > *
+  .notification-action:hover {
+  background-color: #{{overlay1}};
+}
+
+.control-center
+  .notification-row
+  .notification-background
+  .notification
+  > *:last-child
+  > *
+  .notification-action:active {
+  background-color: #{{overlay2}};
+}
+
+.control-center .notification-row .notification-background .close-button {
+  margin: 7px;
+  padding: 2px;
+  border-radius: 6.3px;
+  color: #{{base}};
+  background-color: #{{red}};
+}
+
+.control-center .notification-row .notification-background .close-button:hover {
+  background-color: #{{maroon}};
+}
+
+.control-center
+  .notification-row
+  .notification-background
+  .close-button:active {
+  background-color: #{{pink}};
+}
+
+.control-center .notification-row .notification-background:hover {
+  background-color: #{{overlay1}};
+  color: #{{text}};
+}
+
+.control-center .notification-row .notification-background:active {
+  background-color: #{{sapphire}};
+  color: #{{text}};
+}
+
+.summary,
+.time {
+  font-weight: bold;
+  font-size: medium;
+}
+
+progressbar,
+progress,
+trough {
+  border-radius: 12.6px;
+}
+
+progressbar {
+  box-shadow: inset 0 0 0 1px #{{surface1}};
+}
+
+.notification.critical progress {
+  background-color: #{{red}};
+}
+
+.notification.low progress,
+.notification.normal progress {
+  background-color: #{{blue}};
+}
+
+trough {
+  background-color: #{{surface0}};
+}
+
+.control-center trough {
+  background-color: #{{surface1}};
+}
+
+.widget-dnd {
+  margin: 0px;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.control-center-dnd {
+  margin-top: 5px;
+  font-size: initial;
+  border-radius: 8px;
+  background: #{{surface0}};
+}
+
+.control-center-dnd:checked {
+  background-color: #{{blue}};
+}
+.control-center-dnd:checked slider {
+  background: #{{surface0}};
+}
+
+.control-center-dnd slider {
+  background: #{{surface1}};
+  border-radius: 8px;
+  min-height: 22px;
+  min-width: 22px;
+  margin: 2px;
+}
+.control-center-dnd slider:hover {
+  background-color: #{{surface2}};
+}
+
+.control-center-dnd:checked image {
+  color: #{{surface0}};
+}
+
+/* Mpris widget */
+.widget-mpris {
+  margin: 0px;
+}
+
+.widget-mpris button {
+  border-radius: 12.6px;
+  color: #{{text}};
+  background-color: #{{surface0}};
+  margin: 5px;
+  padding: 4px 5px;
+}
+
+.widget-mpris button:hover {
+  background-color: #{{surface1}};
+}
+
+.widget-mpris button:active {
+  background-color: #{{surface2}};
+}
+
+.widget-mpris button:disabled {
+  opacity: 0.5;
+}
+
+.widget-mpris-player {
+  padding: 8px;
+  margin: 0 5px;
+  background-color: #{{surface0}};
+  border-radius: 12.6px;
+  color: #{{text}};
+}
+
+.widget-mpris-title {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.widget-mpris-subtitle {
+  font-size: 1rem;
+}

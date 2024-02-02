@@ -64,6 +64,7 @@ in {
     kvantum.enable = mkEnableOption "kvantum integration";
     anyrun.enable = mkEnableOption "anyrun integration";
     waybar.enable = mkEnableOption "waybar integration";
+    swaync.enable = mkEnableOption "swaync integration";
   };
 
   config = let
@@ -107,6 +108,9 @@ in {
         })
         (mkIf (cfg.waybar.enable && config.programs.waybar.enable) {
           programs.waybar.style = replaceColors ./waybar-template.css;
+        })
+        (mkIf (cfg.swaync.enable && config.programs.swaync.enable) {
+          programs.swaync.style = replaceColors ./swaync-template.css;
         })
       ]
     );
