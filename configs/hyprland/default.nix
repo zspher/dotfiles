@@ -1,4 +1,9 @@
 {pkgs, ...}: {
+  home.packages = with pkgs; [
+    libnotify
+    python3
+  ];
+
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {

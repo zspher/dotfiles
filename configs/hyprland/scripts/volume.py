@@ -3,12 +3,6 @@
 import argparse
 import subprocess
 
-import gi
-from gi.repository import GLib, Notify
-
-gi.require_version("Notify", "0.7")
-
-
 def init_argparse() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="volume control with notify")
     volume_slider = parser.add_mutually_exclusive_group()
@@ -25,7 +19,7 @@ parser = init_argparse()
 args = parser.parse_args()
 
 
-def get_volume() -> (int, str):
+def get_volume() -> tuple[int, str|None]:
     volume = subprocess.run(
         ["wpctl", "get-volume", "@DEFAULT_AUDIO_SINK@"], capture_output=True, text=True
     ).stdout.split()
@@ -48,28 +42,21 @@ def mute_volume():
     subprocess.run(["wpctl", "set-mute", "@DEFAULT_AUDIO_SINK@", "toggle"])
 
 
-Notify.init("volume")
-
-
-def notify_volume(volume: int, message: str = None):
-    nf = Notify.Notification.new("Volume")
+def notify_volume(volume: int, message: str|None = None):
+    nf = ["notify-send", "-a", "Volume", "Volume"]
     if message == "[MUTED]":
-        nf.update("Volume", "muted", "audio-volume-muted")
+        nf.extend(["muted", "-i", "audio-volume-muted"])
     else:
         if volume <= 10:
-            nf.update("Volume", f"{volume}%", "audio-volume-low")
+            nf.extend([f"{volume}%", "-i", "audio-volume-low"])
         elif volume <= 80:
-            nf.update("Volume", f"{volume}%", "audio-volume-medium")
+            nf.extend([f"{volume}%", "-i", "audio-volume-medium"])
         else:
-            nf.update("Volume", f"{volume}%", "audio-volume-high")
-        nf.set_hint("value", GLib.Variant("i", volume))
-    nf.set_hint(
-        "x-canonical-private-synchronous", GLib.Variant("s", "volume-notification")
-    )
-    nf.set_urgency(Notify.Urgency.LOW)
-    nf.set_timeout(1000)
-    nf.show()
-
+            nf.extend([f"{volume}%", "-i", "audio-volume-high"])
+        nf.extend(["-h", f"int:value:{volume}"])
+    nf.extend(["-h", f"STRING:x-canonical-private-synchronous:volume-notification"])
+    nf.extend(["-u", "low"])
+    subprocess.run(nf)
 
 if args.vol_up:
     increase_volume(args.vol_up)
