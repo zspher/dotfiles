@@ -1,0 +1,268 @@
+
+* {
+  font-family:
+    CaskaydiaMono Nerd Font,
+    monospace;
+  font-size: 11px;
+  min-height: 0;
+  outline-width: 0;
+  outline-offset: 0;
+  border: none;
+  border-radius: 0px;
+}
+
+window#waybar {
+  background: rgba(43, 48, 59, 0.5);
+  transition-property: background-color;
+  transition-duration: 0.5s;
+}
+
+window#waybar.hidden {
+  opacity: 0.2;
+}
+
+.modules-left {
+  margin-left: 10px;
+}
+
+.modules-right {
+  margin-right: 10px;
+}
+
+.modules-left,
+.modules-right,
+.modules-center {
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+#battery,
+#clock,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#network,
+#pulseaudio,
+#tray,
+#taskbar,
+#custom-notification,
+#workspaces,
+#idle_inhibitor {
+  background-color: shade(#{{crust}}, 0.9);
+  padding: 0px 4px;
+  /* margin: 0; */
+  margin: 0px;
+  opacity: 1;
+}
+
+#workspaces,
+#battery,
+#temperature {
+  margin-right: 10px;
+}
+
+/* Left borders*/
+#clock,
+#pulseaudio,
+#custom-notification {
+  border-radius: 12.6px 0 0 12.6px;
+}
+
+/* Right borders*/
+#idle_inhibitor,
+#temperature,
+#tray {
+  border-radius: 0px 12.6px 12.6px 0px;
+}
+
+/* workspaces & taskbar */
+
+#taskbar button.active box,
+#taskbar button:hover,
+#workspaces button:hover,
+#workspaces {
+  animation: gradient_f 20s ease-in infinite;
+  transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
+}
+
+#workspaces {
+  border-radius: 12.6px;
+}
+
+#workspaces button {
+  box-shadow: inherit;
+  text-shadow: inherit;
+  padding: 0 10px;
+  color: #{{text}};
+  margin: 2px 0;
+  border-radius: inherit;
+}
+
+#workspaces button:hover {
+  background-color: #{{base}};
+}
+
+#workspaces button.active {
+  background-color: #{{surface0}};
+}
+
+#workspaces button.active:hover {
+  background-color: #{{surface1}};
+}
+
+#workspaces button:hover,
+#workspaces button.active {
+  color: #{{mauve}};
+}
+
+#workspaces button.urgent {
+  background-color: alpha(#{{red}}, 0.3);
+  color: #{{red}};
+}
+
+#workspaces button.urgent:hover {
+  background-color: alpha(#{{red}}, 0.4);
+}
+
+#taskbar {
+  border-radius: 12.6px;
+}
+
+#taskbar.empty {
+  background: transparent;
+}
+
+#taskbar button {
+  text-shadow: inherit;
+  box-shadow: inherit;
+  margin: 4px 2px;
+  min-width: 0;
+  padding: 0px;
+}
+
+#taskbar button box {
+  border-radius: 50%;
+  padding: 4px;
+}
+#taskbar button box > image {
+  padding: 0;
+  min-width: 12px;
+  min-height: 12px;
+}
+
+#taskbar button:hover box {
+  background-color: #{{base}};
+}
+
+#taskbar button.active box {
+  background-color: alpha(#{{mauve}}, 0.4);
+}
+
+#taskbar button.active:hover box {
+  background-color: #{{surface1}};
+}
+
+#taskbar button:only-child,
+#taskbar button:only-child:hover {
+  border-radius: 12.6px;
+}
+
+#clock {
+  padding: 0 5px 0 10px;
+  color: #{{blue}};
+}
+
+#idle_inhibitor {
+  padding: 0 10px 0 5px;
+  color: #{{mauve}};
+  font-size: 11px;
+  animation: gradient_f 20s ease-in infinite;
+  transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
+}
+
+#idle_inhibitor.activated {
+  background-color: #{{blue}};
+  color: shade(#{{crust}}, 0.9);
+  border-left: none;
+}
+
+#battery {
+  border-radius: 12.6px;
+  padding: 0 10px;
+}
+
+#pulseaudio {
+  padding-left: 10px;
+  color: #{{maroon}};
+}
+
+#memory {
+  color: #{{blue}};
+}
+
+#temperature {
+  padding-right: 10px;
+  color: #{{mauve}};
+}
+
+#temperature.critical {
+  background-color: #{{red}};
+}
+
+#custom-notification {
+  font-size: 10px;
+  padding: 0 10px 0 10px;
+}
+
+#tray {
+  padding: 0 10px 0 0;
+  -gtk-icon-theme: "Papirus-Dark";
+}
+
+#tray window > menu {
+  background-color: #{{mantle}};
+}
+
+#tray window > decoration {
+  box-shadow: none;
+  border: 0.2px white solid;
+}
+
+#tray window > menu,
+#tray window > menu menuitem,
+#tray window > decoration {
+  border-radius: 12.6px;
+}
+
+#tray window > menu label {
+  color: #{{text}};
+}
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+}
+
+#tray > .needs-attention > image {
+  padding: 2px 5px;
+  border-radius: 12.6px;
+  background-color: alpha(#{{red}}, 0.05);
+  border: 2px solid #{{red}};
+}
+
+tooltip,
+tooltip > decoration {
+  box-shadow: none;
+  background: #{{mantle}};
+  border-radius: 12.6px;
+  border-width: 0px;
+  border: 0.2px white solid;
+}
+
+tooltip label {
+  color: #{{text}};
+}

@@ -63,6 +63,7 @@ in {
 
     kvantum.enable = mkEnableOption "kvantum integration";
     anyrun.enable = mkEnableOption "anyrun integration";
+    waybar.enable = mkEnableOption "waybar integration";
   };
 
   config = let
@@ -103,6 +104,9 @@ in {
 
         (mkIf (cfg.anyrun.enable && config.programs.anyrun.enable) {
           programs.anyrun.extraCss = replaceColors ./anyrun-template.css;
+        })
+        (mkIf (cfg.waybar.enable && config.programs.waybar.enable) {
+          programs.waybar.style = replaceColors ./waybar-template.css;
         })
       ]
     );

@@ -13,6 +13,7 @@
     kvantum.enable = true;
     anyrun.enable = true;
     kde.enable = true;
+    waybar.enable = true;
   };
   catppuccin.flavour = "mocha";
   catppuccin.accent = "mauve";
