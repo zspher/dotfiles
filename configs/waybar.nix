@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  config,
+  ...
+}: {
   programs.waybar = {
     enable = true;
     settings = {
@@ -169,4 +173,6 @@
     };
     systemd.enable = true;
   };
+  # FIX: https://github.com/nix-community/home-manager/issues/4099
+  systemd.user.services.waybar.Service.Environment = "PATH=${config.home.profileDirectory}/bin";
 }
