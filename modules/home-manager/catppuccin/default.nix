@@ -25,6 +25,10 @@ in {
       type = types.package;
       readOnly = true;
       description = "Resulting catppuccin variant";
+      default = cfg.package.override {
+        accent = cfg.accent;
+        variant = cfg.variant;
+      };
     };
     variant = mkOption {
       type = types.enum ["latte" "frappe" "macchiato" "mocha"];
@@ -74,11 +78,6 @@ in {
     mkIf cfg.enable (
       mkMerge [
         {
-          theme.catppuccin.finalPackage = cfg.package.override {
-            accent = cfg.accent;
-            variant = cfg.variant;
-          };
-
           theme.catppuccin.type = (
             if builtins.elem cfg.variant ["frappe" "macchiato" "mocha"]
             then "dark"
