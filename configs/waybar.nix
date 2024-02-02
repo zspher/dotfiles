@@ -1,0 +1,172 @@
+{pkgs, ...}: {
+  programs.waybar = {
+    enable = true;
+    settings = {
+      mainBar = {
+        layer = "top";
+        position = "top";
+        height = 37;
+        output = ["*"];
+        modules-left = [
+          "hyprland/workspaces"
+          "wlr/taskbar"
+        ];
+        modules-center = ["clock" "idle_inhibitor"];
+        modules-right = [
+          "battery"
+          "pulseaudio"
+          "cpu"
+          "memory"
+          "temperature"
+          "custom/notification"
+          "tray"
+        ];
+
+        # * left side * //
+
+        "hyprland/workspaces" = {
+          format = "<b>{icon}</b>";
+          on-click = "activate";
+          format-icons = {
+            "1" = "⼀";
+            "2" = "二";
+            "3" = "三";
+            "4" = "四";
+            "5" = "五";
+            "6" = "六";
+            "7" = "七";
+            "8" = "八";
+            "9" = "九";
+            "10" = "十";
+          };
+          sort-by-number = true;
+        };
+        "wlr/taskbar" = {
+          format = "{icon}";
+          icon-size = 12;
+          icon-theme = "Papirus-Dark";
+          markup = true;
+          tooltip-format = "<span size='medium' weight='bold'>{title}</span>\n<small>{app_id}</small>";
+          on-click = "activate";
+          on-click-middle = "close";
+          ignore-list = [];
+          app_ids-mapping = {};
+        };
+
+        # * center  * //
+
+        clock = {
+          format = " {:%H:%M 󰃭 %a %d}";
+          format-alt = "{:%A %B %d, %Y (%R)} 󰃰 ";
+          tooltip-format = "<tt><small>{calendar}</small></tt>";
+          calendar = {
+            mode = "month";
+            mode-mon-col = 3;
+            weeks-pos = "right";
+            on-scroll = 1;
+            on-click-right = "mode";
+            format = {
+              months = "<span color='#cdd6f4'><b>{}</b></span>";
+              days = "<span color='#cdd6f4'><b>{}</b></span>";
+              weeks = "<span color='#89dceb'><b>W{}</b></span>";
+              weekdays = "<span color='#89b4fa'><b>{}</b></span>";
+              today = "<span color='#f38ba8'><b><u>{}</u></b></span>";
+            };
+          };
+          actions = {
+            on-click-right = "mode";
+            on-click-forward = "tz_up";
+            on-click-backward = "tz_down";
+            on-scroll-up = "shift_up";
+            on-scroll-down = "shift_down";
+          };
+        };
+        idle_inhibitor = {
+          format = "{icon}";
+          format-icons = {
+            activated = "󰒳";
+            deactivated = "󰰄";
+          };
+        };
+
+        # * left side  * //
+
+        battery = {
+          bat = "BAT1";
+          interval = 10;
+          states = {
+            warning = 30;
+            critical = 15;
+          };
+          format = "<span foreground='#b4befe'>{capacity}% {icon} {power} W</span>";
+          format-charging = "<span foreground='#a6e3a1'>{capacity}% {icon}󱐋</span>";
+          format-critical = "<span foreground='#f38ba8'>{capacity}% 󱃌 {power} W</span>";
+          format-icons = ["󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹"];
+          max-length = 25;
+        };
+
+        pulseaudio = {
+          scroll-step = 1;
+          reverse-scrolling = 1;
+          format = "{volume}% {icon} {format_source}";
+          format-bluetooth = "{volume}% {icon} {format_source}";
+          format-bluetooth-muted = " {icon} {format_source}";
+          format-muted = " {format_source}";
+          format-source = "{volume}% ";
+          format-source-muted = "";
+          format-icons = {
+            headphone = " ";
+            hands-free = "";
+            headset = "󰋎";
+            phone = "";
+            portable = "";
+            car = " ";
+            default = ["" "" " "];
+          };
+          on-click = "${pkgs.pavucontrol}/bin/pavucontrol";
+        };
+        cpu = {
+          format = "<span foreground='#fab387'>{icon0}</span> <span foreground='#f9e2af'>{icon1}</span> <span foreground='#f9e2af'>{icon2}</span> <span foreground='#a6e3a1'>{icon3}</span>";
+          format-icons = ["▁" "▂" "▃" "▄" "▅" "▆" "▇" "█"];
+        };
+        memory = {
+          format = "{}% ";
+        };
+        temperature = {
+          critical-threshold = 80;
+          format = "{temperatureC}°C {icon}";
+          format-icons = [
+            "<span foreground='#89b4fa'></span>"
+            ""
+            "<span foreground='f38ba8'></span>"
+          ];
+        };
+        "custom/notification" = {
+          tooltip = true;
+          format = "{icon}";
+          format-icons = {
+            notification = "<span foreground='red'><sup></sup></span>";
+            none = "";
+            dnd-notification = "<span foreground='red'><sup></sup></span>";
+            dnd-none = "";
+            inhibited-notification = "<span foreground='red'><sup></sup></span>";
+            inhibited-none = "";
+            dnd-inhibited-notification = "<span foreground='red'><sup></sup></span>";
+            dnd-inhibited-none = "";
+          };
+          return-type = "json";
+          exec = "${pkgs.swaynotificationcenter}/bin/swaync-client -swb";
+          on-click = "${pkgs.swaynotificationcenter}/bin/swaync-client -t -sw";
+          on-click-right = "${pkgs.swaynotificationcenter}/bin/swaync-client -d -sw";
+          escape = true;
+        };
+        tray = {
+          icon-size = 11;
+          spacing = 10;
+          show-passive-items = true;
+        };
+      };
+    };
+    systemd.enable = true;
+  };
+}

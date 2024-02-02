@@ -6,6 +6,7 @@
     ./gpg.nix
     ./kitty
     ./wakatime.nix
+    ./waybar.nix
 
     # utilities: terminal
     ./btop.nix
