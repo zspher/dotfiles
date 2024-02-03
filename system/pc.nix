@@ -88,6 +88,11 @@ in {
   programs.hyprland.enable = true;
   services.blueman.enable = true;
   programs.zsh.enable = true;
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true;
+    dedicatedServer.openFirewall = true;
+  };
 
   # fonts
   fonts.packages = with pkgs; [
