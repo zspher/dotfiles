@@ -28,6 +28,7 @@
 
     # multimedia
     ./mpv.nix
+    ./obs-studio.nix
     ./spicetify.nix
 
     # security
