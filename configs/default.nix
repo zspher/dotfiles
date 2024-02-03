@@ -25,6 +25,7 @@
     ./brave.nix
 
     # multimedia
+    ./mpv.nix
     ./spicetify.nix
 
     # security
