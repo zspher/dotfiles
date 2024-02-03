@@ -66,9 +66,11 @@ in {
     waybar.enable = mkEnableOption "waybar integration";
     swaync.enable = mkEnableOption "swaync integration";
     mpv.enable = mkEnableOption "mpv integration";
+    obs-studio.enable = mkEnableOption "obs-studio integration";
   };
 
   config = let
+    catppuccin-obs = pkgs.callPackage ../../packages/catppuccin-obs.nix {};
     kvantum-theme = "Catppuccin-${upperFirst cfg.variant}-${upperFirst cfg.accent}";
     colors = import ./colors.nix {variant = cfg.variant;};
 
@@ -128,6 +130,17 @@ in {
               "background=${colors.base},"
               "background_text=${colors.text}"
             ];
+          };
+        })
+
+        (mkIf (cfg.obs-studio.enable && config.programs.obs-studio.enable) {
+          home.packages = [
+            catppuccin-obs
+          ];
+
+          xdg.configFile."obs-studio/themes" = {
+            source = "${catppuccin-obs}/themes";
+            recursive = true;
           };
         })
       ]
