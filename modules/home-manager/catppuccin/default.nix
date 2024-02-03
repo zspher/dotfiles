@@ -74,7 +74,7 @@ in {
     replaceColors = src:
       builtins.readFile (pkgs.substitute {
         src = src;
-        replacements = builtins.concatMap (x: ["--replace" "#{{${x}}}" "${colors.${x}}"]) (builtins.attrNames colors);
+        replacements = builtins.concatMap (x: ["--replace" "#{{${x}}}" "#${colors.${x}}"]) (builtins.attrNames colors);
       });
   in
     mkIf cfg.enable (
