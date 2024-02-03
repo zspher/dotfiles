@@ -14,6 +14,8 @@
     ./fzf.nix
     ./git.nix
     ./lazygit.nix
+    ./less.nix
+    ./man.nix
     ./neovim
     ./starship.nix
     ./zsh
