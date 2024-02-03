@@ -212,7 +212,7 @@ window#waybar.hidden {
 
 #custom-notification {
   font-size: 10px;
-  padding: 0 10px 0 10px;
+  padding: 0 12px 0 10px;
 }
 
 #tray {
