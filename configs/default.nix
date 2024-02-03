@@ -2,6 +2,7 @@
   imports = [
     # utilities
     ./anyrun.nix
+    ./copyq
     ./dolphin.nix
     ./gpg.nix
     ./kitty
@@ -95,5 +96,4 @@
     enable = true;
     indicator = true;
   };
-  services.copyq.enable = true;
 }
