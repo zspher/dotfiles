@@ -65,6 +65,7 @@ in {
     anyrun.enable = mkEnableOption "anyrun integration";
     waybar.enable = mkEnableOption "waybar integration";
     swaync.enable = mkEnableOption "swaync integration";
+    mpv.enable = mkEnableOption "mpv integration";
   };
 
   config = let
@@ -111,6 +112,23 @@ in {
         })
         (mkIf (cfg.swaync.enable && config.programs.swaync.enable) {
           programs.swaync.style = replaceColors ./swaync-template.css;
+        })
+        (mkIf (cfg.mpv.enable && config.programs.mpv.enable) {
+          programs.mpv.scriptOpts.uosc = {
+            chapter_ranges = lib.concatStrings [
+              "intros:${colors.blue},"
+              "outros:${colors.blue},"
+              "openings:${colors.blue},"
+              "endings:${colors.blue},"
+              "ads:${colors.red}"
+            ];
+            color = lib.concatStrings [
+              "foreground=${colors.overlay2},"
+              "foreground_text=${colors.text},"
+              "background=${colors.base},"
+              "background_text=${colors.text}"
+            ];
+          };
         })
       ]
     );

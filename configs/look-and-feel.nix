@@ -15,6 +15,7 @@
     kde.enable = true;
     waybar.enable = true;
     swaync.enable = true;
+    mpv.enable = true;
   };
   catppuccin.flavour = "mocha";
   catppuccin.accent = "mauve";
