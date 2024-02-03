@@ -21,9 +21,6 @@
     ./starship.nix
     ./zsh
 
-    # dev
-    ./cargo.nix
-
     # internet
     ./brave.nix
 
@@ -36,6 +33,7 @@
     ./kde-polkit-agent.nix
 
     ./look-and-feel.nix
+    ./xdg-standard.nix
   ];
   home.packages = with pkgs; [
     # documents
