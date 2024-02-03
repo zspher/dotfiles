@@ -81,6 +81,7 @@ in {
     jack.enable = true;
   };
   services.udisks2.enable = true;
+  services.fstrim.enable = true;
 
   # programs
   programs.kdeconnect.enable = true;
