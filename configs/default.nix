@@ -47,12 +47,15 @@
     vscode-fhs
 
     # internet
+    cloudflare-warp
     inetutils
     # rclone # cfg
+    qbittorrent
     webcord
     yt-dlp
 
     # multimedia
+    gimp
     grimblast
     hyprpicker
     timg
@@ -66,15 +69,16 @@
     pavucontrol
 
     # utilities: terminal
-    bat
     brightnessctl
     fd
+    (inxi.override {withRecommendedSystemPrograms = true;})
     jq
     lsd
     playerctl
     ripgrep
     rsync
     wl-clipboard-rs
+    xdg-utils
     xdotool
 
     # utilities: diagnostics
@@ -86,9 +90,10 @@
     keepassxc
   ];
   services.blueman-applet.enable = true;
+  services.network-manager-applet.enable = true;
   services.kdeconnect = {
     enable = true;
     indicator = true;
   };
-  services.copyq.enable = true; # TODO: cfg
+  services.copyq.enable = true;
 }
