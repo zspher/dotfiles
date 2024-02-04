@@ -7,6 +7,7 @@
     ./gpg.nix
     ./kitty
     ./swaync.nix
+    ./swww
     ./wakatime.nix
     ./waybar.nix
 
