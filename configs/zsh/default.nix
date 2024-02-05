@@ -11,14 +11,14 @@
     dotDir = ".config/zsh";
     autocd = true;
     history.path = "${config.xdg.stateHome}/zsh/history";
-    sessionVariables = {
-      LS_COLORS = "$(vivid generate catppuccin-mocha)";
-    };
     shellAliases = {
       wget = "wget --hsts-file=\"$XDG_DATA_HOME/wget-hsts\"";
     };
 
-    initExtraFirst = "WORDCHARS=$WORDCHARS:s:/:";
+    initExtraFirst = ''
+      WORDCHARS=$WORDCHARS:s:/:
+      export LS_COLORS="$(vivid generate catppuccin-mocha)";
+    '';
     initExtraBeforeCompInit = ''
       ZINIT_HOME="''${XDG_DATA_HOME:-''${HOME}/.local/share}/zinit/zinit.git"
       [ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
