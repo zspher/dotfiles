@@ -6,6 +6,9 @@
 }: let
   inherit (data) username keys;
 in {
+  imports = [
+    ./sddm
+  ];
   # kernel
   boot = {
     loader.systemd-boot.enable = true;
