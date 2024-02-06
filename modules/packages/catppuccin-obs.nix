@@ -26,6 +26,7 @@ stdenvNoCC.mkDerivation {
   meta = with lib; {
     description = "Soothing pastel theme for obs-studio";
     homepage = "https://github.com/catppuccin/obs";
+    license = licenses.mit;
     platforms = platforms.unix;
     maintainers = with maintainers; [zspher];
   };
