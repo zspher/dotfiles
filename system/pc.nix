@@ -67,13 +67,13 @@ in {
   systemd.packages = [pkgs.cloudflare-warp];
   systemd.targets.multi-user.wants = ["warp-svc.service"];
 
-  services = {
-    syncthing = {
-      enable = true;
-      overrideDevices = false;
-      overrideFolders = false;
-      openDefaultPorts = true;
-    };
+  users.users.syncthing.homeMode = "750";
+  systemd.services.syncthing.serviceConfig.UMask = "0007";
+  services.syncthing = {
+    enable = true;
+    overrideDevices = false;
+    overrideFolders = false;
+    openDefaultPorts = true;
   };
 
   security.rtkit.enable = true;
@@ -116,7 +116,7 @@ in {
       isNormalUser = true;
       openssh.authorizedKeys = {inherit keys;};
 
-      extraGroups = ["wheel" "networkmanager"];
+      extraGroups = ["wheel" "networkmanager" "syncthing"];
     };
   };
 }
