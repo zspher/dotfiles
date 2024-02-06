@@ -43,6 +43,10 @@ in {
       device = "/dev/disk/by-uuid/2ED7-2A30";
       fsType = "vfat";
     };
+    "/mnt/drive2" = {
+      device = "/dev/disk/by-label/drive2";
+      fsType = "ext4";
+    };
   };
 
   swapDevices = [
