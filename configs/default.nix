@@ -7,6 +7,7 @@
     ./easyeffects.nix
     ./gpg.nix
     ./kitty
+    ./swayidle.nix
     ./swaync.nix
     ./swww
     ./wakatime.nix
