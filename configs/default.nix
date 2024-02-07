@@ -4,6 +4,7 @@
     ./anyrun.nix
     ./copyq
     ./dolphin.nix
+    ./easyeffects.nix
     ./gpg.nix
     ./kitty
     ./swaync.nix

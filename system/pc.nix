@@ -95,6 +95,7 @@ in {
   programs.hyprland.enable = true;
   services.blueman.enable = true;
   programs.zsh.enable = true;
+  programs.dconf.enable = true;
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true;
