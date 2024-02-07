@@ -33,6 +33,7 @@
 
     # security
     ./kde-polkit-agent.nix
+    ./swaylock.nix
 
     ./look-and-feel.nix
     ./xdg-standard.nix
