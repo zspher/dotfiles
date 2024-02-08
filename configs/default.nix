@@ -22,6 +22,7 @@
     ./man.nix
     ./neovim
     ./starship.nix
+    ./tealdeer.nix
     ./zsh
 
     # internet
