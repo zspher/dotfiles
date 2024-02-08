@@ -87,3 +87,15 @@ sudo nixos-rebuild switch --flake .#pc
 ```sh
 home-manager switch --flake .#basic
 ```
+
+### Post-Install (Manual changes)
+
+- [ ] set user password
+- [ ] set timezone via `timedatectl`
+- browser stuff
+  - [ ] update dark reader to new ui
+  - [ ] import stylus styles
+- [ ] run Adwaita-for-steam install script
+- [ ] select catppuccin theme from obs
+- [ ] keepassxc enable theme & settings
+- [ ] copyq disable saving keepassxc passwords
