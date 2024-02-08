@@ -86,7 +86,6 @@
 
     # utilities: diagnostics
     nvtop
-    s-tui
     wev
 
     # security
