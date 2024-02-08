@@ -30,5 +30,27 @@
     #-- nix
     alejandra
     nil
+
+    #-- web: js ts markdown json
+    prettierd
+    biome
+
+    #-- c#
+    (with dotnetCorePackages;
+      combinePackages [
+        sdk_6_0
+        sdk_8_0
+      ])
+    omnisharp-roslyn
+    csharpier
+    netcoredbg
+
+    #-- python
+    nodePackages_latest.pyright
+    ruff-lsp
+
+    #-- bash
+    nodePackages_latest.bash-language-server
+    shfmt
   ];
 }
