@@ -90,6 +90,8 @@ in {
   services.udisks2.enable = true;
   services.fstrim.enable = true;
 
+  security.pam.services.swaylock = {};
+
   # programs
   programs.kdeconnect.enable = true;
   programs.hyprland.enable = true;
