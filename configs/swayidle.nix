@@ -13,10 +13,10 @@
       (with builtins;
         lib.concatStrings [
           "swayidle -w "
-          "timeout ${toString (60 * 31)} \"swaylock -f\" "
-          "timeout ${toString (60 * 30)} \"hyprctl dispatch dpms off\" "
-          "resume \"hyprctl dispatch dpms on\" "
-          "before-sleep \"swaylock -f\""
+          "timeout ${toString (60 * 30)} 'swaylock -f' "
+          "timeout ${toString (60 * 30 + 10)} 'hyprctl dispatch dpms off' "
+          "resume 'hyprctl dispatch dpms on' "
+          "before-sleep 'swaylock -f'"
         ])
     ];
   };
