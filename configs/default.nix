@@ -15,6 +15,7 @@
 
     # utilities: terminal
     ./btop.nix
+    ./direnv.nix
     ./fzf.nix
     ./git.nix
     ./lazygit.nix
