@@ -10,9 +10,6 @@
       indicator = true;
       indicator-radius = 200;
       indicator-thickness = 20;
-      grace = 2;
-      grace-no-mouse = true;
-      grace-no-touch = true;
       datestr = "%b %d, %Y";
       fade-in = 0.1;
       ignore-empty-password = true;
