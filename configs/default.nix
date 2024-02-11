@@ -2,7 +2,7 @@
   imports = [
     # utilities
     ./anyrun.nix
-    ./copyq
+    ./copyq.nix
     ./dolphin.nix
     ./easyeffects.nix
     ./gpg.nix
