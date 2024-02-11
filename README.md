@@ -1,6 +1,13 @@
 # Misc
 
-miscellaneous scripts, configs, dotfiles and desktop tweaks (_now with nix_)
+miscellaneous scripts, configs, and dotfiles (_now with nix_)
+
+- **Window Manager** • [hyprland](https://github.com/hyprwm/Hyprland)
+- **Shell** • [zsh](https://www.zsh.org) w/ [starship](https://github.com/starship/starship)
+- **Terminal** • [kitty](https://github.com/kovidgoyal/kitty)
+- **Panel** • [waybar](https://aur.archlinux.org/packages/waybar-hyprland-git)
+- **Notify Daemon** • [swaync](https://github.com/ErikReider/SwayNotificationCenter)
+- **Launcher** • [anyrun](https://github.com/Kirottu/anyrun)
 
 ## Important commands
 
@@ -21,6 +28,9 @@ sudo nix store gc --debug
 ```
 
 ## Installation
+
+<details>
+<summary>install instructions</summary>
 
 ### Preinstall
 
@@ -99,3 +109,4 @@ home-manager switch --flake .#basic
 - [ ] select catppuccin theme from obs
 - [ ] keepassxc enable theme & settings
 - [ ] copyq disable saving keepassxc passwords
+</details>
