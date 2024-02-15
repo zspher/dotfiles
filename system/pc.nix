@@ -95,7 +95,6 @@ in {
   # programs
   programs.kdeconnect.enable = true;
   programs.hyprland.enable = true;
-  services.blueman.enable = true;
   programs.zsh.enable = true;
   programs.dconf.enable = true;
   programs.steam = {
@@ -103,6 +102,10 @@ in {
     remotePlay.openFirewall = true;
     dedicatedServer.openFirewall = true;
   };
+
+  services.blueman.enable = true;
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
 
   # fonts
   fonts.packages = with pkgs; [
