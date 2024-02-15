@@ -76,6 +76,7 @@
         "col.border_locked_inactive" = "rgb($mantleAlpha)";
 
         groupbar = {
+          height = 1;
           render_titles = false;
           "col.active" = "rgb($mauveAlpha)";
           "col.inactive" = "rgb($surface0Alpha)";
