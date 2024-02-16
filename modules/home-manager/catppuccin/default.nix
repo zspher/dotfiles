@@ -35,11 +35,6 @@ in {
       default = config.catppuccin.flavour;
       description = "Sets catppuccin theme variant";
     };
-    type = mkOption {
-      type = types.enum ["dark" "light"];
-      readOnly = true;
-      description = "ligth or dark theme";
-    };
     accent = mkOption {
       type = types.enum [
         "rosewater"
@@ -84,12 +79,6 @@ in {
     mkIf cfg.enable (
       mkMerge [
         {
-          theme.catppuccin.type = (
-            if builtins.elem cfg.variant ["frappe" "macchiato" "mocha"]
-            then "dark"
-            else "light"
-          );
-
           home.packages = [cfg.finalPackage];
         }
 
