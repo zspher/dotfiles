@@ -107,6 +107,8 @@ in {
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
 
+  services.openssh.settings.PasswordAuthentication = false;
+
   # fonts
   fonts.packages = with pkgs; [
     (nerdfonts.override {fonts = ["CascadiaMono" "Noto"];})
