@@ -17,7 +17,7 @@
 
     initExtraFirst = ''
       WORDCHARS=$WORDCHARS:s:/:
-      export LS_COLORS="$(vivid generate catppuccin-mocha)";
+      export LS_COLORS="$(vivid generate catppuccin-${config.catppuccin.flavour})";
     '';
     initExtraBeforeCompInit = ''
       ZINIT_HOME="''${XDG_DATA_HOME:-''${HOME}/.local/share}/zinit/zinit.git"
