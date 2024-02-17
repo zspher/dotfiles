@@ -82,9 +82,7 @@
     playerctl
     ripgrep
     rsync
-    wl-clipboard-rs
     xdg-utils
-    xdotool
 
     # utilities: diagnostics
     nvtop

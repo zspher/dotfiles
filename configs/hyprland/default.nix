@@ -1,7 +1,15 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
+  imports = [
+    ./clipboard.nix
+  ];
   home.packages = with pkgs; [
     libnotify
     python3
+    xdotool
   ];
 
   wayland.windowManager.hyprland = {
