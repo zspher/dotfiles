@@ -6,7 +6,15 @@
 
   wayland.windowManager.hyprland = {
     enable = true;
+    systemd.variables = [
+      "DISPLAY"
+      "HYPRLAND_INSTANCE_SIGNATURE"
+      "WAYLAND_DISPLAY"
+      "XDG_CURRENT_DESKTOP"
+      "QT_QPA_PLATFORM"
+    ];
     settings = {
+      env = ["QT_QPA_PLATFORM,wayland"];
       input = {
         kb_layout = "us";
         kb_options = "caps:swapescape";
