@@ -21,7 +21,6 @@
   ];
   networking.networkmanager.enable = true;
   services = {
-    openssh.enable = true;
     openssh.settings.PermitRootLogin = "no";
     avahi = {
       ipv6 = true;

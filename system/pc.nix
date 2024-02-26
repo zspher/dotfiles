@@ -103,10 +103,12 @@ in {
     dedicatedServer.openFirewall = true;
   };
 
+  # services
   services.blueman.enable = true;
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
 
+  services.openssh.enable = true;
   services.openssh.settings.PasswordAuthentication = false;
 
   # fonts
