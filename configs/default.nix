@@ -77,6 +77,7 @@
     # utilities: terminal
     brightnessctl
     fd
+    ghostscript
     (inxi.override {withRecommendedSystemPrograms = true;})
     jq
     lsd
