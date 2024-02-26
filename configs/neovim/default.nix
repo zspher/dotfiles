@@ -22,6 +22,7 @@
     cargo
     gnumake
     cmake
+    lldb # c, c++, rust
 
     #-- lua
     lua-language-server
@@ -45,6 +46,9 @@
     csharpier
     netcoredbg
 
+    #-- c/c++
+    clang-tools
+
     #-- python
     nodePackages_latest.pyright
     ruff-lsp
@@ -52,5 +56,9 @@
     #-- bash
     nodePackages_latest.bash-language-server
     shfmt
+    shellcheck
+
+    #-- xml
+    lemminx
   ];
 }
