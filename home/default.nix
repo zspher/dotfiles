@@ -2,7 +2,6 @@
   self,
   inputs,
   username,
-  config,
   ...
 }: {
   imports = [

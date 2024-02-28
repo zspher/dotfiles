@@ -12,7 +12,7 @@ in {
 
   wayland.windowManager.hyprland.settings = {
     exec-once = lib.mkIf (config.wayland.windowManager.hyprland.enable) [
-      "${script}"
+      "${script}/bin/swww-wallset"
     ];
   };
 }
