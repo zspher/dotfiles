@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  self,
   ...
 }:
 with lib; let
@@ -66,7 +67,7 @@ in {
   };
 
   config = let
-    catppuccin-obs = pkgs.callPackage ../../packages/catppuccin-obs.nix {};
+    catppuccin-obs = self.packages.${pkgs.system}.catppuccin-obs;
     kvantum-theme = "Catppuccin-${upperFirst cfg.variant}-${upperFirst cfg.accent}";
     colors = import ./colors.nix {variant = cfg.variant;};
 
