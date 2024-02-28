@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  self,
+  ...
+}: {
   services.xserver.enable = true;
   services.xserver.displayManager.sddm = {
     enable = true;
@@ -8,6 +12,6 @@
 
   environment.systemPackages = with pkgs; [
     libsForQt5.qt5.qtgraphicaleffects
-    (pkgs.callPackage ../../modules/packages/sddm-corners-theme {})
+    self.packages.${pkgs.system}.sddm-corners-theme
   ];
 }
