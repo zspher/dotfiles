@@ -1,13 +1,9 @@
 {
   pkgs,
   config,
-  inputs,
+  self,
   ...
 }: {
-  imports = [
-    inputs.catppuccin.homeManagerModules.catppuccin
-    ../modules/home-manager/catppuccin
-  ];
   theme.catppuccin = {
     enable = true;
     kvantum.enable = true;
@@ -42,7 +38,7 @@
   };
   home.pointerCursor = {
     gtk.enable = true;
-    package = pkgs.callPackage ../modules/packages/posy-cursor.nix {};
+    package = self.packages.${pkgs.system}.posy-cursor;
     name = "Posy_Cursor";
     size = 32;
   };

@@ -20,9 +20,6 @@
   };
   home.packages = with pkgs; [
     cargo
-    gnumake
-    cmake
-    lldb # c, c++, rust
 
     #-- lua
     lua-language-server
@@ -36,19 +33,6 @@
     prettierd
     biome
 
-    #-- c#
-    (with dotnetCorePackages;
-      combinePackages [
-        sdk_6_0
-        sdk_8_0
-      ])
-    omnisharp-roslyn
-    csharpier
-    netcoredbg
-
-    #-- c/c++
-    clang-tools
-
     #-- python
     nodePackages_latest.pyright
     ruff-lsp
@@ -60,5 +44,9 @@
 
     #-- xml
     lemminx
+
+    #-- rust
+    clippy
+    rust-analyzer
   ];
 }

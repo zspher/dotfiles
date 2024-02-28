@@ -1,6 +1,11 @@
 {pkgs, ...}: {
+  imports = [
+    ./copyq.nix
+    ./kitty
+    ./dolphin.nix
+    ./wakatime.nix
+  ];
   home.packages = with pkgs; [
-    # utilities
     ark
     filelight
     font-manager

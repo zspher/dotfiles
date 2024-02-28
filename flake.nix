@@ -6,6 +6,7 @@
 
       imports = [
         ./system/profiles
+        ./home/profiles
         ./packages
         ./modules
       ];

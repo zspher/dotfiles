@@ -1,8 +1,4 @@
 {...}: {
-  imports = [
-    ../modules/home-manager/swaync.nix
-  ];
-
   programs.swaync = {
     enable = true;
     systemd.enable = true;
