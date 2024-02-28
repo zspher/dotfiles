@@ -1,3 +1,5 @@
+.direnv/
+
 # zsh
 **/.zcompdump
 
