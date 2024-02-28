@@ -1,7 +1,21 @@
 {
   description = "IZBV personal dotfiles";
+  outputs = inputs:
+    inputs.flake-parts.lib.mkFlake {inherit inputs;} {
+      systems = ["x86_64-linux"];
+
+      imports = [
+      ];
+    };
+
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+
+    flake-parts = {
+      url = "github:hercules-ci/flake-parts";
+      inputs.nixpkgs-lib.follows = "nixpkgs";
+    };
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -9,52 +23,12 @@
     anyrun = {
       url = "github:Kirottu/anyrun";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-parts.follows = "flake-parts";
     };
     catppuccin.url = "github:zspher/ctp-nix";
     spicetify-nix = {
       url = "github:the-argus/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-  };
-  outputs = {
-    self,
-    nixpkgs,
-    home-manager,
-    ...
-  } @ inputs: let
-    inherit (nixpkgs) lib;
-    data = {inherit (import ./config.nix) username system hostname keys;};
-    inherit (data) system;
-  in {
-    nixosConfigurations = {
-      "pc" = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs data;};
-        modules = [
-          ./system
-          ./system/pc.nix
-          {system.stateVersion = "23.11";}
-        ];
-      };
-      "pi" = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit data;};
-        modules = [
-          ./system
-          ./system/pi.nix
-          {system.stateVersion = "23.11";}
-        ];
-      };
-    };
-    homeConfigurations = {
-      basic = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages."${system}";
-        extraSpecialArgs = {inherit inputs data;};
-        modules = [
-          ./configs
-          ./configs/hyprland
-          ./configs/home-manager.nix
-          {home.stateVersion = "23.11";}
-        ];
-      };
     };
   };
 }
