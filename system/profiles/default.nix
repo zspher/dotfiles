@@ -15,6 +15,13 @@
         {system.stateVersion = "23.11";}
       ];
     };
+    laptop = nixosSystem {
+      inherit specialArgs;
+      modules = [
+        ./laptop
+        {system.stateVersion = "23.11";}
+      ];
+    };
     pi = nixosSystem {
       inherit specialArgs;
       modules = [
