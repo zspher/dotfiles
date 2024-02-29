@@ -13,17 +13,13 @@
     ./zsh
   ];
   home.packages = with pkgs; [
-    brightnessctl
     fd
     ghostscript
     (inxi.override {withRecommendedSystemPrograms = true;})
     jq
     lsd
-    nvtop
-    playerctl
     ripgrep
     rsync
-    wev
     xdg-utils
   ];
 }
