@@ -7,3 +7,6 @@
 - **stylus-extension**
 
   - loaded stylus themes for select websites
+
+- **nvim**
+  - the nvim config

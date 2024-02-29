@@ -107,6 +107,7 @@ home-manager switch --flake .#basic
   - [ ] import stylus styles
 - [ ] run Adwaita-for-steam install script
 - [ ] select catppuccin theme from obs
+- [ ] theme webcord
 - [ ] keepassxc enable theme & settings
 - [ ] copyq disable saving keepassxc passwords
 </details>
