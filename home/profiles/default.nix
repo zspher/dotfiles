@@ -10,19 +10,30 @@
   };
   pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
 
-  inherit (import ./config.nix) homeImports;
+  mods = {
+    "minimal" = [
+      ./..
+      ./minimal.nix
+    ];
+    "full" = [
+      ./..
+      ./full.nix
+    ];
+    "nixpkgs" = [../../system/nix/nixpkgs.nix];
+  };
 in {
   flake.homeConfigurations = {
     "minimal" = homeManagerConfiguration {
-      modules =
-        [../../system/nix/nixpkgs.nix]
-        ++ homeImports.minimal;
+      modules = mods.minimal ++ mods.nixpkgs;
       inherit pkgs extraSpecialArgs;
     };
+    "minimalPi" = homeManagerConfiguration {
+      modules = mods.minimal ++ mods.nixpkgs;
+      inherit extraSpecialArgs;
+      pkgs = inputs.nixpkgs.legacyPackages.aarch64-linux;
+    };
     "desktop" = homeManagerConfiguration {
-      modules =
-        [../../system/nix/nixpkgs.nix]
-        ++ homeImports.desktop;
+      modules = mods.full ++ mods.nixpkgs;
       inherit pkgs extraSpecialArgs;
     };
   };
