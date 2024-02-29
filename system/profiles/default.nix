@@ -7,6 +7,7 @@
     inherit (inputs.nixpkgs.lib) nixosSystem;
     username = "faust";
     specialArgs = {inherit inputs self username;};
+    inherit (import ../../home/profiles/config.nix) homeImports;
   in {
     pc = nixosSystem {
       inherit specialArgs;
@@ -15,10 +16,7 @@
         {system.stateVersion = "23.11";}
         {
           home-manager = {
-            users."${username}".imports = [
-              ../../home
-              ../../home/profiles/full.nix
-            ];
+            users."${username}".imports = homeImports.desktop;
             extraSpecialArgs = specialArgs;
           };
         }
@@ -31,10 +29,7 @@
         {system.stateVersion = "23.11";}
         {
           home-manager = {
-            users.faust.imports = [
-              ../../home
-              ../../home/profiles/minimal.nix
-            ];
+            users.faust.imports = homeImports.minimal;
             extraSpecialArgs = specialArgs;
           };
         }
