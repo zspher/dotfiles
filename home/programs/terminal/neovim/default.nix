@@ -20,6 +20,7 @@
   };
   home.packages = with pkgs; [
     cargo
+    cmake
 
     #-- lua
     lua-language-server
