@@ -27,6 +27,20 @@ sudo nix profile wipe-history --profile /nix/var/nix/profiles/system
 sudo nix store gc --debug
 ```
 
+- checking installed packages (nixos system, user local, home-manager)
+
+```sh
+nix-store -q -R /run/current-system/sw/
+```
+
+```sh
+nix profile list
+```
+
+```sh
+home-manager packages
+```
+
 ## Installation
 
 <details>
