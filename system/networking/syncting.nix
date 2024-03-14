@@ -1,5 +1,6 @@
-{...}: {
-  users.users.syncthing.homeMode = "750";
+{...}: let
+  inherit (import ../config.nix) user;
+in {
   systemd.services.syncthing.serviceConfig.UMask = "0007";
   services.syncthing = {
     enable = true;
