@@ -48,7 +48,9 @@
     fsType = "vfat";
   };
 
-  swapDevices = [];
+  swapDevices = [
+    {device = "/dev/disk/by-uuid/8a283110-c511-43c7-96b4-e45b0bfce74f";}
+  ];
 
   zramSwap.enable = true;
 
