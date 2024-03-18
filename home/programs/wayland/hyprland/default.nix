@@ -18,6 +18,7 @@
       "QT_QPA_PLATFORM"
     ];
     settings = {
+      source = ["~/.config/hypr/monitors.conf"];
       env = ["QT_QPA_PLATFORM,wayland"];
       input = {
         kb_layout = "us";
