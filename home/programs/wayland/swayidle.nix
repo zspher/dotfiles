@@ -16,7 +16,6 @@
           "timeout ${toString (60 * 30)} 'swaylock -f' "
           "timeout ${toString (60 * 30 + 10)} 'hyprctl dispatch dpms off' "
           "resume 'hyprctl dispatch dpms on' "
-          "before-sleep 'swaylock -f'"
         ])
     ];
   };
