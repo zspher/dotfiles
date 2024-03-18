@@ -54,7 +54,8 @@ home-manager packages
    | fat32 | /boot | boot | 512 MiB |
    | linux-swap | | swap | ram size |
    |btrfs | /, /home /nix /nix/store | nixos | the rest |
-2. create btrfs subvolumes [1](https://nixos.wiki/wiki/Btrfs)
+2. reboot
+3. create btrfs subvolumes [1](https://nixos.wiki/wiki/Btrfs)
 
 ```sh
 nix-shell -p btrfs-progs
@@ -66,7 +67,7 @@ btrfs subvolume create /mnt/nix
 umount /mnt
 ```
 
-3. mount the partitions and subvolumes
+4. mount the partitions and subvolumes
 
 ```sh
 mount -o compress=zstd,subvol=root /dev/sdX2 /mnt
@@ -116,6 +117,7 @@ home-manager switch --flake .#basic
 
 - [ ] set user password
 - [ ] set timezone via `timedatectl`
+- [ ] set qt icon theme via qt5ct qt6ct
 - browser stuff
   - [ ] update dark reader to new ui
   - [ ] import stylus styles
