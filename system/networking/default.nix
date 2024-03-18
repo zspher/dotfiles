@@ -1,6 +1,6 @@
 {...}: {
   imports = [
-    ./avahi.nix
+    ./mdns.nix
     ./network-manager.nix
     ./pipewire.nix
   ];
