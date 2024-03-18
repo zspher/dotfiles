@@ -48,6 +48,11 @@
     fsType = "vfat";
   };
 
+  fileSystems."/mnt/drive2" = {
+    device = "/dev/disk/by-label/drive2";
+    fsType = "btrfs";
+  };
+
   swapDevices = [
     {device = "/dev/disk/by-uuid/8a283110-c511-43c7-96b4-e45b0bfce74f";}
   ];
