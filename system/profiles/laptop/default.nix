@@ -1,4 +1,4 @@
-{...}: {
+{pkgs, ...}: {
   imports = [
     ./hardware-config.nix
 
@@ -24,4 +24,7 @@
   ];
 
   networking.hostName = "ls-2100";
+
+  services.printing.enable = true;
+  services.printing.drivers = with pkgs; [epson-201401w];
 }
