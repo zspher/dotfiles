@@ -10,7 +10,7 @@
 
     ../services
 
-    ../misc/look-and-feel.nix
+    ../misc/theme
     ../misc/xdg-dirs.nix
     ../misc/xdg.nix
   ];

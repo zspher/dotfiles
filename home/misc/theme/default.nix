@@ -4,6 +4,9 @@
   self,
   ...
 }: {
+  imports = [
+    ./qt.nix
+  ];
   theme.catppuccin = {
     enable = true;
     kvantum.enable = true;
@@ -31,10 +34,6 @@
       else "Papirus-Dark";
 
     gtk2.configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
-  };
-  qt = {
-    enable = true;
-    platformTheme = "qtct";
   };
   home.pointerCursor = {
     gtk.enable = true;
