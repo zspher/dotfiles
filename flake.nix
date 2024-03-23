@@ -42,7 +42,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-parts.follows = "flake-parts";
     };
-    catppuccin.url = "github:zspher/ctp-nix";
+    catppuccin.url = "github:Stonks3141/ctp-nix";
     spicetify-nix = {
       url = "github:the-argus/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
