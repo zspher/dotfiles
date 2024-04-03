@@ -37,5 +37,14 @@ in {
       modules = mods.full ++ mods.nixpkgs;
       inherit pkgs extraSpecialArgs;
     };
+    "desktop-games" = homeManagerConfiguration {
+      modules =
+        mods.full
+        ++ mods.nixpkgs
+        ++ [
+          ../programs/games/minecraft.nix
+        ];
+      inherit pkgs extraSpecialArgs;
+    };
   };
 }
