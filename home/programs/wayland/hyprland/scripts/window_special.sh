@@ -63,8 +63,8 @@ fi
 cache_files=$(find /tmp/hypr -maxdepth 1 -type f -printf '%T@ %p\n' | sort -n | cut -d' ' -f2- | tail -n +$((CACHE_FILE_LIMIT + 1)))
 n_cache_files=$(echo "$cache_files" | wc -l)
 if [ "$n_cache_files" -gt "$CACHE_FILE_LIMIT" ]; then
-    echo "INFO: Deleting cache files..."
+    echo "Deleting cache files..."
     echo "$cache_files" | xargs rm
 else
-    echo "INFO: Cache files not found or below the limit."
+    echo "Cache files not found or below the limit."
 fi
