@@ -9,5 +9,6 @@
     # useful for pipewire
     rtkit.enable = true;
 
+    pam.services.hyprlock = {};
   };
 }
