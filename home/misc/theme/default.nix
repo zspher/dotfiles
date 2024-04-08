@@ -16,7 +16,6 @@
     swaync.enable = true;
     mpv.enable = true;
     obs-studio.enable = true;
-    swaylock.enable = true;
   };
   catppuccin.flavour = "mocha";
   catppuccin.accent = "mauve";
