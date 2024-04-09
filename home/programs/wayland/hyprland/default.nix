@@ -145,7 +145,7 @@
       ## keybinds
 
       "$mainMod" = "SUPER";
-      "$terminal" = "kitty -1";
+      "$terminal" = "kitty -1 tmux new -As0";
       "$file_manager" = "dolphin";
       "$notification_manager" = "swaync-client -t -sw";
       "$screen_shot" = "pkill rofi || ~/.config/rofi/bin/screenshot.sh";

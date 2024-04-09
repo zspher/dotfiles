@@ -15,6 +15,5 @@
     curl
     gcc
     gparted
-    tmux
   ];
 }

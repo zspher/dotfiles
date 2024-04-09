@@ -10,6 +10,7 @@
     ./neovim
     ./starship.nix
     ./tealdeer.nix
+    ./tmux.nix
     ./zsh
   ];
   home.packages = with pkgs; [
