@@ -8,7 +8,9 @@ zinit wait lucid for \
 
 zinit wait lucid for \
         atinit"
-            zstyle ':zim:termtitle' format '%~'"\
+        zstyle ':zim:termtitle' hooks 'preexec' 'precmd'
+        zstyle ':zim:termtitle:preexec' format '\${\${(A)=1}[1]}'
+        zstyle ':zim:termtitle:precmd'  format '%2~'"\
     "zimfw/termtitle" \
         atinit"
             zstyle ':prezto:*:*' color 'yes'
