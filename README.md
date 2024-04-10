@@ -117,7 +117,6 @@ home-manager switch --flake .#basic
 
 - [ ] set user password
 - [ ] set timezone via `timedatectl`
-- [ ] set qt icon theme via qt5ct qt6ct
 - browser stuff
   - [ ] update dark reader to new ui
   - [ ] import stylus styles
