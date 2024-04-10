@@ -2,6 +2,8 @@
   self,
   inputs,
   username,
+  lib,
+  pkgs,
   ...
 }: {
   imports = [
@@ -18,4 +20,11 @@
     stateVersion = "23.11";
   };
   programs.home-manager.enable = true;
+
+  home.activation.setSddmAvatar = lib.hm.dag.entryAfter ["linkGeneration"] ''
+    if [ -s /home/${username} ]; then
+        run ${pkgs.acl}/bin/setfacl -m u:sddm:r /home/${username}/.face.icon
+        run ${pkgs.acl}/bin/setfacl -m u:sddm:x /home/${username}
+    fi
+  '';
 }
