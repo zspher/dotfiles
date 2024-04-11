@@ -90,6 +90,7 @@
 
   services.thermald.enable = true;
 
+  # printers
   services.printing.enable = true;
   services.printing.drivers = with pkgs; [epson-201401w];
 
@@ -100,4 +101,11 @@
       model = "epson-inkjet-printer-201401w/ppds/EPSON_L220.ppd";
     }
   ];
+
+  # scanners
+  hardware.sane = {
+    enable = true;
+    extraBackends = [pkgs.utsushi];
+  };
+  services.udev.packages = [pkgs.utsushi];
 }
