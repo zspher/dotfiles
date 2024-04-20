@@ -20,6 +20,7 @@ in {
   qt = {
     enable = true;
     platformTheme.package = with pkgs; [libsForQt5.qt5ct qt6Packages.qt6ct];
+    kde.settings.kdeglobals.General.TerminalApplication = "kitty";
   };
   xdg.configFile."qt5ct/qt5ct.conf".text = lib.generators.toINI {} data;
   xdg.configFile."qt6ct/qt6ct.conf".text = lib.generators.toINI {} data;
