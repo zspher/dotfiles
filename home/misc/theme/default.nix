@@ -45,15 +45,9 @@
   programs.kitty.catppuccin.enable = true;
   programs.lazygit.catppuccin.enable = true;
   programs.starship.catppuccin.enable = true;
+  programs.tmux.catppuccin.enable = true;
   wayland.windowManager.hyprland.catppuccin.enable = true;
 
-  programs.tmux.catppuccin.enable = true;
-  programs.tmux.extraConfig = let
-    t = "#{b:pane_current_path}/#{?#{!=:#{pane_current_command},zsh}, - #{pane_current_command}, }";
-  in ''
-    set -g @catppuccin_window_default_text "${t}"
-    set -g @catppuccin_window_current_text "${t}"
-  '';
   #programs.qtct = {
   #  enable = true;
   #  iconTheme.package = pkgs.papairus-icon-theme;
