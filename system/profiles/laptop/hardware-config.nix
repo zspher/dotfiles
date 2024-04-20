@@ -64,6 +64,9 @@
     enable = true;
     driSupport = true;
     driSupport32Bit = true;
+    extraPackages = with pkgs; [
+      vaapiVdpau # required by davinci resolve
+    ];
   };
 
   services.xserver.videoDrivers = ["nvidia"];
