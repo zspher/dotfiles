@@ -10,7 +10,6 @@
     brightnessctl
     filelight
     font-manager
-    nvtopPackages.full
     (nwg-displays.override {hyprlandSupport = true;})
     pavucontrol
     playerctl
