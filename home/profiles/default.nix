@@ -43,6 +43,7 @@ in {
         ++ mods.nixpkgs
         ++ [
           ../programs/games/minecraft.nix
+          ../programs/multimedia/davinci-resolve.nix
         ];
       inherit pkgs extraSpecialArgs;
     };
