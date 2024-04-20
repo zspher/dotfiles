@@ -38,6 +38,7 @@ in {
 
     themeInfo = lib.mkMerge [
       (fromINI "${package}/share/color-schemes/Catppuccin${variant}${accent}.colors")
+      {"ColorEffects:Disabled".IntensityAmount = lib.mkForce 1;}
     ];
   in
     mkIf cfg.kde.enable {
