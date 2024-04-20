@@ -11,8 +11,7 @@ with lib; let
 
   settings = cfg.settings // {"$schema" = cfg.schema;};
   configFile = (settingsFormat.generate "swaync/config.json" settings).overrideAttrs (_: {
-    # TODO uncomment once version higher than 0.9.0
-    # checkPhase = "${pkgs.check-jsonschema}/bin/check-jsonschema --schemafile ${settings."$schema"} $out ";
+    checkPhase = "${pkgs.check-jsonschema}/bin/check-jsonschema --schemafile ${settings."$schema"} $out ";
   });
 in {
   meta.maintainers = [maintainers.rhoriguchi];
