@@ -1,4 +1,8 @@
-{lib, ...}: let
+{
+  lib,
+  pkgs,
+  ...
+}: let
   data = {
     Appearance = {
       custom_palette = false;
@@ -15,7 +19,7 @@
 in {
   qt = {
     enable = true;
-    platformTheme = "qtct";
+    platformTheme.package = with pkgs; [libsForQt5.qt5ct qt6Packages.qt6ct];
   };
   xdg.configFile."qt5ct/qt5ct.conf".text = lib.generators.toINI {} data;
   xdg.configFile."qt6ct/qt6ct.conf".text = lib.generators.toINI {} data;
