@@ -3,8 +3,7 @@
   self,
   ...
 }: {
-  services.xserver.enable = true;
-  services.xserver.displayManager.sddm = {
+  services.displayManager.sddm = {
     enable = true;
     theme = "sddm-corners";
     wayland.enable = true;
