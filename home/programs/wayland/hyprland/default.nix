@@ -118,7 +118,7 @@
         "workspace 1, class:obsidian"
         "workspace 2, class:Brave-browser"
         "workspace 3, class:Code"
-        "workspace 3, class:kitty, title:nvim"
+        "workspace 3, class:kitty"
         "workspace 4, class:WebCord"
 
         "float, title:^(Floating Window \- Show Me The Key)$"
