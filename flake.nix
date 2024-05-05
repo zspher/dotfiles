@@ -53,7 +53,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-parts.follows = "flake-parts";
     };
-    catppuccin.url = "github:catppuccin/nix";
+    # pinned until FIX: https://github.com/catppuccin/nix/pull/159
+    catppuccin.url = "github:catppuccin/nix/2788becbb58bd2a60666fbbf2d4f6ae1721112d5";
     spicetify-nix = {
       url = "github:the-argus/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
