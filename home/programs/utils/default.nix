@@ -9,7 +9,7 @@
     ark
     brightnessctl
     filelight
-    font-manager
+    # font-manager
     (nwg-displays.override {hyprlandSupport = true;})
     pavucontrol
     playerctl
