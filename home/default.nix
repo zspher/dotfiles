@@ -13,7 +13,6 @@
     inputs.hyprlock.homeManagerModules.default
     inputs.spicetify-nix.homeManagerModule
     self.nixosModules.catppuccin
-    self.nixosModules.swaync
   ];
   home = {
     inherit username;

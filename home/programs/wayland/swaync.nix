@@ -1,7 +1,6 @@
 {...}: {
-  programs.swaync = {
+  services.swaync = {
     enable = true;
-    systemd.enable = true;
     settings = {
       positionX = "right";
       positionY = "top";

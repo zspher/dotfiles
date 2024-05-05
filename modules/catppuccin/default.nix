@@ -104,7 +104,7 @@ in {
           programs.waybar.style = replaceColors ./waybar-template.css;
         })
         (mkIf (cfg.swaync.enable) {
-          programs.swaync.style = replaceColors ./swaync-template.css;
+          services.swaync.style = replaceColors ./swaync-template.css;
         })
         (mkIf (cfg.mpv.enable) {
           programs.mpv.scriptOpts.uosc = {
