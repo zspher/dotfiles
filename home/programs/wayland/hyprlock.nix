@@ -77,7 +77,7 @@ in {
 
     images = [
       {
-        path = "~/.face.icon";
+        path = "~/avatar.png";
         border_color = "rgb(${c.crust})";
         position = {
           x = 0;
