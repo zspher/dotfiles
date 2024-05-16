@@ -42,6 +42,7 @@
     "/boot" = {
       device = "/dev/disk/by-uuid/2ED7-2A30";
       fsType = "vfat";
+      options = ["umask=0077"];
     };
     "/mnt/drive2" = {
       device = "/dev/disk/by-label/drive2";

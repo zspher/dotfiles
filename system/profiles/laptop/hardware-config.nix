@@ -47,6 +47,7 @@
   fileSystems."/boot" = {
     device = "/dev/disk/by-uuid/442E-476E";
     fsType = "vfat";
+    options = ["umask=0077"];
   };
 
   fileSystems."/mnt/drive2" = {
