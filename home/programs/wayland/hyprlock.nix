@@ -14,14 +14,14 @@ in {
         ignore_empty_input = false;
       };
 
-      backgrounds = [
+      background = [
         {
           color = "rgb(${c.mantle})";
           path = "~/wall.png";
         }
       ];
 
-      input-fields = [
+      input-field = [
         {
           outer_color = "rgb(${c.crust})";
           inner_color = "rgb(${c.base})";
@@ -33,56 +33,56 @@ in {
           fail_color = "rgb(${c.red})";
           capslock_color = "rgb(${c.yellow})";
 
-          position = {
-            x = 0;
-            y = -70;
-          };
+          size = "200, 50";
+
+          position = "0, -70";
         }
       ];
 
-      labels = [
+      label = [
         {
           text = "$TIME";
           inherit font_family;
           color = "rgb(${c.text})";
           font_size = 30;
-          position = {
-            x = 0;
-            y = 300;
-          };
+
+          position = "0, 300";
+          halign = "center";
+          valign = "center";
         }
         {
           text = ''Hi there, <span foreground="##${c.peach}">$USER</span>'';
           inherit font_family;
           color = "rgb(${c.text})";
-          position = {
-            x = 0;
-            y = 250;
-          };
+
+          position = "0, 250";
+          halign = "center";
+          valign = "center";
         }
         {
           text = "⁙";
           inherit font_family;
-          color = "rgb(${c.text})";
           font_size = 15;
+          color = "rgb(${c.text})";
+
           rotate = 45.0;
-          position = {
-            x = 0;
-            y = 80;
-          };
+          position = "0, 80";
+
           halign = "center";
           valign = "bottom";
         }
       ];
 
-      images = [
+      image = [
         {
           path = "~/avatar.png";
           border_color = "rgb(${c.crust})";
-          position = {
-            x = 0;
-            y = 50;
-          };
+
+          position = "0, 50";
+          size = 150;
+
+          halign = "center";
+          valign = "center";
         }
       ];
     };
