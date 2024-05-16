@@ -3,7 +3,6 @@
     ./brave.nix
   ];
   home.packages = with pkgs; [
-    cloudflare-warp
     inetutils
     qbittorrent
     webcord

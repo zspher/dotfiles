@@ -17,7 +17,6 @@
     ../../services/usisks.nix
 
     ../../networking
-    ../../networking/cloudflare-warp.nix
     ../../networking/openssh.nix
     ../../networking/syncting.nix
   ];
