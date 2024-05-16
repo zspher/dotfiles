@@ -10,7 +10,6 @@
   imports = [
     inputs.anyrun.homeManagerModules.default
     inputs.catppuccin.homeManagerModules.catppuccin
-    inputs.hyprlock.homeManagerModules.default
     inputs.spicetify-nix.homeManagerModule
     self.nixosModules.catppuccin
   ];

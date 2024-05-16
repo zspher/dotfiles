@@ -37,11 +37,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprlock = {
-      url = "github:hyprwm/hyprlock";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     pollymc = {
       url = "github:fn2006/PollyMC";
       inputs.nixpkgs.follows = "nixpkgs";
