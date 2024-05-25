@@ -17,7 +17,7 @@
     mpv.enable = true;
     obs-studio.enable = true;
   };
-  catppuccin.flavour = "mocha";
+  catppuccin.flavor = "mocha";
   catppuccin.accent = "mauve";
   gtk = {
     enable = true;
@@ -28,7 +28,7 @@
 
     iconTheme.package = pkgs.papirus-icon-theme;
     iconTheme.name =
-      if config.catppuccin.flavour == "latte"
+      if config.catppuccin.flavor == "latte"
       then "Papirus-Light"
       else "Papirus-Dark";
 

@@ -17,7 +17,7 @@
 
     initExtraFirst = ''
       WORDCHARS=$WORDCHARS:s:/:
-      export LS_COLORS="$(vivid generate catppuccin-${config.catppuccin.flavour})";
+      export LS_COLORS="$(vivid generate catppuccin-${config.catppuccin.flavor})";
       setopt autopushd
     '';
     initExtraBeforeCompInit = ''

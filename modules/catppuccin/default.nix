@@ -33,7 +33,7 @@ in {
     };
     variant = mkOption {
       type = types.enum ["latte" "frappe" "macchiato" "mocha"];
-      default = config.catppuccin.flavour;
+      default = config.catppuccin.flavor;
       description = "Sets catppuccin theme variant";
     };
     accent = mkOption {
