@@ -51,6 +51,8 @@
 
     #-- xml
     lemminx
+    #-- toml
+    taplo # LSP
 
     #-- rust
     clippy
