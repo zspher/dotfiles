@@ -29,33 +29,34 @@
     vscode-extensions.vadimcn.vscode-lldb.adapter # debugger
 
     #-- lua
-    lua-language-server
-    stylua
+    lua-language-server # LSP
+    stylua # formatter
 
     #-- nix
-    alejandra
-    nil
+    alejandra # formatter
+    nil # lsp
 
     #-- web: js ts markdown json
-    prettierd
-    biome
+    prettierd # formatter
+    biome # linter, formatter via LSP
 
     #-- python
-    nodePackages_latest.pyright
-    ruff-lsp
+    nodePackages_latest.pyright # LSP
+    ruff-lsp # linter, formatter via LSP
 
     #-- bash
-    nodePackages_latest.bash-language-server
-    shfmt
-    shellcheck
+    nodePackages_latest.bash-language-server # LSP
+    shfmt # formatter
+    shellcheck # linter
 
     #-- xml
-    lemminx
+    lemminx # LSP
+
     #-- toml
     taplo # LSP
 
     #-- rust
-    clippy
-    rust-analyzer
+    clippy # linter
+    rust-analyzer # LSP
   ];
 }
