@@ -28,6 +28,10 @@
     clang-tools # LSP, formatter
     vscode-extensions.vadimcn.vscode-lldb.adapter # debugger
 
+    #-- c#
+    omnisharp-roslyn # lsp
+    netcoredbg # debugger
+
     #-- lua
     lua-language-server # LSP
     stylua # formatter
