@@ -22,6 +22,11 @@
     cargo
     gnumake
     cmake
+    meson
+
+    #-- c/c++
+    clang-tools # LSP, formatter
+    vscode-extensions.vadimcn.vscode-lldb.adapter # debugger
 
     #-- lua
     lua-language-server
