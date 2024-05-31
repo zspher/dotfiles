@@ -11,6 +11,7 @@
     ../../programs
     ../../programs/hyprland.nix
     ../../programs/steam.nix
+    ../../programs/virtualbox.nix
 
     ../../services/power.nix
     ../../services/blueman.nix
@@ -22,10 +23,5 @@
     ../../networking/syncting.nix
   ];
 
-  virtualisation.virtualbox.host.enable = true;
-  environment.systemPackages = with pkgs; [
-    vagrant
-  ];
-  virtualisation.virtualbox.guest.enable = true;
   networking.hostName = "ls-2100";
 }
