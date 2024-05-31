@@ -12,7 +12,7 @@
     ../../programs/hyprland.nix
     ../../programs/steam.nix
 
-    ../../services/auto-cpufreq.nix
+    ../../services/power.nix
     ../../services/blueman.nix
     ../../services/sddm.nix
     ../../services/usisks.nix
