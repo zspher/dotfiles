@@ -5,7 +5,8 @@
       {id = "eimadpbcbfnmbkopoojfekhnkhdbieeh";} # dark reader
       {id = "oboonakemofpalcgghocfoadofidjkkk";} # keepassxc
       {id = "clngdbkpkpeebahjckkjfobafhncgmne";} # stylus
-      {id = "dbepggeogbaibhgnhhndojpepiihcmeb";} # vimium
+      {id = "hfjbmagddngcpeloejdejnfgbamkjaeg";} # vimium-c
+      {id = "nacjakoppgmdcpemlfnfegmlhipddanj";} # pdf viewer for vimium-c
       {id = "mcbpblocgmgfnpjjppndjkmgjaogfceg";} # fireshot
     ];
   };
