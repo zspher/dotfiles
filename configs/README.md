@@ -9,4 +9,8 @@
   - loaded stylus themes for select websites
 
 - **nvim**
+
   - the nvim config
+
+- **vimium-c**
+  - vimium-c config
