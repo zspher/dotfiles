@@ -59,6 +59,9 @@
     #-- toml
     taplo # LSP
 
+    #-- json, html, css, eslint
+    vscode-langservers-extracted # LSP
+
     #-- rust
     clippy # linter
     rust-analyzer # LSP
