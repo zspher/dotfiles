@@ -1,4 +1,11 @@
-{lib, ...}: {
+{
+  lib,
+  self,
+  ...
+}: {
+  imports = [
+    self.nixosModules.ascii-fix
+  ];
   nixpkgs = {
     overlays = [
       (final: prev: {
