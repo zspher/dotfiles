@@ -19,7 +19,7 @@
     ../../services/usisks.nix
 
     ../../networking
-    ../../networking/openssh.nix
+    # ../../networking/openssh.nix
     ../../networking/syncting.nix
   ];
 
