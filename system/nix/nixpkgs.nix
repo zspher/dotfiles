@@ -1,6 +1,7 @@
 {
   lib,
   self,
+  inputs,
   ...
 }: {
   imports = [
@@ -26,6 +27,7 @@
             '';
           };
       })
+      inputs.waybar.overlays.default
     ];
     config = {
       allowUnfree = true;

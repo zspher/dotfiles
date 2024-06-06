@@ -1,4 +1,5 @@
 {
+  inputs,
   self,
   lib,
   ...
@@ -11,7 +12,7 @@
   }: {
     _module.args.pkgs = import self.inputs.nixpkgs {
       inherit system;
-      inherit ((import ../system/nix/nixpkgs.nix {inherit self lib;}).nixpkgs) overlays config;
+      inherit ((import ../system/nix/nixpkgs.nix {inherit inputs self lib;}).nixpkgs) overlays config;
     };
     packages = {
       catppuccin-obs = pkgs.callPackage ./catppuccin-obs {};
