@@ -24,13 +24,8 @@
     cmake
     meson
 
-    #-- c/c++
-    clang-tools # LSP, formatter
-    vscode-extensions.vadimcn.vscode-lldb.adapter # debugger
-
-    #-- c#
-    omnisharp-roslyn # lsp
-    netcoredbg # debugger
+    #-- rust
+    rust-analyzer # LSP # required by rustaceanvim
 
     #-- lua
     lua-language-server # LSP
@@ -39,10 +34,6 @@
     #-- nix
     alejandra # formatter
     nil # lsp
-
-    #-- web: js ts markdown json
-    prettierd # formatter
-    biome # linter, formatter via LSP
 
     #-- python
     nodePackages_latest.pyright # LSP
@@ -59,11 +50,8 @@
     #-- toml
     taplo # LSP
 
-    #-- json, html, css, eslint
+    #-- json, html, css, eslint markdown json
+    prettierd # formatter
     vscode-langservers-extracted # LSP
-
-    #-- rust
-    clippy # linter
-    rust-analyzer # LSP
   ];
 }
