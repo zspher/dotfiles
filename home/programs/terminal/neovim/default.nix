@@ -36,7 +36,7 @@
     nil # lsp
 
     #-- python
-    nodePackages_latest.pyright # LSP
+    pyright # LSP
     ruff-lsp # linter, formatter via LSP
 
     #-- bash
