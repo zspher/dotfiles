@@ -43,6 +43,7 @@ in {
         ++ [
           ../programs/games/minecraft.nix
           ../programs/games/controller.nix
+          ../programs/games/bottles.nix
           # ../programs/multimedia/davinci-resolve.nix
         ];
       inherit pkgs extraSpecialArgs;
