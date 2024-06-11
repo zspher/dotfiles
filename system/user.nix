@@ -1,7 +1,7 @@
 {pkgs, ...}: let
-  inherit (import ./config.nix) user;
+  inherit (import ./config.nix) username;
 in {
-  users.users.${user} = {
+  users.users.${username} = {
     shell = pkgs.zsh;
     initialPassword = "defaultPass";
     isNormalUser = true;

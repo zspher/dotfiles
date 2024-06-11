@@ -4,10 +4,9 @@
   ...
 }: let
   inherit (inputs.home-manager.lib) homeManagerConfiguration;
-  inherit (import ../../system/config.nix) user;
+  inherit (import ../../system/config.nix) username;
   extraSpecialArgs = {
-    inherit inputs self;
-    username = user;
+    inherit inputs self username;
   };
   pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
 

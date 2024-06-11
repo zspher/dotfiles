@@ -5,7 +5,7 @@
 }: {
   flake.nixosConfigurations = let
     inherit (inputs.nixpkgs.lib) nixosSystem;
-    username = "faust";
+    inherit (import ../config.nix) username;
     specialArgs = {inherit inputs self username;};
   in {
     pc = nixosSystem {
