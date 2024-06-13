@@ -20,9 +20,10 @@
   };
   home.packages = with pkgs; [
     cargo
-    gnumake
     cmake
+    gnumake
     meson
+    tree-sitter
 
     #-- rust
     rust-analyzer # LSP # required by rustaceanvim
