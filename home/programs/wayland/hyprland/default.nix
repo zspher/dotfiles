@@ -169,7 +169,6 @@
         "$mainMod, F, togglefloating, "
         "$mainMod, M, fullscreen, 1" # monocle layout
         "$mainMod SHIFT, F, fullscreen, 0" # true fullscreen
-        "$mainMod, T, exec, ~/.config/hypr/scripts/toggle_tile_layout.sh" # toggle master, dwindle
         "$mainMod, C, centerwindow"
 
         # Special Workspace
@@ -185,11 +184,8 @@
 
         # dwindle
         "$mainMod SHIFT, P, pseudo,"
-        "$mainMod, S, togglesplit,"
-
-        # master
-        "$mainMod, S, layoutmsg, swapwithmaster"
-        "$mainMod SHIFT, M, layoutmsg, focusmaster"
+        "$mainMod, T, togglesplit"
+        "$mainMod, S, swapnext"
 
         # pin
         "CTRL ALT, P, pin,"
