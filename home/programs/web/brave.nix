@@ -8,6 +8,7 @@
       {id = "hfjbmagddngcpeloejdejnfgbamkjaeg";} # vimium-c
       {id = "nacjakoppgmdcpemlfnfegmlhipddanj";} # pdf viewer for vimium-c
       {id = "mcbpblocgmgfnpjjppndjkmgjaogfceg";} # fireshot
+      {id = "bkkmolkhemgaeaeggcmfbghljjjoofoh";} # catppuccin mocha
     ];
   };
 }
