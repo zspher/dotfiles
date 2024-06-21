@@ -4,9 +4,6 @@
   inputs,
   ...
 }: {
-  imports = [
-    self.nixosModules.ascii-fix
-  ];
   nixpkgs = {
     overlays = [
       inputs.waybar.overlays.default
