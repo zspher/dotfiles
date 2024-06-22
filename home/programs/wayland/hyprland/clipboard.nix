@@ -11,8 +11,8 @@
   wayland.windowManager.hyprland.settings.exec-once = [
     (lib.concatStrings [
       "wl-paste -t text -w "
-      "sh -c 'v=$(cat); cmp -s <(xclip -selection clipboard -o)  <<< \"$v\" || "
-      "xclip -selection clipboard <<< \"$v\"'"
+      "sh -c 'v=$(cat); cmp -s <(xclip -o)  <<< \"$v\" || "
+      "xclip <<< \"$v\"'"
     ])
   ];
 }
