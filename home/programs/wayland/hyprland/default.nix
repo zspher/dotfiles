@@ -116,7 +116,9 @@
 
         "workspace 1, class:obsidian"
         "workspace 2, class:Brave-browser"
+        "workspace 2, class:brave-browser"
         "workspace 3, class:Code"
+        "workspace 3, class:code-url-handler"
         "workspace 3, class:kitty"
         "workspace 4, class:WebCord"
 
