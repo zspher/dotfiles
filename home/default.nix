@@ -11,6 +11,7 @@
     inputs.anyrun.homeManagerModules.default
     inputs.catppuccin.homeManagerModules.catppuccin
     inputs.spicetify-nix.homeManagerModule
+    inputs.hyprland.homeManagerModules.default
     self.nixosModules.catppuccin
   ];
   home = {
