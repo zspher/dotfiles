@@ -16,43 +16,41 @@
 
       withPython3 = true;
       withNodeJs = true;
+
+      extraPackages = with pkgs; [
+        gnumake # NOTE: required by fzf-telescope
+        tree-sitter
+
+        #-- rust
+        rust-analyzer # LSP  NOTE: required by rustaceanvim
+
+        #-- lua
+        lua-language-server # LSP
+        stylua # formatter
+
+        #-- nix
+        alejandra # formatter
+        nil # lsp
+
+        #-- python
+        pyright # LSP
+        ruff-lsp # linter, formatter via LSP
+
+        #-- bash
+        nodePackages_latest.bash-language-server # LSP
+        shfmt # formatter
+        shellcheck # linter
+
+        #-- xml
+        lemminx # LSP
+
+        #-- toml
+        taplo # LSP
+
+        #-- json, html, css, eslint markdown json
+        prettierd # formatter
+        vscode-langservers-extracted # LSP
+      ];
     };
   };
-  home.packages = with pkgs; [
-    cargo
-    cmake
-    gnumake
-    meson
-    tree-sitter
-
-    #-- rust
-    rust-analyzer # LSP # required by rustaceanvim
-
-    #-- lua
-    lua-language-server # LSP
-    stylua # formatter
-
-    #-- nix
-    alejandra # formatter
-    nil # lsp
-
-    #-- python
-    pyright # LSP
-    ruff-lsp # linter, formatter via LSP
-
-    #-- bash
-    nodePackages_latest.bash-language-server # LSP
-    shfmt # formatter
-    shellcheck # linter
-
-    #-- xml
-    lemminx # LSP
-
-    #-- toml
-    taplo # LSP
-
-    #-- json, html, css, eslint markdown json
-    prettierd # formatter
-    vscode-langservers-extracted # LSP
-  ];
 }
