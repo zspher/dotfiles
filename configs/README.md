@@ -12,5 +12,5 @@
 
   - the nvim config
 
-- **vimium-c**
-  - vimium-c config
+- **vimium**
+  - vimium config
