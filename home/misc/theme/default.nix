@@ -25,22 +25,22 @@ in {
   catppuccin.accent = "mauve";
   gtk = {
     enable = true;
-    # catppuccin.enable = true;
+    catppuccin.enable = true;
 
-    theme = let
-      gtkTheme =
-        if config.catppuccin.flavor == "latte"
-        then "light"
-        else "dark";
-    in {
-      name = "Colloid-Purple-Dark-Catppuccin";
-      package = pkgs.colloid-gtk-theme.override {
-        themeVariants = ["purple"];
-        colorVariants = [gtkTheme];
-        sizeVariants = ["standard"];
-        tweaks = ["catppuccin" "black"];
-      };
-    };
+    # theme = let
+    #   gtkTheme =
+    #     if config.catppuccin.flavor == "latte"
+    #     then "light"
+    #     else "dark";
+    # in {
+    #   name = "Colloid-Purple-Dark-Catppuccin";
+    #   package = pkgs.colloid-gtk-theme.override {
+    #     themeVariants = ["purple"];
+    #     colorVariants = [gtkTheme];
+    #     sizeVariants = ["standard"];
+    #     tweaks = ["catppuccin" "black"];
+    #   };
+    # };
 
     font.name = "NotoSans Nerd Font";
     font.size = 10;
