@@ -3,6 +3,7 @@
 import argparse
 import subprocess
 
+
 def init_argparse() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="volume control with notify")
     volume_slider = parser.add_mutually_exclusive_group()
@@ -19,7 +20,7 @@ parser = init_argparse()
 args = parser.parse_args()
 
 
-def get_volume() -> tuple[int, str|None]:
+def get_volume() -> tuple[int, str | None]:
     volume = subprocess.run(
         ["wpctl", "get-volume", "@DEFAULT_AUDIO_SINK@"], capture_output=True, text=True
     ).stdout.split()
@@ -42,7 +43,7 @@ def mute_volume():
     subprocess.run(["wpctl", "set-mute", "@DEFAULT_AUDIO_SINK@", "toggle"])
 
 
-def notify_volume(volume: int, message: str|None = None):
+def notify_volume(volume: int, message: str | None = None):
     nf = ["notify-send", "-a", "Volume", "Volume"]
     if message == "[MUTED]":
         nf.extend(["muted", "-i", "audio-volume-muted"])
@@ -54,9 +55,10 @@ def notify_volume(volume: int, message: str|None = None):
         else:
             nf.extend([f"{volume}%", "-i", "audio-volume-high"])
         nf.extend(["-h", f"int:value:{volume}"])
-    nf.extend(["-h", f"STRING:x-canonical-private-synchronous:volume-notification"])
+    nf.extend(["-h", "STRING:x-canonical-private-synchronous:volume-notification"])
     nf.extend(["-u", "low"])
     subprocess.run(nf)
+
 
 if args.vol_up:
     increase_volume(args.vol_up)
