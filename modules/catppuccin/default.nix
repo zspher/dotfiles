@@ -8,8 +8,9 @@
 with lib; let
   cfg = config.theme.catppuccin;
 
-  veryBigNum = 100000;
-  upperFirst = str: (lib.strings.toUpper (builtins.substring 0 1 str)) + (builtins.substring 1 veryBigNum str);
+  upperFirst = str:
+    (lib.toUpper (builtins.substring 0 1 str))
+    + (builtins.substring 1 (builtins.stringLength str) str);
 in {
   imports = [
     ./kde.nix
