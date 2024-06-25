@@ -66,14 +66,4 @@ in {
   programs.starship.catppuccin.enable = true;
   programs.tmux.catppuccin.enable = true;
   wayland.windowManager.hyprland.catppuccin.enable = true;
-
-  #programs.qtct = {
-  #  enable = true;
-  #  iconTheme.package = pkgs.papairus-icon-theme;
-  #  iconTheme.name = "Papirus-Dark";
-  #  font.name = "NotoSans Nerd Font";
-  #  font.size = "10";
-  #  fontMono.name = "";
-  #  fontMono.size = "";
-  #};
 }
