@@ -2,8 +2,8 @@
   programs.fzf = {
     enable = true;
     enableZshIntegration = false;
-    changeDirWidgetCommand = "fd -td -tl --hidden --exclude .git";
-    fileWidgetCommand = "fd -td -tl -tf --hidden --exclude .git";
+    changeDirWidgetCommand = "fd -L -td --hidden --exclude .git";
+    fileWidgetCommand = "fd -L -td -tf --hidden --exclude .git";
     colors = {
       "bg+" = "#313244";
       "bg" = "#1e1e2e";
