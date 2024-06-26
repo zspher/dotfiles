@@ -10,12 +10,11 @@
 
   wayland.windowManager.hyprland.settings.exec-once = [
     (lib.concatStrings [
-      # "wl-paste -t text -w "
-      # "sh -c 'v=$(cat); cmp -s <(xclip -o)  <<< \"$v\" || "
-      # "xclip <<< \"$v\"'"
+      # wayland <-> xwayand primary is enabled by default in hyprland
+      # wayland <-> xwayand clipboard
       "wl-paste -t text -w sh -c "
       "'sleep 0.05 && [ \"$(xclip -selection clipboard -o)\" = \"$(wl-paste -n)\" ] "
-      "&& wl-copy \"$(xclip -o)\" || xclip -selection \"clipboard primary\"'"
+      "|| xclip -selection clipboard'"
     ])
   ];
 }
