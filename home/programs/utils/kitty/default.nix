@@ -27,14 +27,25 @@
       window_resize_step_lines = 2;
       window_border_width = "0.5pt";
 
-      tab_bar_edge = "top";
-      tab_bar_style = "powerline";
+      tab_bar_edge = "bottom";
+      tab_bar_style = "separator";
       tab_bar_min_tabs = 1;
-      tab_powerline_style = "angled";
       tab_activity_symbol = "●";
-      tab_title_template = "{activity_symbol} {index}:{f'{title[title.rfind(\"/\")+1:]}' if title.rfind(\"/\") > 0 else title}";
-      active_tab_title_template = "{index}:{title} {fmt.fg.blue}{layout_name[:2].upper()}{fmt.bg.tab}";
+      tab_separator = "' '";
+      tab_powerline_style = "angled";
+      tab_bar_background = "#313244";
 
+      tab_title_template = lib.concatStrings [
+        "{fmt.bg._89B4FA}{fmt.fg._1E1E2E} {index} "
+        "{fmt.bg._313244}{fmt.fg.tab} {title} "
+        "{activity_symbol}"
+      ];
+
+      active_tab_title_template = lib.concatStrings [
+        "{fmt.bg._A6E3A1} {index} "
+        "{fmt.bg._11111B}{fmt.fg._CDD6F4} {title} "
+        "{fmt.fg._74C7EC}{layout_name[:2].upper()} {activity_symbol}{fmt.bg.tab}"
+      ];
       background_opacity = "0.9";
       dynamic_background_opacity = true;
     };
