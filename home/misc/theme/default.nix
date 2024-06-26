@@ -66,4 +66,8 @@ in {
   programs.starship.catppuccin.enable = true;
   programs.tmux.catppuccin.enable = true;
   wayland.windowManager.hyprland.catppuccin.enable = true;
+
+  home.sessionVariables = {
+    GREP_COLORS = "ms=01;31";
+  };
 }
