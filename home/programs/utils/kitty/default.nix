@@ -1,4 +1,4 @@
-{...}: {
+{lib, ...}: {
   programs.kitty = {
     enable = true;
     font.name = "CaskaydiaMono Nerd Font";
@@ -8,7 +8,11 @@
 
       cursor_shape = "beam";
 
-      scrollback_pager = "nvim -u NONE -R -M -c 'lua require(\"kitty-pager\")(INPUT_LINE_NUMBER, CURSOR_LINE, CURSOR_COLUMN)' -";
+      scrollback_pager = lib.concatStrings [
+        "nvim -R -M "
+        "--cmd 'lua vim.g.kitty_pager = true' "
+        "-c 'lua require(\"kitty-pager\")(INPUT_LINE_NUMBER, CURSOR_LINE, CURSOR_COLUMN)' -"
+      ];
       scrollback_pager_history_size = 15;
 
       copy_on_select = true;
