@@ -64,7 +64,6 @@ in {
     swaync.enable = mkEnableOption "swaync integration";
     mpv.enable = mkEnableOption "mpv integration";
     obs-studio.enable = mkEnableOption "obs-studio integration";
-    swaylock.enable = mkEnableOption "swaylock integration";
   };
 
   config = let
@@ -129,31 +128,6 @@ in {
           xdg.configFile."obs-studio/themes" = {
             source = "${catppuccin-obs}/themes";
             recursive = true;
-          };
-        })
-        (mkIf (cfg.swaylock.enable) {
-          programs.swaylock.settings = {
-            color = colors.base;
-            line-color = colors.base;
-            ring-color = colors.mantle;
-            inside-color = colors.base;
-            key-hl-color = colors."${cfg.accent}";
-            separator-color = colors.text;
-            text-color = colors.text;
-            text-caps-lock-color = colors.yellow;
-            line-ver-color = colors.text;
-            ring-ver-color = colors."${cfg.accent}";
-            inside-ver-color = colors.base;
-            text-ver-color = colors.text;
-            ring-wrong-color = colors.red;
-            text-wrong-color = colors.red;
-            inside-wrong-color = colors.base;
-            inside-clear-color = colors.base;
-            text-clear-color = colors.text;
-            ring-clear-color = colors.blue;
-            line-clear-color = colors.base;
-            line-wrong-color = colors.base;
-            bs-hl-color = colors.teal;
           };
         })
       ]
