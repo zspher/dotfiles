@@ -43,7 +43,7 @@ in {
   in
     mkIf cfg.kde.enable {
       home.packages = [
-        package
+        package # for krita, okular
       ];
       qt.kde.settings.kdeglobals = themeInfo;
     };
