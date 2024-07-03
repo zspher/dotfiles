@@ -1,8 +1,4 @@
-{
-  lib,
-  pkgs,
-  ...
-}: let
+{lib, ...}: let
   data = {
     Appearance = {
       custom_palette = false;
@@ -19,7 +15,9 @@
 in {
   qt = {
     enable = true;
+    style.name = "kvantum";
     platformTheme.name = "qtct";
+    # platformTheme.name = "kvantum";
     kde.settings.kdeglobals.General.TerminalApplication = "kitty";
   };
   xdg.configFile."qt5ct/qt5ct.conf".text = lib.generators.toINI {} data;

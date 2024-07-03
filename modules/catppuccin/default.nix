@@ -87,9 +87,6 @@ in {
         }
 
         (mkIf cfg.kvantum.enable {
-          qt = {
-            style.name = "kvantum";
-          };
           xdg.configFile."Kvantum/kvantum.kvconfig".text = generators.toINI {} {
             General.theme = "${kvantum-theme}#";
           };
