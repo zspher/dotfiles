@@ -26,7 +26,7 @@ in {
       ## keybinds
 
       "$mainMod" = "SUPER";
-      "$terminal" = "kitty -1";
+      "$terminal" = "kitty -1 --class kitty-term";
       "$file_manager" = "dolphin";
       "$notification_manager" = "swaync-client -t -sw";
       "$screen_shot" = "pkill rofi || ~/.config/rofi/bin/screenshot.sh";
