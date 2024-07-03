@@ -75,7 +75,7 @@ in {
     replaceColors = src:
       builtins.readFile (pkgs.substitute {
         src = src;
-        replacements = builtins.concatMap (x: ["--replace" "#{{${x}}}" "#${colors.${x}}"]) (builtins.attrNames colors);
+        substitutions = builtins.concatMap (x: ["--replace" "#{{${x}}}" "#${colors.${x}}"]) (builtins.attrNames colors);
       });
   in
     mkIf cfg.enable (
@@ -92,10 +92,6 @@ in {
             General.theme = "${kvantum-theme}#";
           };
           xdg.configFile."Kvantum/${kvantum-theme}#/${kvantum-theme}#.kvconfig".source = "${cfg.finalPackage}/share/Kvantum/${kvantum-theme}/${kvantum-theme}.kvconfig";
-          #xdg.configFile."Kvantum/${kvantum-theme}#/${kvantum-theme}#.kvconfig".source = pkgs.substitute {
-          #  src = "${cfg.finalPackage}/share/Kvantum/${kvantum-theme}/${kvantum-theme}.kvconfig";
-          #  replacements = ["--replace" "translucent_windows=false" "translucent_windows=true"];
-          #};
         })
 
         (mkIf (cfg.anyrun.enable) {
