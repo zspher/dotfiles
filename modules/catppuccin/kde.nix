@@ -9,6 +9,7 @@ with lib; let
   upperFirst = str: (lib.strings.toUpper (builtins.substring 0 1 str)) + (builtins.substring 1 veryBigNum str);
 
   cfg = config.theme.catppuccin;
+  ctp = {inherit (config.catppuccin) sources flavor accent;};
 
   fromINI = file: let
     inherit (builtins) fromJSON readFile;
@@ -27,15 +28,15 @@ in {
 
   config = let
     package = pkgs.catppuccin-kde.override {
-      flavour = [cfg.variant];
-      accents = [cfg.accent];
+      flavour = [ctp.flavor];
+      accents = [ctp.accent];
     };
 
-    accent = upperFirst cfg.accent;
-    variant = upperFirst cfg.variant;
+    accent = upperFirst ctp.accent;
+    flavor = upperFirst ctp.flavor;
 
     themeInfo = lib.mkMerge [
-      (fromINI "${package}/share/color-schemes/Catppuccin${variant}${accent}.colors")
+      (fromINI "${package}/share/color-schemes/Catppuccin${flavor}${accent}.colors")
       {"ColorEffects:Disabled".IntensityAmount = lib.mkForce 1;}
     ];
   in

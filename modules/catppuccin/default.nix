@@ -17,46 +17,6 @@ in {
   ];
   options.theme.catppuccin = {
     enable = mkEnableOption "catppuccin";
-    package = mkOption {
-      type = types.package;
-      default = pkgs.catppuccin;
-      defaultText = literalExpression "pkgs.catppuccin";
-      description = "The package to use for catppuccin theme";
-    };
-    finalPackage = mkOption {
-      type = types.package;
-      readOnly = true;
-      description = "Resulting catppuccin variant";
-      default = cfg.package.override {
-        accent = cfg.accent;
-        variant = cfg.variant;
-      };
-    };
-    variant = mkOption {
-      type = types.enum ["latte" "frappe" "macchiato" "mocha"];
-      default = config.catppuccin.flavor;
-      description = "Sets catppuccin theme variant";
-    };
-    accent = mkOption {
-      type = types.enum [
-        "rosewater"
-        "flamingo"
-        "pink"
-        "mauve"
-        "red"
-        "maroon"
-        "peach"
-        "yellow"
-        "green"
-        "teal"
-        "sky"
-        "sapphire"
-        "blue"
-        "lavender"
-      ];
-      default = config.catppuccin.accent;
-      description = "Main accent to use for catppuccin";
-    };
 
     kvantum.enable = mkEnableOption "kvantum integration";
     anyrun.enable = mkEnableOption "anyrun integration";
@@ -67,9 +27,14 @@ in {
   };
 
   config = let
+    ctp = {inherit (config.catppuccin) sources flavor accent;};
     catppuccin-obs = self.packages.${pkgs.system}.catppuccin-obs;
-    kvantum-theme = "Catppuccin-${upperFirst cfg.variant}-${upperFirst cfg.accent}";
-    ctp = {inherit (config.catppuccin) sources flavor;};
+    catppuccin = pkgs.catppuccin.override {
+      inherit (ctp) accent;
+      variant = ctp.flavor;
+    };
+
+    kvantum-theme = "Catppuccin-${upperFirst ctp.flavor}-${upperFirst ctp.accent}";
     colors =
       builtins.mapAttrs (color: val: (builtins.substring 1 6 val.hex))
       (lib.importJSON "${ctp.sources.palette}/palette.json").${ctp.flavor}.colors;
@@ -82,22 +47,19 @@ in {
   in
     mkIf cfg.enable (
       mkMerge [
-        {
-          home.packages = [cfg.finalPackage];
-        }
-
         (mkIf cfg.kvantum.enable {
-          xdg.configFile."Kvantum/kvantum.kvconfig".text = generators.toINI {} {
-            General.theme = "${kvantum-theme}#";
+          xdg.configFile = {
+            "Kvantum/${kvantum-theme}".source = "${catppuccin}/share/Kvantum/${kvantum-theme}";
+            "Kvantum/kvantum.kvconfig".text = generators.toINI {} {
+              General.theme = "${kvantum-theme}";
+            };
           };
-          xdg.configFile."Kvantum/${kvantum-theme}#/${kvantum-theme}#.kvconfig".source = "${cfg.finalPackage}/share/Kvantum/${kvantum-theme}/${kvantum-theme}.kvconfig";
         })
 
         (mkIf (cfg.anyrun.enable) {
           programs.anyrun.extraCss = replaceColors ./anyrun-template.css;
         })
         (mkIf (cfg.waybar.enable) {
-          # TODO: transition to ctp-nix
           programs.waybar.style = replaceColors ./waybar-template.css;
         })
         (mkIf (cfg.swaync.enable) {
