@@ -1,4 +1,3 @@
-
 * {
   font-family:
     CaskaydiaMono Nerd Font,
@@ -49,7 +48,7 @@ window#waybar.hidden {
 #custom-notification,
 #workspaces,
 #idle_inhibitor {
-  background-color: shade(#{{crust}}, 0.9);
+  background-color: shade(var(--crust), 0.9);
   padding: 0px 4px;
   /* margin: 0; */
   margin: 0px;
@@ -94,35 +93,35 @@ window#waybar.hidden {
   box-shadow: inherit;
   text-shadow: inherit;
   padding: 0 10px;
-  color: #{{text}};
+  color: var(--text);
   margin: 2px 0;
   border-radius: inherit;
 }
 
 #workspaces button:hover {
-  background-color: #{{base}};
+  background-color: var(--base);
 }
 
 #workspaces button.active {
-  background-color: #{{surface0}};
+  background-color: var(--surface0);
 }
 
 #workspaces button.active:hover {
-  background-color: #{{surface1}};
+  background-color: var(--surface1);
 }
 
 #workspaces button:hover,
 #workspaces button.active {
-  color: #{{mauve}};
+  color: var(--mauve);
 }
 
 #workspaces button.urgent {
-  background-color: alpha(#{{red}}, 0.3);
-  color: #{{red}};
+  background-color: alpha(var(--red), 0.3);
+  color: var(--red);
 }
 
 #workspaces button.urgent:hover {
-  background-color: alpha(#{{red}}, 0.4);
+  background-color: alpha(var(--red), 0.4);
 }
 
 #taskbar {
@@ -152,15 +151,15 @@ window#waybar.hidden {
 }
 
 #taskbar button:hover box {
-  background-color: #{{base}};
+  background-color: var(--base);
 }
 
 #taskbar button.active box {
-  background-color: alpha(#{{mauve}}, 0.4);
+  background-color: alpha(var(--mauve), 0.4);
 }
 
 #taskbar button.active:hover box {
-  background-color: #{{surface1}};
+  background-color: var(--surface1);
 }
 
 #taskbar button:only-child,
@@ -170,20 +169,20 @@ window#waybar.hidden {
 
 #clock {
   padding: 0 5px 0 10px;
-  color: #{{blue}};
+  color: var(--blue);
 }
 
 #idle_inhibitor {
   padding: 0 10px 0 5px;
-  color: #{{mauve}};
+  color: var(--mauve);
   font-size: 11px;
   animation: gradient_f 20s ease-in infinite;
   transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
 }
 
 #idle_inhibitor.activated {
-  background-color: #{{blue}};
-  color: shade(#{{crust}}, 0.9);
+  background-color: var(--blue);
+  color: shade(var(--crust), 0.9);
   border-left: none;
 }
 
@@ -194,20 +193,20 @@ window#waybar.hidden {
 
 #pulseaudio {
   padding-left: 10px;
-  color: #{{maroon}};
+  color: var(--maroon);
 }
 
 #memory {
-  color: #{{blue}};
+  color: var(--blue);
 }
 
 #temperature {
   padding-right: 10px;
-  color: #{{mauve}};
+  color: var(--mauve);
 }
 
 #temperature.critical {
-  background-color: #{{red}};
+  background-color: var(--red);
 }
 
 #custom-notification {
@@ -221,7 +220,7 @@ window#waybar.hidden {
 }
 
 #tray window > menu {
-  background-color: #{{mantle}};
+  background-color: var(--mantle);
 }
 
 #tray window > decoration {
@@ -236,7 +235,7 @@ window#waybar.hidden {
 }
 
 #tray window > menu label {
-  color: #{{text}};
+  color: var(--text);
 }
 
 #tray > .passive {
@@ -250,19 +249,19 @@ window#waybar.hidden {
 #tray > .needs-attention > image {
   padding: 2px 5px;
   border-radius: 12.6px;
-  background-color: alpha(#{{red}}, 0.05);
-  border: 2px solid #{{red}};
+  background-color: alpha(var(--red), 0.05);
+  border: 2px solid var(--red);
 }
 
 tooltip,
 tooltip > decoration {
   box-shadow: none;
-  background: #{{mantle}};
+  background: var(--mantle);
   border-radius: 12.6px;
   border-width: 0px;
   border: 0.2px white solid;
 }
 
 tooltip label {
-  color: #{{text}};
+  color: var(--text);
 }

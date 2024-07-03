@@ -35,14 +35,15 @@ in {
     };
 
     kvantum-theme = "Catppuccin-${upperFirst ctp.flavor}-${upperFirst ctp.accent}";
-    colors =
-      builtins.mapAttrs (color: val: (builtins.substring 1 6 val.hex))
-      (lib.importJSON "${ctp.sources.palette}/palette.json").${ctp.flavor}.colors;
+    palette = (lib.importJSON "${ctp.sources.palette}/palette.json").${ctp.flavor}.colors;
+    colors = builtins.mapAttrs (color: val: (builtins.substring 1 6 val.hex)) palette;
 
     replaceColors = src:
       builtins.readFile (pkgs.substitute {
         src = src;
-        substitutions = builtins.concatMap (x: ["--replace" "#{{${x}}}" "#${colors.${x}}"]) (builtins.attrNames colors);
+        substitutions =
+          builtins.concatMap (x: ["--replace" "var(--${x})" "${palette.${x}.hex}"])
+          (builtins.attrNames colors);
       });
   in
     mkIf cfg.enable (

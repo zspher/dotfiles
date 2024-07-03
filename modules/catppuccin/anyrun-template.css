@@ -1,5 +1,5 @@
 #window {
-  background: alpha(#{{subtext0}}, 0.15);
+  background: alpha(var(--subtext0), 0.15);
 }
 
 box#main {
@@ -9,10 +9,10 @@ box#main {
 entry#entry {
   min-height: 40px;
   border-radius: 8px;
-  background: #{{base}};
+  background: var(--base);
   box-shadow: none;
   margin-bottom: 10px;
-  border: 1px solid #{{surface0}};
+  border: 1px solid var(--surface0);
 }
 
 list#main {
@@ -25,22 +25,22 @@ list#main {
   box-shadow: none;
 }
 
-row#plugin{
-  background: #{{base}};
-  border: 1px solid #{{surface0}};
+row#plugin {
+  background: var(--base);
+  border: 1px solid var(--surface0);
   border-width: 1px 1px 0 1px;
 }
 
-row#plugin:first-child{
+row#plugin:first-child {
   border-radius: 8px 8px 0 0;
 }
 
-row#plugin:last-child{
+row#plugin:last-child {
   border-radius: 0 0 8px 8px;
   border-bottom-width: 1px;
 }
 
-row#plugin:only-child{
+row#plugin:only-child {
   border-radius: 8px;
 }
 
@@ -50,27 +50,27 @@ row#plugin:only-child{
 }
 
 #match:selected {
-  background: #{{surface2}};
+  background: var(--surface2);
 }
 
 #match:hover {
-  background: #{{surface0}};
+  background: var(--surface0);
 }
 
 #match:hover:selected {
-  background: #{{surface2}};
+  background: var(--surface2);
 }
 
 label#match-desc {
   font-size: 10px;
-  color: #{{subtext0}};
+  color: var(--subtext0);
 }
 
 label#match-title {
-  color: #{{text}};
+  color: var(--text);
 }
 
 label#plugin {
   font-size: 14px;
-  color: #{{text}};
+  color: var(--text);
 }

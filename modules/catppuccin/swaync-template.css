@@ -6,25 +6,25 @@
 }
 
 trough highlight {
-  background: #{{text}};
+  background: var(--text);
 }
 
 scale trough {
   margin: 0rem 1rem;
-  background-color: #{{surface0}};
+  background-color: var(--surface0);
   min-height: 8px;
   min-width: 70px;
 }
 
 slider {
-  background-color: #{{blue}};
+  background-color: var(--blue);
 }
 
 .floating-notifications.background .notification-row .notification-background {
   border-radius: 12.6px;
   margin: 8px 10px;
-  background-color: #{{mantle}};
-  color: #{{text}};
+  background-color: var(--mantle);
+  color: var(--text);
   padding: 0;
 }
 
@@ -32,7 +32,7 @@ slider {
   .notification-row
   .notification-background
   .notification.low {
-  border: 2px solid alpha(#{{blue}}, 0.5);
+  border: 2px solid alpha(var(--blue), 0.5);
 }
 
 .floating-notifications.background
@@ -41,14 +41,14 @@ slider {
   .notification {
   padding: 7px;
   border-radius: 12.6px;
-  border: 2px solid #{{blue}};
+  border: 2px solid var(--blue);
 }
 
 .floating-notifications.background
   .notification-row
   .notification-background
   .notification.critical {
-  border: 2px solid #{{red}};
+  border: 2px solid var(--red);
 }
 
 .floating-notifications.background
@@ -65,7 +65,7 @@ slider {
   .notification
   .notification-content
   .summary {
-  color: #{{text}};
+  color: var(--text);
 }
 
 .floating-notifications.background
@@ -74,7 +74,7 @@ slider {
   .notification
   .notification-content
   .time {
-  color: #{{subtext0}};
+  color: var(--subtext0);
 }
 
 .floating-notifications.background
@@ -83,7 +83,7 @@ slider {
   .notification
   .notification-content
   .body {
-  color: #{{text}};
+  color: var(--text);
 }
 
 .floating-notifications.background
@@ -103,8 +103,8 @@ slider {
   > *
   .notification-action {
   border-radius: 7px;
-  color: #{{text}};
-  background-color: #{{surface0}};
+  color: var(--text);
+  background-color: var(--surface0);
   margin: 7px;
 }
 
@@ -115,7 +115,7 @@ slider {
   > *:last-child
   > *
   .notification-action:hover {
-  background-color: #{{surface1}};
+  background-color: var(--surface1);
 }
 
 .floating-notifications.background
@@ -125,7 +125,7 @@ slider {
   > *:last-child
   > *
   .notification-action:active {
-  background-color: #{{surface2}};
+  background-color: var(--surface2);
 }
 
 .floating-notifications.background
@@ -135,75 +135,75 @@ slider {
   margin: 7px;
   padding: 2px;
   border-radius: 6.3px;
-  color: #{{base}};
-  background-color: #{{red}};
+  color: var(--base);
+  background-color: var(--red);
 }
 
 .floating-notifications.background
   .notification-row
   .notification-background
   .close-button:hover {
-  background-color: #{{maroon}};
+  background-color: var(--maroon);
 }
 
 .floating-notifications.background
   .notification-row
   .notification-background
   .close-button:active {
-  background-color: #{{pink}};
+  background-color: var(--pink);
 }
 
 .control-center {
   border-radius: 12.6px;
-  background-color: #{{mantle}};
-  color: #{{text}};
+  background-color: var(--mantle);
+  color: var(--text);
   padding: 14px;
-  border: 1px solid #{{surface0}};
+  border: 1px solid var(--surface0);
 }
 
 .control-center .widget-title > label {
-  color: #{{text}};
+  color: var(--text);
   font-size: 1.2rem;
   font-weight: bold;
 }
 
 .control-center .control-center-clear-all {
   border-radius: 7px;
-  color: #{{text}};
-  background-color: #{{surface0}};
+  color: var(--text);
+  background-color: var(--surface0);
   padding: 8px;
 }
 
 .control-center .control-center-clear-all:hover {
-  background-color: #{{surface1}};
+  background-color: var(--surface1);
 }
 
 .control-center .control-center-clear-all:active {
-  background-color: #{{surface2}};
+  background-color: var(--surface2);
 }
 
 .control-center .notification-row .notification-background {
   border-radius: 7px;
-  color: #{{text}};
-  background-color: #{{base}};
+  color: var(--text);
+  background-color: var(--base);
   margin-top: 14px;
 }
 
 .control-center .notification-row .notification-background .notification {
   padding: 7px;
   border-radius: 7px;
-  border: 2px solid #{{blue}};
+  border: 2px solid var(--blue);
 }
 
 .control-center .notification-row .notification-background .notification.low {
-  border: 2px solid alpha(#{{blue}}, 0.5);
+  border: 2px solid alpha(var(--blue), 0.5);
 }
 
 .control-center
   .notification-row
   .notification-background
   .notification.critical {
-  border: 2px solid #{{red}};
+  border: 2px solid var(--red);
 }
 
 .control-center
@@ -220,7 +220,7 @@ slider {
   .notification
   .notification-content
   .summary {
-  color: #{{text}};
+  color: var(--text);
 }
 
 .control-center
@@ -229,7 +229,7 @@ slider {
   .notification
   .notification-content
   .time {
-  color: #{{subtext0}};
+  color: var(--subtext0);
 }
 
 .control-center
@@ -238,7 +238,7 @@ slider {
   .notification
   .notification-content
   .body {
-  color: #{{text}};
+  color: var(--text);
 }
 
 .control-center
@@ -258,8 +258,8 @@ slider {
   > *
   .notification-action {
   border-radius: 7px;
-  color: #{{text}};
-  background-color: #{{overlay0}};
+  color: var(--text);
+  background-color: var(--overlay0);
   margin: 7px;
 }
 
@@ -270,7 +270,7 @@ slider {
   > *:last-child
   > *
   .notification-action:hover {
-  background-color: #{{overlay1}};
+  background-color: var(--overlay1);
 }
 
 .control-center
@@ -280,15 +280,15 @@ slider {
   > *:last-child
   > *
   .notification-action:active {
-  background-color: #{{overlay2}};
+  background-color: var(--overlay2);
 }
 
 .control-center .notification-row .notification-background .close-button {
   margin: 7px;
   padding: 2px;
   border-radius: 6.3px;
-  color: #{{base}};
-  background-color: #{{red}};
+  color: var(--base);
+  background-color: var(--red);
 }
 
 .close-button {
@@ -296,24 +296,24 @@ slider {
 }
 
 .control-center .notification-row .notification-background .close-button:hover {
-  background-color: #{{maroon}};
+  background-color: var(--maroon);
 }
 
 .control-center
   .notification-row
   .notification-background
   .close-button:active {
-  background-color: #{{pink}};
+  background-color: var(--pink);
 }
 
 .control-center .notification-row .notification-background:hover {
-  background-color: #{{overlay1}};
-  color: #{{text}};
+  background-color: var(--overlay1);
+  color: var(--text);
 }
 
 .control-center .notification-row .notification-background:active {
-  background-color: #{{sapphire}};
-  color: #{{text}};
+  background-color: var(--sapphire);
+  color: var(--text);
 }
 
 .summary,
@@ -329,24 +329,24 @@ trough {
 }
 
 progressbar {
-  box-shadow: inset 0 0 0 1px #{{surface1}};
+  box-shadow: inset 0 0 0 1px var(--surface1);
 }
 
 .notification.critical progress {
-  background-color: #{{red}};
+  background-color: var(--red);
 }
 
 .notification.low progress,
 .notification.normal progress {
-  background-color: #{{blue}};
+  background-color: var(--blue);
 }
 
 trough {
-  background-color: #{{surface0}};
+  background-color: var(--surface0);
 }
 
 .control-center trough {
-  background-color: #{{surface1}};
+  background-color: var(--surface1);
 }
 
 .widget-dnd {
@@ -359,29 +359,29 @@ trough {
   margin-top: 5px;
   font-size: initial;
   border-radius: 8px;
-  background: #{{surface0}};
+  background: var(--surface0);
 }
 
 .control-center-dnd:checked {
-  background-color: #{{blue}};
+  background-color: var(--blue);
 }
 .control-center-dnd:checked slider {
-  background: #{{surface0}};
+  background: var(--surface0);
 }
 
 .control-center-dnd slider {
-  background: #{{surface1}};
+  background: var(--surface1);
   border-radius: 8px;
   min-height: 22px;
   min-width: 22px;
   margin: 2px;
 }
 .control-center-dnd slider:hover {
-  background-color: #{{surface2}};
+  background-color: var(--surface2);
 }
 
 .control-center-dnd:checked image {
-  color: #{{surface0}};
+  color: var(--surface0);
 }
 
 /* Mpris widget */
@@ -391,18 +391,18 @@ trough {
 
 .widget-mpris button {
   border-radius: 12.6px;
-  color: #{{text}};
-  background-color: #{{surface0}};
+  color: var(--text);
+  background-color: var(--surface0);
   margin: 5px;
   padding: 4px 5px;
 }
 
 .widget-mpris button:hover {
-  background-color: #{{surface1}};
+  background-color: var(--surface1);
 }
 
 .widget-mpris button:active {
-  background-color: #{{surface2}};
+  background-color: var(--surface2);
 }
 
 .widget-mpris button:disabled {
@@ -412,9 +412,9 @@ trough {
 .widget-mpris-player {
   padding: 8px;
   margin: 0 5px;
-  background-color: #{{surface0}};
+  background-color: var(--surface0);
   border-radius: 12.6px;
-  color: #{{text}};
+  color: var(--text);
 }
 
 .widget-mpris-title {
