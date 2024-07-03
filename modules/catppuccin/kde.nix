@@ -26,8 +26,6 @@ in {
   };
 
   config = let
-    colors = import ./colors.nix {variant = cfg.variant;};
-
     package = pkgs.catppuccin-kde.override {
       flavour = [cfg.variant];
       accents = [cfg.accent];

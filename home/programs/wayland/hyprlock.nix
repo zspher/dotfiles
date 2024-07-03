@@ -1,6 +1,12 @@
-{config, ...}: let
-  theme = ../../../modules/catppuccin/colors.nix;
-  c = import theme {inherit (config.theme.catppuccin) variant;};
+{
+  config,
+  lib,
+  ...
+}: let
+  ctp = {inherit (config.catppuccin) sources flavor;};
+  c =
+    builtins.mapAttrs (color: val: (builtins.substring 1 6 val.hex))
+    (lib.importJSON "${ctp.sources.palette}/palette.json").${ctp.flavor}.colors;
 
   font_family = "CaskaydiaMono Nerd Font";
 in {

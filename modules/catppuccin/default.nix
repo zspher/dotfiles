@@ -69,7 +69,10 @@ in {
   config = let
     catppuccin-obs = self.packages.${pkgs.system}.catppuccin-obs;
     kvantum-theme = "Catppuccin-${upperFirst cfg.variant}-${upperFirst cfg.accent}";
-    colors = import ./colors.nix {variant = cfg.variant;};
+    ctp = {inherit (config.catppuccin) sources flavor;};
+    colors =
+      builtins.mapAttrs (color: val: (builtins.substring 1 6 val.hex))
+      (lib.importJSON "${ctp.sources.palette}/palette.json").${ctp.flavor}.colors;
 
     replaceColors = src:
       builtins.readFile (pkgs.substitute {
@@ -97,6 +100,7 @@ in {
           programs.anyrun.extraCss = replaceColors ./anyrun-template.css;
         })
         (mkIf (cfg.waybar.enable) {
+          # TODO: transition to ctp-nix
           programs.waybar.style = replaceColors ./waybar-template.css;
         })
         (mkIf (cfg.swaync.enable) {
