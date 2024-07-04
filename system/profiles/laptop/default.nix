@@ -11,7 +11,7 @@
     ../../programs
     ../../programs/hyprland.nix
     ../../programs/steam.nix
-    ../../programs/virtualbox.nix
+    ../../programs/virtualization.nix
 
     ../../services/power.nix
     ../../services/blueman.nix
