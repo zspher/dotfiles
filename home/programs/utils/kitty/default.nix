@@ -52,6 +52,7 @@
 
     keybindings = {
       "shift+alt+t" = "new_tab_with_cwd";
+      "ctrl+shift+enter" = "launch --cwd=current";
 
       # tab
       "ctrl+space>1" = "goto_tab 1";
