@@ -18,6 +18,7 @@
       withNodeJs = true;
 
       extraPackages = with pkgs; [
+        unzip # NOTE: for mason
         gnumake # NOTE: required by fzf-telescope
         tree-sitter
 
