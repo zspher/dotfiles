@@ -54,7 +54,7 @@
 
     keybindings = {
       "shift+alt+t" = "new_tab_with_cwd";
-      "ctrl+shift+enter" = "launch --cwd=current";
+      "ctrl+shift+enter" = "launch --cwd=current --location hsplit";
 
       # tab
       "ctrl+space>1" = "goto_tab 1";
@@ -69,7 +69,8 @@
       "ctrl+space>t" = "new_tab";
 
       # window
-      "ctrl+space>\"" = "launch --cwd=current";
+      "ctrl+space>\"" = "launch --cwd=current --location hsplit";
+      "ctrl+space>%" = "launch --cwd=current --location vsplit";
       "ctrl+space>x" = "close_window";
 
       "ctrl+alt+m" = "toggle_layout stack";
