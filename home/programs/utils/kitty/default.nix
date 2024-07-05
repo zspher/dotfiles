@@ -27,6 +27,8 @@
       window_resize_step_lines = 2;
       window_border_width = "0.5pt";
 
+      enabled_layouts = "splits,all";
+
       tab_bar_edge = "bottom";
       tab_bar_style = "separator";
       tab_bar_min_tabs = 1;
