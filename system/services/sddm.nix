@@ -10,7 +10,6 @@
   };
 
   environment.systemPackages = with pkgs; [
-    libsForQt5.qt5.qtgraphicaleffects
     self.packages.${pkgs.system}.sddm-corners-theme
   ];
 }
