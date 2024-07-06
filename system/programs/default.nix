@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   imports = [
     ./home-manager.nix
+    ./npm.nix
   ];
   programs = {
     kdeconnect.enable = true;
