@@ -12,34 +12,34 @@
 
   mods = {
     "minimal" = [
+      ../../system/nix
       ./..
       ./minimal.nix
     ];
     "full" = [
+      ../../system/nix
       ./..
       ./full.nix
     ];
-    "nixpkgs" = [../../system/nix/nixpkgs.nix];
   };
 in {
   flake.homeConfigurations = {
     "minimal" = homeManagerConfiguration {
-      modules = mods.minimal ++ mods.nixpkgs;
+      modules = mods.minimal;
       inherit pkgs extraSpecialArgs;
     };
     "minimalPi" = homeManagerConfiguration {
-      modules = mods.minimal ++ mods.nixpkgs;
+      modules = mods.minimal;
       inherit extraSpecialArgs;
       pkgs = inputs.nixpkgs.legacyPackages.aarch64-linux;
     };
     "desktop" = homeManagerConfiguration {
-      modules = mods.full ++ mods.nixpkgs;
+      modules = mods.full;
       inherit pkgs extraSpecialArgs;
     };
     "desktop-games" = homeManagerConfiguration {
       modules =
         mods.full
-        ++ mods.nixpkgs
         ++ [
           ../programs/games/minecraft.nix
           ../programs/games/controller.nix
