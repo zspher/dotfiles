@@ -1,13 +1,13 @@
 {pkgs, ...}: {
   # printers
   services.printing.enable = true;
-  services.printing.drivers = with pkgs; [epson-201401w];
+  services.printing.drivers = with pkgs; [epson-201401w gutenprint];
 
   hardware.printers.ensurePrinters = [
     {
       name = "EPSON-L220";
       deviceUri = "usb://EPSON/L220%20Series?serial=5647574B3131353901";
-      model = "epson-inkjet-printer-201401w/ppds/EPSON_L220.ppd";
+      model = "gutenprint.5.3://escp2-l210/expert";
     }
   ];
 
