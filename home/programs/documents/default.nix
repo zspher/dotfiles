@@ -5,7 +5,7 @@
     masterpdfeditor4
     obsidian
     okular
-    skanpage
+    simple-scan
     vscode-fhs
   ];
 }
