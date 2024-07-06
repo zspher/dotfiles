@@ -3,7 +3,6 @@
     ./substituters.nix
     ./nixpkgs.nix
   ];
-  environment.systemPackages = [pkgs.git];
   nix = {
     gc = {
       automatic = true;

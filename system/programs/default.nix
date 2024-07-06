@@ -14,6 +14,7 @@
     clang
     curl
     gcc
+    git
     gparted
   ];
 }
