@@ -1,0 +1,47 @@
+{
+  lib,
+  pkgs,
+  self,
+  config,
+  ...
+}: let
+  data = qtVersion: {
+    Appearance = {
+      custom_palette = true;
+      icon_theme = "Papirus-Dark";
+      standard_dialogs = "default";
+      style = "Lightly";
+      color_scheme_path = "${config.xdg.configHome}/${qtVersion}/colors/catppuccin.conf";
+    };
+
+    Fonts = {
+      fixed = "\"CaskaydiaMono Nerd Font Mono,10,-1,5,50,0,0,0,0,0,Regular\"";
+      general = "\"Sans Serif,10,-1,5,50,0,0,0,0,0,Regular\"";
+    };
+  };
+in {
+  qt = {
+    enable = true;
+    style.name = "qtct";
+    style.package = with pkgs; [
+      lightly-boehs
+      self.packages.${pkgs.system}.lightly-qt6
+    ];
+    platformTheme.name = "qtct";
+    kde.settings.kdeglobals.General.TerminalApplication = "kitty";
+  };
+
+  xdg.configFile = {
+    "qt5ct/qt5ct.conf".text = lib.generators.toINI {} (data "qt5ct");
+    "qt6ct/qt6ct.conf".text = lib.generators.toINI {} (data "qt6ct");
+    "qt6ct/colors/catppuccin.conf".source = ./qt6ct-catppuccin.conf;
+    "qt5ct/colors/catppuccin.conf".source = ./qt5ct-catppuccin.conf;
+    "lightlyrc".text = ''
+      [Style]
+      AnimationsEnabled=false
+      DolphinSidebarOpacity=100
+      MenuOpacity=100
+      TransparentDolphinView=false
+    '';
+  };
+}

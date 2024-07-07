@@ -9,11 +9,11 @@
     (lib.toUpper (builtins.substring 0 1 str)) + (builtins.substring 1 (builtins.stringLength str) str);
 in {
   imports = [
-    ./qt.nix
+    ./qt
   ];
   theme.catppuccin = {
     enable = true;
-    kvantum.enable = true;
+    kvantum.enable = false;
     anyrun.enable = true;
     kde.enable = true;
     waybar.enable = true;
