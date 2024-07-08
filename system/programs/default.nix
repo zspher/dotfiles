@@ -2,6 +2,7 @@
   imports = [
     ./home-manager.nix
     ./npm.nix
+    ./nh.nix
   ];
   programs = {
     kdeconnect.enable = true;
