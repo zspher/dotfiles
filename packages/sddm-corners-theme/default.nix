@@ -2,36 +2,30 @@
   lib,
   stdenvNoCC,
   fetchFromGitHub,
-  libsForQt5,
+  font ? "Noto Sans",
+  fontSize ? "9",
+  kdePackages,
 }:
 stdenvNoCC.mkDerivation {
   pname = "sddm-corners";
-  version = "unstable-2023-12-29";
+  version = "unstable-2024-07-08";
 
   src = fetchFromGitHub {
-    owner = "aczw";
+    owner = "zspher";
     repo = "sddm-theme-corners";
-    rev = "6ff0ff455261badcae36cd7d151a34479f157a3c";
-    hash = "sha256-CPK3kbc8lroPU8MAeNP8JSStzDCKCvAHhj6yQ1fWKkY=";
+    rev = "40f93d05c3bd0493900c7a99b304548c97952ebb";
+    hash = "sha256-BW2mzN2hwpECPKTODq+KvPDcsZYPTqWX4qQIH1MoByA=";
   };
 
-  patches = [./custom-settings.patch];
-
-  dontConfigure = true;
-  dontBuild = true;
   dontWrapQtApps = true;
 
-  propagatedBuildInputs = with libsForQt5.qt5; [
-    qtgraphicaleffects
-    qtquickcontrols2
+  propagatedBuildInputs = with kdePackages; [
     qtsvg
   ];
 
   postFixup = ''
     mkdir -p $out/nix-support
-    echo ${libsForQt5.qt5.qtgraphicaleffects}  >> $out/nix-support/propagated-user-env-packages
-    echo ${libsForQt5.qt5.qtquickcontrols2}  >> $out/nix-support/propagated-user-env-packages
-    echo ${libsForQt5.qt5.qtsvg}  >> $out/nix-support/propagated-user-env-packages
+    echo ${kdePackages.qtsvg} >> $out/nix-support/propagated-user-env-packages
   '';
 
   installPhase = ''
@@ -39,6 +33,14 @@ stdenvNoCC.mkDerivation {
 
     mkdir -p "$out/share/sddm/themes/"
     cp -r corners/ "$out/share/sddm/themes/sddm-corners"
+
+    configFile=$out/share/sddm/themes/sddm-corners/theme.conf
+
+    substituteInPlace $configFile \
+      --replace-fail 'BgSource="backgrounds/glacier.png"' 'BgSource="backgrounds/leaves.png"' \
+      --replace-fail 'FontFamily="Atkinson Hyperlegible"' 'FontFamily="${font}"' \
+      --replace-fail 'FontSize=9' 'FontSize=${fontSize}' \
+      --replace-fail 'TimeFormat="hh:mm AP"' 'TimeFormat="HH:mm"'
 
     runHook postInstall
   '';
