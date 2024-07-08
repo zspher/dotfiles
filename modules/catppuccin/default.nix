@@ -42,7 +42,7 @@ in {
       builtins.readFile (pkgs.substitute {
         src = src;
         substitutions =
-          builtins.concatMap (x: ["--replace" "var(--${x})" "${palette.${x}.hex}"])
+          builtins.concatMap (x: ["--replace-quiet" "var(--${x})" "${palette.${x}.hex}"])
           (builtins.attrNames colors);
       });
   in
