@@ -51,6 +51,9 @@
         #-- json, html, css, eslint markdown json
         prettierd # formatter
         vscode-langservers-extracted # LSP
+
+        #-- json, javascript, typescript
+        biome # LSP
       ];
     };
   };
