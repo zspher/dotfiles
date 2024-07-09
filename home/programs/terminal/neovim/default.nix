@@ -35,10 +35,17 @@
 
         #-- python
         pyright # LSP
-        ruff-lsp # linter, formatter via LSP
+        ruff-lsp # linter & formatter via LSP
+
+        #-- c/c++, meson
+        vscode-extensions.vadimcn.vscode-lldb.adapter # DAP
+        mesonlsp # LSP
+
+        #-- c#
+        roslyn-ls # LSP, formatter
 
         #-- bash
-        nodePackages_latest.bash-language-server # LSP
+        bash-language-server # LSP
         shfmt # formatter
         shellcheck # linter
 
@@ -53,7 +60,12 @@
         vscode-langservers-extracted # LSP
 
         #-- json, javascript, typescript
-        biome # LSP
+        biome # formatter, linter
+        vscode-js-debug # DAP
+
+        #-- html, tailwind
+        emmet-language-server # LSP
+        tailwindcss-language-server # LSP
       ];
     };
   };
