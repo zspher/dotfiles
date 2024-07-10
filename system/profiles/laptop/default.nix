@@ -17,6 +17,7 @@
     ../../services/blueman.nix
     ../../services/sddm.nix
     ../../services/usisks.nix
+    ../../services/pipewire.nix
 
     ../../networking
     # ../../networking/openssh.nix
