@@ -18,12 +18,12 @@
       withNodeJs = true;
 
       extraPackages = with pkgs; [
-        unzip # NOTE: for mason
-        gnumake # NOTE: required by fzf-telescope
+        unzip # for mason
+        gnumake # required by fzf-telescope
         tree-sitter
 
         #-- rust
-        rust-analyzer # LSP  NOTE: required by rustaceanvim
+        rust-analyzer # LSP, required by rustaceanvim
 
         #-- lua
         lua-language-server # LSP
