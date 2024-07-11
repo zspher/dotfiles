@@ -6,6 +6,7 @@ zinit lucid for \
 zinit wait lucid for \
     "OMZP::fzf"
 
+# TODO: remove GREP_COLOR fix when it gets fixed in prezto:util
 zinit wait lucid for \
         atinit"
         zstyle ':zim:termtitle' format '%2~'"\
@@ -20,7 +21,8 @@ zinit wait lucid for \
             alias ll='ls -la --date +\"%d %b %y %H:%S\" --size short' \
             alias lc='ll -tr'
             alias lx='ll -X'
-            alias lt='ll --tree'"\
+            alias lt='ll --tree'
+            unset GREP_COLOR"\
     "PZTM::utility" \
         atinit"zstyle ':zim:input' double-dot-expand yes" \
     "zimfw/input" \
