@@ -2,9 +2,8 @@ root = true
 
 [*]
 indent_style = space
-indent_size = 4
 trim_trailing_whitespace = true
 charset = utf-8
 
-[*.nix]
+[*.{nix, css}]
 indent_size = 2
