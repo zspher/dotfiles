@@ -1,0 +1,319 @@
+/* #ui */
+
+:host {
+  --vimium-rosewater: #f5e0dc;
+  --vimium-peach: #fab387;
+  --vimium-green: #a6e3a1;
+  --vimium-blue: #89b4fa;
+  --vimium-lavender: #b4befe;
+  --vimium-red: #f38ba8;
+  --vimium-yellow: #f9e2af;
+  --vimium-text: #cdd6f4;
+  --vimium-surface2: #585b70;
+  --vimium-surface1: #45475a;
+  --vimium-surface0: #313244;
+  --vimium-base: #1e1e2e;
+  --vimium-mantle: #181825;
+}
+
+.LH,
+.D .LH {
+  border: 1px solid;
+  margin-top: -2px;
+  margin-left: -2px;
+  z-index: 0;
+  box-shadow: 0px 2px 11px rgb(0 0 0 0.12);
+
+  color: var(--vimium-mantle) !important;
+  background: var(--vimium-yellow);
+  border-color: var(--vimium-mantle);
+}
+
+.LH:before {
+  position: absolute;
+  background: var(--vimium-mantle);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  content: \\;
+  z-index: -1;
+}
+
+/* hints matching chars */
+.MC,
+.D .MC {
+  color: var(--vimium-surface1);
+}
+
+/* bottom hud */
+.HUD {
+  bottom: 1rem;
+  left: unset;
+  right: 1rem;
+  border: 1px solid;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  line-height: 21px;
+  text-transform: lowercase;
+  max-width: 420px;
+  min-width: unset;
+  display: flex;
+  align-items: center;
+  background: var(--vimium-mantle);
+  color: var(--vimium-text);
+  border-color: var(--vimium-yellow);
+}
+
+.HUD.UI {
+  min-width: 180px;
+  align-items: unset;
+}
+
+.HUD:after,
+.HUD.D:after {
+  background: var(--vimium-mantle);
+}
+
+/* Help UI */
+
+.D .HelpDA#HDlg {
+  color: var(--vimium-text);
+  background: var(--vimium-mantle);
+}
+
+.D .HelpDA #HCls,
+.D .HelpDA .VimL {
+  color: var(--vimium-blue);
+}
+
+.D .HelpDA .VimC {
+  color: var(--vimium-peach);
+}
+
+.D .HelpDA .HelpKey {
+  color: var(--vimium-text);
+  background: var(--vimium-base);
+  border-color: var(--vimium-surface1);
+}
+
+/* omnibar outer style */
+.Omnibar {
+  top: 20vh !important;
+}
+
+/* #find */
+/* ^ do not touch this line ^ */
+
+:host {
+  --vimium-rosewater: #f5e0dc;
+  --vimium-peach: #fab387;
+  --vimium-green: #a6e3a1;
+  --vimium-blue: #89b4fa;
+  --vimium-lavender: #b4befe;
+  --vimium-red: #f38ba8;
+  --vimium-yellow: #f9e2af;
+  --vimium-text: #cdd6f4;
+  --vimium-surface2: #585b70;
+  --vimium-surface1: #45475a;
+  --vimium-surface0: #313244;
+  --vimium-base: #1e1e2e;
+  --vimium-mantle: #181825;
+
+  background-color: var(--vimium-mantle) !important;
+}
+
+* {
+  background: unset;
+}
+
+.r {
+  border: none;
+  border-radius: unset;
+  box-shadow: unset;
+  height: 10px;
+}
+
+.r,
+.r.D {
+  background: var(--vimium-mantle);
+  color: var(--vimium-text);
+}
+
+#i,
+.D #i {
+  color: var(--vimium-text);
+}
+
+/* #omni */
+:root {
+  --vimium-rosewater: #f5e0dc;
+  --vimium-peach: #fab387;
+  --vimium-green: #a6e3a1;
+  --vimium-blue: #89b4fa;
+  --vimium-lavender: #b4befe;
+  --vimium-red: #f38ba8;
+  --vimium-yellow: #f9e2af;
+  --vimium-text: #cdd6f4;
+  --vimium-surface2: #585b70;
+  --vimium-surface1: #45475a;
+  --vimium-surface0: #313244;
+  --vimium-base: #1e1e2e;
+  --vimium-mantle: #181825;
+}
+
+@keyframes show {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+body {
+  border: 3px solid;
+  animation: show 200ms cubic-bezier(0, 0, 0.2, 1) forwards;
+}
+
+/* bar */
+#bar,
+#bar.empty {
+  border: none;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  height: 3rem;
+  padding: 2px;
+
+  max-height: unset;
+}
+
+.has-dark,
+.has-dark #bar {
+  border-color: var(--vimium-lavender);
+  background: var(--vimium-mantle);
+}
+
+#bar input {
+  border: none;
+  padding: 16px 30px 16px 10px;
+  width: 100%;
+  box-shadow: unset;
+  margin: 0 10px;
+}
+.has-dark #bar input {
+  color: var(--vimium-text);
+  background: var(--vimium-base);
+}
+
+#bar #toolbar {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  margin-right: 10px;
+  opacity: 0;
+
+  position: unset;
+  right: unset;
+}
+
+#bar #toolbar:hover {
+  opacity: 1;
+}
+
+#bar #toolbar .button {
+  display: flex;
+
+  margin-right: unset;
+}
+
+.has-dark #bar #toolbar .button {
+  color: var(--vimium-text);
+}
+
+.has-dark #bar #toolbar .button:hover {
+  color: var(--vimium-base);
+  background: var(--vimium-blue);
+}
+
+.has-dark #bar #toolbar .button#close:hover {
+  color: var(--vimium-base);
+  background: var(--vimium-red);
+}
+
+/* search list */
+#list {
+  border: none;
+  padding: unset;
+}
+
+.has-dark #list {
+  background: var(--vimium-mantle);
+}
+
+.has-dark #list .item {
+  border-color: var(--vimium-surface0);
+}
+
+#list .item {
+  height: 50px; /* limited by vomibar size 3rd item */
+}
+
+#list .item .bottom {
+  margin-top: 2px;
+  margin-bottom: 3px;
+}
+
+#list .item .top {
+  margin-top: 3px;
+}
+
+.has-dark #list .item .top,
+.has-dark #list .item .time {
+  color: var(--vimium-text);
+}
+
+.has-dark #list .item .label {
+  color: var(--vimium-rosewater);
+}
+
+#list .item .top .icon {
+  margin-right: 10px;
+}
+
+#list .item match {
+  font-weight: bold;
+  text-decoration: unset;
+}
+
+#list .item.b {
+  margin-bottom: 6px;
+}
+
+.has-dark #list .item match {
+  color: var(--vimium-green);
+}
+
+.has-dark #list .item .icon > path {
+  fill: var(--vimium-peach);
+}
+
+.has-dark #list .bottom a {
+  color: var(--vimium-rosewater);
+}
+
+.has-dark #list .title match {
+  color: var(--vimium-blue);
+}
+
+.has-dark #list .item.s,
+.has-dark #list .item.s:hover {
+  background: var(--vimium-surface1);
+}
+
+.has-dark #list .item:hover {
+  background: var(--vimium-surface0);
+}
