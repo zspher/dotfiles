@@ -1,6 +1,7 @@
 zinit lucid for \
-    atload"
-    zvm_bindkey vicmd 'gd' run-help"\
+        atload"
+            ZVM_VI_INSERT_ESCAPE_BINDKEY='jj'
+            zvm_bindkey vicmd 'gd' run-help"\
     "jeffreytse/zsh-vi-mode"
 
 zinit wait lucid for \
