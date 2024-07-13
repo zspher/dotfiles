@@ -128,6 +128,8 @@
 
         "float, class:^(net.code\-industry.masterpdfeditor4)$"
         "tile, title:^(.*Master PDF Editor.*)$"
+
+        "noblur, xwayland:1, title:" # brave pop-up (i.e. app menu, right click pop-up)
       ];
 
       layerrule = [
