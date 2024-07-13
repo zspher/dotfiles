@@ -5,9 +5,9 @@
       {id = "eimadpbcbfnmbkopoojfekhnkhdbieeh";} # dark reader
       {id = "oboonakemofpalcgghocfoadofidjkkk";} # keepassxc
       {id = "clngdbkpkpeebahjckkjfobafhncgmne";} # stylus
-      {id = "dbepggeogbaibhgnhhndojpepiihcmeb";} # vimium
+      {id = "hfjbmagddngcpeloejdejnfgbamkjaeg";} # vimium-c
       {id = "oemmndcbldboiebfnladdacbdfmadadm";} # pdf viewer
-      {id = "mcbpblocgmgfnpjjppndjkmgjaogfceg";} # fireshot
+      {id = "mdddabjhelpilpnpgondfmehhcplpiin";} # explain and send screenshot
       {id = "bkkmolkhemgaeaeggcmfbghljjjoofoh";} # catppuccin mocha
     ];
   };
