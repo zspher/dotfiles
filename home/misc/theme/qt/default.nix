@@ -22,7 +22,6 @@
 in {
   qt = {
     enable = true;
-    style.name = "qtct";
     style.package = with pkgs; [
       lightly-boehs
       self.packages.${pkgs.system}.lightly-qt6
