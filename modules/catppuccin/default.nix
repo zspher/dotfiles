@@ -89,6 +89,8 @@ in {
             catppuccin-obs
           ];
 
+          qt.kde.settings."obs-studio/global.ini".General."CurrentTheme3" = "Catppuccin ${upperFirst ctp.flavor}";
+
           xdg.configFile."obs-studio/themes" = {
             source = "${catppuccin-obs}/themes";
             recursive = true;
