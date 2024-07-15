@@ -4,9 +4,6 @@ zinit lucid for \
             zvm_bindkey vicmd 'gd' run-help"\
     "jeffreytse/zsh-vi-mode"
 
-zinit wait lucid for \
-    "OMZP::fzf"
-
 # TODO: remove GREP_COLOR fix when it gets fixed in prezto:util
 zinit wait lucid for \
         atinit"
