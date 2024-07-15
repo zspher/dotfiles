@@ -43,4 +43,8 @@ in {
       TransparentDolphinView=false
     '';
   };
+
+  home.activation.genKdeglobals = lib.hm.dag.entryBefore ["kconfig"] ''
+    touch ${config.xdg.configHome}/kdeglobals
+  '';
 }

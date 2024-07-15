@@ -27,7 +27,4 @@
         run ${pkgs.acl}/bin/setfacl -m u:sddm:x /home/${username}
     fi
   '';
-  home.activation.genKconfig = lib.hm.dag.entryBefore ["kconfig"] ''
-    touch ${config.xdg.configHome}/kdeglobals
-  '';
 }
