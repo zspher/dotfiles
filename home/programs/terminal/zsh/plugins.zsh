@@ -1,7 +1,7 @@
 zinit lucid for \
         atload"
             ZVM_VI_INSERT_ESCAPE_BINDKEY='jj'
-            zvm_bindkey vicmd 'gd' run-help"\
+            zvm_bindkey vicmd 'K' run-help"\
     "jeffreytse/zsh-vi-mode"
 
 # TODO: remove GREP_COLOR fix when it gets fixed in prezto:util
