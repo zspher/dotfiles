@@ -1,7 +1,9 @@
 {pkgs, ...}: {
   imports = [
+    ./bash.nix
     ./btop.nix
     ./direnv.nix
+    ./fish.nix
     ./fzf.nix
     ./git.nix
     ./lazygit.nix

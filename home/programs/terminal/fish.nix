@@ -1,0 +1,43 @@
+{pkgs, ...}: {
+  programs.fish = {
+    enable = true;
+    plugins = [
+      {
+        name = "puffer";
+        src = pkgs.fishPlugins.puffer.src;
+      }
+      {
+        name = "pisces";
+        src = pkgs.fishPlugins.pisces.src;
+      }
+    ];
+    shellAbbrs = {
+    };
+    shellAliases = {
+      lsd = "lsd --group-directories-first";
+      la = "lsd -lA";
+      lu = "lsd -lA --total-size";
+      lt = "lsd -lA --tree";
+      l = "lsd -1A";
+      ls = "lsd";
+    };
+    shellInit = ''
+    '';
+    interactiveShellInit = ''
+      set fish_greeting # Disable greeting
+    '';
+    functions = {
+      fish_user_key_bindings = {
+        body = ''
+          fish_vi_key_bindings
+
+          bind -M insert \cn accept-autosuggestion
+          bind -M insert \en forward-word
+
+          bind -M insert \cj down-or-search
+          bind -M insert \ck up-or-search
+        '';
+      };
+    };
+  };
+}

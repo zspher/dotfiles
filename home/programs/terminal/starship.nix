@@ -1,6 +1,7 @@
 {lib, ...}: {
   programs.starship = {
     enable = true;
+    enableTransience = true;
     settings = {
       format = lib.concatStrings [
         "$time"
@@ -9,7 +10,7 @@
         "$character"
       ];
       shell = {
-        fish_indicator = "🐟 ";
+        fish_indicator = "⥽ ";
         powershell_indicator = ">_";
         bash_indicator = "\$_";
         zsh_indicator = "z ";

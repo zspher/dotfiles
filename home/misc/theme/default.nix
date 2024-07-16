@@ -61,6 +61,7 @@ in {
   };
 
   programs.btop.catppuccin.enable = true;
+  programs.fish.catppuccin.enable = true;
   programs.fzf.catppuccin.enable = true;
   programs.kitty.catppuccin.enable = true;
   programs.lazygit.catppuccin.enable = true;
