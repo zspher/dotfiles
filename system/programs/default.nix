@@ -6,7 +6,6 @@
   ];
   programs = {
     kdeconnect.enable = true;
-    zsh.enable = true;
 
     # for GTK stuff: easyeffects
     dconf.enable = true;

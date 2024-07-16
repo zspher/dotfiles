@@ -2,7 +2,6 @@
   inherit (import ./config.nix) username;
 in {
   users.users.${username} = {
-    shell = pkgs.zsh;
     initialPassword = "defaultPass";
     isNormalUser = true;
     openssh.authorizedKeys.keys = [

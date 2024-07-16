@@ -11,7 +11,7 @@
     ./starship.nix
     ./tealdeer.nix
     ./tmux.nix
-    ./zsh
+    # ./zsh
   ];
   home.packages = with pkgs; [
     fd
