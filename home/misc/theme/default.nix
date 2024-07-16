@@ -72,4 +72,9 @@ in {
   home.sessionVariables = {
     GREP_COLORS = "ms=01;31";
   };
+
+  programs.vivid = {
+    enable = true;
+    theme = "catppuccin-${config.catppuccin.flavor}";
+  };
 }
