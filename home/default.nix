@@ -13,6 +13,7 @@
     inputs.spicetify-nix.homeManagerModules.default
     # inputs.hyprland.homeManagerModules.default
     self.homeManagerModules.catppuccin
+    self.homeManagerModules.vivid
   ];
   home = {
     inherit username;
