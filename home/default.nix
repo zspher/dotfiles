@@ -12,7 +12,7 @@
     inputs.catppuccin.homeManagerModules.catppuccin
     inputs.spicetify-nix.homeManagerModules.default
     # inputs.hyprland.homeManagerModules.default
-    self.nixosModules.catppuccin
+    self.homeManagerModules.catppuccin
   ];
   home = {
     inherit username;

@@ -1,5 +1,5 @@
 {
-  flake.nixosModules = {
+  flake.homeManagerModules = {
     catppuccin = import ./catppuccin;
   };
 }
