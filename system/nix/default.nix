@@ -1,6 +1,8 @@
 {
   pkgs,
   config,
+  lib,
+  inputs,
   ...
 }: {
   imports = [
@@ -10,6 +12,13 @@
   nix = {
     enable = true;
     package = pkgs.nix;
+
+    # pin the registry to avoid downloading and evaling a new nixpkgs version every time
+    registry = lib.mapAttrs (_: v: {flake = v;}) inputs;
+
+    # set the path for channels compat
+    nixPath = lib.mapAttrsToList (key: _: "${key}=flake:${key}") config.nix.registry;
+
     # gc =
     #   {
     #     automatic = true;
@@ -20,6 +29,7 @@
     #     then {frequency = "weekly";}
     #     else {dates = "weekly";}
     #   );
+
     settings = {
       experimental-features = ["nix-command" "flakes"];
       auto-optimise-store = true;
