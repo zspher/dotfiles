@@ -2,7 +2,7 @@
   programs.kitty = {
     enable = true;
     font.name = "CaskaydiaMono Nerd Font";
-    shellIntegration.mode = "no-rc no-title";
+    shellIntegration.mode = "no-title";
     settings = {
       disable_ligatures = "always";
 
