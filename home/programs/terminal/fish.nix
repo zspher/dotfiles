@@ -25,11 +25,20 @@
     '';
     interactiveShellInit = ''
       set fish_greeting # Disable greeting
+
+      # cursor
+      set fish_cursor_default block
+      set fish_cursor_insert line
+      set fish_cursor_replace_one underscore
+      set fish_cursor_replace underscore
+      set fish_cursor_external line
+      set fish_cursor_visual block
     '';
     functions = {
       fish_user_key_bindings = {
         body = ''
           fish_vi_key_bindings
+
 
           bind -M insert \cn accept-autosuggestion
           bind -M insert \en forward-word
