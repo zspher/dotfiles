@@ -41,11 +41,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    waybar = {
-      url = "github:Alexays/Waybar";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     pollymc = {
       url = "github:fn2006/PollyMC";
       inputs.nixpkgs.follows = "nixpkgs";
