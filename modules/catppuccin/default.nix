@@ -75,12 +75,6 @@ in {
               "endings:${colors.blue},"
               "ads:${colors.red}"
             ];
-            color = lib.concatStrings [
-              "foreground=${colors.overlay2},"
-              "foreground_text=${colors.text},"
-              "background=${colors.base},"
-              "background_text=${colors.text}"
-            ];
           };
         })
 
