@@ -35,7 +35,7 @@
 
         #-- python
         pyright # LSP
-        ruff-lsp # linter & formatter via LSP
+        ruff # linter & formatter via LSP
 
         #-- c/c++, meson
         vscode-extensions.vadimcn.vscode-lldb.adapter # DAP
