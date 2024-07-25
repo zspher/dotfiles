@@ -18,6 +18,7 @@
     ../../services/sddm.nix
     ../../services/usisks.nix
     ../../services/pipewire.nix
+    ../../services/kanata.nix
 
     ../../networking
     # ../../networking/openssh.nix
