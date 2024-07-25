@@ -12,6 +12,7 @@
     ../../programs/hyprland.nix
     ../../programs/steam.nix
     ../../programs/vm.nix
+    ../../programs/container.nix
 
     ../../services/power.nix
     ../../services/blueman.nix
