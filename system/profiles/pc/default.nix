@@ -9,13 +9,12 @@
     ../../user.nix
 
     ../../programs
+    ../../programs/blueman.nix
     ../../programs/hyprland.nix
+    ../../programs/pipewire.nix
+    ../../programs/sddm.nix
     ../../programs/steam.nix
-
-    ../../services/blueman.nix
-    ../../services/sddm.nix
-    ../../services/usisks.nix
-    ../../services/pipewire.nix
+    ../../programs/usisks.nix
 
     ../../networking
     ../../networking/openssh.nix

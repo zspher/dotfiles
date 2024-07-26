@@ -9,17 +9,16 @@
     ../../user.nix
 
     ../../programs
-    ../../programs/hyprland.nix
-    ../../programs/steam.nix
-    ../../programs/vm.nix
+    ../../programs/blueman.nix
     ../../programs/container.nix
-
-    ../../services/power.nix
-    ../../services/blueman.nix
-    ../../services/sddm.nix
-    ../../services/usisks.nix
-    ../../services/pipewire.nix
-    ../../services/kanata.nix
+    ../../programs/hyprland.nix
+    ../../programs/kanata.nix
+    ../../programs/pipewire.nix
+    ../../programs/power.nix
+    ../../programs/sddm.nix
+    ../../programs/steam.nix
+    ../../programs/usisks.nix
+    ../../programs/vm.nix
 
     ../../networking
     # ../../networking/openssh.nix
