@@ -8,21 +8,21 @@
     inherit (import ../config.nix) username;
     specialArgs = {inherit inputs self username;};
   in {
-    pc = nixosSystem {
+    "c-100" = nixosSystem {
       inherit specialArgs;
       modules = [
         ./pc
         {system.stateVersion = "23.11";}
       ];
     };
-    laptop = nixosSystem {
+    "ls-2100" = nixosSystem {
       inherit specialArgs;
       modules = [
         ./laptop
         {system.stateVersion = "23.11";}
       ];
     };
-    pi = nixosSystem {
+    "ns-200" = nixosSystem {
       inherit specialArgs;
       modules = [
         ./pi

@@ -28,16 +28,16 @@ in {
       modules = mods.minimal;
       inherit pkgs extraSpecialArgs;
     };
-    "minimalPi" = homeManagerConfiguration {
+    "${username}@ns-200" = homeManagerConfiguration {
       modules = mods.minimal;
       inherit extraSpecialArgs;
       pkgs = inputs.nixpkgs.legacyPackages.aarch64-linux;
     };
-    "desktop" = homeManagerConfiguration {
+    "${username}@c-100" = homeManagerConfiguration {
       modules = mods.full;
       inherit pkgs extraSpecialArgs;
     };
-    "desktop-games" = homeManagerConfiguration {
+    "${username}@ls-2100" = homeManagerConfiguration {
       modules =
         mods.full
         ++ [
