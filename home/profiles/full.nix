@@ -8,8 +8,6 @@
     ../programs/wayland
     ../programs/web
 
-    ../services
-
     ../misc/theme
     ../misc/xdg-dirs.nix
     ../misc/xdg.nix
