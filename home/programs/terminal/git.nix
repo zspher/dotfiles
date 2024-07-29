@@ -10,6 +10,6 @@
       init.defaultBranch = "main";
       status.short = true;
     };
-    ignores = [".env"];
+    ignores = [".env" ".direnv"];
   };
 }
