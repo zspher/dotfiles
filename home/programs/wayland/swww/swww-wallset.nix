@@ -8,8 +8,6 @@ pkgs.writeShellApplication {
   runtimeInputs = with pkgs; [swww fd];
   text = ''
     #! /usr/bin/env bash
-    swww-daemon
-
     wallpaperDir="${wallpaperDir}"
     TIMEOUT=${timeout}
 
