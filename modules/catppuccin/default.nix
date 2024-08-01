@@ -79,6 +79,7 @@ in {
         })
 
         (mkIf (cfg.obs-studio.enable) {
+          # BUG: currently broken
           home.packages = [
             catppuccin-obs
           ];

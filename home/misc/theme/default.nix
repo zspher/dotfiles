@@ -19,7 +19,7 @@ in {
     waybar.enable = true;
     swaync.enable = true;
     mpv.enable = true;
-    obs-studio.enable = true;
+    obs-studio.enable = false;
   };
   catppuccin.flavor = "mocha";
   catppuccin.accent = "mauve";
