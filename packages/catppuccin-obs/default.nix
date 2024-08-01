@@ -5,13 +5,13 @@
 }:
 stdenvNoCC.mkDerivation {
   pname = "catppuccin-obs";
-  version = "unstable-2023-07-06";
+  version = "unstable-2024-04-03";
 
   src = fetchFromGitHub {
     owner = "catppuccin";
     repo = "obs";
-    rev = "9a78d89d186afbdcc719a1cb7bbf7fb1c2fdd248";
-    hash = "sha256-8DjAjpYsC9lEHe6gt/B7YCyfqVPaA5Qg1hbIMyyx/ho=";
+    rev = "e7c4fcf387415a20cb747121bc0416c4c8ae3362";
+    hash = "sha256-dZcgIPMa1AUFXcMPT99YUUhvxHbniv0Anbh9/DB00NY=";
   };
 
   installPhase = ''
