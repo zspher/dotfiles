@@ -39,20 +39,23 @@ in {
           fail_color = "rgb(${c.red})";
           capslock_color = "rgb(${c.yellow})";
 
-          size = "200, 50";
+          fade_on_empty = false;
+          outline_thickness = 1;
+          rounding = 20;
+          size = "200, 40";
 
-          position = "0, -70";
+          position = "0, -120";
         }
       ];
 
       label = [
         {
-          text = "$TIME";
+          text = "<span>- $TIME -</span>";
           inherit font_family;
           color = "rgb(${c.text})";
-          font_size = 30;
+          font_size = 28;
 
-          position = "0, 300";
+          position = "0, 200";
           halign = "center";
           valign = "center";
         }
@@ -61,7 +64,7 @@ in {
           inherit font_family;
           color = "rgb(${c.text})";
 
-          position = "0, 250";
+          position = "0, 150";
           halign = "center";
           valign = "center";
         }
@@ -81,10 +84,10 @@ in {
 
       image = [
         {
-          path = "~/avatar.png";
+          path = "~/.face.icon";
           border_color = "rgb(${c.crust})";
 
-          position = "0, 50";
+          position = "0, 0";
           size = 150;
 
           halign = "center";
