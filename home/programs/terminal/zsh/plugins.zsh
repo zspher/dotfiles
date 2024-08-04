@@ -4,7 +4,6 @@ zinit lucid for \
             zvm_bindkey vicmd 'K' run-help"\
     "jeffreytse/zsh-vi-mode"
 
-# TODO: remove GREP_COLOR fix when it gets fixed in prezto:util
 zinit wait lucid for \
         atinit"
             zstyle ':zim:termtitle' format '${SSH_CONNECTION:+%m} %2~'"\
