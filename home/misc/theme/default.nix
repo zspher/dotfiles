@@ -13,13 +13,14 @@ in {
   ];
   theme.catppuccin = {
     enable = true;
-    kvantum.enable = false;
     anyrun.enable = true;
     kde.enable = true;
-    waybar.enable = true;
-    swaync.enable = true;
+    kvantum.enable = false;
     mpv.enable = true;
     obs-studio.enable = false;
+    swaync.enable = true;
+    waybar.enable = true;
+    webcord.enable = true;
   };
   catppuccin.flavor = "mocha";
   catppuccin.accent = "mauve";

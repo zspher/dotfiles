@@ -18,12 +18,13 @@ in {
   options.theme.catppuccin = {
     enable = mkEnableOption "catppuccin";
 
-    kvantum.enable = mkEnableOption "kvantum integration";
     anyrun.enable = mkEnableOption "anyrun integration";
-    waybar.enable = mkEnableOption "waybar integration";
-    swaync.enable = mkEnableOption "swaync integration";
+    kvantum.enable = mkEnableOption "kvantum integration";
     mpv.enable = mkEnableOption "mpv integration";
     obs-studio.enable = mkEnableOption "obs-studio integration";
+    swaync.enable = mkEnableOption "swaync integration";
+    waybar.enable = mkEnableOption "waybar integration";
+    webcord.enable = mkEnableOption "webcord integration";
   };
 
   config = let
@@ -91,6 +92,21 @@ in {
             recursive = true;
           };
         })
+
+        (let
+          catppuccin-discord = pkgs.fetchFromGitHub {
+            owner = "catppuccin";
+            repo = "discord";
+            rev = "7c2c42e5e6fe0e9949ecdd0e594282f01e9d3217";
+            hash = "sha256-wAfF3VId5yJtstfkmHojSQ8xTQRB9Vw7iKTUrPxZPv4=";
+          };
+          theme-file = "catppuccin-${ctp.flavor}-${ctp.accent}.theme";
+        in
+          mkIf (cfg.webcord.enable) {
+            xdg.configFile."WebCord/Themes/${theme-file}" = {
+              source = "${catppuccin-discord}/dist/${theme-file}.css";
+            };
+          })
       ]
     );
 }
