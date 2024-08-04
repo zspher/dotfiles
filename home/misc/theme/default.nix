@@ -17,7 +17,7 @@ in {
     kde.enable = true;
     kvantum.enable = false;
     mpv.enable = true;
-    obs-studio.enable = false;
+    obs-studio.enable = true;
     swaync.enable = true;
     waybar.enable = true;
     webcord.enable = true;
