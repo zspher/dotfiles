@@ -29,7 +29,6 @@ in {
 
   config = let
     ctp = {inherit (config.catppuccin) sources flavor accent;};
-    catppuccin-obs = self.packages.${pkgs.system}.catppuccin-obs;
     catppuccin = pkgs.catppuccin.override {
       inherit (ctp) accent;
       variant = ctp.flavor;
@@ -79,19 +78,23 @@ in {
           };
         })
 
-        (mkIf (cfg.obs-studio.enable) {
-          # BUG: currently broken
-          home.packages = [
-            catppuccin-obs
-          ];
-
-          qt.kde.settings."obs-studio/global.ini".General."CurrentTheme3" = "Catppuccin ${upperFirst ctp.flavor}";
-
-          xdg.configFile."obs-studio/themes" = {
-            source = "${catppuccin-obs}/themes";
-            recursive = true;
+        (let
+          # TODO: switch to main catppuccin repo when my fix is merged
+          catppuccin-obs = pkgs.fetchFromGitHub {
+            owner = "zspher";
+            repo = "obs";
+            rev = "7705e980bd43c8f5af95162af71ac0c4d830877d";
+            hash = "sha256-j905gMz6ieVFaaSv00S5ANKwlQGqa0v9qwxwgzt2V0o=";
           };
-        })
+        in
+          mkIf (cfg.obs-studio.enable) {
+            qt.kde.settings."obs-studio/global.ini".Appearance."Theme" = "com.obsproject.Catppuccin.${upperFirst ctp.flavor}";
+
+            xdg.configFile."obs-studio/themes" = {
+              source = "${catppuccin-obs}/themes";
+              recursive = true;
+            };
+          })
 
         (let
           catppuccin-discord = pkgs.fetchFromGitHub {
