@@ -124,13 +124,13 @@ in {
         ", XF86AudioPrev, exec, playerctl previous"
         ", XF86AudioNext, exec, playerctl next"
         ", XF86AudioMute, exec, ${volume} -m"
-        ", XF86MonBrightnessDown, exec, ${brightness} -d 5"
-        ", XF86MonBrightnessUp, exec, ${brightness} -i 5"
       ];
 
       bindle = [
         ", XF86AudioLowerVolume, exec, ${volume} -d 5"
         ", XF86AudioRaiseVolume, exec, ${volume} -i 5"
+        ", XF86MonBrightnessDown, exec, ${brightness} -d 5"
+        ", XF86MonBrightnessUp, exec, ${brightness} -i 5"
       ];
 
       bindm = [
