@@ -4,7 +4,7 @@
 
     ../../nix
 
-    ../../fonts.nix
+    ../../misc.nix
     ../../security.nix
     ../../user.nix
 
