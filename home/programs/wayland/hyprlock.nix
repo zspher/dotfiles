@@ -23,13 +23,13 @@ in {
       background = [
         {
           color = "rgb(${c.mantle})";
-          path = "~/wall.png";
+          path = "~/Pictures/wall.png";
         }
       ];
 
       input-field = [
         {
-          outer_color = "rgb(${c.crust})";
+          outer_color = "rgb(${c.${config.catppuccin.accent}})";
           inner_color = "rgb(${c.base})";
 
           font_color = "rgb(${c.text})";
@@ -40,7 +40,7 @@ in {
           capslock_color = "rgb(${c.yellow})";
 
           fade_on_empty = false;
-          outline_thickness = 1;
+          outline_thickness = 2;
           rounding = 20;
           size = "200, 40";
 
