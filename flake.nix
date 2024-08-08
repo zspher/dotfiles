@@ -58,6 +58,16 @@
       url = "github:catppuccin/delta";
       flake = false;
     };
+    catppuccin-obs = {
+      # TODO: switch to main catppuccin repo when my fix is merged
+      url = "github:zspher/obs?ref=feat/30.2";
+      flake = false;
+    };
+    catppuccin-discord = {
+      url = "github:catppuccin/discord?ref=gh-pages";
+      flake = false;
+    };
+
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";

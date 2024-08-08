@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  inputs,
   ...
 }: let
   cfg = config.theme.catppuccin;
@@ -76,36 +77,21 @@ in {
           };
         })
 
-        (let
-          # TODO: switch to main catppuccin repo when my fix is merged
-          catppuccin-obs = pkgs.fetchFromGitHub {
-            owner = "zspher";
-            repo = "obs";
-            rev = "7705e980bd43c8f5af95162af71ac0c4d830877d";
-            hash = "sha256-j905gMz6ieVFaaSv00S5ANKwlQGqa0v9qwxwgzt2V0o=";
-          };
-        in
-          mkIf (cfg.obs-studio.enable) {
-            qt.kde.settings."obs-studio/global.ini".Appearance."Theme" = "com.obsproject.Catppuccin.${upperFirst ctp.flavor}";
+        (lib.mkIf (cfg.obs-studio.enable) {
+          qt.kde.settings."obs-studio/global.ini".Appearance."Theme" = "com.obsproject.Catppuccin.${upperFirst ctp.flavor}";
 
-            xdg.configFile."obs-studio/themes" = {
-              source = "${catppuccin-obs}/themes";
-              recursive = true;
-            };
-          })
+          xdg.configFile."obs-studio/themes" = {
+            source = "${inputs.catppuccin-obs}/themes";
+            recursive = true;
+          };
+        })
 
         (let
-          catppuccin-discord = pkgs.fetchFromGitHub {
-            owner = "catppuccin";
-            repo = "discord";
-            rev = "7c2c42e5e6fe0e9949ecdd0e594282f01e9d3217";
-            hash = "sha256-wAfF3VId5yJtstfkmHojSQ8xTQRB9Vw7iKTUrPxZPv4=";
-          };
           theme-file = "catppuccin-${ctp.flavor}-${ctp.accent}.theme";
         in
           lib.mkIf (cfg.webcord.enable) {
             xdg.configFile."WebCord/Themes/${theme-file}" = {
-              source = "${catppuccin-discord}/dist/${theme-file}.css";
+              source = "${inputs.catppuccin-discord}/dist/${theme-file}.css";
             };
           })
       ]
