@@ -9,7 +9,9 @@
   ];
   theme.catppuccin = {
     enable = true;
+
     anyrun.enable = true;
+    git-delta.enable = true;
     kde.enable = true;
     kvantum.enable = false;
     mpv.enable = true;

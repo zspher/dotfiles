@@ -18,6 +18,7 @@ in {
     enable = lib.mkEnableOption "catppuccin";
 
     anyrun.enable = lib.mkEnableOption "anyrun integration";
+    git-delta.enable = lib.mkEnableOption "git delta integration";
     kvantum.enable = lib.mkEnableOption "kvantum integration";
     mpv.enable = lib.mkEnableOption "mpv integration";
     obs-studio.enable = lib.mkEnableOption "obs-studio integration";
@@ -94,6 +95,21 @@ in {
               source = "${inputs.catppuccin-discord}/dist/${theme-file}.css";
             };
           })
+
+        (lib.mkIf (cfg.git-delta.enable) {
+          programs.git = {
+            extraConfig.delta.features = "catppuccin-${config.catppuccin.flavor}";
+            includes = [
+              {
+                path = "${inputs.catppuccin-delta}/catppuccin.gitconfig";
+              }
+            ];
+          };
+          # bat cache & catppuccin/bat is needed to theme delta
+          programs.bat = {
+            enable = true;
+          };
+        })
       ]
     );
 }
