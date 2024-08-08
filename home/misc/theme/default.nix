@@ -56,7 +56,7 @@
     size = 32;
   };
 
-  # programs.bat.catppuccin.enable = true;
+  programs.bat.catppuccin.enable = true;
   programs.btop.catppuccin.enable = true;
   programs.fish.catppuccin.enable = true;
   programs.fzf.catppuccin.enable = true;

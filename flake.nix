@@ -52,7 +52,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-parts.follows = "flake-parts";
     };
+
     catppuccin.url = "github:catppuccin/nix";
+    catppuccin-delta = {
+      url = "github:catppuccin/delta";
+      flake = false;
+    };
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";

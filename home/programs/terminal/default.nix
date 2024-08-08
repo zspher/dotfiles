@@ -5,6 +5,7 @@
     ./direnv.nix
     ./fish.nix
     ./fzf.nix
+    ./git-delta.nix
     ./git.nix
     ./lazygit.nix
     ./less.nix
