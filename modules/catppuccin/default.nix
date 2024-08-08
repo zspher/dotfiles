@@ -2,10 +2,8 @@
   config,
   lib,
   pkgs,
-  self,
   ...
-}:
-with lib; let
+}: let
   cfg = config.theme.catppuccin;
 
   upperFirst = str:
@@ -16,15 +14,15 @@ in {
     ./kde.nix
   ];
   options.theme.catppuccin = {
-    enable = mkEnableOption "catppuccin";
+    enable = lib.mkEnableOption "catppuccin";
 
-    anyrun.enable = mkEnableOption "anyrun integration";
-    kvantum.enable = mkEnableOption "kvantum integration";
-    mpv.enable = mkEnableOption "mpv integration";
-    obs-studio.enable = mkEnableOption "obs-studio integration";
-    swaync.enable = mkEnableOption "swaync integration";
-    waybar.enable = mkEnableOption "waybar integration";
-    webcord.enable = mkEnableOption "webcord integration";
+    anyrun.enable = lib.mkEnableOption "anyrun integration";
+    kvantum.enable = lib.mkEnableOption "kvantum integration";
+    mpv.enable = lib.mkEnableOption "mpv integration";
+    obs-studio.enable = lib.mkEnableOption "obs-studio integration";
+    swaync.enable = lib.mkEnableOption "swaync integration";
+    waybar.enable = lib.mkEnableOption "waybar integration";
+    webcord.enable = lib.mkEnableOption "webcord integration";
   };
 
   config = let
@@ -46,27 +44,27 @@ in {
           (builtins.attrNames colors);
       });
   in
-    mkIf cfg.enable (
-      mkMerge [
-        (mkIf cfg.kvantum.enable {
+    lib.mkIf cfg.enable (
+      lib.mkMerge [
+        (lib.mkIf cfg.kvantum.enable {
           xdg.configFile = {
             "Kvantum/${kvantum-theme}".source = "${catppuccin}/share/Kvantum/${kvantum-theme}";
-            "Kvantum/kvantum.kvconfig".text = generators.toINI {} {
+            "Kvantum/kvantum.kvconfig".text = lib.generators.toINI {} {
               General.theme = "${kvantum-theme}";
             };
           };
         })
 
-        (mkIf (cfg.anyrun.enable) {
+        (lib.mkIf (cfg.anyrun.enable) {
           programs.anyrun.extraCss = replaceColors ./anyrun-template.css;
         })
-        (mkIf (cfg.waybar.enable) {
+        (lib.mkIf (cfg.waybar.enable) {
           programs.waybar.style = replaceColors ./waybar-template.css;
         })
-        (mkIf (cfg.swaync.enable) {
+        (lib.mkIf (cfg.swaync.enable) {
           services.swaync.style = replaceColors ./swaync-template.css;
         })
-        (mkIf (cfg.mpv.enable) {
+        (lib.mkIf (cfg.mpv.enable) {
           programs.mpv.scriptOpts.uosc = {
             chapter_ranges = lib.concatStrings [
               "intros:${colors.blue},"
@@ -105,7 +103,7 @@ in {
           };
           theme-file = "catppuccin-${ctp.flavor}-${ctp.accent}.theme";
         in
-          mkIf (cfg.webcord.enable) {
+          lib.mkIf (cfg.webcord.enable) {
             xdg.configFile."WebCord/Themes/${theme-file}" = {
               source = "${catppuccin-discord}/dist/${theme-file}.css";
             };

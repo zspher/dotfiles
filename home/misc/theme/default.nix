@@ -2,12 +2,8 @@
   pkgs,
   config,
   self,
-  lib,
   ...
-}: let
-  upperFirst = str:
-    (lib.toUpper (builtins.substring 0 1 str)) + (builtins.substring 1 (builtins.stringLength str) str);
-in {
+}: {
   imports = [
     ./qt
   ];
@@ -60,6 +56,7 @@ in {
     size = 32;
   };
 
+  # programs.bat.catppuccin.enable = true;
   programs.btop.catppuccin.enable = true;
   programs.fish.catppuccin.enable = true;
   programs.fzf.catppuccin.enable = true;
