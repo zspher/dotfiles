@@ -8,11 +8,10 @@
   home.packages = with pkgs; [
     ark
     brightnessctl
-    filelight
-    # font-manager
     (nwg-displays.override {hyprlandSupport = true;})
     pavucontrol
     playerctl
+    qdirstat
     wev
   ];
 }
