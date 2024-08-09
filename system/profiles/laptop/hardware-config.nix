@@ -92,5 +92,7 @@
 
   services.fstrim.enable = true; # for ssd
 
+  # battery save; intel only
   services.thermald.enable = true;
+  powerManagement.powertop.enable = true;
 }
