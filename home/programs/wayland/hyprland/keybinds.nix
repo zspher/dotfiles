@@ -23,10 +23,8 @@
 in {
   wayland.windowManager.hyprland = {
     settings = {
-      ## keybinds
-
       "$mainMod" = "SUPER";
-      "$terminal" = "kitty -1 --class kitty-term";
+      "$terminal" = "kitty -1 ";
       "$file_manager" = "dolphin";
       "$notification_manager" = "swaync-client -t -sw";
       "$screen_shot" = "pkill rofi || ~/.config/rofi/bin/screenshot.sh";
@@ -35,7 +33,8 @@ in {
 
       bind = [
         # * === apps === * #
-        "CTRL ALT, T, exec, $terminal"
+        "CTRL SHIFT, escape, exec, $terminal btop"
+        "CTRL ALT, T, exec, $terminal --class kitty-term"
         "ALT, SPACE, exec, $runner"
         "$mainMod, E, exec, $file_manager"
         "$mainMod, N, exec, $notification_manager"
