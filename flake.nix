@@ -53,7 +53,8 @@
       inputs.flake-parts.follows = "flake-parts";
     };
 
-    catppuccin.url = "github:catppuccin/nix";
+    # TODO: switch to main catppuccin repo when my fix is merged
+    catppuccin.url = "github:zspher/ctp-nix";
     catppuccin-delta = {
       url = "github:catppuccin/delta";
       flake = false;
