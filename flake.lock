@@ -38,6 +38,56 @@
         "type": "github"
       }
     },
+    "catppuccin-delta": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1720545270,
+        "narHash": "sha256-/zLkxfpTkZ744hUNANFmm96q81ydFM7EcxOj+0GoaGU=",
+        "owner": "catppuccin",
+        "repo": "delta",
+        "rev": "b88f87aedbeb7dc74c38831cf385819b69b78cbe",
+        "type": "github"
+      },
+      "original": {
+        "owner": "catppuccin",
+        "repo": "delta",
+        "type": "github"
+      }
+    },
+    "catppuccin-discord": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1722962995,
+        "narHash": "sha256-saybJ4E5rzVguciOhJuoxw5VdQPE4B547M/S/oVfRWA=",
+        "owner": "catppuccin",
+        "repo": "discord",
+        "rev": "eaef47d91296526cea4b23c3a2316de1d68d119f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "catppuccin",
+        "ref": "gh-pages",
+        "repo": "discord",
+        "type": "github"
+      }
+    },
+    "catppuccin-obs": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1722521843,
+        "narHash": "sha256-j905gMz6ieVFaaSv00S5ANKwlQGqa0v9qwxwgzt2V0o=",
+        "owner": "zspher",
+        "repo": "obs",
+        "rev": "7705e980bd43c8f5af95162af71ac0c4d830877d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "zspher",
+        "ref": "feat/30.2",
+        "repo": "obs",
+        "type": "github"
+      }
+    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -293,6 +343,9 @@
       "inputs": {
         "anyrun": "anyrun",
         "catppuccin": "catppuccin",
+        "catppuccin-delta": "catppuccin-delta",
+        "catppuccin-discord": "catppuccin-discord",
+        "catppuccin-obs": "catppuccin-obs",
         "flake-parts": "flake-parts",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
