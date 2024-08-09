@@ -38,13 +38,12 @@ in {
     palette = (lib.importJSON "${ctp.sources.palette}/palette.json").${ctp.flavor}.colors;
     colors = builtins.mapAttrs (color: val: (builtins.substring 1 6 val.hex)) palette;
 
-    replaceColors = src:
-      builtins.readFile (pkgs.substitute {
-        src = src;
-        substitutions =
-          builtins.concatMap (x: ["--replace-quiet" "var(--${x})" "${palette.${x}.hex}"])
-          (builtins.attrNames colors);
-      });
+    replaceColors = src: (pkgs.substitute {
+      src = src;
+      substitutions =
+        builtins.concatMap (x: ["--replace-quiet" "var(--${x})" "${palette.${x}.hex}"])
+        (builtins.attrNames colors);
+    });
   in
     lib.mkIf cfg.enable (
       lib.mkMerge [
@@ -58,7 +57,7 @@ in {
         })
 
         (lib.mkIf (cfg.anyrun.enable) {
-          programs.anyrun.extraCss = replaceColors ./anyrun-template.css;
+          xdg.configFile."anyrun/style.css".source = replaceColors ./anyrun-template.css;
         })
         (lib.mkIf (cfg.waybar.enable) {
           programs.waybar.style = replaceColors ./waybar-template.css;
