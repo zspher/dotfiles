@@ -7,7 +7,6 @@
       {id = "clngdbkpkpeebahjckkjfobafhncgmne";} # stylus
       {id = "dbepggeogbaibhgnhhndojpepiihcmeb";} # vimium
       {id = "oemmndcbldboiebfnladdacbdfmadadm";} # pdf viewer
-      {id = "mdddabjhelpilpnpgondfmehhcplpiin";} # explain and send screenshot
       {id = "bkkmolkhemgaeaeggcmfbghljjjoofoh";} # catppuccin mocha
     ];
   };
