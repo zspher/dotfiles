@@ -66,6 +66,10 @@
         #-- html, tailwind
         emmet-language-server # LSP
         tailwindcss-language-server # LSP
+
+        #-- latex
+        texlab # LSP
+        texlivePackages.latexindent # formatter
       ];
     };
   };
