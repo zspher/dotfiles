@@ -8,6 +8,7 @@
   home.packages = with pkgs; [
     ark
     brightnessctl
+    gnome-pomodoro
     (nwg-displays.override {hyprlandSupport = true;})
     pavucontrol
     playerctl
