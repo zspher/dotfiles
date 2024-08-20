@@ -4,6 +4,7 @@
   ...
 }: {
   home.packages = with pkgs; [
+    copyq
     wl-clipboard
     xclip
   ];

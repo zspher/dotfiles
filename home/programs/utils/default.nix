@@ -1,6 +1,5 @@
 {pkgs, ...}: {
   imports = [
-    ./copyq.nix
     ./kitty
     ./dolphin.nix
     ./wakatime.nix
