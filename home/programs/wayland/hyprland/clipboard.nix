@@ -7,6 +7,7 @@
     copyq
     wl-clipboard
     xclip
+    zbar
   ];
 
   wayland.windowManager.hyprland.settings.exec-once = [
