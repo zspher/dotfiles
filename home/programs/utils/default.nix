@@ -5,7 +5,7 @@
     ./wakatime.nix
   ];
   home.packages = with pkgs; [
-    ark
+    kdePackages.ark
     brightnessctl
     gnome-pomodoro
     (nwg-displays.override {hyprlandSupport = true;})

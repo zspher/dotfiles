@@ -4,7 +4,7 @@
     libreoffice-fresh
     masterpdfeditor4
     obsidian
-    okular
+    kdePackages.okular
     simple-scan
     vscode-fhs
   ];
