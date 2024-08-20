@@ -14,7 +14,7 @@
     ../../programs/pipewire.nix
     ../../programs/sddm.nix
     ../../programs/steam.nix
-    ../../programs/usisks.nix
+    ../../programs/storage-dev.nix
 
     ../../networking
     ../../networking/openssh.nix
