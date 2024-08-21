@@ -5,7 +5,10 @@
     ./nh.nix
   ];
   programs = {
-    kdeconnect.enable = true;
+    kdeconnect = {
+      enable = true;
+      package = pkgs.kdePackages.kdeconnect-kde;
+    };
     fish.enable = true;
 
     # for GTK stuff: easyeffects

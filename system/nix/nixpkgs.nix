@@ -7,11 +7,13 @@
   nixpkgs = {
     overlays = [
       (final: prev: {
-        libsForQt5 = prev.libsForQt5.overrideScope (selfx: prevx: {
+        kdePackages = prev.kdePackages.overrideScope (selfx: prevx: {
           kdeconnect-kde = prevx.kdeconnect-kde.overrideAttrs (oldAttrs: {
-            cmakeFlags = [
-              "-DMDNS_ENABLED=OFF"
-            ];
+            cmakeFlags =
+              oldAttrs.cmakeFlags
+              ++ [
+                "-DMDNS_ENABLED=OFF"
+              ];
           });
         });
       })
