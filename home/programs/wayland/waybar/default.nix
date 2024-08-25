@@ -9,13 +9,18 @@
       mainBar = {
         layer = "top";
         position = "top";
-        height = 37;
+        height = 38;
         output = ["*"];
         modules-left = [
+          "group/power"
           "hyprland/workspaces"
           "wlr/taskbar"
         ];
-        modules-center = ["clock" "idle_inhibitor"];
+        modules-center = [
+          "privacy"
+          "clock"
+          "idle_inhibitor"
+        ];
         modules-right = [
           "battery"
           "pulseaudio"
@@ -27,27 +32,56 @@
         ];
 
         # * left side * //
+        #
+        "group/power" = {
+          orientation = "inherit";
+          drawer = {
+            transition-duration = 500;
+            children-class = "power";
+            transition-left-to-right = true;
+          };
+          modules = [
+            "image#logo"
+            "custom/power"
+            "custom/quit"
+            "custom/lock"
+            "custom/reboot"
+          ];
+        };
+
+        "image#logo" = {
+          path = "${./icons/nix-catppuccin-logo.svg}";
+        };
+        "custom/quit" = {
+          format = "󰗼";
+          on-click = "hyprctl dispatch exit";
+          tooltip-format = "quit";
+        };
+        "custom/lock" = {
+          format = "󰍁";
+          on-click = "hyprlock";
+          tooltip-format = "lock";
+        };
+        "custom/reboot" = {
+          format = "󰜉";
+          on-click = "reboot";
+          tooltip-format = "reboot";
+        };
+        "custom/power" = {
+          format = "";
+          on-click = "shutdown now";
+          tooltip-format = "shutdown";
+        };
 
         "hyprland/workspaces" = {
           format = "<b>{icon}</b>";
           on-click = "activate";
-          format-icons = {
-            "1" = "⼀";
-            "2" = "二";
-            "3" = "三";
-            "4" = "四";
-            "5" = "五";
-            "6" = "六";
-            "7" = "七";
-            "8" = "八";
-            "9" = "九";
-            "10" = "十";
-          };
           sort-by-number = true;
         };
+
         "wlr/taskbar" = {
-          format = "{icon}";
-          icon-size = 12;
+          format = "{icon}{short_state}";
+          icon-size = 11;
           icon-theme = "Papirus-Dark";
           markup = true;
           tooltip-format = "<span size='medium' weight='bold'>{title}</span>\n<small>{app_id}</small>";
@@ -58,10 +92,14 @@
         };
 
         # * center  * //
+        privacy = {
+          icon-size = 1;
+          icon-spacing = 0;
+        };
 
         clock = {
-          format = " {:%H:%M 󰃭 %a %d}";
-          format-alt = "{:%A %B %d, %Y (%R)} 󰃰 ";
+          format = "{:%H:%M - %a %d}";
+          format-alt = "{:%A %B %d, %Y (%R)}";
           tooltip-format = "<tt><small>{calendar}</small></tt>";
           calendar = {
             mode = "month";
@@ -114,8 +152,8 @@
           reverse-scrolling = 1;
           format = "{volume}% {icon} {format_source}";
           format-bluetooth = "{volume}% {icon} {format_source}";
-          format-bluetooth-muted = " {icon} {format_source}";
-          format-muted = " {format_source}";
+          format-bluetooth-muted = "󰝟 {icon} {format_source}";
+          format-muted = "󰝟 {format_source}";
           format-source = "{volume}% ";
           format-source-muted = "";
           format-icons = {
@@ -137,6 +175,7 @@
           format = "{}% ";
         };
         temperature = {
+          thermal-zone = 1;
           critical-threshold = 80;
           format = "{temperatureC}°C {icon}";
           format-icons = [
@@ -146,23 +185,23 @@
           ];
         };
         "custom/notification" = {
-          tooltip = true;
+          escape = true;
           format = "{icon}";
           format-icons = {
-            notification = "<span foreground='red'><sup></sup></span>";
-            none = "";
-            dnd-notification = "<span foreground='red'><sup></sup></span>";
-            dnd-none = "";
-            inhibited-notification = "<span foreground='red'><sup></sup></span>";
-            inhibited-none = "";
-            dnd-inhibited-notification = "<span foreground='red'><sup></sup></span>";
-            dnd-inhibited-none = "";
+            dnd-inhibited-none = "󱙍";
+            dnd-inhibited-notification = "󱙍<span foreground='red'><sup></sup></span>";
+            dnd-none = "󱙍";
+            dnd-notification = "󱙍<span foreground='red'><sup></sup></span>";
+            inhibited-none = "󰍡";
+            inhibited-notification = "󰍡<span foreground='red'><sup></sup></span>";
+            none = "󰍡";
+            notification = "󰍡<span foreground='red'><sup></sup></span>";
           };
-          return-type = "json";
           exec = "${pkgs.swaynotificationcenter}/bin/swaync-client -swb";
           on-click = "${pkgs.swaynotificationcenter}/bin/swaync-client -t -sw";
           on-click-right = "${pkgs.swaynotificationcenter}/bin/swaync-client -d -sw";
-          escape = true;
+          return-type = "json";
+          tooltip = true;
         };
         tray = {
           icon-size = 11;

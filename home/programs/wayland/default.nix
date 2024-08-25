@@ -7,7 +7,7 @@
     ./hyprlock.nix
     ./swaync.nix
     ./swww
-    ./waybar.nix
+    ./waybar
   ];
 
   services.blueman-applet.enable = true;
