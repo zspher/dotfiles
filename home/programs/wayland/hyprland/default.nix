@@ -137,8 +137,7 @@
         "noanim, ^(rofi)$"
         "ignorezero, ^(rofi)$"
         "blur, ^(rofi)$"
-        "noanim, ^(anyrun)$"
-        "blur, ^(anyrun)$"
+        "noanim, ^(walker)$"
       ];
     };
   };

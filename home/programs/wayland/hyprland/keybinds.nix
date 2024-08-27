@@ -28,8 +28,8 @@ in {
       "$file_manager" = "dolphin";
       "$notification_manager" = "swaync-client -t -sw";
       "$screen_shot" = "pkill rofi || ~/.config/rofi/bin/screenshot.sh";
-      "$runner" = "pkill anyrun || anyrun";
       "$power_menu" = "pkill rofi || ~/.config/rofi/bin/powermenu.sh";
+      "$runner" = "walker";
 
       bind = [
         # * === apps === * #
