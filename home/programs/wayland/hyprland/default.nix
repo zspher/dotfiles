@@ -29,7 +29,7 @@
         gaps_in = 5;
         gaps_out = 10;
         border_size = 2;
-        "col.active_border" = "rgb($mauveAlpha) rgb($blueAlpha) 60deg";
+        "col.active_border" = "rgb($mauveAlpha)";
         "col.inactive_border" = "rgb($mantleAlpha)";
         layout = "dwindle";
       };
@@ -76,7 +76,7 @@
       gestures.workspace_swipe = true;
 
       group = {
-        "col.border_active" = "rgb($mauveAlpha) rgb($blueAlpha) 60deg";
+        "col.border_active" = "rgb($mauveAlpha)";
         "col.border_inactive" = "rgb($surface0Alpha)";
         "col.border_locked_active" = "rgb($blueAlpha)";
         "col.border_locked_inactive" = "rgb($mantleAlpha)";
@@ -102,7 +102,6 @@
       };
 
       windowrulev2 = [
-        "bordercolor rgb($skyAlpha), floating:1"
         "bordercolor rgb($blueAlpha), fullscreen:1"
         "bordercolor rgb($overlay2Alpha), xwayland:1, floating:0, fullscreen:0"
 
