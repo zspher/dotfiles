@@ -22,6 +22,7 @@ in {
     mpv.enable = lib.mkEnableOption "mpv integration";
     obs-studio.enable = lib.mkEnableOption "obs-studio integration";
     swaync.enable = lib.mkEnableOption "swaync integration";
+    walker.enable = lib.mkEnableOption "walker integration";
     waybar.enable = lib.mkEnableOption "waybar integration";
     webcord.enable = lib.mkEnableOption "webcord integration";
   };
@@ -61,6 +62,14 @@ in {
         (lib.mkIf (cfg.swaync.enable) {
           services.swaync.style = replaceColors ./swaync-template.css;
         })
+        (lib.mkIf (cfg.walker.enable) {
+          xdg.configFile."walker/themes/catppuccin.css".source =
+            replaceColors ./walker-template.css;
+
+          xdg.configFile."walker/themes/catppuccin.json".source =
+            ./walker-theme.json;
+        })
+
         (lib.mkIf (cfg.mpv.enable) {
           programs.mpv.scriptOpts.uosc = {
             chapter_ranges = lib.concatStrings [

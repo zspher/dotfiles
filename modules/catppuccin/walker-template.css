@@ -1,0 +1,133 @@
+#window,
+#box,
+#search,
+#password,
+#input,
+#typeahead,
+#spinner,
+#list,
+child,
+scrollbar,
+slider,
+#item,
+#text,
+#label,
+#sub,
+#activationlabel {
+  all: unset;
+}
+
+#window {
+  background: none;
+}
+
+#box {
+  background: var(--base);
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: none;
+}
+
+scrollbar {
+  background: none;
+  padding-left: 8px;
+}
+
+slider {
+  min-width: 2px;
+  background: var(--overlay1);
+  opacity: 0.5;
+}
+
+#search {
+}
+
+#password,
+#input,
+#typeahead {
+  background: var(--surface0);
+  background: none;
+  box-shadow: none;
+  border-radius: 0px;
+  border-radius: 32px;
+  color: var(--text);
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+#input {
+  background: none;
+}
+
+#input > *:first-child,
+#typeahead > *:first-child {
+  color: var(--overlay1);
+  margin-right: 7px;
+}
+
+#input > *:last-child,
+#typeahead > *:last-child {
+  color: var(--overlay1);
+}
+
+#spinner {
+}
+
+#typeahead {
+  color: var(--blue);
+}
+
+#input placeholder {
+  opacity: 0.5;
+}
+
+#list {
+}
+
+child {
+  border-radius: 8px;
+  color: var(--text);
+  padding: 4px;
+}
+
+child:selected,
+child:hover {
+  background: var(--surface0);
+  box-shadow: none;
+  color: var(--text);
+}
+
+#item {
+}
+
+#icon {
+}
+
+#text {
+}
+
+#label {
+  font-weight: bold;
+  color: var(--text);
+}
+
+#sub {
+  opacity: 0.5;
+  color: var(--text);
+}
+
+#activationlabel {
+  opacity: 0.5;
+  padding-right: 4px;
+}
+
+.activation #activationlabel {
+  font-weight: bold;
+  color: var(--blue);
+  opacity: 1;
+}
+
+.activation #text,
+.activation #icon,
+.activation #search {
+}

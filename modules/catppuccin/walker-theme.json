@@ -1,0 +1,45 @@
+{
+  "ui": {
+    "anchors": {
+      "top": true
+    },
+    "window": {
+      "v_align": "start",
+      "h_align": "center",
+      "box": {
+        "width": 800,
+        "margins": {
+          "top": 200,
+          "bottom": 200
+        },
+        "v_align": "start",
+        "h_align": "center",
+        "search": {
+          "width": 800,
+          "spacing": 10,
+          "margins": {
+            "bottom": 10
+          }
+        },
+        "scroll": {
+          "list": {
+            "width": 800,
+            "max_height": 400,
+            "min_width": 800,
+            "max_width": 800,
+            "item": {
+              "spacing": 5,
+              "activation_label": {
+                "x_align": 1.0,
+                "width": 20
+              },
+              "icon": {
+                "theme": "Papirus"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -16,6 +16,7 @@
     mpv.enable = true;
     obs-studio.enable = true;
     swaync.enable = true;
+    walker.enable = true;
     waybar.enable = true;
     webcord.enable = true;
   };
