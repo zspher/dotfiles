@@ -1,12 +1,14 @@
 {pkgs, ...}: {
   programs.walker = {
     enable = true;
-    runAsService = false;
+    # runAsService = true;
     config = {
-      activation_mode.labels = "123456789";
+      ignore_mouse = true;
+      activation_mode.labels = "12345678";
       activation_mode.use_alt = true;
 
-      list.max_entries = 5;
+      disabled = ["finder" "runner" "windows"];
+      list.max_items = 20;
     };
   };
   home.packages = [pkgs.libqalculate];
