@@ -17,7 +17,6 @@ in {
   options.theme.catppuccin = {
     enable = lib.mkEnableOption "catppuccin";
 
-    anyrun.enable = lib.mkEnableOption "anyrun integration";
     git-delta.enable = lib.mkEnableOption "git delta integration";
     kvantum.enable = lib.mkEnableOption "kvantum integration";
     mpv.enable = lib.mkEnableOption "mpv integration";
@@ -56,9 +55,6 @@ in {
           };
         })
 
-        (lib.mkIf (cfg.anyrun.enable) {
-          xdg.configFile."anyrun/style.css".source = replaceColors ./anyrun-template.css;
-        })
         (lib.mkIf (cfg.waybar.enable) {
           programs.waybar.style = replaceColors ./waybar-template.css;
         })

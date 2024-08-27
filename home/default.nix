@@ -8,7 +8,6 @@
   ...
 }: {
   imports = [
-    inputs.anyrun.homeManagerModules.default
     inputs.catppuccin.homeManagerModules.catppuccin
     inputs.spicetify-nix.homeManagerModules.default
     inputs.walker.homeManagerModules.default

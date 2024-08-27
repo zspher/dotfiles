@@ -49,13 +49,6 @@
       url = "github:abenz1267/walker";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    anyrun = {
-      # url = "github:anyrun-org/anyrun";
-      # FIX: https://github.com/anyrun-org/anyrun/issues/124
-      url = "github:fufexan/anyrun";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-parts.follows = "flake-parts";
-    };
 
     catppuccin.url = "github:catppuccin/nix";
     catppuccin-delta = {

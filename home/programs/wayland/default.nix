@@ -1,6 +1,5 @@
 {pkgs, ...}: {
   imports = [
-    ./anyrun.nix
     ./walker.nix
     ./hyprland
     ./rofi
