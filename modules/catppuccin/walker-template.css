@@ -85,16 +85,22 @@ slider {
 }
 
 child {
-  border-radius: 8px;
   color: var(--text);
   padding: 4px;
+  border-top: 1px solid var(--surface0);
 }
 
 child:selected,
 child:hover {
+  border-radius: 8px;
   background: var(--surface0);
   box-shadow: none;
   color: var(--text);
+}
+child:selected + child,
+child:hover + child,
+child:first-child {
+  border-top: none;
 }
 
 #item {
