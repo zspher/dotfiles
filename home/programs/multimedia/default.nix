@@ -9,6 +9,7 @@
     gimp
     grimblast
     hyprpicker
+    inkscape
     qimgv
     timg
   ];
