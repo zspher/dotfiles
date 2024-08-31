@@ -51,16 +51,15 @@
     "catppuccin-obs": {
       "flake": false,
       "locked": {
-        "lastModified": 1724989302,
-        "narHash": "sha256-JMDo8TSWgG7vwIsUH8MMin4MvUnzL/V4Fo/qVizvk1E=",
-        "owner": "zspher",
+        "lastModified": 1725040763,
+        "narHash": "sha256-1Stlcfcl/DZMPPqsShst849Ns0Lgk9D2SekMhTy7zZY=",
+        "owner": "catppuccin",
         "repo": "obs",
-        "rev": "51df476885601dcdd149e2de47248aa5fde34a5d",
+        "rev": "b17939991545bdd6232e688ec5004b6dfae46f69",
         "type": "github"
       },
       "original": {
-        "owner": "zspher",
-        "ref": "feat/30.2",
+        "owner": "catppuccin",
         "repo": "obs",
         "type": "github"
       }
@@ -104,11 +103,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1725015982,
-        "narHash": "sha256-1WXS/BBKZUcWlfeZL7U8ujuCdlLktImbpmJgN9zsZXM=",
+        "lastModified": 1725024810,
+        "narHash": "sha256-ODYRm8zHfLTH3soTFWE452ydPYz2iTvr9T8ftDMUQ3E=",
         "owner": "hercules-ci",
         "repo": "flake-parts",
-        "rev": "4f37dc19b47b50512008f38858734f8fa8a4e0cc",
+        "rev": "af510d4a62d071ea13925ce41c95e3dec816c01d",
         "type": "github"
       },
       "original": {
@@ -359,11 +358,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1724991403,
-        "narHash": "sha256-n0os3uymBUoGlikG87Yp7oisYGrkEwsm3nptS9FhdAk=",
+        "lastModified": 1725077747,
+        "narHash": "sha256-4SwFxe789QXOtGNFbwldpqFzkKxIFuyDysFttFWB5eM=",
         "owner": "Gerg-L",
         "repo": "spicetify-nix",
-        "rev": "0965e58aa38245b2105fec2949a9463fe34e3f05",
+        "rev": "305b6034ad329268eb33c079e2d33740ccf329ea",
         "type": "github"
       },
       "original": {

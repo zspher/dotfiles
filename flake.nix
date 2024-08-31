@@ -56,8 +56,7 @@
       flake = false;
     };
     catppuccin-obs = {
-      # TODO: switch to main catppuccin repo when my fix is merged
-      url = "github:zspher/obs?ref=feat/30.2";
+      url = "github:catppuccin/obs";
       flake = false;
     };
     catppuccin-discord = {
