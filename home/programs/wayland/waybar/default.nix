@@ -181,7 +181,7 @@
           format-icons = [
             "<span foreground='#89b4fa'></span>"
             ""
-            "<span foreground='f38ba8'></span>"
+            "<span foreground='#f38ba8'></span>"
           ];
         };
         "custom/notification" = {
