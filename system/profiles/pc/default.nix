@@ -11,6 +11,7 @@
     ../../programs
     ../../programs/blueman.nix
     ../../programs/hyprland.nix
+    ../../programs/kanata.nix
     ../../programs/pipewire.nix
     ../../programs/sddm.nix
     ../../programs/steam.nix
