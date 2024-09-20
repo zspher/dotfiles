@@ -28,6 +28,7 @@ in {
     ];
     platformTheme.name = "qtct";
     kde.settings.kdeglobals.General.TerminalApplication = "kitty";
+    kde.settings.kdeglobals.Icons.Theme = config.gtk.iconTheme.name;
   };
 
   xdg.configFile = {
