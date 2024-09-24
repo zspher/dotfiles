@@ -40,7 +40,6 @@
           enabled = true;
           size = 3;
           passes = 1;
-          new_optimizations = true;
         };
 
         drop_shadow = false;
