@@ -3,6 +3,7 @@
     ./walker.nix
     ./hyprland
     ./rofi
+    ./hypridle.nix
     ./hyprlock.nix
     ./swaync.nix
     ./swww
