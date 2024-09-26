@@ -26,8 +26,8 @@
       };
 
       general = {
-        gaps_in = 5;
-        gaps_out = 10;
+        gaps_in = 2;
+        gaps_out = 5;
         border_size = 2;
         "col.active_border" = "rgb($mauveAlpha)";
         "col.inactive_border" = "rgb($mantleAlpha)";
@@ -81,9 +81,9 @@
         "col.border_locked_inactive" = "rgb($mantleAlpha)";
 
         groupbar = {
-          height = 1;
-          render_titles = false;
-          "col.active" = "rgb($mauveAlpha)";
+          height = 10;
+          render_titles = true;
+          "col.active" = "rgb($surface1Alpha)";
           "col.inactive" = "rgb($surface0Alpha)";
           "col.locked_active" = "rgb($blueAlpha)";
           "col.locked_inactive" = "rgb($mantleAlpha)";
