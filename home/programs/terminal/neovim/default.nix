@@ -2,10 +2,9 @@
   pkgs,
   config,
   ...
-}: {
-  xdg.configFile.nvim.source =
-    config.lib.file.mkOutOfStoreSymlink
-    "${config.home.homeDirectory}/dotfiles/configs/nvim";
+}:
+{
+  xdg.configFile.nvim.source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/configs/nvim";
   programs = {
     neovim = {
       enable = true;
@@ -30,7 +29,7 @@
         stylua # formatter
 
         #-- nix
-        alejandra # formatter
+        nixfmt-rfc-style # formatter
         nil # lsp
 
         #-- python

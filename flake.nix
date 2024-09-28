@@ -1,8 +1,9 @@
 {
   description = "IZBV personal dotfiles";
-  outputs = inputs:
-    inputs.flake-parts.lib.mkFlake {inherit inputs;} {
-      systems = ["x86_64-linux"];
+  outputs =
+    inputs:
+    inputs.flake-parts.lib.mkFlake { inherit inputs; } {
+      systems = [ "x86_64-linux" ];
 
       imports = [
         ./system/profiles
@@ -10,19 +11,21 @@
         ./packages
         ./modules
       ];
-      perSystem = {
-        config,
-        pkgs,
-        ...
-      }: {
-        devShells.default = pkgs.mkShell {
-          packages = with pkgs; [
-            alejandra
-            nil
-          ];
+      perSystem =
+        {
+          config,
+          pkgs,
+          ...
+        }:
+        {
+          devShells.default = pkgs.mkShell {
+            packages = with pkgs; [
+              nixfmt-rfc-style
+              nil
+            ];
+          };
+          formatter = pkgs.nixfmt-rfc-style;
         };
-        formatter = pkgs.alejandra;
-      };
     };
 
   inputs = {
