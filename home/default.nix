@@ -6,12 +6,13 @@
   pkgs,
   config,
   ...
-}: {
+}:
+{
   imports = [
     inputs.catppuccin.homeManagerModules.catppuccin
     inputs.spicetify-nix.homeManagerModules.default
     inputs.walker.homeManagerModules.default
-    # inputs.hyprland.homeManagerModules.default
+    inputs.hyprland.homeManagerModules.default
     self.homeManagerModules.catppuccin
     self.homeManagerModules.vivid
   ];
@@ -22,7 +23,7 @@
   };
   programs.home-manager.enable = true;
 
-  home.activation.setSddmAvatar = lib.hm.dag.entryAfter ["linkGeneration"] ''
+  home.activation.setSddmAvatar = lib.hm.dag.entryAfter [ "linkGeneration" ] ''
     if [ -s /home/${username} ]; then
         run ${pkgs.acl}/bin/setfacl -m u:sddm:r /home/${username}/.face.icon
         run ${pkgs.acl}/bin/setfacl -m u:sddm:x /home/${username}
