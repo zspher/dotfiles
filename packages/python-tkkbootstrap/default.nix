@@ -27,12 +27,12 @@ buildPythonPackage rec {
     tkinter
   ];
 
-  pythonImportsCheck = ["ttkbootstrap"];
+  pythonImportsCheck = [ "ttkbootstrap" ];
 
   meta = with lib; {
     description = "A supercharged theme extension for tkinter that enables on-demand modern flat style themes inspired by Bootstrap";
     homepage = "https://pypi.org/project/ttkbootstrap";
     license = licenses.mit;
-    maintainers = with maintainers; [zspher];
+    maintainers = with maintainers; [ zspher ];
   };
 }

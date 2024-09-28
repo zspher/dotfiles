@@ -4,7 +4,8 @@
   lib,
   inputs,
   ...
-}: {
+}:
+{
   imports = [
     ./substituters.nix
     ./nixpkgs.nix
@@ -14,7 +15,7 @@
     package = pkgs.lix;
 
     # pin the registry to avoid downloading and evaling a new nixpkgs version every time
-    registry = lib.mapAttrs (_: v: {flake = v;}) inputs;
+    registry = lib.mapAttrs (_: v: { flake = v; }) inputs;
 
     # set the path for channels compat
     nixPath = lib.mapAttrsToList (key: _: "${key}=flake:${key}") config.nix.registry;
@@ -32,11 +33,17 @@
 
     settings = {
       allow-import-from-derivation = true;
-      experimental-features = ["nix-command" "flakes"];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
       auto-optimise-store = true;
       use-xdg-base-directories = true;
 
-      trusted-users = ["root" "@wheel"];
+      trusted-users = [
+        "root"
+        "@wheel"
+      ];
     };
   };
 }

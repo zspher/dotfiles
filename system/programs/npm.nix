@@ -1,4 +1,5 @@
-{...}: {
+{ ... }:
+{
   programs.npm = {
     enable = true;
     npmrc = ''

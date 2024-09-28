@@ -1,6 +1,8 @@
-{...}: let
+{ ... }:
+let
   inherit (import ../config.nix) username;
-in {
+in
+{
   systemd.services.syncthing.serviceConfig.UMask = "0007";
   services.syncthing = {
     enable = true;

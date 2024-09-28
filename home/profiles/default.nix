@@ -2,7 +2,8 @@
   self,
   inputs,
   ...
-}: let
+}:
+let
   inherit (inputs.home-manager.lib) homeManagerConfiguration;
   inherit (import ../../system/config.nix) username;
   extraSpecialArgs = {
@@ -22,7 +23,8 @@
       ./full.nix
     ];
   };
-in {
+in
+{
   flake.homeConfigurations = {
     "minimal" = homeManagerConfiguration {
       modules = mods.minimal;
@@ -38,14 +40,12 @@ in {
       inherit pkgs extraSpecialArgs;
     };
     "${username}@ls-2100" = homeManagerConfiguration {
-      modules =
-        mods.full
-        ++ [
-          ../programs/games/minecraft.nix
-          ../programs/games/controller.nix
-          ../programs/games/bottles.nix
-          # ../programs/multimedia/davinci-resolve.nix
-        ];
+      modules = mods.full ++ [
+        ../programs/games/minecraft.nix
+        ../programs/games/controller.nix
+        ../programs/games/bottles.nix
+        # ../programs/multimedia/davinci-resolve.nix
+      ];
       inherit pkgs extraSpecialArgs;
     };
   };

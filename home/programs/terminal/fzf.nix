@@ -1,4 +1,5 @@
-{...}: {
+{ ... }:
+{
   programs.fzf = {
     enable = true;
     changeDirWidgetCommand = "fd -L -td --hidden --exclude .git";

@@ -4,13 +4,15 @@
   pkgs,
   inputs,
   ...
-}: let
+}:
+let
   cfg = config.theme.catppuccin;
 
-  upperFirst = str:
-    (lib.toUpper (builtins.substring 0 1 str))
-    + (builtins.substring 1 (builtins.stringLength str) str);
-in {
+  upperFirst =
+    str:
+    (lib.toUpper (builtins.substring 0 1 str)) + (builtins.substring 1 (builtins.stringLength str) str);
+in
+{
   imports = [
     ./kde.nix
   ];
@@ -27,30 +29,37 @@ in {
     webcord.enable = lib.mkEnableOption "webcord integration";
   };
 
-  config = let
-    ctp = {inherit (config.catppuccin) sources flavor accent;};
-    catppuccin = pkgs.catppuccin.override {
-      inherit (ctp) accent;
-      variant = ctp.flavor;
-    };
+  config =
+    let
+      ctp = {
+        inherit (config.catppuccin) sources flavor accent;
+      };
+      catppuccin = pkgs.catppuccin.override {
+        inherit (ctp) accent;
+        variant = ctp.flavor;
+      };
 
-    kvantum-theme = "Catppuccin-${upperFirst ctp.flavor}-${upperFirst ctp.accent}";
-    palette = (lib.importJSON "${ctp.sources.palette}/palette.json").${ctp.flavor}.colors;
-    colors = builtins.mapAttrs (color: val: (builtins.substring 1 6 val.hex)) palette;
+      kvantum-theme = "Catppuccin-${upperFirst ctp.flavor}-${upperFirst ctp.accent}";
+      palette = (lib.importJSON "${ctp.sources.palette}/palette.json").${ctp.flavor}.colors;
+      colors = builtins.mapAttrs (color: val: (builtins.substring 1 6 val.hex)) palette;
 
-    replaceColors = src: (pkgs.substitute {
-      src = src;
-      substitutions =
-        builtins.concatMap (x: ["--replace-quiet" "var(--${x})" "${palette.${x}.hex}"])
-        (builtins.attrNames colors);
-    });
-  in
+      replaceColors =
+        src:
+        (pkgs.substitute {
+          src = src;
+          substitutions = builtins.concatMap (x: [
+            "--replace-quiet"
+            "var(--${x})"
+            "${palette.${x}.hex}"
+          ]) (builtins.attrNames colors);
+        });
+    in
     lib.mkIf cfg.enable (
       lib.mkMerge [
         (lib.mkIf cfg.kvantum.enable {
           xdg.configFile = {
             "Kvantum/${kvantum-theme}".source = "${catppuccin}/share/Kvantum/${kvantum-theme}";
-            "Kvantum/kvantum.kvconfig".text = lib.generators.toINI {} {
+            "Kvantum/kvantum.kvconfig".text = lib.generators.toINI { } {
               General.theme = "${kvantum-theme}";
             };
           };
@@ -63,11 +72,9 @@ in {
           services.swaync.style = replaceColors ./swaync-template.css;
         })
         (lib.mkIf (cfg.walker.enable) {
-          xdg.configFile."walker/themes/catppuccin.css".source =
-            replaceColors ./walker-template.css;
+          xdg.configFile."walker/themes/catppuccin.css".source = replaceColors ./walker-template.css;
 
-          xdg.configFile."walker/themes/catppuccin.json".source =
-            ./walker-theme.json;
+          xdg.configFile."walker/themes/catppuccin.json".source = ./walker-theme.json;
         })
 
         (lib.mkIf (cfg.mpv.enable) {
@@ -91,14 +98,16 @@ in {
           };
         })
 
-        (let
-          theme-file = "catppuccin-${ctp.flavor}-${ctp.accent}.theme";
-        in
+        (
+          let
+            theme-file = "catppuccin-${ctp.flavor}-${ctp.accent}.theme";
+          in
           lib.mkIf (cfg.webcord.enable) {
             xdg.configFile."WebCord/Themes/${theme-file}" = {
               source = "${inputs.catppuccin-discord}/dist/${theme-file}.css";
             };
-          })
+          }
+        )
 
         (lib.mkIf (cfg.git-delta.enable) {
           programs.git = {

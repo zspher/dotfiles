@@ -1,6 +1,8 @@
-{...}: let
+{ ... }:
+let
   inherit (import ../config.nix) username;
-in {
+in
+{
   programs.nh = {
     enable = true;
     clean.enable = true;

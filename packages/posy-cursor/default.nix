@@ -25,6 +25,6 @@ stdenvNoCC.mkDerivation rec {
     description = "Posy's Improved Cursors for Linux";
     homepage = "https://github.com/simtrami/posy-improved-cursor-linux";
     platforms = platforms.unix;
-    maintainers = with maintainers; [mkez];
+    maintainers = with maintainers; [ mkez ];
   };
 }

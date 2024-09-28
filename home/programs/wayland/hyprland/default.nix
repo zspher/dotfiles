@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   imports = [
     ./clipboard.nix
     ./keybinds.nix
@@ -13,8 +14,8 @@
       "QT_QPA_PLATFORM"
     ];
     settings = {
-      source = ["~/.config/hypr/monitors.conf"];
-      env = ["QT_QPA_PLATFORM,wayland"];
+      source = [ "~/.config/hypr/monitors.conf" ];
+      env = [ "QT_QPA_PLATFORM,wayland" ];
       input = {
         kb_layout = "us";
         follow_mouse = 1;

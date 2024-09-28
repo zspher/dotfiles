@@ -1,4 +1,5 @@
-{...}: {
+{ ... }:
+{
   imports = [
     ../programs/terminal
     ../programs/utils/kitty

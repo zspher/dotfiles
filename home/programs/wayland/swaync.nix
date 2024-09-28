@@ -1,4 +1,5 @@
-{...}: {
+{ ... }:
+{
   services.swaync = {
     enable = true;
     settings = {
@@ -34,7 +35,12 @@
       hide-on-action = true;
       script-fail-notify = true;
 
-      widgets = ["mpris" "title" "dnd" "notifications"];
+      widgets = [
+        "mpris"
+        "title"
+        "dnd"
+        "notifications"
+      ];
       widget-config = {
         title = {
           text = "Notifications";

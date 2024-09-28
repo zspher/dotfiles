@@ -1,5 +1,6 @@
-{pkgs, ...}: {
-  home.packages = [pkgs.delta];
+{ pkgs, ... }:
+{
+  home.packages = [ pkgs.delta ];
   programs.git.extraConfig = {
     core.pager = "delta";
     interactive.diffFilter = "delta --color-only";

@@ -17,7 +17,7 @@ buildPythonApplication rec {
     hash = "sha256-BUWMqGeiMbfczwuFbH+4xtw7FlIyxQWX/weVsg9soLk=";
   };
 
-  nativeBuildInputs = [copyDesktopItems];
+  nativeBuildInputs = [ copyDesktopItems ];
 
   build-system = with python3Packages; [
     setuptools
@@ -27,7 +27,7 @@ buildPythonApplication rec {
   propagatedBuildInputs = with python3Packages; [
     pillow
     requests
-    (callPackage ../python-tkkbootstrap {})
+    (callPackage ../python-tkkbootstrap { })
     wand
     tkinter
     pip
@@ -39,14 +39,18 @@ buildPythonApplication rec {
       name = "FotoKilof";
       exec = "fotokilof";
       comment = "GUI for ImageMagick";
-      categories = ["Graphics" "Utility" "Photography"];
+      categories = [
+        "Graphics"
+        "Utility"
+        "Photography"
+      ];
     })
   ];
   meta = with lib; {
     description = "Nice gui for ImageMagick";
     homepage = "https://pypi.org/project/FotoKilof";
     license = licenses.mit;
-    maintainers = with maintainers; [zspher];
+    maintainers = with maintainers; [ zspher ];
     mainProgram = "fotokilof";
   };
 }

@@ -4,7 +4,8 @@
   self,
   config,
   ...
-}: let
+}:
+let
   data = qtVersion: {
     Appearance = {
       custom_palette = true;
@@ -19,7 +20,8 @@
       general = "\"Sans Serif,10,-1,5,50,0,0,0,0,0,Regular\"";
     };
   };
-in {
+in
+{
   qt = {
     enable = true;
     style.package = with pkgs; [
@@ -32,8 +34,8 @@ in {
   };
 
   xdg.configFile = {
-    "qt5ct/qt5ct.conf".text = lib.generators.toINI {} (data "qt5ct");
-    "qt6ct/qt6ct.conf".text = lib.generators.toINI {} (data "qt6ct");
+    "qt5ct/qt5ct.conf".text = lib.generators.toINI { } (data "qt5ct");
+    "qt6ct/qt6ct.conf".text = lib.generators.toINI { } (data "qt6ct");
     "qt6ct/colors/catppuccin.conf".source = ./qt6ct-catppuccin.conf;
     "qt5ct/colors/catppuccin.conf".source = ./qt5ct-catppuccin.conf;
     "lightlyrc".text = ''
@@ -45,7 +47,7 @@ in {
     '';
   };
 
-  home.activation.genKdeglobals = lib.hm.dag.entryBefore ["kconfig"] ''
+  home.activation.genKdeglobals = lib.hm.dag.entryBefore [ "kconfig" ] ''
     touch ${config.xdg.configHome}/kdeglobals
   '';
 }

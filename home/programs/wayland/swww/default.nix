@@ -3,9 +3,11 @@
   lib,
   config,
   ...
-}: let
-  script = import ./swww-wallset.nix {inherit pkgs;};
-in {
+}:
+let
+  script = import ./swww-wallset.nix { inherit pkgs; };
+in
+{
   home.packages = with pkgs; [
     swww
   ];

@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   home.packages = with pkgs.kdePackages; [
     dolphin
     # https://invent.kde.org/frameworks/kimageformats

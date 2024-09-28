@@ -1,5 +1,6 @@
-{pkgs, ...}: {
-  home.packages = with pkgs; [davinci-resolve];
+{ pkgs, ... }:
+{
+  home.packages = with pkgs; [ davinci-resolve ];
   xdg.desktopEntries.davinci-resolve = {
     name = "Davinci Resolve";
     genericName = "DaVinci Resolve";
@@ -9,6 +10,6 @@
     icon = "camera-video";
     startupNotify = true;
     settings.StartupWMClass = "resolve";
-    mimeType = ["application/x-resolveproj"];
+    mimeType = [ "application/x-resolveproj" ];
   };
 }

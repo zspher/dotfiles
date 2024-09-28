@@ -50,6 +50,6 @@ stdenvNoCC.mkDerivation {
     homepage = "https://github.com/aczw/sddm-theme-corners";
     license = licenses.gpl3;
     platforms = platforms.linux;
-    maintainers = with maintainers; [zspher];
+    maintainers = with maintainers; [ zspher ];
   };
 }

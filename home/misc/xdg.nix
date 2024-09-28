@@ -1,15 +1,18 @@
-{...}: let
-  browser = ["brave-browser"];
-  imageViewer = ["qimgv"];
-  videoPlayer = ["mpv"];
-  audioPlayer = ["mpv"];
+{ ... }:
+let
+  browser = [ "brave-browser" ];
+  imageViewer = [ "qimgv" ];
+  videoPlayer = [ "mpv" ];
+  audioPlayer = [ "mpv" ];
 
-  xdgAssociations = type: program: list:
-    builtins.listToAttrs (map (e: {
+  xdgAssociations =
+    type: program: list:
+    builtins.listToAttrs (
+      map (e: {
         name = "${type}/${e}";
         value = program;
-      })
-      list);
+      }) list
+    );
 
   image = xdgAssociations "image" imageViewer [
     "avif"
@@ -50,20 +53,23 @@
     ]);
 
   # XDG MIME types
-  associations = builtins.mapAttrs (_: v: (map (e: "${e}.desktop") v)) ({
-      "image/vnd.djvu" = ["org.kde.okular"];
-      "application/pdf" = ["org.kde.okular"];
+  associations = builtins.mapAttrs (_: v: (map (e: "${e}.desktop") v)) (
+    {
+      "image/vnd.djvu" = [ "org.kde.okular" ];
+      "application/pdf" = [ "org.kde.okular" ];
 
       "text/html" = browser;
-      "text/plain" = ["nvim"];
+      "text/plain" = [ "nvim" ];
 
-      "inode/directory" = ["org.kde.dolphin"];
+      "inode/directory" = [ "org.kde.dolphin" ];
     }
     // image
     // video
     // audio
-    // browserTypes);
-in {
+    // browserTypes
+  );
+in
+{
   xdg = {
     enable = true;
     userDirs.enable = true;

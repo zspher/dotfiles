@@ -1,7 +1,11 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   # printers
   services.printing.enable = true;
-  services.printing.drivers = with pkgs; [epson-201401w gutenprint];
+  services.printing.drivers = with pkgs; [
+    epson-201401w
+    gutenprint
+  ];
 
   hardware.printers.ensurePrinters = [
     {
@@ -14,7 +18,7 @@
   # scanners
   hardware.sane = {
     enable = true;
-    extraBackends = [pkgs.utsushi];
+    extraBackends = [ pkgs.utsushi ];
   };
-  services.udev.packages = [pkgs.utsushi];
+  services.udev.packages = [ pkgs.utsushi ];
 }

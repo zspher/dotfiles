@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   imports = [
     ./kitty
     ./dolphin.nix
@@ -8,7 +9,7 @@
     kdePackages.ark
     brightnessctl
     gnome-pomodoro
-    (nwg-displays.override {hyprlandSupport = true;})
+    (nwg-displays.override { hyprlandSupport = true; })
     pavucontrol
     playerctl
     qdirstat

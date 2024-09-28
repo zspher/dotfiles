@@ -2,14 +2,20 @@
   pkgs,
   inputs,
   ...
-}: {
+}:
+{
   imports = [
     inputs.catppuccin.nixosModules.catppuccin
   ];
 
   # fonts
   fonts.packages = with pkgs; [
-    (nerdfonts.override {fonts = ["CascadiaMono" "Noto"];})
+    (nerdfonts.override {
+      fonts = [
+        "CascadiaMono"
+        "Noto"
+      ];
+    })
   ];
 
   # internationalization

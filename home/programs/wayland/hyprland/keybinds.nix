@@ -1,21 +1,24 @@
-{pkgs, ...}: let
+{ pkgs, ... }:
+let
   close_window = pkgs.writeShellApplication {
     name = "close-window";
-    runtimeInputs = [pkgs.xdotool];
+    runtimeInputs = [ pkgs.xdotool ];
     text = builtins.readFile ./scripts/close_window.sh;
   };
-  brightness =
-    pkgs.writers.writePython3 "brightness"
-    {
-      libraries = [pkgs.libnotify];
-      flakeIgnore = ["E501" "E265"];
-    } (builtins.readFile ./scripts/brightness.py);
-  volume =
-    pkgs.writers.writePython3 "volume"
-    {
-      libraries = [pkgs.libnotify];
-      flakeIgnore = ["E501" "E265"];
-    } (builtins.readFile ./scripts/volume.py);
+  brightness = pkgs.writers.writePython3 "brightness" {
+    libraries = [ pkgs.libnotify ];
+    flakeIgnore = [
+      "E501"
+      "E265"
+    ];
+  } (builtins.readFile ./scripts/brightness.py);
+  volume = pkgs.writers.writePython3 "volume" {
+    libraries = [ pkgs.libnotify ];
+    flakeIgnore = [
+      "E501"
+      "E265"
+    ];
+  } (builtins.readFile ./scripts/volume.py);
   gamemode = pkgs.writeShellApplication {
     name = "gamemode";
     text = builtins.readFile ./scripts/gamemode.sh;
@@ -24,7 +27,8 @@
     name = "hyprtabs";
     text = builtins.readFile ./scripts/hyprtabs.sh;
   };
-in {
+in
+{
   wayland.windowManager.hyprland = {
     settings = {
       "$mainMod" = "SUPER";

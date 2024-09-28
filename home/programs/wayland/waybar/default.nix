@@ -2,7 +2,8 @@
   pkgs,
   config,
   ...
-}: {
+}:
+{
   programs.waybar = {
     enable = true;
     settings = {
@@ -10,7 +11,7 @@
         layer = "top";
         position = "top";
         height = 38;
-        output = ["*"];
+        output = [ "*" ];
         modules-left = [
           "group/power"
           "hyprland/workspaces"
@@ -87,8 +88,8 @@
           tooltip-format = "<span size='medium' weight='bold'>{title}</span>\n<small>{app_id}</small>";
           on-click = "activate";
           on-click-middle = "close";
-          ignore-list = [];
-          app_ids-mapping = {};
+          ignore-list = [ ];
+          app_ids-mapping = { };
         };
 
         # * center  * //
@@ -143,7 +144,18 @@
           format = "<span foreground='#b4befe'>{capacity}% {icon} {power} W</span>";
           format-charging = "<span foreground='#a6e3a1'>{capacity}% {icon}󱐋</span>";
           format-critical = "<span foreground='#f38ba8'>{capacity}% 󱃌 {power} W</span>";
-          format-icons = ["󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹"];
+          format-icons = [
+            "󰁺"
+            "󰁻"
+            "󰁼"
+            "󰁽"
+            "󰁾"
+            "󰁿"
+            "󰂀"
+            "󰂁"
+            "󰂂"
+            "󰁹"
+          ];
           max-length = 25;
         };
 
@@ -163,13 +175,26 @@
             phone = "";
             portable = "";
             car = " ";
-            default = ["" "" " "];
+            default = [
+              ""
+              ""
+              " "
+            ];
           };
           on-click = "${pkgs.pavucontrol}/bin/pavucontrol";
         };
         cpu = {
           format = "<span foreground='#fab387'>{icon0}</span> <span foreground='#f9e2af'>{icon1}</span> <span foreground='#f9e2af'>{icon2}</span> <span foreground='#a6e3a1'>{icon3}</span>";
-          format-icons = ["▁" "▂" "▃" "▄" "▅" "▆" "▇" "█"];
+          format-icons = [
+            "▁"
+            "▂"
+            "▃"
+            "▄"
+            "▅"
+            "▆"
+            "▇"
+            "█"
+          ];
         };
         memory = {
           format = "{}% ";

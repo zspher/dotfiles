@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   programs.walker = {
     enable = true;
     # runAsService = true;
@@ -7,9 +8,13 @@
       activation_mode.labels = "12345678";
       activation_mode.use_alt = true;
 
-      disabled = ["finder" "runner" "windows"];
+      disabled = [
+        "finder"
+        "runner"
+        "windows"
+      ];
       list.max_items = 20;
     };
   };
-  home.packages = [pkgs.libqalculate];
+  home.packages = [ pkgs.libqalculate ];
 }

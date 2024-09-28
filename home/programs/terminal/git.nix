@@ -1,4 +1,5 @@
-{...}: {
+{ ... }:
+{
   programs.git = {
     enable = true;
     userName = "zspher";
@@ -10,6 +11,9 @@
       init.defaultBranch = "main";
       status.short = true;
     };
-    ignores = [".env" ".direnv"];
+    ignores = [
+      ".env"
+      ".direnv"
+    ];
   };
 }

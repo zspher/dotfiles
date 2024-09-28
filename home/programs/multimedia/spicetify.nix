@@ -3,9 +3,11 @@
   pkgs,
   config,
   ...
-}: let
+}:
+let
   spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
-in {
+in
+{
   programs.spicetify = {
     enable = true;
     theme = spicePkgs.themes.catppuccin;

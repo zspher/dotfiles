@@ -1,4 +1,5 @@
-{...}: {
+{ ... }:
+{
   users.users = {
     root.hashedPassword = "!";
   };
@@ -9,6 +10,6 @@
     # useful for pipewire
     rtkit.enable = true;
 
-    pam.services.hyprlock = {};
+    pam.services.hyprlock = { };
   };
 }

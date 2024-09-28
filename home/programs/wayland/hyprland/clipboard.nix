@@ -2,7 +2,8 @@
   pkgs,
   lib,
   ...
-}: {
+}:
+{
   home.packages = with pkgs; [
     copyq
     wl-clipboard
@@ -10,7 +11,7 @@
     zbar
   ];
 
-  wayland.windowManager.hyprland.settings.exec-once = ["${pkgs.copyq}/bin/copyq --start-server"];
+  wayland.windowManager.hyprland.settings.exec-once = [ "${pkgs.copyq}/bin/copyq --start-server" ];
 
   # wayland.windowManager.hyprland.settings.exec-once = [
   #   (lib.concatStrings [

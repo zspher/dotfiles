@@ -2,7 +2,8 @@
   lib,
   config,
   ...
-}: {
+}:
+{
   imports = [
     ../../hardware
     ../../hardware/bluetooth.nix
@@ -19,7 +20,7 @@
       "usbhid"
       "sd_mod"
     ];
-    kernelModules = ["kvm-intel"];
+    kernelModules = [ "kvm-intel" ];
   };
 
   # hardware
@@ -27,22 +28,32 @@
     "/" = {
       device = "/dev/disk/by-label/nixos";
       fsType = "btrfs";
-      options = ["subvol=root" "compress=zstd"];
+      options = [
+        "subvol=root"
+        "compress=zstd"
+      ];
     };
     "/home" = {
       device = "/dev/disk/by-label/nixos";
       fsType = "btrfs";
-      options = ["subvol=home" "compress=zstd"];
+      options = [
+        "subvol=home"
+        "compress=zstd"
+      ];
     };
     "/nix" = {
       device = "/dev/disk/by-label/nixos";
       fsType = "btrfs";
-      options = ["subvol=nix" "compress=zstd" "noatime"];
+      options = [
+        "subvol=nix"
+        "compress=zstd"
+        "noatime"
+      ];
     };
     "/boot" = {
       device = "/dev/disk/by-uuid/2ED7-2A30";
       fsType = "vfat";
-      options = ["umask=0077"];
+      options = [ "umask=0077" ];
     };
     "/mnt/drive2" = {
       device = "/dev/disk/by-label/drive2";
@@ -51,7 +62,7 @@
   };
 
   swapDevices = [
-    {device = "/dev/disk/by-uuid/f2cb2ead-1cb7-46f3-b7b0-e4e84fa49025";}
+    { device = "/dev/disk/by-uuid/f2cb2ead-1cb7-46f3-b7b0-e4e84fa49025"; }
   ];
   zramSwap.enable = true;
 

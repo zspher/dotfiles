@@ -5,7 +5,10 @@
 }:
 pkgs.writeShellApplication {
   name = "swww-wallset";
-  runtimeInputs = with pkgs; [swww fd];
+  runtimeInputs = with pkgs; [
+    swww
+    fd
+  ];
   text = ''
     #! /usr/bin/env bash
     wallpaperDir="${wallpaperDir}"

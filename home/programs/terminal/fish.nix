@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   programs.fish = {
     enable = true;
     plugins = [
@@ -11,8 +12,9 @@
         src = pkgs.fishPlugins.pisces.src;
       }
     ];
-    shellAbbrs = {
-    };
+    shellAbbrs =
+      {
+      };
     shellAliases = {
       lsd = "lsd --group-directories-first";
       la = "lsd -lA";
@@ -21,8 +23,7 @@
       l = "lsd -1A";
       ls = "lsd";
     };
-    shellInit = ''
-    '';
+    shellInit = '''';
     interactiveShellInit = ''
       set fish_greeting # Disable greeting
 

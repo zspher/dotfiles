@@ -3,7 +3,8 @@
   config,
   pkgs,
   ...
-}: {
+}:
+{
   imports = [
     ../../hardware
     ../../hardware/bluetooth.nix
@@ -23,32 +24,42 @@
       "vmd"
       "xhci_pci"
     ];
-    kernelModules = ["kvm-intel"];
-    kernelParams = ["intel_pstate=disable"];
+    kernelModules = [ "kvm-intel" ];
+    kernelParams = [ "intel_pstate=disable" ];
   };
 
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/76633a56-4e98-4e1f-bf64-b90f71dc3463";
     fsType = "btrfs";
-    options = ["subvol=root" "compress=zstd"];
+    options = [
+      "subvol=root"
+      "compress=zstd"
+    ];
   };
 
   fileSystems."/home" = {
     device = "/dev/disk/by-uuid/76633a56-4e98-4e1f-bf64-b90f71dc3463";
     fsType = "btrfs";
-    options = ["subvol=home" "compress=zstd"];
+    options = [
+      "subvol=home"
+      "compress=zstd"
+    ];
   };
 
   fileSystems."/nix" = {
     device = "/dev/disk/by-uuid/76633a56-4e98-4e1f-bf64-b90f71dc3463";
     fsType = "btrfs";
-    options = ["subvol=nix" "compress=zstd" "noatime"];
+    options = [
+      "subvol=nix"
+      "compress=zstd"
+      "noatime"
+    ];
   };
 
   fileSystems."/boot" = {
     device = "/dev/disk/by-uuid/442E-476E";
     fsType = "vfat";
-    options = ["umask=0077"];
+    options = [ "umask=0077" ];
   };
 
   fileSystems."/mnt/drive2" = {
@@ -57,7 +68,7 @@
   };
 
   swapDevices = [
-    {device = "/dev/disk/by-uuid/8a283110-c511-43c7-96b4-e45b0bfce74f";}
+    { device = "/dev/disk/by-uuid/8a283110-c511-43c7-96b4-e45b0bfce74f"; }
   ];
 
   zramSwap.enable = true;
@@ -70,7 +81,7 @@
     ];
   };
 
-  services.xserver.videoDrivers = ["nvidia"];
+  services.xserver.videoDrivers = [ "nvidia" ];
 
   hardware.nvidia = {
     open = true;
