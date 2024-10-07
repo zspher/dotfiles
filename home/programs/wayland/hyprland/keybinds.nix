@@ -55,8 +55,8 @@ in
         "$mainMod SHIFT, Q, exit,"
         "$mainMod, Q, exec, ${close_window}/bin/close-window "
         "$mainMod, F, togglefloating, "
-        # "$mainMod, M, fullscreen, 1" # monocle layout
-        "$mainMod, M, exec, ${hyprtabs}/bin/hyprtabs" # monocle layout
+        "$mainMod, M, fullscreen, 1" # monocle layout
+        # "$mainMod, M, exec, ${hyprtabs}/bin/hyprtabs" # monocle layout
         "$mainMod SHIFT, F, fullscreen, 0" # true fullscreen
         "$mainMod, C, centerwindow"
 
