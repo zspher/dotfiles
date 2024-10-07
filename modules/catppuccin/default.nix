@@ -26,7 +26,7 @@ in
     swaync.enable = lib.mkEnableOption "swaync integration";
     walker.enable = lib.mkEnableOption "walker integration";
     waybar.enable = lib.mkEnableOption "waybar integration";
-    webcord.enable = lib.mkEnableOption "webcord integration";
+    vesktop.enable = lib.mkEnableOption "webcord integration";
   };
 
   config =
@@ -100,11 +100,11 @@ in
 
         (
           let
-            theme-file = "catppuccin-${ctp.flavor}-${ctp.accent}.theme";
+            theme-file = "catppuccin-${ctp.flavor}-${ctp.accent}.theme.css";
           in
-          lib.mkIf (cfg.webcord.enable) {
-            xdg.configFile."WebCord/Themes/${theme-file}" = {
-              source = "${inputs.catppuccin-discord}/dist/${theme-file}.css";
+          lib.mkIf (cfg.vesktop.enable) {
+            xdg.configFile."vesktop/themes/${theme-file}" = {
+              source = "${inputs.catppuccin-discord}/dist/${theme-file}";
             };
           }
         )

@@ -19,7 +19,7 @@
     swaync.enable = true;
     walker.enable = true;
     waybar.enable = true;
-    webcord.enable = true;
+    vesktop.enable = true;
   };
   catppuccin.flavor = "mocha";
   catppuccin.accent = "mauve";

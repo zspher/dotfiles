@@ -113,7 +113,7 @@
         "workspace 3, class:Code"
         "workspace 3, class:code-url-handler"
         "workspace 3, class:kitty-term"
-        "workspace 4, class:WebCord"
+        "workspace 4, class:vesktop"
 
         "float, title:^(Floating Window \- Show Me The Key)$"
         "noborder, title:^(Floating Window \- Show Me The Key)$"

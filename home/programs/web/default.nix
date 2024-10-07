@@ -6,7 +6,7 @@
   home.packages = with pkgs; [
     inetutils
     qbittorrent
-    webcord
+    vesktop
     yt-dlp
   ];
 }
