@@ -10,5 +10,8 @@
       { id = "oemmndcbldboiebfnladdacbdfmadadm"; } # pdf viewer
       { id = "bkkmolkhemgaeaeggcmfbghljjjoofoh"; } # catppuccin mocha
     ];
+    commandLineArgs = [
+      "--password-store=basic" # to remove kwallet popup
+    ];
   };
 }
