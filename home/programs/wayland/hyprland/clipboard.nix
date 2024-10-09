@@ -13,6 +13,8 @@
 
   services.copyq.enable = true;
 
+  systemd.user.services.copyq.Service.Environment = lib.mkForce [ ];
+
   # wayland.windowManager.hyprland.settings.exec-once = [
   #   (lib.concatStrings [
   #     # wayland <-> xwayand primary is enabled by default in hyprland
