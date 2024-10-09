@@ -14,6 +14,8 @@ pkgs.writeShellApplication {
     wallpaperDir="${wallpaperDir}"
     TIMEOUT=${timeout}
 
+    swww-daemon
+
     if [ ! -d "$wallpaperDir" ]; then
         mkdir -p "$wallpaperDir"
     fi

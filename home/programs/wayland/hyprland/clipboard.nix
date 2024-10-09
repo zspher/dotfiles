@@ -5,13 +5,13 @@
 }:
 {
   home.packages = with pkgs; [
-    copyq
     wl-clipboard
+    ydotool
     xclip
     zbar
   ];
 
-  wayland.windowManager.hyprland.settings.exec-once = [ "${pkgs.copyq}/bin/copyq --start-server" ];
+  services.copyq.enable = true;
 
   # wayland.windowManager.hyprland.settings.exec-once = [
   #   (lib.concatStrings [
