@@ -102,7 +102,8 @@
       };
 
       windowrulev2 = [
-        "bordercolor rgb($maroonAlpha), fullscreen:1"
+        "bordercolor rgb($greenAlpha), fullscreen:1"
+        "bordercolor rgb($greenAlpha), floating:1"
         "bordercolor rgb($overlay2Alpha), xwayland:1, floating:0, fullscreen:0"
 
         "float, class:^(org.kde.polkit-kde-authentication-agent-1)$"
