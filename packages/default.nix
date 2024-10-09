@@ -21,7 +21,7 @@
         posy-cursor = pkgs.callPackage ./posy-cursor { };
         sddm-corners-theme = pkgs.callPackage ./sddm-corners-theme { };
         fotokilof = pkgs.python311Packages.callPackage ./fotokilof { };
-        lightly-qt6 = pkgs.kdePackages.callPackage ./lightly-qt6 { };
+        lightly-qt6 = pkgs.callPackage ./lightly-qt6 { };
       };
     };
 }

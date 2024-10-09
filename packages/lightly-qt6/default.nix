@@ -1,64 +1,59 @@
 {
+  kdePackages,
   extra-cmake-modules,
   fetchFromGitHub,
-  fetchurl,
-  frameworkintegration,
-  kcmutils,
-  kcolorscheme,
-  kcoreaddons,
-  kdecoration,
-  kiconthemes,
-  kwindowsystem,
   lib,
-  mkKdeDerivation,
+  stdenv,
+  cmake,
+  qt6,
+  lightly-boehs,
 }:
-let
-  config-tar-gz = fetchurl {
-    url = "https://github.com/boehs/Lightly/files/14445309/config.tar.gz";
-    sha256 = "sha256-eCIRm2z1+eTBcCCg8Wdt2DfTTbc767Rv+m1LI+t058I=";
-  };
-  lightlystyleconfig-json = fetchurl {
-    url = "https://github.com/boehs/Lightly/files/14444935/lightlystyleconfig.json";
-    sha256 = "sha256-ORQk0QirDB9dF3RdgmH5sstqQqqSEfOE6lh1YEUz+iM=";
-  };
-in
-mkKdeDerivation {
+stdenv.mkDerivation (finalAttrs: {
   pname = "lightly-qt6";
-  version = "0.4.1";
+  version = "0.5.2-unstable-2024-10-08";
 
   src = fetchFromGitHub {
-    owner = "boehs";
+    owner = "Bali10050";
     repo = "Lightly";
-    rev = "00ca23447844114d41bfc0d37cf8823202c082e8";
-    sha256 = "sha256-NpgOcN9sDqgQMjqcfx92bfKohxaJpnwMgxb9MCu9uJM=";
+    rev = "1feaaf29f7bc20e86e9410a4e129f6b5158abad6";
+    sha256 = "sha256-UxtayqLgtFbClErjZWMBp3bBtSv31AQzP5dh3fk+d44=";
   };
 
-  patchPhase = ''
-    mkdir tmp
-    tar -xv -f ${config-tar-gz} -C tmp
-
-    cp -v tmp/config/CMakeLists.txt kdecoration/config/CMakeLists.txt
-    cp -v tmp/config/kcm_lightlydecoration.json kdecoration/config/kcm_lightlydecoration.json
-    cp -v tmp/config/kcm_lightlydecoration.cpp kdecoration/config/kcm_lightlydecoration.cpp
-    cp -v ${lightlystyleconfig-json} kstyle/config/lightlystyleconfig.json
+  preBuild = ''
+    cd ./kdecoration/config/
+    make -j $NIX_BUILD_CORES
+    cd ../..
   '';
 
   postInstall = ''
     rm $out/share/kstyle/themes/lightly.themerc
+    rm $out/share/color-schemes/Lightly.colors
+    ln -s "${lightly-boehs}/share/kstyle/themes" "$out/share/kstyle/themes"
+    ln -s "${lightly-boehs}/share/color-schemes" "$out/share/color-schemes"
   '';
 
-  extraPropagatedBuildInputs = [
+  buildInputs = [ qt6.qtbase ];
+
+  propagatedBuildInputs = with kdePackages; [
     frameworkintegration
+    kcmutils
     kcolorscheme
     kcoreaddons
     kdecoration
     kiconthemes
     kwindowsystem
-    kcmutils
   ];
 
-  extraNativeBuildInputs = [
+  nativeBuildInputs = [
+    cmake
+    qt6.wrapQtAppsHook
     extra-cmake-modules
+  ];
+
+  enableParallelBuilding = true;
+  outputs = [
+    "out"
+    "dev"
   ];
 
   meta = with lib; {
@@ -69,4 +64,4 @@ mkKdeDerivation {
     maintainers = [ maintainers.hikari ];
     platforms = platforms.all;
   };
-}
+})
