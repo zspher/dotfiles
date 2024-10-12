@@ -17,16 +17,14 @@ in
     ./kde.nix
   ];
   options.theme.catppuccin = {
-    enable = lib.mkEnableOption "catppuccin";
-
     git-delta.enable = lib.mkEnableOption "git delta integration";
     kvantum.enable = lib.mkEnableOption "kvantum integration";
     mpv.enable = lib.mkEnableOption "mpv integration";
     obs-studio.enable = lib.mkEnableOption "obs-studio integration";
     swaync.enable = lib.mkEnableOption "swaync integration";
+    vesktop.enable = lib.mkEnableOption "webcord integration";
     walker.enable = lib.mkEnableOption "walker integration";
     waybar.enable = lib.mkEnableOption "waybar integration";
-    vesktop.enable = lib.mkEnableOption "webcord integration";
   };
 
   config =
@@ -54,75 +52,73 @@ in
           ]) (builtins.attrNames colors);
         });
     in
-    lib.mkIf cfg.enable (
-      lib.mkMerge [
-        (lib.mkIf cfg.kvantum.enable {
-          xdg.configFile = {
-            "Kvantum/${kvantum-theme}".source = "${catppuccin}/share/Kvantum/${kvantum-theme}";
-            "Kvantum/kvantum.kvconfig".text = lib.generators.toINI { } {
-              General.theme = "${kvantum-theme}";
-            };
+    lib.mkMerge [
+      (lib.mkIf cfg.kvantum.enable {
+        xdg.configFile = {
+          "Kvantum/${kvantum-theme}".source = "${catppuccin}/share/Kvantum/${kvantum-theme}";
+          "Kvantum/kvantum.kvconfig".text = lib.generators.toINI { } {
+            General.theme = "${kvantum-theme}";
           };
-        })
+        };
+      })
 
-        (lib.mkIf (cfg.waybar.enable) {
-          programs.waybar.style = replaceColors ./waybar-template.css;
-        })
-        (lib.mkIf (cfg.swaync.enable) {
-          services.swaync.style = replaceColors ./swaync-template.css;
-        })
-        (lib.mkIf (cfg.walker.enable) {
-          xdg.configFile."walker/themes/catppuccin.css".source = replaceColors ./walker-template.css;
+      (lib.mkIf (cfg.waybar.enable) {
+        programs.waybar.style = replaceColors ./waybar-template.css;
+      })
+      (lib.mkIf (cfg.swaync.enable) {
+        services.swaync.style = replaceColors ./swaync-template.css;
+      })
+      (lib.mkIf (cfg.walker.enable) {
+        xdg.configFile."walker/themes/catppuccin.css".source = replaceColors ./walker-template.css;
 
-          xdg.configFile."walker/themes/catppuccin.json".source = ./walker-theme.json;
-        })
+        xdg.configFile."walker/themes/catppuccin.json".source = ./walker-theme.json;
+      })
 
-        (lib.mkIf (cfg.mpv.enable) {
-          programs.mpv.scriptOpts.uosc = {
-            chapter_ranges = lib.concatStrings [
-              "intros:${colors.blue},"
-              "outros:${colors.blue},"
-              "openings:${colors.blue},"
-              "endings:${colors.blue},"
-              "ads:${colors.red}"
-            ];
+      (lib.mkIf (cfg.mpv.enable) {
+        programs.mpv.scriptOpts.uosc = {
+          chapter_ranges = lib.concatStrings [
+            "intros:${colors.blue},"
+            "outros:${colors.blue},"
+            "openings:${colors.blue},"
+            "endings:${colors.blue},"
+            "ads:${colors.red}"
+          ];
+        };
+      })
+
+      (lib.mkIf (cfg.obs-studio.enable) {
+        qt.kde.settings."obs-studio/global.ini".Appearance."Theme" = "com.obsproject.Catppuccin.${upperFirst ctp.flavor}";
+
+        xdg.configFile."obs-studio/themes" = {
+          source = "${inputs.catppuccin-obs}/themes";
+          recursive = true;
+        };
+      })
+
+      (
+        let
+          theme-file = "catppuccin-${ctp.flavor}-${ctp.accent}.theme.css";
+        in
+        lib.mkIf (cfg.vesktop.enable) {
+          xdg.configFile."vesktop/themes/${theme-file}" = {
+            source = "${inputs.catppuccin-discord}/dist/${theme-file}";
           };
-        })
+        }
+      )
 
-        (lib.mkIf (cfg.obs-studio.enable) {
-          qt.kde.settings."obs-studio/global.ini".Appearance."Theme" = "com.obsproject.Catppuccin.${upperFirst ctp.flavor}";
-
-          xdg.configFile."obs-studio/themes" = {
-            source = "${inputs.catppuccin-obs}/themes";
-            recursive = true;
-          };
-        })
-
-        (
-          let
-            theme-file = "catppuccin-${ctp.flavor}-${ctp.accent}.theme.css";
-          in
-          lib.mkIf (cfg.vesktop.enable) {
-            xdg.configFile."vesktop/themes/${theme-file}" = {
-              source = "${inputs.catppuccin-discord}/dist/${theme-file}";
-            };
-          }
-        )
-
-        (lib.mkIf (cfg.git-delta.enable) {
-          programs.git = {
-            extraConfig.delta.features = "catppuccin-${config.catppuccin.flavor}";
-            includes = [
-              {
-                path = "${inputs.catppuccin-delta}/catppuccin.gitconfig";
-              }
-            ];
-          };
-          # bat cache & catppuccin/bat is needed to theme delta
-          programs.bat = {
-            enable = true;
-          };
-        })
-      ]
-    );
+      (lib.mkIf (cfg.git-delta.enable) {
+        programs.git = {
+          extraConfig.delta.features = "catppuccin-${config.catppuccin.flavor}";
+          includes = [
+            {
+              path = "${inputs.catppuccin-delta}/catppuccin.gitconfig";
+            }
+          ];
+        };
+        # bat cache & catppuccin/bat is needed to theme delta
+        programs.bat = {
+          enable = true;
+        };
+      })
+    ];
 }

@@ -9,8 +9,6 @@
     ./qt
   ];
   theme.catppuccin = {
-    enable = true;
-
     git-delta.enable = true;
     kde.enable = true;
     kvantum.enable = false;
