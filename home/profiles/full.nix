@@ -10,6 +10,7 @@
     ../programs/web
 
     ../misc/theme
+    ../misc/theme/gui.nix
     ../misc/xdg-dirs.nix
     ../misc/xdg.nix
   ];
