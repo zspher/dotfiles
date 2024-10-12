@@ -21,6 +21,7 @@
     ../../networking
     ../../networking/openssh.nix
     ../../networking/syncting.nix
+    ../../networking/tailscale.nix
   ];
 
   networking.hostName = "c-100";
