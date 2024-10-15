@@ -2,7 +2,7 @@
  *
  * Author : Aditya Shakya (adi1090x)
  * Github : @adi1090x
- * 
+ *
  * Rofi Theme File
  * Rofi Version: 1.7.3
  **/
@@ -15,6 +15,7 @@ configuration {
 /*****----- Global Properties -----*****/
 @import                          "catppuccin.rasi"
 @import                          "fonts.rasi"
+@import                          "vim.rasi"
 
 /*
 USE_ICON=NO
