@@ -1,7 +1,4 @@
-{ ... }:
-let
-  inherit (import ../config.nix) username;
-in
+{ username, ... }:
 {
   programs.nh = {
     enable = true;

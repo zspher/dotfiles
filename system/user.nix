@@ -1,7 +1,4 @@
-{ pkgs, ... }:
-let
-  inherit (import ./config.nix) username;
-in
+{ pkgs, username, ... }:
 {
   users.users.${username} = {
     initialPassword = "defaultPass";
