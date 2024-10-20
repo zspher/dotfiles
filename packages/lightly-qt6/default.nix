@@ -10,13 +10,13 @@
 }:
 stdenv.mkDerivation (finalAttrs: {
   pname = "lightly-qt6";
-  version = "0.5.2-unstable-2024-10-08";
+  version = "0.5.3";
 
   src = fetchFromGitHub {
     owner = "Bali10050";
     repo = "Lightly";
-    rev = "1feaaf29f7bc20e86e9410a4e129f6b5158abad6";
-    sha256 = "sha256-UxtayqLgtFbClErjZWMBp3bBtSv31AQzP5dh3fk+d44=";
+    rev = "refs/tags/${finalAttrs.version}";
+    sha256 = "sha256-WNcHGmMcmVYn+MKHKHmCBGDcszhtVPevCC033iRZBBw=";
   };
 
   preBuild = ''
