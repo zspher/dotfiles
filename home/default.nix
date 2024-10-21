@@ -12,7 +12,7 @@
     inputs.catppuccin.homeManagerModules.catppuccin
     inputs.spicetify-nix.homeManagerModules.default
     inputs.walker.homeManagerModules.default
-    inputs.hyprland.homeManagerModules.default
+    # inputs.hyprland.homeManagerModules.default
     self.homeManagerModules.catppuccin
     self.homeManagerModules.vivid
   ];
