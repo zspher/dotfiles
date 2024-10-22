@@ -15,7 +15,7 @@ stdenv.mkDerivation (finalAttrs: {
   src = fetchFromGitHub {
     owner = "Bali10050";
     repo = "Lightly";
-    rev = "refs/tags/${finalAttrs.version}";
+    rev = "v${finalAttrs.version}";
     sha256 = "sha256-WNcHGmMcmVYn+MKHKHmCBGDcszhtVPevCC033iRZBBw=";
   };
 
