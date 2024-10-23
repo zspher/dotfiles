@@ -5,6 +5,7 @@
     libnotify
     procps
     qimgv
+    libsForQt5.kimageformats # avif, xcf, jxl in qimgv
   ];
   programs.rofi.enable = true;
   programs.rofi.package = pkgs.rofi-wayland-unwrapped;
