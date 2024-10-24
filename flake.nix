@@ -3,6 +3,7 @@
   outputs =
     inputs:
     inputs.flake-parts.lib.mkFlake { inherit inputs; } {
+      debug = true;
       systems = [
         "x86_64-linux"
         "aarch64-linux"
@@ -16,7 +17,6 @@
       ];
       perSystem =
         {
-          config,
           pkgs,
           ...
         }:
@@ -25,6 +25,7 @@
             packages = with pkgs; [
               nixfmt-rfc-style
               nil
+              nixd
             ];
           };
           formatter = pkgs.nixfmt-rfc-style;

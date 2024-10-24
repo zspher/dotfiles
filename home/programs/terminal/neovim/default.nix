@@ -31,6 +31,7 @@
         #-- nix
         nixfmt-rfc-style # formatter
         nil # lsp
+        nixd
 
         #-- python
         pyright # LSP
