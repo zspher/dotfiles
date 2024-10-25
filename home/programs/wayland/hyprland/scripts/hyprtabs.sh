@@ -30,7 +30,7 @@
 # ------------------------------------------------------------------------------
 
 # Set POSIX-compliant mode for security and unset possible overrides
-# NOTE: This does not mean that we are restricted to POSIX-only constructs
+# NOTE This does not mean that we are restricted to POSIX-only constructs
 # ------------------------------------------------------------------------
 POSIXLY_CORRECT=1
 set -o posix
