@@ -248,6 +248,7 @@ window#waybar.hidden {
 }
 
 #memory {
+  padding-right: 10px;
   color: var(--blue);
 }
 
@@ -258,6 +259,7 @@ window#waybar.hidden {
 
 #temperature.critical {
   background-color: var(--red);
+  color: var(--base);
 }
 
 #custom-notification {
