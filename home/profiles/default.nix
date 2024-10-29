@@ -45,6 +45,11 @@ in
         ../programs/games/controller.nix
         ../programs/games/bottles.nix
         # ../programs/multimedia/davinci-resolve.nix
+        {
+          wayland.windowManager.hyprland.settings = {
+            exec-once = [ "ckb-next -b" ];
+          };
+        }
       ];
       inherit pkgs extraSpecialArgs;
     };

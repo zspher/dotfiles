@@ -28,4 +28,6 @@
   ];
 
   networking.hostName = "ls-2100";
+  hardware.i2c.enable = true;
+  hardware.ckb-next.enable = true;
 }

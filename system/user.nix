@@ -13,6 +13,7 @@
       "syncthing"
       "libvirtd"
       "uinput"
+      "i2c"
     ];
   };
 }
