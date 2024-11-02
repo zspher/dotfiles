@@ -13,6 +13,11 @@
       deviceUri = "usb://EPSON/L220%20Series?serial=5647574B3131353901";
       model = "gutenprint.5.3://escp2-l210/expert";
     }
+    {
+      name = "HP-6962";
+      deviceUri = "ipps://hpf68113";
+      model = "everywhere";
+    }
   ];
 
   # scanners
