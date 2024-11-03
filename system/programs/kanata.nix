@@ -9,8 +9,9 @@
       config = ''
         ;; homerow mod, swapscape
         (defsrc
-          caps esc a s d f
-                   j k l ;
+          caps esc grv
+          a s d f
+          j k l ;
         )
         (defvar
           tap-timeout   200
@@ -46,15 +47,20 @@
           hl (tap-hold-release-keys $tt $ht (multi l @tap) ralt $right-hand-keys)
           h; (tap-hold-release-keys $tt 200 (multi ; @tap) rmet $right-hand-keys)
         )
+        (deftemplate switch-mode (mode)
+          (tap-hold 200 200 grv (layer-switch $mode))
+        )
 
         (deflayer base
-          esc caps @ha @hs @hd @hf
-                   @hj @hk @hl @h;
+          esc caps (t! switch-mode nomods)
+          @ha @hs @hd @hf
+          @hj @hk @hl @h;
         )
 
         (deflayer nomods
-          esc caps a s d f
-                   j k l ;
+          esc caps (t! switch-mode base)
+          a s d f
+          j k l ;
         )
 
       '';
