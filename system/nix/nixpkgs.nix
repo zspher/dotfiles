@@ -17,23 +17,6 @@
             });
           }
         );
-        pstoedit = prev.pstoedit.overrideAttrs (oldAttrs: rec {
-          version = "4.01";
-          src = prev.fetchurl {
-            url = "mirror://sourceforge/pstoedit/pstoedit-${version}.tar.gz";
-            sha256 = "sha256-RZdlq3NssQ+VVKesAsXqfzVcbC6fz9IXYRx9UQKxB2s=";
-          };
-          patches = [ ];
-          preConfigure = '''';
-          nativeBuildInputs = with prev; [
-            makeWrapper
-            pkg-config
-          ];
-          postInstall = ''
-            wrapProgram $out/bin/pstoedit \
-              --prefix PATH : ${prev.lib.makeBinPath [ prev.ghostscript ]}
-          '';
-        });
       })
     ];
     config = {

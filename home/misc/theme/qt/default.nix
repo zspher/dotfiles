@@ -33,33 +33,6 @@ in
     kde.settings.kdeglobals.Icons.Theme = config.gtk.iconTheme.name;
   };
 
-  # BUG: https://github.com/NixOS/nixpkgs/pull/349457
-  #      https://github.com/NixOS/nixpkgs/issues/350514
-  #      waiting for staging-next
-  home.sessionVariables.QT_PLUGIN_PATH =
-    let
-      deferTheme =
-        themes:
-        map (
-          theme:
-          pkgs.runCommand "${pkgs.lib.getName theme}-workaround" { } ''
-            plugins="${theme.outPath}/${pkgs.qt6.qtbase.qtPluginPrefix}"
-            cp -r --dereference "$plugins" $out
-          ''
-        ) themes;
-
-      toStr = lib.concatMapStrings (x: ":" + x) (
-        deferTheme (
-          with pkgs;
-          [
-            self.packages.${pkgs.system}.lightly-qt6
-            qt6ct
-          ]
-        )
-      );
-    in
-    "$QT_PLUGIN_PATH${toStr}";
-
   xdg.configFile = {
     "qt5ct/qt5ct.conf".text = lib.generators.toINI { } (data "qt5ct");
     "qt6ct/qt6ct.conf".text = lib.generators.toINI { } (data "qt6ct");
