@@ -49,7 +49,7 @@
         "{fmt.bg._11111B}{fmt.fg._CDD6F4} {title} "
         "{fmt.fg._74C7EC}{layout_name[:2].upper()} {activity_symbol}{fmt.bg.tab}"
       ];
-      background_opacity = "0.9";
+      background_opacity = "0.95";
       dynamic_background_opacity = true;
     };
 
