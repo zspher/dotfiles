@@ -14,6 +14,9 @@
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
 
+    initrd.kernelModules = [
+      "i915"
+    ];
     initrd.availableKernelModules = [
       "ahci"
       "nvme"
@@ -24,8 +27,15 @@
       "vmd"
       "xhci_pci"
     ];
-    kernelModules = [ "kvm-intel" ];
-    kernelParams = [ "intel_pstate=disable" ];
+
+    kernelPackages = pkgs.linuxPackages_latest;
+    kernelModules = [
+      "kvm-intel"
+    ];
+    kernelParams = [
+      "intel_pstate=disable"
+      "i915.enable_guc=3"
+    ];
   };
 
   fileSystems."/" = {
@@ -77,7 +87,14 @@
     enable = true;
     enable32Bit = true;
     extraPackages = with pkgs; [
-      vaapiVdpau # required by davinci resolve
+      libva-vdpau-driver # required by davinci resolve
+
+      intel-media-driver
+      intel-compute-runtime
+      vpl-gpu-rt
+    ];
+    extraPackages32 = with pkgs; [
+      driversi686Linux.intel-media-driver
     ];
   };
 
