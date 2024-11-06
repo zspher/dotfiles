@@ -10,7 +10,6 @@
   ];
   theme.catppuccin = {
     kde.enable = true;
-    kvantum.enable = false;
     mpv.enable = true;
     obs-studio.enable = true;
     swaync.enable = true;

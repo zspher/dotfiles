@@ -18,7 +18,6 @@ in
   ];
   options.theme.catppuccin = {
     git-delta.enable = lib.mkEnableOption "git delta integration";
-    kvantum.enable = lib.mkEnableOption "kvantum integration";
     mpv.enable = lib.mkEnableOption "mpv integration";
     obs-studio.enable = lib.mkEnableOption "obs-studio integration";
     swaync.enable = lib.mkEnableOption "swaync integration";
@@ -37,7 +36,6 @@ in
         variant = ctp.flavor;
       };
 
-      kvantum-theme = "Catppuccin-${upperFirst ctp.flavor}-${upperFirst ctp.accent}";
       palette = (lib.importJSON "${ctp.sources.palette}/palette.json").${ctp.flavor}.colors;
       colors = builtins.mapAttrs (color: val: (builtins.substring 1 6 val.hex)) palette;
 
@@ -53,15 +51,6 @@ in
         });
     in
     lib.mkMerge [
-      (lib.mkIf cfg.kvantum.enable {
-        xdg.configFile = {
-          "Kvantum/${kvantum-theme}".source = "${catppuccin}/share/Kvantum/${kvantum-theme}";
-          "Kvantum/kvantum.kvconfig".text = lib.generators.toINI { } {
-            General.theme = "${kvantum-theme}";
-          };
-        };
-      })
-
       (lib.mkIf (cfg.waybar.enable) {
         programs.waybar.style = replaceColors ./waybar-template.css;
       })
