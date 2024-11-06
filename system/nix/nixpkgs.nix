@@ -17,12 +17,6 @@
             });
           }
         );
-        # TODO: remove when https://nixpk.gs/pr-tracker.html?pr=353338 lands
-        neatvnc = prev.neatvnc.overrideAttrs (oldAttrs: {
-          patches = [
-            ./patches/fix-ffmpeg.patch
-          ];
-        });
       })
     ];
     config = {
