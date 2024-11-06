@@ -48,6 +48,9 @@ in
             "--replace-quiet"
             "var(--${x})"
             "${palette.${x}.hex}"
+            "--replace-quiet"
+            "var(--accent)"
+            "${palette.${ctp.accent}.hex}"
           ]) (builtins.attrNames colors);
         });
     in
