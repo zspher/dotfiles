@@ -1,4 +1,9 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 {
   home.packages = with pkgs; [
     grimblast
@@ -10,7 +15,12 @@
   programs.rofi.enable = true;
   programs.rofi.package = pkgs.rofi-wayland-unwrapped;
   xdg.configFile."rofi/share" = {
-    source = ./share;
+    source = lib.cleanSourceWith {
+      src = ./share;
+      filter =
+        path: type:
+        if config.theme.catppuccin.rofi.enable then builtins.baseNameOf path != "theme.rasi" else true;
+    };
     recursive = true;
   };
   xdg.configFile."rofi/bin" = {

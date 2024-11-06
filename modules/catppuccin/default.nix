@@ -58,7 +58,7 @@ in
     lib.mkIf (config.theme.catppuccin.enable) (
       lib.mkMerge [
         (lib.mkIf (cfg.rofi.enable) {
-          xdg.configFile."rofi/share/catppuccin.rasi".source = replaceColors ./rofi-template.rasi;
+          xdg.configFile."rofi/share/theme.rasi".source = replaceColors ./rofi-template.rasi;
         })
         (lib.mkIf (cfg.waybar.enable) {
           programs.waybar.style = replaceColors ./waybar-template.css;

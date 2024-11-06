@@ -13,7 +13,7 @@ configuration {
 }
 
 /*****----- Global Properties -----*****/
-@import                          "catppuccin.rasi"
+@import                          "theme.rasi"
 @import                          "fonts.rasi"
 @import                          "vim.rasi"
 
