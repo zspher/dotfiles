@@ -19,6 +19,7 @@ in
   options.theme.catppuccin = {
     enable = lib.mkEnableOption "catppuccin";
     git-delta.enable = lib.mkEnableOption "git delta integration";
+    gtk.enable = lib.mkEnableOption "gtk integration";
     mpv.enable = lib.mkEnableOption "mpv integration";
     obs-studio.enable = lib.mkEnableOption "obs-studio integration";
     rofi.enable = lib.mkEnableOption "rofi integration";
@@ -68,8 +69,50 @@ in
         })
         (lib.mkIf (cfg.walker.enable) {
           xdg.configFile."walker/themes/catppuccin.css".source = replaceColors ./walker-template.css;
-
           xdg.configFile."walker/themes/catppuccin.json".source = ./walker-theme.json;
+        })
+
+        (lib.mkIf (cfg.gtk.enable) {
+          gtk = {
+
+            enable = true;
+
+            theme =
+              let
+                colorVariants = if ctp.flavor == "latte" then [ "light" ] else [ "dark" ];
+                ctpToCollTbl = {
+                  mauve = "purple";
+                  maroon = "red";
+                  peach = "orange";
+
+                  pink = "pink";
+                  blue = "blue";
+                  teal = "teal";
+                  green = "green";
+                  yellow = "yellow";
+                };
+
+                ctpToColl =
+                  color:
+                  if builtins.hasAttr color ctpToCollTbl then
+                    ctpToCollTbl.${color}
+                  else
+                    builtins.throw "invalid color: ${color}";
+                ac = ctp.accent;
+              in
+              {
+                name = "Colloid-${upperFirst (ctpToColl ac)}-Dark-Catppuccin";
+                package = pkgs.colloid-gtk-theme.override {
+                  inherit colorVariants;
+                  themeVariants = [ "${ctpToColl ac}" ];
+                  sizeVariants = [ "standard" ];
+                  tweaks = [
+                    "catppuccin"
+                    "black"
+                  ];
+                };
+              };
+          };
         })
 
         (lib.mkIf (cfg.mpv.enable) {

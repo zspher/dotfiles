@@ -10,6 +10,7 @@
   ];
   theme.catppuccin = {
     enable = true;
+    gtk.enable = true;
     mpv.enable = true;
     obs-studio.enable = true;
     rofi.enable = true;
@@ -19,25 +20,6 @@
     waybar.enable = true;
   };
   gtk = {
-    enable = true;
-
-    theme =
-      let
-        colorVariants = if config.catppuccin.flavor == "latte" then [ "light" ] else [ "dark" ];
-      in
-      {
-        name = "Colloid-Purple-Dark-Catppuccin";
-        package = pkgs.colloid-gtk-theme.override {
-          inherit colorVariants;
-          themeVariants = [ "purple" ];
-          sizeVariants = [ "standard" ];
-          tweaks = [
-            "catppuccin"
-            "black"
-          ];
-        };
-      };
-
     font.name = "NotoSans Nerd Font";
     font.size = 10;
 
