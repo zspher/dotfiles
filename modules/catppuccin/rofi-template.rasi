@@ -1,0 +1,9 @@
+* {
+    background:                 var(--base)ff;
+    background-alt:             var(--surface0)ff;
+    background-transparent:     var(--base)ee;
+    foreground:                 var(--text)ff;
+    selected:                   var(--blue)ff;
+    accent:                     var(--accent)ff;
+    urgent:                     var(--red)FF;
+}

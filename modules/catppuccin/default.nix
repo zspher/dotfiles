@@ -21,6 +21,7 @@ in
     git-delta.enable = lib.mkEnableOption "git delta integration";
     mpv.enable = lib.mkEnableOption "mpv integration";
     obs-studio.enable = lib.mkEnableOption "obs-studio integration";
+    rofi.enable = lib.mkEnableOption "rofi integration";
     swaync.enable = lib.mkEnableOption "swaync integration";
     vesktop.enable = lib.mkEnableOption "webcord integration";
     walker.enable = lib.mkEnableOption "walker integration";
@@ -56,6 +57,9 @@ in
     in
     lib.mkIf (config.theme.catppuccin.enable) (
       lib.mkMerge [
+        (lib.mkIf (cfg.rofi.enable) {
+          xdg.configFile."rofi/share/catppuccin.rasi".source = replaceColors ./rofi-template.rasi;
+        })
         (lib.mkIf (cfg.waybar.enable) {
           programs.waybar.style = replaceColors ./waybar-template.css;
         })

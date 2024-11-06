@@ -13,6 +13,7 @@
     enable = true;
     mpv.enable = true;
     obs-studio.enable = true;
+    rofi.enable = true;
     swaync.enable = true;
     vesktop.enable = true;
     walker.enable = true;

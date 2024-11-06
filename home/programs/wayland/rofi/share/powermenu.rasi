@@ -8,6 +8,7 @@
  **/
 
 @import                          "vim.rasi"
+@import                          "catppuccin.rasi"
 
 /*****----- Configuration -----*****/
 configuration {
@@ -30,11 +31,11 @@ configuration {
     textbox-font:                "CaskaydiaMono Nerd Font Mono 14";
     element-text-font:           "CaskaydiaMono Nerd Font Mono 70";
 
-    background-window:           black/30%;
-    background-normal:           white/5%;
-    background-selected:         white/15%;
-    foreground-normal:           white;
-    foreground-selected:         white;
+    background-window:           gray/5%;
+    background-normal:           @background;
+    background-selected:         @selected;
+    foreground-normal:           @foreground;
+    foreground-selected:         @background;
 }
 
 /*****----- Main Window -----*****/
@@ -70,8 +71,10 @@ dummy {
 prompt {
     enabled:                     true;
     font:                        var(prompt-font);
-    background-color:            transparent;
-    text-color:                  var(foreground-normal);
+    padding:                     15px 30px;
+    border-radius:               var(element-border-radius);
+    background-color:            var(background-normal);
+    text-color:                  @accent;
 }
 
 /*****----- Message -----*****/

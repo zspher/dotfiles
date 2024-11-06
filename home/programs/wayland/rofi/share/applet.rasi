@@ -34,7 +34,7 @@ window {
     padding:                     0px;
     border:                      3px solid;
     border-radius:               12px;
-    border-color:                @active;
+    border-color:                @accent;
     cursor:                      "default";
     background-color:            @background;
 }
@@ -66,7 +66,7 @@ prompt {
     enabled:                     true;
     padding:                     10px;
     border-radius:               12px;
-    background-color:            @active;
+    background-color:            @accent;
     text-color:                  @background;
 }
 
@@ -134,7 +134,7 @@ element selected.active {
 element normal.active,
 element alternate.active,
 element selected.urgent {
-    background-color:            var(active);
+    background-color:            var(accent);
     text-color:                  var(background);
 }
 element selected.normal {
