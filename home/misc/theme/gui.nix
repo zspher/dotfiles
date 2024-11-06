@@ -9,7 +9,6 @@
     ./qt
   ];
   theme.catppuccin = {
-    kde.enable = true;
     enable = true;
     mpv.enable = true;
     obs-studio.enable = true;
