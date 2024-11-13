@@ -30,8 +30,8 @@
 
         #-- nix
         nixfmt-rfc-style # formatter
-        nil # lsp
-        nixd
+        nil # lsp for code actions only
+        nixd # lsp
 
         #-- python
         pyright # LSP
