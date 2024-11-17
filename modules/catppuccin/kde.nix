@@ -41,6 +41,7 @@ in
       themeInfo = lib.mkMerge [
         (importINI "${package}/share/color-schemes/Catppuccin${flavor}${accent}.colors")
         { "ColorEffects:Disabled".IntensityAmount = lib.mkForce 1; }
+        { "General".Name = lib.mkForce null; }
       ];
     in
     lib.mkIf cfg.kde.enable {
