@@ -53,12 +53,16 @@ let
       "unknown"
     ]);
 
+  documentTypes = {
+    "image/vnd.djvu" = [ "org.kde.okular" ];
+    "application/pdf" = [ "org.kde.okular" ];
+    "application/vnd.openxmlformats-officedocument.wordprocessingml.document" = [ "writer" ];
+    "application/epub+zip" = [ "calibre-ebook-viewer" ];
+  };
+
   # XDG MIME types
   associations = builtins.mapAttrs (_: v: (map (e: "${e}.desktop") v)) (
     {
-      "image/vnd.djvu" = [ "org.kde.okular" ];
-      "application/pdf" = [ "org.kde.okular" ];
-
       "text/html" = browser;
       "text/plain" = [ "nvim" ];
 
@@ -68,6 +72,7 @@ let
     // video
     // audio
     // browserTypes
+    // documentTypes
   );
 in
 {
