@@ -29,6 +29,7 @@ let
     "avi"
     "mkv"
     "mp4"
+    "mov"
   ];
   audio = xdgAssociations "audio" audioPlayer [
     "aac"
