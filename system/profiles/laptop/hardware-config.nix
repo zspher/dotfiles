@@ -28,7 +28,8 @@
       "xhci_pci"
     ];
 
-    kernelPackages = pkgs.linuxPackages_latest;
+    # TODO: uncomment when https://github.com/NixOS/nixpkgs/issues/357643
+    # kernelPackages = pkgs.linuxPackages_latest;
     kernelModules = [
       "kvm-intel"
     ];
