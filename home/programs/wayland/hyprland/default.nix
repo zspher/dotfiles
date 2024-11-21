@@ -43,12 +43,15 @@
           passes = 1;
         };
 
-        drop_shadow = false;
-        shadow_range = 8;
-        shadow_render_power = 2;
-        shadow_offset = "2 3";
-        "col.shadow_inactive" = "rgb($crustAlpha)";
-        "col.shadow" = "rgb($mauveAlpha)";
+        shadow = {
+          enabled = false;
+          range = 8;
+          render_power = 2;
+          offset = "2 3";
+
+          color = "rgb($mauveAlpha)";
+          color_inactive = "rgb($crustAlpha)";
+        };
       };
 
       animations = {
