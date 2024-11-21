@@ -70,6 +70,7 @@ in
         (lib.mkIf (cfg.walker.enable) {
           xdg.configFile."walker/themes/catppuccin.css".source = replaceColors ./walker-template.css;
           xdg.configFile."walker/themes/catppuccin.json".source = ./walker-theme.json;
+          programs.walker.config.theme = "catppuccin";
         })
 
         (lib.mkIf (cfg.gtk.enable) {
