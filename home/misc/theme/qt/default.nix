@@ -32,6 +32,7 @@ in
     ];
     platformTheme.name = "qtct";
     kde.settings.kdeglobals.Icons.Theme = config.gtk.iconTheme.name;
+    kde.settings.dolphinrc.UiSettings.ColorScheme = "*";
   };
 
   xdg.configFile = {
