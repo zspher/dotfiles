@@ -31,7 +31,6 @@ in
       self.packages.${pkgs.system}.lightly-qt6
     ];
     platformTheme.name = "qtct";
-    kde.settings.kdeglobals.General.TerminalApplication = "kitty";
     kde.settings.kdeglobals.Icons.Theme = config.gtk.iconTheme.name;
   };
 

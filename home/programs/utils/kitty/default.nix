@@ -1,5 +1,7 @@
 { lib, ... }:
 {
+  qt.kde.settings.kdeglobals.General.TerminalApplication = "kitty";
+
   programs.kitty = {
     enable = true;
     font.name = "CaskaydiaMono Nerd Font";
