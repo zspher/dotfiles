@@ -9,8 +9,5 @@
     ffmpegthumbs # video thumbnails
     qtimageformats # for webp thumbnails
   ];
-  xdg.configFile."baloofilerc".text = ''
-    [Basic Settings]
-    Indexing-Enabled=false
-  '';
+  qt.kde.settings."baloofilerc"."Basic Settings"."Indexing-Enabled" = false;
 }
