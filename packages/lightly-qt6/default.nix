@@ -10,13 +10,13 @@
 }:
 stdenv.mkDerivation (finalAttrs: {
   pname = "lightly-qt6";
-  version = "0.5.5";
+  version = "0.5.7";
 
   src = fetchFromGitHub {
     owner = "Bali10050";
     repo = "Lightly";
     rev = "v${finalAttrs.version}";
-    sha256 = "sha256-cBICf6DGg6s7vbqJZ/zo09Wjkvm/ztQCDB8XLoXL7S8=";
+    sha256 = "sha256-imFBAaLLa1yJn8FKfm6DRcRR1acxYmpJULU0Vl1bLMQ=";
   };
 
   preBuild = ''
@@ -50,7 +50,6 @@ stdenv.mkDerivation (finalAttrs: {
     extra-cmake-modules
   ];
 
-  enableParallelBuilding = true;
   outputs = [
     "out"
     "dev"
