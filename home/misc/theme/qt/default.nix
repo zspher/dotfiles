@@ -3,6 +3,7 @@
   pkgs,
   self,
   config,
+  inputs,
   ...
 }:
 let
@@ -26,9 +27,9 @@ in
   theme.catppuccin.kde.enable = true;
   qt = {
     enable = true;
-    style.package = with pkgs; [
-      lightly-boehs
-      self.packages.${pkgs.system}.lightly-qt6
+    style.package = [
+      inputs.lightly.packages.${pkgs.system}.lightly-qt5
+      inputs.lightly.packages.${pkgs.system}.lightly-qt6
     ];
     platformTheme.name = "qtct";
     kde.settings.kdeglobals.Icons.Theme = config.gtk.iconTheme.name;

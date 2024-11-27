@@ -75,5 +75,10 @@
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    lightly = {
+      url = "github:zspher/Lightly/feature-nix-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 }
