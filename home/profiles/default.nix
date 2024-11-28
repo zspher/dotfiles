@@ -46,6 +46,7 @@ in
         ../programs/games/bottles.nix
         # ../programs/multimedia/davinci-resolve.nix
         {
+          home.packages = with pkgs; [ cemu ];
         }
       ];
       inherit pkgs extraSpecialArgs;
