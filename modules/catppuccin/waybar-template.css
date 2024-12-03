@@ -86,16 +86,27 @@ window#waybar.hidden {
   margin: 0 10px;
 }
 
-#custom-lock {
+#custom-power:hover,
+#custom-quit:hover,
+#custom-lock:hover,
+#custom-reboot:hover,
+#custom-hibernate:hover {
+  color: var(--text);
+}
+
+#custom-power {
   color: var(--red);
+}
+#custom-quit {
+  color: var(--peach);
+}
+#custom-lock {
+  color: var(--yellow);
 }
 #custom-reboot {
   color: var(--green);
 }
-#custom-quit {
-  color: var(--yellow);
-}
-#custom-power {
+#custom-hibernate {
   color: var(--blue);
 }
 

@@ -47,11 +47,17 @@
             "custom/quit"
             "custom/lock"
             "custom/reboot"
+            "custom/hibernate"
           ];
         };
 
         "image#logo" = {
           path = "${./icons/nix-catppuccin-logo.svg}";
+        };
+        "custom/power" = {
+          format = "";
+          on-click = "shutdown now";
+          tooltip-format = "shutdown";
         };
         "custom/quit" = {
           format = "󰗼";
@@ -68,10 +74,10 @@
           on-click = "reboot";
           tooltip-format = "reboot";
         };
-        "custom/power" = {
-          format = "";
-          on-click = "shutdown now";
-          tooltip-format = "shutdown";
+        "custom/hibernate" = {
+          format = "";
+          on-click = "systemctl hibernate";
+          tooltip-format = "hibernate";
         };
 
         "hyprland/workspaces" = {
