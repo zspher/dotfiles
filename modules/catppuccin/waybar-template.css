@@ -135,20 +135,23 @@ window#waybar.hidden {
 }
 
 #workspaces button box label {
-  color: transparent;
+  font-size: 0.8em;
+  color: var(--surface2);
   border-radius: 100%;
-  min-width: 14px;
+  min-width: 12px;
+  padding-left: 2px;
+  padding-right: 1.5px;
   margin: 8px 0;
   background-color: var(--subtext0);
 }
 
 #workspaces button.active box label {
-  padding-left: 10px;
-  padding-right: 10px;
-  border-radius: 30%;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 35%;
   background-color: var(--mauve);
   color: var(--base);
-  margin: 6px 0;
+  margin: 7.5px 0;
 }
 
 #workspaces button:hover box label {
