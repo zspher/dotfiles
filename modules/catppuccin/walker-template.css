@@ -25,6 +25,7 @@ slider,
   background: var(--base);
   padding: 16px;
   border-radius: 8px;
+  border: 2px solid var(--accent);
   box-shadow: none;
 }
 
