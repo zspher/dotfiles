@@ -46,14 +46,17 @@ in
         src:
         (pkgs.substitute {
           src = src;
-          substitutions = builtins.concatMap (x: [
-            "--replace-quiet"
-            "var(--${x})"
-            "${palette.${x}.hex}"
-            "--replace-quiet"
-            "var(--accent)"
-            "${palette.${ctp.accent}.hex}"
-          ]) (builtins.attrNames colors);
+          substitutions =
+            (builtins.concatMap (x: [
+              "--replace-quiet"
+              "var(--${x})"
+              "${palette.${x}.hex}"
+            ]) (builtins.attrNames colors))
+            ++ [
+              "--replace-quiet"
+              "var(--accent)"
+              "${palette.${ctp.accent}.hex}"
+            ];
         });
     in
     lib.mkIf (config.theme.catppuccin.enable) (
@@ -129,7 +132,8 @@ in
         })
 
         (lib.mkIf (cfg.obs-studio.enable) {
-          qt.kde.settings."obs-studio/global.ini".Appearance."Theme" = "com.obsproject.Catppuccin.${upperFirst ctp.flavor}";
+          qt.kde.settings."obs-studio/global.ini".Appearance."Theme" =
+            "com.obsproject.Catppuccin.${upperFirst ctp.flavor}";
 
           xdg.configFile."obs-studio/themes" = {
             source = "${inputs.catppuccin-obs}/themes";
