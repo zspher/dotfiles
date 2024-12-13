@@ -48,8 +48,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    pollymc = {
-      url = "github:fn2006/PollyMC";
+    fjordLauncher = {
+      url = "github:unmojang/FjordLauncher";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     walker = {
