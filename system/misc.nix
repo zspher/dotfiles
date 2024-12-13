@@ -10,12 +10,8 @@
 
   # fonts
   fonts.packages = with pkgs; [
-    (nerdfonts.override {
-      fonts = [
-        "CascadiaMono"
-        "Noto"
-      ];
-    })
+    nerd-fonts.noto
+    nerd-fonts.caskaydia-mono
   ];
 
   # internationalization
