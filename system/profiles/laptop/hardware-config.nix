@@ -34,6 +34,7 @@
       "kvm-intel"
     ];
     kernelParams = [
+      "intel_iommu=on"
       "intel_pstate=disable"
       "i915.enable_guc=3"
     ];
