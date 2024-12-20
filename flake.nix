@@ -77,7 +77,7 @@
     };
 
     lightly = {
-      url = "github:zspher/Lightly/feature-nix-flake";
+      url = "github:Bali10050/Lightly";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
