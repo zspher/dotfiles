@@ -76,8 +76,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    lightly = {
-      url = "github:Bali10050/Lightly";
+    darkly = {
+      url = "github:Bali10050/Darkly";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

@@ -12,7 +12,7 @@ let
       custom_palette = true;
       icon_theme = config.gtk.iconTheme.name;
       standard_dialogs = "default";
-      style = "Lightly";
+      style = "Darkly";
       color_scheme_path = "${config.xdg.configHome}/${qtctVersion}/colors/catppuccin.conf";
     };
 
@@ -28,8 +28,8 @@ in
   qt = {
     enable = true;
     style.package = [
-      inputs.lightly.packages.${pkgs.system}.lightly-qt5
-      inputs.lightly.packages.${pkgs.system}.lightly-qt6
+      inputs.darkly.packages.${pkgs.system}.darkly-qt5
+      inputs.darkly.packages.${pkgs.system}.darkly-qt6
     ];
     platformTheme.name = "qtct";
     kde.settings.kdeglobals.Icons.Theme = config.gtk.iconTheme.name;
@@ -41,7 +41,7 @@ in
     "qt6ct/qt6ct.conf".text = lib.generators.toINI { } (data "qt6ct");
     "qt6ct/colors/catppuccin.conf".source = ./qt6ct-catppuccin.conf;
     "qt5ct/colors/catppuccin.conf".source = ./qt5ct-catppuccin.conf;
-    "lightlyrc".text = ''
+    "darklyrc".text = ''
       [Style]
       AnimationsEnabled=false
       DolphinSidebarOpacity=100

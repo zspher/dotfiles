@@ -64,6 +64,26 @@
         "type": "github"
       }
     },
+    "darkly": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1735214495,
+        "narHash": "sha256-W5rFYbVNuprZxf8go0Ok/+jcMHAGocx5WzdJQWmJF40=",
+        "owner": "Bali10050",
+        "repo": "Darkly",
+        "rev": "5e74e10ff4ef868007bd8fbf80dee28d384a6b4d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Bali10050",
+        "repo": "Darkly",
+        "type": "github"
+      }
+    },
     "fjordLauncher": {
       "inputs": {
         "flake-compat": "flake-compat",
@@ -196,26 +216,6 @@
         "type": "github"
       }
     },
-    "lightly": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1735214495,
-        "narHash": "sha256-W5rFYbVNuprZxf8go0Ok/+jcMHAGocx5WzdJQWmJF40=",
-        "owner": "Bali10050",
-        "repo": "Lightly",
-        "rev": "5e74e10ff4ef868007bd8fbf80dee28d384a6b4d",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Bali10050",
-        "repo": "Lightly",
-        "type": "github"
-      }
-    },
     "nix-filter": {
       "locked": {
         "lastModified": 1731533336,
@@ -253,10 +253,10 @@
         "catppuccin-delta": "catppuccin-delta",
         "catppuccin-discord": "catppuccin-discord",
         "catppuccin-obs": "catppuccin-obs",
+        "darkly": "darkly",
         "fjordLauncher": "fjordLauncher",
         "flake-parts": "flake-parts",
         "home-manager": "home-manager",
-        "lightly": "lightly",
         "nixpkgs": "nixpkgs",
         "spicetify-nix": "spicetify-nix",
         "walker": "walker"
