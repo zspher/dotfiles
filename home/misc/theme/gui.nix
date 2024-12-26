@@ -35,7 +35,7 @@
     size = 32;
   };
 
-  programs.kitty.catppuccin.enable = true;
-  programs.mpv.catppuccin.enable = true;
-  wayland.windowManager.hyprland.catppuccin.enable = true;
+  catppuccin.kitty.enable = true;
+  catppuccin.mpv.enable = true;
+  catppuccin.hyprland.enable = true;
 }

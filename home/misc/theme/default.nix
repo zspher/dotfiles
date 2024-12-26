@@ -4,13 +4,13 @@
   catppuccin.accent = "mauve";
 
   # the minimum needed for theming (i.e. in a tty: shell, cmdline)
-  programs.bat.catppuccin.enable = true;
-  programs.btop.catppuccin.enable = true;
-  programs.fish.catppuccin.enable = true;
-  programs.fzf.catppuccin.enable = true;
-  programs.lazygit.catppuccin.enable = true;
-  programs.starship.catppuccin.enable = true;
-  programs.tmux.catppuccin.enable = true;
+  catppuccin.bat.enable = true;
+  catppuccin.btop.enable = true;
+  catppuccin.fish.enable = true;
+  catppuccin.fzf.enable = true;
+  catppuccin.lazygit.enable = true;
+  catppuccin.starship.enable = true;
+  catppuccin.tmux.enable = true;
 
   home.sessionVariables = {
     GREP_COLORS = "ms=01;31";

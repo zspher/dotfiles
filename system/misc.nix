@@ -23,5 +23,5 @@
   # theme
   catppuccin.flavor = "mocha";
   catppuccin.accent = "mauve";
-  console.catppuccin.enable = true;
+  catppuccin.tty.enable = true;
 }
