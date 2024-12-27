@@ -9,7 +9,13 @@
     settings = {
       disable_ligatures = "always";
 
+      box_drawing_scale = "0.001, 0.1, 1.0, 1";
       cursor_shape = "beam";
+      cursor_beam_thickness = "1.1";
+
+      inactive_text_alpha = "0.6";
+      background_opacity = "0.95";
+      dynamic_background_opacity = true;
 
       scrollback_pager = lib.concatStrings [
         "nvim -R -M "
@@ -38,21 +44,19 @@
       tab_activity_symbol = "●";
       tab_separator = "' '";
       tab_powerline_style = "angled";
-      tab_bar_background = "#313244";
 
       tab_title_template = lib.concatStrings [
-        "{fmt.bg._89B4FA}{fmt.fg._1E1E2E} {index} "
-        "{fmt.bg._313244}{fmt.fg.tab} {title} "
+        "{fmt.bg.color4}{fmt.fg.color0} {index} "
+        "{fmt.bg.tab}{fmt.fg.tab} {title} "
         "{activity_symbol}"
       ];
 
       active_tab_title_template = lib.concatStrings [
-        "{fmt.bg._A6E3A1} {index} "
-        "{fmt.bg._11111B}{fmt.fg._CDD6F4} {title} "
-        "{fmt.fg._74C7EC}{layout_name[:2].upper()} {activity_symbol}{fmt.bg.tab}"
+        "{fmt.bg.color2} {index} "
+        "{fmt.bg._11111B}{fmt.fg.color7} {title} "
+        "{fmt.fg.color4}{'𝙼' if layout_name == 'stack' else activity_symbol}"
+        "{fmt.bg.tab}"
       ];
-      background_opacity = "0.95";
-      dynamic_background_opacity = true;
     };
 
     keybindings = {
