@@ -51,7 +51,7 @@ run_rofi() {
 # Screenshot
 time=$(date +%Y-%m-%d-%H-%M-%S)
 dir="$HOME"/Pictures/Screenshots
-file="Screenshot_${time}.png"
+file="Screenshot_${time}.webp"
 
 if [[ ! -d "$dir" ]]; then
     mkdir -p "$dir"
