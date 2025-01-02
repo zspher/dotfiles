@@ -22,6 +22,7 @@ let
     "jxl"
     "png"
     "svg"
+    "svg+xml"
     "tiff"
     "webp"
   ];
