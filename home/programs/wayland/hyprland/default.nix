@@ -109,8 +109,6 @@
         "bordercolor rgb($greenAlpha), floating:1"
         "bordercolor rgb($overlay2Alpha), xwayland:1, floating:0, fullscreen:0"
 
-        "float, class:^(org.kde.polkit-kde-authentication-agent-1)$"
-
         "workspace 1, class:obsidian"
         "workspace 2, class:Brave-browser"
         "workspace 2, class:brave-browser"
@@ -126,12 +124,12 @@
         "noanim, title:^(Floating Window \- Show Me The Key)$"
         "pin, title:^(Floating Window \- Show Me The Key)$"
 
+        "float, class:brave-browser, title:^(DevTools.*)$"
+        "float, class:^(org.kde.polkit-kde-authentication-agent-1)$"
+        "float, class:xdg-desktop-portal-gtk"
         "float, title:^(Unlock Database \- KeePassXC)$"
-
         "float, class:^(net.code\-industry.masterpdfeditor4)$"
         "tile, title:^(.*Master PDF Editor.*)$"
-
-        "float, class:brave-browser, title:^(DevTools.*)$"
 
         "noblur, xwayland:1, title:" # brave pop-up (i.e. app menu, right click pop-up)
       ];
