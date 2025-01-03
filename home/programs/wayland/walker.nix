@@ -8,6 +8,7 @@
       activation_mode.labels = "12345678";
       activation_mode.use_alt = true;
       builtins.calc.prefix = "=";
+      terminal = "kitty";
 
       disabled = [
         "finder"
