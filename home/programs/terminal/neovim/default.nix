@@ -67,6 +67,9 @@
         emmet-language-server # LSP
         tailwindcss-language-server # LSP
 
+        #-- yaml
+        yaml-language-server
+
         #-- latex
         texlab # LSP
         texlivePackages.latexindent # formatter
