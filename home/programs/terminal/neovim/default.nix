@@ -73,6 +73,9 @@
         #-- latex
         texlab # LSP
         texlivePackages.latexindent # formatter
+
+        #-- sql & co
+        sqlcmd
       ];
     };
   };
