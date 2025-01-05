@@ -43,7 +43,7 @@ in
       modules = mods.full ++ [
         ../programs/games/minecraft.nix
         ../programs/games/controller.nix
-        ../programs/games/bottles.nix
+        # ../programs/games/bottles.nix
         # ../programs/multimedia/davinci-resolve.nix
         {
           home.packages = with pkgs; [ cemu ];
