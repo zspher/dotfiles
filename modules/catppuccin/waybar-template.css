@@ -196,16 +196,13 @@ window#waybar.hidden {
 }
 
 #taskbar button.active box > label {
-  padding: 2px;
+  padding: 1px;
   min-width: 2px;
   min-height: 2px;
-  font-size: 2px;
-  margin-bottom: 15px;
-  border-radius: 100%;
-}
+  margin-bottom: 8px;
 
-#taskbar button.active box > label {
-  background-color: var(--mauve);
+  font-size: 10px;
+  color: var(--mauve);
 }
 
 #taskbar button {

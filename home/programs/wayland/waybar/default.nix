@@ -87,7 +87,7 @@
         };
 
         "wlr/taskbar" = {
-          format = "{icon}{short_state}";
+          format = "{icon}●";
           icon-size = 11;
           icon-theme = "Papirus-Dark";
           markup = true;
