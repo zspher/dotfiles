@@ -55,13 +55,21 @@
         #-- toml
         taplo # LSP
 
-        #-- json, html, css, eslint markdown json
+        #-- json, css, eslint json
         prettierd # formatter
         vscode-langservers-extracted # LSP
+
+        #-- html
+        superhtml # LSP
+
+        #-- markdown
+        marksman # LSP
+        markdownlint-cli2 # linter, formatter
 
         #-- json, javascript, typescript
         biome # formatter, linter
         vscode-js-debug # DAP
+        vtsls # LSP
 
         #-- html, tailwind
         emmet-language-server # LSP
