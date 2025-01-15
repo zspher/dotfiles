@@ -1,5 +1,8 @@
 { pkgs, ... }:
 {
+  imports = [
+    ./dbeaver.nix
+  ];
   home.packages = with pkgs; [
     anki
     calibre
