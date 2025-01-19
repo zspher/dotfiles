@@ -92,9 +92,12 @@
       intel-media-driver
       intel-compute-runtime
       vpl-gpu-rt
+      intel-vaapi-driver
+
+      intel-ocl
     ];
-    extraPackages32 = with pkgs; [
-      driversi686Linux.intel-media-driver
+    extraPackages32 = with pkgs.pkgsi686Linux; [
+      intel-media-driver
     ];
   };
 
@@ -120,6 +123,8 @@
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
   services.fstrim.enable = true; # for ssd
+
+  services.fwupd.enable = true; # firmware
 
   services.thermald.enable = true;
 }
