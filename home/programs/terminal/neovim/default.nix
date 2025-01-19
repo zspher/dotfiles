@@ -13,10 +13,10 @@
       viAlias = false;
       vimAlias = true;
 
-      withPython3 = true;
       withNodeJs = true;
 
       extraPackages = with pkgs; [
+        python3
         unzip # for mason
         gnumake # required by fzf-telescope
         tree-sitter
