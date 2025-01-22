@@ -22,7 +22,7 @@ slider,
 }
 
 #window {
-  color: none;
+  color: var(--text); /*typing cursor color*/
 }
 
 #box {
