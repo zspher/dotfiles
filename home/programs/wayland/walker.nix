@@ -6,14 +6,19 @@
     # runAsService = true;
     config = {
       ignore_mouse = true;
-      activation_mode.labels = "12345678";
-      activation_mode.use_alt = true;
-      builtins.calc.prefix = "=";
       terminal = "kitty";
+
+      activation_mode = {
+        labels = "12345678";
+        use_alt = true;
+      };
+      builtins = {
+        calc.prefix = "=";
+        runner.prefix = ">";
+      };
 
       disabled = [
         "finder"
-        "runner"
         "windows"
       ];
       list.max_items = 20;
