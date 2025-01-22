@@ -8,13 +8,24 @@
       ignore_mouse = true;
       terminal = "kitty";
 
-      activation_mode = {
-        labels = "12345678";
-        use_alt = true;
-      };
+      activation_mode.labels = "12345678";
+
       builtins = {
         calc.prefix = "=";
         runner.prefix = ">";
+      };
+
+      keys = {
+        trigger_labels = "lalt";
+        next = [
+          "ctrl j"
+          "down"
+        ];
+        prev = [
+          "ctrl k"
+          "up"
+        ];
+        toggle_exact_search = [ "ctrl m" ];
       };
 
       disabled = [
