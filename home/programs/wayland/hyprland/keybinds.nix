@@ -44,6 +44,7 @@ in
         "CTRL SHIFT, escape, exec, $terminal btop"
         "CTRL ALT, T, exec, $terminal --class kitty-term"
         "ALT, SPACE, exec, $runner"
+        "ALT, TAB, exec, $runner -m windows"
         "$mainMod, E, exec, $file_manager"
         "$mainMod, N, exec, $notification_manager"
         "$mainMod SHIFT, S, exec, $screen_shot"

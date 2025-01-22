@@ -19,7 +19,6 @@
 
       disabled = [
         "finder"
-        "windows"
       ];
       list.max_items = 20;
     };
