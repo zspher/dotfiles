@@ -12,9 +12,7 @@
         src = pkgs.fishPlugins.pisces.src;
       }
     ];
-    shellAbbrs =
-      {
-      };
+    shellAbbrs = { };
     shellAliases = {
       lsd = "lsd --group-directories-first";
       la = "lsd -lA";
@@ -22,6 +20,7 @@
       lt = "lsd -lA --tree";
       l = "lsd -1A";
       ls = "lsd";
+      o = "xdg-open";
     };
     shellInit = '''';
     interactiveShellInit = ''
