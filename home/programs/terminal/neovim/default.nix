@@ -14,12 +14,13 @@
       vimAlias = true;
 
       withNodeJs = true;
-
+      extraLuaPackages = luaPkgs: with luaPkgs; [ magick ];
       extraPackages = with pkgs; [
         python3
         unzip # for mason
         gnumake # required by fzf-telescope
         tree-sitter
+        ueberzugpp # for image preview (fzf-lua)
 
         #-- rust
         rust-analyzer # LSP, required by rustaceanvim
