@@ -134,11 +134,6 @@ in
         (lib.mkIf (cfg.obs-studio.enable) {
           qt.kde.settings."obs-studio/global.ini".Appearance."Theme" =
             "com.obsproject.Catppuccin.${upperFirst ctp.flavor}";
-
-          xdg.configFile."obs-studio/themes" = {
-            source = "${inputs.catppuccin-obs}/themes";
-            recursive = true;
-          };
         })
 
         (

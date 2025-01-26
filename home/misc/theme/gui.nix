@@ -35,6 +35,7 @@
     size = 32;
   };
 
+  catppuccin.obs.enable = true;
   catppuccin.kitty.enable = true;
   catppuccin.mpv.enable = true;
   catppuccin.hyprland.enable = true;

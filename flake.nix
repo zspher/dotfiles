@@ -62,10 +62,6 @@
       url = "github:catppuccin/delta";
       flake = false;
     };
-    catppuccin-obs = {
-      url = "github:catppuccin/obs";
-      flake = false;
-    };
     catppuccin-discord = {
       url = "github:catppuccin/discord?ref=gh-pages";
       flake = false;
