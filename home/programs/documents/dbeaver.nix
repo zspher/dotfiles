@@ -4,7 +4,7 @@
     dbeaver-bin
   ];
   xdg.desktopEntries = {
-    dbeaver-ce = {
+    dbeaver = {
       name = "dbeaver-ce";
       icon = "dbeaver";
       genericName = "Universal Database Manager";
