@@ -85,6 +85,7 @@
 
         #-- sql & co
         sqlcmd
+        sqlfluff
       ];
     };
   };
