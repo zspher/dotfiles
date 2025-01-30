@@ -39,12 +39,13 @@
         body = ''
           fish_vi_key_bindings
 
+          bind -e --key \cy
 
-          bind -M insert \cn accept-autosuggestion
+          bind -M insert \cy accept-autosuggestion
           bind -M insert \en forward-word
 
-          bind -M insert \cj down-or-search
-          bind -M insert \ck up-or-search
+          bind -M insert \cn down-or-search
+          bind -M insert \cp up-or-search
         '';
       };
     };
