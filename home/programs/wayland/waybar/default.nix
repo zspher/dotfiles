@@ -100,8 +100,8 @@
 
         # * center  * //
         privacy = {
-          icon-size = 1;
-          icon-spacing = 0;
+          icon-size = 12;
+          icon-spacing = 5;
         };
 
         clock = {

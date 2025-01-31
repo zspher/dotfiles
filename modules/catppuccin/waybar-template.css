@@ -215,19 +215,12 @@ window#waybar.hidden {
   background-color: var(--base);
 }
 
-#privacy-item {
-  margin: 11px 2px;
-  min-height: 8px;
-  min-width: 8px;
-  border-radius: 100%;
-}
-
 #privacy-item.screenshare {
-  background-color: var(--red);
+  color: var(--red);
 }
 
 #privacy-item.audio-in {
-  background-color: var(--yellow);
+  color: var(--yellow);
 }
 
 #clock {
@@ -322,7 +315,6 @@ tooltip > decoration {
   box-shadow: none;
   background: var(--base);
   border-radius: 12.6px;
-  border-width: 0;
   border: 0.2px var(--mantle) solid;
 }
 
