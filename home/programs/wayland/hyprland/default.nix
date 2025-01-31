@@ -6,6 +6,7 @@
   ];
   wayland.windowManager.hyprland = {
     enable = true;
+    package = null;
     systemd.variables = [
       "DISPLAY"
       "HYPRLAND_INSTANCE_SIGNATURE"
