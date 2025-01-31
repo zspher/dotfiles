@@ -33,6 +33,7 @@
         posy-cursor = pkgs.callPackage ./posy-cursor { };
         sddm-corners-theme = pkgs.callPackage ./sddm-corners-theme { };
         fotokilof = pkgs.python311Packages.callPackage ./fotokilof { };
+        shrinkpdf = pkgs.callPackage ./shrinkpdf { };
       };
     };
 }

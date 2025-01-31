@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, self, ... }:
 {
   imports = [
     ./dbeaver.nix
@@ -10,6 +10,7 @@
     masterpdfeditor4
     obsidian
     kdePackages.okular
+    (self.packages.${pkgs.system}.shrinkpdf)
     simple-scan
     vscode-fhs
   ];
