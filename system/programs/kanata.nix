@@ -8,11 +8,6 @@
       '';
       config = ''
         ;; homerow mod, swapscape
-        (defsrc
-          caps esc grv
-          a s d f
-          j k l ;
-        )
         (defvar
           tap-timeout   200
           hold-timeout  150
@@ -46,23 +41,33 @@
           hk (tap-hold-release-keys $tt $ht (multi k @tap) rctl $right-hand-keys)
           hl (tap-hold-release-keys $tt $ht (multi l @tap) ralt $right-hand-keys)
           h; (tap-hold-release-keys $tt 200 (multi ; @tap) rmet $right-hand-keys)
+
+          vu (switch (lalt) (mwheel-up 50 120) break () volu break)
+          vd (switch (lalt) (mwheel-down 50 120) break () voldwn break)
         )
         (deftemplate switch-mode (mode)
           (tap-hold 200 200 grv (layer-switch $mode))
+        )
+        (defsrc
+          caps esc grv
+          a s d f
+          j k l ;
+          volu voldwn
         )
 
         (deflayer base
           esc caps (t! switch-mode nomods)
           @ha @hs @hd @hf
           @hj @hk @hl @h;
+          @vu @vd
         )
 
         (deflayer nomods
           esc caps (t! switch-mode base)
           a s d f
           j k l ;
+          @vu @vd
         )
-
       '';
     };
   };
