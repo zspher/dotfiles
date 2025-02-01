@@ -4,7 +4,7 @@
   systemd.user.services.polkit-kde-agent = {
     Unit = {
       Description = "polkit-kde-agent";
-      After = [ "graphical-session-pre.target" ];
+      After = [ "graphical-session.target" ];
       PartOf = [ "graphical-session.target" ];
     };
     Service = {

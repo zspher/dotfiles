@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   imports = [
     ./walker.nix
@@ -17,5 +17,9 @@
     package = pkgs.kdePackages.kdeconnect-kde;
     enable = true;
     indicator = true;
+  };
+  systemd.user.services = {
+    kdeconnect.Unit.After = lib.mkForce [ "graphical-session.target" ];
+    kdeconnect-indicator.Unit.After = lib.mkForce [ "graphical-session.target" ];
   };
 }
