@@ -22,4 +22,9 @@
     kdeconnect.Unit.After = lib.mkForce [ "graphical-session.target" ];
     kdeconnect-indicator.Unit.After = lib.mkForce [ "graphical-session.target" ];
   };
+
+  xdg.portal.config.common.default = [
+    "hyprland"
+    "gtk"
+  ];
 }
