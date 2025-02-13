@@ -60,8 +60,8 @@
     };
 
     keybindings = {
+      "ctrl+shift+enter" = "launch --cwd=current --location hsplit --bias 40";
       "shift+alt+t" = "new_tab_with_cwd";
-      "ctrl+shift+enter" = "launch --cwd=current --location hsplit";
 
       # tab
       "ctrl+space>1" = "goto_tab 1";
