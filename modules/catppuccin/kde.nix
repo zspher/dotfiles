@@ -18,7 +18,7 @@ let
     file:
     let
       json = pkgs.runCommand "INItoJSON" { } ''
-        ${pkgs.jc}/bin/jc --ini < ${file} > $out
+        ${lib.getExe pkgs.jc} --ini < ${file} > $out
       '';
     in
     lib.importJSON json;

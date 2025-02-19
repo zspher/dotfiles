@@ -23,7 +23,7 @@ in
       Type = "notify";
       NotifyAccess = "all";
       ExecStart = "${script}/bin/swww-wallset";
-      ExecStop = "${pkgs.swww}/bin/swww kill";
+      ExecStop = "${lib.getExe pkgs.swww} kill";
     };
 
     Install = {

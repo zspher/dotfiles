@@ -1,8 +1,12 @@
 {
   pkgs,
   config,
+  lib,
   ...
 }:
+let
+  inherit (lib.meta) getExe getExe';
+in
 {
   programs.waybar = {
     enable = true;
@@ -187,7 +191,7 @@
               " "
             ];
           };
-          on-click = "${pkgs.pavucontrol}/bin/pavucontrol";
+          on-click = "${getExe pkgs.pavucontrol}";
         };
         cpu = {
           format = "<span foreground='#fab387'>{icon0}</span> <span foreground='#f9e2af'>{icon1}</span> <span foreground='#f9e2af'>{icon2}</span> <span foreground='#a6e3a1'>{icon3}</span>";
@@ -228,9 +232,9 @@
             none = "󰍡";
             notification = "󰍡<span foreground='red'><sup></sup></span>";
           };
-          exec = "${pkgs.swaynotificationcenter}/bin/swaync-client -swb";
-          on-click = "${pkgs.swaynotificationcenter}/bin/swaync-client -t -sw";
-          on-click-right = "${pkgs.swaynotificationcenter}/bin/swaync-client -d -sw";
+          exec = "${getExe' pkgs.swaynotificationcenter "swaync-client"} -swb";
+          on-click = "${getExe' pkgs.swaynotificationcenter "swaync-client"} -t -sw";
+          on-click-right = "${getExe' pkgs.swaynotificationcenter "swaync-client"} -d -sw";
           return-type = "json";
           tooltip = true;
         };
