@@ -73,6 +73,7 @@
   };
 
   fileSystems."/mnt/drive2" = {
+    enable = false;
     device = "/dev/disk/by-label/drive2";
     fsType = "btrfs";
   };
