@@ -100,8 +100,7 @@
       };
 
       misc = {
-        vrr = 1;
-        vfr = true;
+        vrr = 2;
         force_default_wallpaper = 0;
       };
 
