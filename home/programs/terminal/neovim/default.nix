@@ -72,6 +72,10 @@
         vscode-js-debug # DAP
         vtsls # LSP
 
+        #-- typst
+        tinymist
+        typstyle
+
         #-- html, tailwind
         emmet-language-server # LSP
         tailwindcss-language-server # LSP
