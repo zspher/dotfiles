@@ -15,19 +15,7 @@
     {
       _module.args.pkgs = import self.inputs.nixpkgs {
         inherit system;
-        inherit
-          ((import ../system/nix/nixpkgs.nix {
-            inherit
-              inputs
-              self
-              lib
-              pkgs
-              ;
-          }).nixpkgs
-          )
-          overlays
-          config
-          ;
+        inherit ((import ../system/nix/nixpkgs.nix { inherit inputs self lib; }).nixpkgs) overlays config;
       };
       packages = {
         posy-cursor = pkgs.callPackage ./posy-cursor { };

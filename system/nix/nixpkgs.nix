@@ -2,7 +2,6 @@
   lib,
   self,
   inputs,
-  pkgs,
   ...
 }:
 {
@@ -36,9 +35,7 @@
     ];
     config = {
       allowUnfree = true;
-      permittedInsecurePackages = lib.optional (
-        pkgs.roslyn-ls.version == "4.13.0-3.24577.4"
-      ) "dotnet-sdk-6.0.428";
+      permittedInsecurePackages = [ ];
     };
   };
 }
