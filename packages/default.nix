@@ -34,6 +34,7 @@
         sddm-corners-theme = pkgs.callPackage ./sddm-corners-theme { };
         fotokilof = pkgs.python311Packages.callPackage ./fotokilof { };
         shrinkpdf = pkgs.callPackage ./shrinkpdf { };
+        sqruff = pkgs.callPackage ./sqruff { };
       };
     };
 }
