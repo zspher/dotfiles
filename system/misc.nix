@@ -20,6 +20,12 @@
     LC_TIME = "C.UTF-8";
   };
 
+  boot.supportedFilesystems = {
+    btrfs = true;
+    ntfs = true;
+    exfat = true;
+  };
+
   # theme
   catppuccin.flavor = "mocha";
   catppuccin.accent = "mauve";
