@@ -45,6 +45,7 @@ in
         ../programs/games/controller.nix
         ../misc/fonts.nix
         ../programs/games/bottles.nix
+        ../programs/security/fun-stuff.nix
         # ../programs/multimedia/davinci-resolve.nix
         {
           home.packages = with pkgs; [ cemu ];
