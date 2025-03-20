@@ -19,6 +19,7 @@
   ];
   home.packages = with pkgs; [
     fd
+    ghostscript
     (inxi.override { withRecommendedSystemPrograms = true; })
     jq
     lsd
