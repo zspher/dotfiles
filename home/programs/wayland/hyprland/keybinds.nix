@@ -9,14 +9,12 @@ let
     libraries = [ pkgs.libnotify ];
     flakeIgnore = [
       "E501"
-      "E265"
     ];
   } (builtins.readFile ./scripts/brightness.py);
   volume = pkgs.writers.writePython3 "volume" {
     libraries = [ pkgs.libnotify ];
     flakeIgnore = [
       "E501"
-      "E265"
     ];
   } (builtins.readFile ./scripts/volume.py);
   gamemode = pkgs.writeShellApplication {

@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 # GDbus - no work
 # busctl - sadly only option (for now)
 
