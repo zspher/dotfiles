@@ -1,4 +1,10 @@
 { pkgs, ... }:
+let
+  conditional_startup = pkgs.writers.writePython3 "conditional_startup" {
+    flakeIgnore = [
+    ];
+  } (builtins.readFile ./scripts/conditional_startup.py);
+in
 {
   imports = [
     ./clipboard.nix
@@ -17,6 +23,11 @@
     settings = {
       source = [ "~/.config/hypr/monitors.conf" ];
       env = [ "QT_QPA_PLATFORM,wayland" ];
+
+      exec-once = [
+        "${conditional_startup}"
+      ];
+
       input = {
         kb_layout = "us";
         follow_mouse = 1;
@@ -34,6 +45,7 @@
         "col.active_border" = "rgb($mauveAlpha)";
         "col.inactive_border" = "rgb($mantleAlpha)";
         layout = "dwindle";
+        allow_tearing = true;
       };
 
       decoration = {
@@ -132,6 +144,8 @@
         "tile, title:^(.*Master PDF Editor.*)$"
 
         "noblur, xwayland:1, title:" # brave pop-up (i.e. app menu, right click pop-up)
+
+        "immediate, class:^(steam_app_230410)$"
       ];
 
       layerrule = [
