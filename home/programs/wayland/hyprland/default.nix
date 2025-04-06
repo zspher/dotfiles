@@ -116,7 +116,7 @@ in
         force_default_wallpaper = 0;
       };
 
-      windowrulev2 = [
+      windowrule = [
         "bordercolor rgb($greenAlpha), fullscreen:1"
         "bordercolor rgb($greenAlpha), floating:1"
         "bordercolor rgb($overlay2Alpha), xwayland:1, floating:0, fullscreen:0"
