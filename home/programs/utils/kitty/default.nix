@@ -5,6 +5,7 @@
   programs.kitty = {
     enable = true;
     font.name = "CaskaydiaMono Nerd Font";
+    font.size = 10.5;
     shellIntegration.mode = "no-title";
     settings = {
       disable_ligatures = "always";
@@ -46,16 +47,16 @@
       tab_powerline_style = "angled";
 
       tab_title_template = lib.concatStrings [
-        "{fmt.bg.color4}{fmt.fg.color0} {index} "
-        "{fmt.bg.tab}{fmt.fg.tab} {title} "
-        "{activity_symbol}"
+        "{fmt.fg._313244}{fmt.bg._11111b}"
+        "{fmt.bg._313244}{fmt.fg._cdd6f4}{index}: {title} {activity_symbol}"
+        "{fmt.fg._313244}{fmt.bg._11111b}"
       ];
 
       active_tab_title_template = lib.concatStrings [
-        "{fmt.bg.color2} {index} "
-        "{fmt.bg._11111B}{fmt.fg.color7} {title} "
-        "{fmt.fg.color4}{'𝙼' if layout_name == 'stack' else activity_symbol}"
-        "{fmt.bg.tab}"
+        "{fmt.fg._cba6f7}{fmt.bg._11111b}"
+        "{fmt.bg.tab}{fmt.fg.tab}({index}) "
+        "{title} {'𝙼' if layout_name == 'stack' else activity_symbol}"
+        "{fmt.fg._cba6f7}{fmt.bg._11111b}"
       ];
     };
 
