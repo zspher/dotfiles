@@ -7,7 +7,7 @@
     ./spicetify.nix
   ];
   home.packages = with pkgs; [
-    gimp
+    gimp3
     grimblast
     hyprpicker
     inkscape
