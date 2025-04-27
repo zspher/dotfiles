@@ -90,6 +90,9 @@
         #-- sql & co
         sqlcmd
         sqlfluff
+
+        #-- zig
+        zls
       ];
     };
   };
