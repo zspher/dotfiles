@@ -144,12 +144,13 @@ in
             xdg.configFile."vesktop/themes/${theme-file}" = {
               source = "${inputs.catppuccin-discord}/dist/${theme-file}";
             };
+            programs.vesktop.vencord.settings.enabledThemes = [ "${theme-file}" ];
           }
         )
 
         (lib.mkIf (cfg.git-delta.enable) {
           programs.git = {
-            extraConfig.delta.features = "catppuccin-${config.catppuccin.flavor}";
+            extraConfig.delta.features = "catppuccin-${ctp.flavor}";
             includes = [
               {
                 path = "${inputs.catppuccin-delta}/catppuccin.gitconfig";
