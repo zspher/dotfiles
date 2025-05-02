@@ -34,23 +34,6 @@
         "type": "github"
       }
     },
-    "catppuccin-discord": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1745112317,
-        "narHash": "sha256-71nfGDn6y49OKovwq8aqxLlmOxrzMjzoGpEPw4qkQSk=",
-        "owner": "catppuccin",
-        "repo": "discord",
-        "rev": "3a93c3a53bf02057982c89b3ec63b4ea65dcd452",
-        "type": "github"
-      },
-      "original": {
-        "owner": "catppuccin",
-        "ref": "gh-pages",
-        "repo": "discord",
-        "type": "github"
-      }
-    },
     "darkly": {
       "inputs": {
         "nixpkgs": [
@@ -184,7 +167,6 @@
       "inputs": {
         "catppuccin": "catppuccin",
         "catppuccin-delta": "catppuccin-delta",
-        "catppuccin-discord": "catppuccin-discord",
         "darkly": "darkly",
         "fjordLauncher": "fjordLauncher",
         "flake-parts": "flake-parts",
