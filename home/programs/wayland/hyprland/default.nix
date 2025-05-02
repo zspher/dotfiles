@@ -112,7 +112,7 @@ in
       };
 
       misc = {
-        vrr = 2;
+        # vrr = 2;
         force_default_wallpaper = 0;
       };
 
@@ -145,7 +145,7 @@ in
 
         "noblur, xwayland:1, title:" # brave pop-up (i.e. app menu, right click pop-up)
 
-        "immediate, class:^(steam_app_230410)$"
+        # "immediate, class:^(steam_app_230410)$"
       ];
 
       layerrule = [
