@@ -62,10 +62,6 @@
       url = "github:catppuccin/delta";
       flake = false;
     };
-    catppuccin-discord = {
-      url = "github:catppuccin/discord?ref=gh-pages";
-      flake = false;
-    };
 
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";

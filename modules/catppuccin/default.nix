@@ -136,17 +136,11 @@ in
             "com.obsproject.Catppuccin.${upperFirst ctp.flavor}";
         })
 
-        (
-          let
-            theme-file = "catppuccin-${ctp.flavor}-${ctp.accent}.theme.css";
-          in
-          lib.mkIf (cfg.vesktop.enable) {
-            xdg.configFile."vesktop/themes/${theme-file}" = {
-              source = "${inputs.catppuccin-discord}/dist/${theme-file}";
-            };
-            programs.vesktop.vencord.settings.enabledThemes = [ "${theme-file}" ];
-          }
-        )
+        (lib.mkIf (cfg.vesktop.enable) {
+          programs.vesktop.vencord.settings.themeLinks = [
+            "https://catppuccin.github.io/discord/dist/catppuccin-mocha-mauve.theme.css"
+          ];
+        })
 
         (lib.mkIf (cfg.git-delta.enable) {
           programs.git = {
