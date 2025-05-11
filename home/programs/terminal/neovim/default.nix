@@ -1,6 +1,7 @@
 {
   pkgs,
   config,
+  self,
   ...
 }:
 {
@@ -62,6 +63,7 @@
 
         #-- html
         superhtml # LSP
+        self.packages.${pkgs.system}.markuplint
 
         #-- markdown
         marksman # LSP
