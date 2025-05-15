@@ -23,6 +23,9 @@
         tree-sitter
         ueberzugpp # for image preview (fzf-lua)
 
+        #-- spelling
+        harper
+
         #-- rust
         rust-analyzer # LSP, required by rustaceanvim
 
