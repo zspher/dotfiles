@@ -35,8 +35,8 @@
 
         #-- nix
         nixfmt-rfc-style # formatter
-        nil # lsp for code actions only
-        nixd # lsp
+        nil # LSP for code actions only
+        nixd # LSP
 
         #-- python
         pyright # LSP
@@ -54,17 +54,17 @@
         shfmt # formatter
         shellcheck # linter
 
-        #-- xml
+        #-- XML
         lemminx # LSP
 
-        #-- toml
+        #-- TOML
         taplo # LSP
 
-        #-- json, css, eslint json
+        #-- JSON, CSS, ESLint JSON
         prettierd # formatter
         vscode-langservers-extracted # LSP
 
-        #-- html
+        #-- HTML
         superhtml # LSP
         self.packages.${pkgs.system}.markuplint
 
@@ -72,27 +72,27 @@
         marksman # LSP
         markdownlint-cli2 # linter, formatter
 
-        #-- json, javascript, typescript
+        #-- JSON, JavaScript, TypeScript
         biome # formatter, linter
         vscode-js-debug # DAP
         vtsls # LSP
 
-        #-- typst
+        #-- Typst
         tinymist
         typstyle
 
-        #-- html, tailwind
+        #-- HTML, tailwind
         emmet-language-server # LSP
         tailwindcss-language-server # LSP
 
-        #-- yaml
+        #-- YAML
         yaml-language-server
 
         #-- latex
         texlab # LSP
         texlivePackages.latexindent # formatter
 
-        #-- sql & co
+        #-- SQL & co
         sqlcmd
         sqlfluff
 
