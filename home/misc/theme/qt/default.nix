@@ -27,9 +27,9 @@ in
   theme.catppuccin.kde.enable = true;
   qt = {
     enable = true;
-    style.package = [
-      inputs.darkly.packages.${pkgs.system}.darkly-qt5
-      inputs.darkly.packages.${pkgs.system}.darkly-qt6
+    style.package = with pkgs; [
+      darkly-qt5
+      darkly
     ];
     platformTheme.name = "qtct";
     kde.settings.kdeglobals.Icons.Theme = config.gtk.iconTheme.name;

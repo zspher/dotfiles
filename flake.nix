@@ -67,10 +67,5 @@
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    darkly = {
-      url = "github:Bali10050/Darkly";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 }

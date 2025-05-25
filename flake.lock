@@ -34,26 +34,6 @@
         "type": "github"
       }
     },
-    "darkly": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1747747644,
-        "narHash": "sha256-3/oJbf7QHaFyBnrEnZFpWgXbRc5wAFj9RZ7iQEBSZNw=",
-        "owner": "Bali10050",
-        "repo": "Darkly",
-        "rev": "67802271e7af0f21c3549635822dbd62a21f76a2",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Bali10050",
-        "repo": "Darkly",
-        "type": "github"
-      }
-    },
     "fjordLauncher": {
       "inputs": {
         "libnbtplusplus": "libnbtplusplus",
@@ -167,7 +147,6 @@
       "inputs": {
         "catppuccin": "catppuccin",
         "catppuccin-delta": "catppuccin-delta",
-        "darkly": "darkly",
         "fjordLauncher": "fjordLauncher",
         "flake-parts": "flake-parts",
         "home-manager": "home-manager",
