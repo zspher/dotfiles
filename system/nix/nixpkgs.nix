@@ -19,7 +19,11 @@
       #     }
       #   );
       # })
-      (final: prev: {
+      (final: prev: rec {
+        rizin = pkgs.callPackage ../../packages/rizin { };
+        rizinPlugins = lib.recurseIntoAttrs rizin.plugins;
+        cutter = pkgs.qt6.callPackage ../../packages/rizin/cutter.nix { inherit rizin; };
+        cutterPlugins = lib.recurseIntoAttrs cutter.plugins;
       })
     ];
     config = {
