@@ -24,7 +24,7 @@
         ueberzugpp # for image preview (fzf-lua)
 
         #-- spelling
-        harper
+        # harper
 
         #-- rust
         rust-analyzer # LSP, required by rustaceanvim
