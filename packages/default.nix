@@ -35,6 +35,7 @@
         shrinkpdf = pkgs.callPackage ./shrinkpdf { };
         sqruff = pkgs.callPackage ./sqruff { };
         markuplint = pkgs.callPackage ./markuplint { };
+        cssmodules-language-server = pkgs.callPackage ./cssmodules-language-server { };
       };
     };
 }
