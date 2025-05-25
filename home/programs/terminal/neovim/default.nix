@@ -66,7 +66,7 @@
 
         #-- HTML
         superhtml # LSP
-        self.packages.${pkgs.system}.markuplint
+        self.packages.${pkgs.system}.markuplint # LSP
 
         #-- markdown
         marksman # LSP
@@ -84,6 +84,7 @@
         #-- HTML, tailwind
         emmet-language-server # LSP
         tailwindcss-language-server # LSP
+        self.packages.${pkgs.system}.cssmodules-language-server # LSP
 
         #-- YAML
         yaml-language-server
