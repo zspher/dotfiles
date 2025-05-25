@@ -33,7 +33,6 @@
         posy-cursor = pkgs.callPackage ./posy-cursor { };
         sddm-corners-theme = pkgs.callPackage ./sddm-corners-theme { };
         shrinkpdf = pkgs.callPackage ./shrinkpdf { };
-        sqruff = pkgs.callPackage ./sqruff { };
         markuplint = pkgs.callPackage ./markuplint { };
         cssmodules-language-server = pkgs.callPackage ./cssmodules-language-server { };
       };
