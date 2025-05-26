@@ -114,6 +114,7 @@ in
       misc = {
         # vrr = 2;
         force_default_wallpaper = 0;
+        anr_missed_pings = 10;
       };
 
       windowrule = [
