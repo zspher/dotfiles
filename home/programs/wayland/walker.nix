@@ -7,6 +7,7 @@
     config = {
       ignore_mouse = true;
       terminal = "kitty";
+      # as_window = true; # for debugging
 
       activation_mode.labels = "12345678";
 
@@ -29,9 +30,9 @@
       };
 
       disabled = [
+        "ai"
         "finder"
       ];
-      list.max_items = 20;
     };
   };
   home.packages = [ pkgs.libqalculate ];
