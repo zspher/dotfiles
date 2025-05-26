@@ -2,49 +2,27 @@
   font-family:
     CaskaydiaMono Nerd Font,
     monospace;
-}
-
-#window,
-#box,
-#aiScroll,
-#aiList,
-#search,
-#password,
-#input,
-#prompt,
-#clear,
-#typeahead,
-#list,
-child,
-scrollbar,
-slider,
-#item,
-#text,
-#label,
-#bar,
-#sub,
-#activationlabel {
   all: unset;
 }
 
 #window {
-  color: var(--text); /*typing cursor color*/
+  color: #cdd6f4; /*typing cursor color*/
 }
 
 #box {
   border-radius: 8px;
-  background: var(--mantle);
-  padding: 32px;
-  border: 2px solid var(--accent);
+  background: #181825;
+  padding: 10px;
+  border: 2px solid #cba6f7;
   box-shadow: none;
 }
 
 #search {
   box-shadow: none;
-  background: var(--base);
+  background: #1e1e2e;
   padding: 8px;
   border-radius: 8px;
-  color: var(--text);
+  color: #cdd6f4;
 }
 
 #prompt {
@@ -54,7 +32,7 @@ slider,
 }
 
 #clear {
-  color: var(--text);
+  color: #cdd6f4;
   opacity: 0.8;
 }
 
@@ -76,7 +54,7 @@ slider,
 }
 
 #typeahead {
-  color: var(--text);
+  color: #cdd6f4;
   opacity: 0.8;
 }
 
@@ -88,17 +66,17 @@ slider,
 /* } */
 
 child {
-  color: var(--text);
+  color: #cdd6f4;
   padding: 4px;
-  border-top: 1px solid var(--surface0);
+  border-top: 1px solid #313244;
 }
 
 child:selected,
 child:hover {
   border-radius: 8px;
-  background: var(--surface0);
+  background: #313244;
   box-shadow: none;
-  color: var(--text);
+  color: #cdd6f4;
 }
 child:selected + child,
 child:hover + child,
@@ -117,11 +95,11 @@ child:first-child {
 /* } */
 
 #label {
-  color: var(--blue);
+  color: #89b4fa;
 }
 
 #sub {
-  color: var(--subtext1);
+  color: #bac2de;
 }
 
 /* #activationlabel { */
@@ -134,7 +112,7 @@ child:first-child {
 /* } */
 
 .activation #activationlabel {
-  color: var(--blue);
+  color: #89b4fa;
   font-weight: bold;
 }
 
@@ -147,8 +125,8 @@ child:first-child {
 .aiItem {
   padding: 10px;
   border-radius: 2px;
-  color: var(--text);
-  background: var(--mantle);
+  color: #cdd6f4;
+  background: #181825;
 }
 
 .aiItem.user {
@@ -157,5 +135,5 @@ child:first-child {
 }
 
 .aiItem.assistant {
-  background: var(--base);
+  background: #1e1e2e;
 }
