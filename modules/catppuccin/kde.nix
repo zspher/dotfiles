@@ -16,12 +16,11 @@ let
 
   importINI =
     file:
-    let
-      json = pkgs.runCommand "INItoJSON" { } ''
-        ${lib.getExe pkgs.jc} --ini < ${file} > $out
-      '';
-    in
-    lib.importJSON json;
+    lib.importJSON (
+      pkgs.runCommand "INItoJSON" { nativeBuildInputs = [ pkgs.jc ]; } ''
+        jc --ini < ${file} > $out
+      ''
+    );
 in
 {
   options.theme.catppuccin.kde = {
