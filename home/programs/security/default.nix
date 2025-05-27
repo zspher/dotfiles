@@ -2,10 +2,9 @@
 {
   imports = [
     # ./kde-polkit-agent.nix
+    ./keepassxc.nix
     ./gpg.nix
   ];
-  home.packages = with pkgs; [
-    keepassxc
-  ];
+
   services.polkit-gnome.enable = true;
 }
