@@ -84,7 +84,7 @@ in
             theme =
               let
                 colorVariants = if ctp.flavor == "latte" then [ "light" ] else [ "dark" ];
-                ctpToCollTbl = {
+                ctpToCollMap = {
                   mauve = "purple";
                   maroon = "red";
                   peach = "orange";
@@ -98,8 +98,8 @@ in
 
                 ctpToColl =
                   color:
-                  if builtins.hasAttr color ctpToCollTbl then
-                    ctpToCollTbl.${color}
+                  if builtins.hasAttr color ctpToCollMap then
+                    ctpToCollMap.${color}
                   else
                     builtins.throw "invalid color: ${color}";
                 ac = ctp.accent;
