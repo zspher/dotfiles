@@ -23,8 +23,18 @@
     kdeconnect-indicator.Unit.After = lib.mkForce [ "graphical-session.target" ];
   };
 
-  xdg.portal.config.common.default = [
-    "hyprland"
-    "gtk"
-  ];
+  xdg.portal = {
+    xdgOpenUsePortal = true;
+    extraPortals = [ pkgs.kdePackages.xdg-desktop-portal-kde ];
+    config.common = {
+      default = [
+        "kde"
+      ];
+
+      "org.freedesktop.impl.portal.GlobalShortcuts" = [ "hyprland" ];
+      "org.freedesktop.impl.portal.InputCapture" = [ "hyprland" ];
+      "org.freedesktop.impl.portal.ScreenCast" = [ "hyprland" ];
+      "org.freedesktop.impl.portal.Screenshot" = [ "hyprland" ];
+    };
+  };
 }
