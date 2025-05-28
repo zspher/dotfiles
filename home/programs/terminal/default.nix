@@ -20,7 +20,7 @@
   home.packages = with pkgs; [
     fd
     ghostscript
-    (inxi.override { withRecommendedSystemPrograms = true; })
+    (inxi.override { withRecommends = true; })
     jq
     lsd
     ripgrep
