@@ -7,5 +7,9 @@
     extraCompatPackages = with pkgs; [
       proton-ge-bin
     ];
+    package = pkgs.steam.override {
+      # FIX: https://github.com/tkashkin/Adwaita-for-Steam/issues/316
+      extraEnv.MESA_LOADER_DRIVER_OVERRIDE = "zink";
+    };
   };
 }
