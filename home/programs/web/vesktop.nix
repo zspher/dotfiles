@@ -22,12 +22,12 @@
           ignoreSelf = true;
         };
         FakeNitro.enabled = true;
-        CrashHandler.enable = true;
-        WebKeybinds.enable = true;
-        WebScreenShareFixes.enable = true;
-        BiggerStreamPreview.enable = true;
-        ReverseImageSearch.enable = true;
-        Experiments.enable = true;
+        CrashHandler.enabled = true;
+        WebKeybinds.enabled = true;
+        WebScreenShareFixes.enabled = true;
+        BiggerStreamPreview.enabled = true;
+        ReverseImageSearch.enabled = true;
+        Experiments.enabled = true;
       };
 
       notifications = {
