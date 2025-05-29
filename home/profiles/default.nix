@@ -41,7 +41,6 @@ in
     };
     "${username}@ls-2100" = homeManagerConfiguration {
       modules = mods.full ++ [
-        ../misc/fonts.nix
         ../programs/security/fun-stuff.nix
         ../programs/games
         # ../programs/multimedia/davinci-resolve.nix
