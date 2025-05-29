@@ -24,17 +24,6 @@
         rizinPlugins = lib.recurseIntoAttrs rizin.plugins;
         cutter = pkgs.qt6.callPackage ../../packages/rizin/cutter.nix { inherit rizin; };
         cutterPlugins = lib.recurseIntoAttrs cutter.plugins;
-
-        kdePackages = prev.kdePackages.overrideScope (
-          selfx: prevx: {
-            # TODO: https://github.com/NixOS/nixpkgs/pull/411042
-            polkit-kde-agent-1 = prevx.polkit-kde-agent-1.overrideAttrs (oldAttrs: {
-              buildInputs = oldAttrs.buildInputs ++ [
-                prev.kdePackages.kirigami
-              ];
-            });
-          }
-        );
       })
     ];
     config = {
