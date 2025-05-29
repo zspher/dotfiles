@@ -41,15 +41,10 @@ in
     };
     "${username}@ls-2100" = homeManagerConfiguration {
       modules = mods.full ++ [
-        ../programs/games/minecraft.nix
-        ../programs/games/controller.nix
         ../misc/fonts.nix
-        ../programs/games/bottles.nix
         ../programs/security/fun-stuff.nix
+        ../programs/games
         # ../programs/multimedia/davinci-resolve.nix
-        {
-          home.packages = with pkgs; [ cemu ];
-        }
       ];
       inherit pkgs extraSpecialArgs;
     };
