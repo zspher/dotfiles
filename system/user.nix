@@ -14,6 +14,7 @@
       "libvirtd"
       "uinput"
       "i2c"
+      "gamemode"
     ];
   };
 }

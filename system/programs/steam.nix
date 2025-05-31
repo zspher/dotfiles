@@ -12,4 +12,5 @@
       extraEnv.MESA_LOADER_DRIVER_OVERRIDE = "zink";
     };
   };
+  programs.gamemode.enable = true;
 }
