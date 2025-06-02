@@ -51,7 +51,7 @@ in
       decoration = {
         rounding = 10;
         blur = {
-          enabled = true;
+          enabled = false;
           size = 3;
           passes = 1;
         };
@@ -68,7 +68,7 @@ in
       };
 
       animations = {
-        enabled = true;
+        enabled = false;
 
         bezier = [
           "easeInSine, 0.12, 0, 0.39, 0"
