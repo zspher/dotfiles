@@ -78,6 +78,7 @@ in
 
         # * === Special Modes === * #
         "$mainMod, F1, exec, ${gamemode}/bin/gamemode"
+        "$mainMod, F2, exec, keepassxc --lock"
 
         # * === Move Focus === * #
         "$mainMod, H, movefocus, l"

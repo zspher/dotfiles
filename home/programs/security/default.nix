@@ -3,7 +3,7 @@
   imports = [
     # ./kde-polkit-agent.nix
     ./keepassxc.nix
-    ./gnome-keyring.nix
+    # ./gnome-keyring.nix
     ./gpg.nix
   ];
 
