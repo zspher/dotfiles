@@ -58,7 +58,7 @@
     };
 
     anyrun = {
-      url = "github:anyrun-org/anyrun";
+      url = "github:zspher/anyrun/updates";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

@@ -9,15 +9,16 @@
         "systems": "systems"
       },
       "locked": {
-        "lastModified": 1748365336,
-        "narHash": "sha256-pg0w4uOZI32dLASD6UbBezeQg5PwOa0GLv7rTwn3VxY=",
-        "owner": "anyrun-org",
+        "lastModified": 1748845989,
+        "narHash": "sha256-VzOPzY9JtPQcKgjB6h5kn/b1OpXcJqekat0c/LiR7OQ=",
+        "owner": "zspher",
         "repo": "anyrun",
-        "rev": "25367153f225a59c5ce5746583e39a71ff052f09",
+        "rev": "3932ded7a3a668df989b56eb6df266e8d09a089a",
         "type": "github"
       },
       "original": {
-        "owner": "anyrun-org",
+        "owner": "zspher",
+        "ref": "updates",
         "repo": "anyrun",
         "type": "github"
       }
