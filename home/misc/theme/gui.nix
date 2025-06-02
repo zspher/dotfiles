@@ -10,6 +10,7 @@
   ];
   theme.catppuccin = {
     enable = true;
+    anyrun.enable = true;
     gtk.enable = true;
     mpv.enable = true;
     obs-studio.enable = true;

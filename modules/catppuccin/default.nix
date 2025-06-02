@@ -18,6 +18,7 @@ in
   ];
   options.theme.catppuccin = {
     enable = lib.mkEnableOption "catppuccin";
+    anyrun.enable = lib.mkEnableOption "anyrun";
     git-delta.enable = lib.mkEnableOption "git delta integration";
     gtk.enable = lib.mkEnableOption "gtk integration";
     mpv.enable = lib.mkEnableOption "mpv integration";
@@ -74,6 +75,9 @@ in
           xdg.configFile."walker/themes/catppuccin.css".source = replaceColors ./walker-template.css;
           xdg.configFile."walker/themes/catppuccin.toml".source = replaceColors ./walker-theme.toml;
           programs.walker.config.theme = "catppuccin";
+        })
+        (lib.mkIf (cfg.anyrun.enable) {
+          xdg.configFile."anyrun/style.css".source = replaceColors ./anyrun-template.css;
         })
 
         (lib.mkIf (cfg.gtk.enable) {
