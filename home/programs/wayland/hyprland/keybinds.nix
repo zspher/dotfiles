@@ -34,7 +34,7 @@ in
       "$file_manager" = "dolphin";
       "$notification_manager" = "swaync-client -t -sw";
       "$screen_shot" = "~/.config/rofi/bin/screenshot.sh";
-      "$runner" = "walker";
+      "$runner" = "anyrun";
       "$power_menu" = "~/.config/rofi/bin/powermenu.sh";
 
       bind = [
