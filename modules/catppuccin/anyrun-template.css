@@ -1,3 +1,7 @@
+* {
+  all: unset;
+}
+
 #window {
   background: alpha(var(--subtext0), 0.15);
 }
@@ -11,8 +15,13 @@ entry#entry {
   border-radius: 8px;
   background: var(--base);
   box-shadow: none;
-  margin-bottom: 10px;
-  border: 1px solid var(--surface0);
+  margin-bottom: 0;
+  border: 2px solid var(--accent);
+  padding-left: 10px;
+}
+
+selection {
+  background: var(--surface2);
 }
 
 list#main {
@@ -29,10 +38,11 @@ row#plugin {
   background: var(--base);
   border: 1px solid var(--surface0);
   border-width: 1px 1px 0 1px;
+  padding: 5px;
 }
 
 row#plugin:first-child {
-  border-radius: 8px 8px 0 0;
+  border-top: 0;
 }
 
 row#plugin:last-child {
@@ -40,13 +50,10 @@ row#plugin:last-child {
   border-bottom-width: 1px;
 }
 
-row#plugin:only-child {
-  border-radius: 8px;
-}
-
 #match {
   margin: 2px 0;
   border-radius: 8px;
+  padding-left: 2px;
 }
 
 #match:selected {
