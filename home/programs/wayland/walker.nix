@@ -10,8 +10,14 @@
       # as_window = true; # for debugging
 
       activation_mode.labels = "12345678";
+      list.max_entries = 20;
+      list.show_initial_entries = false;
 
       builtins = {
+        applications.cache = true;
+        applications.typeahead = false;
+        builtins.runner.eager_loading = false;
+
         calc.prefix = "=";
         runner.prefix = ">";
       };
@@ -32,6 +38,7 @@
       disabled = [
         "ai"
         "finder"
+        "clipboard"
       ];
     };
   };
