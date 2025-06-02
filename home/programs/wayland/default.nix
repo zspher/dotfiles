@@ -1,7 +1,12 @@
-{ pkgs, lib, ... }:
+{
+  pkgs,
+  lib,
+  inputs,
+  ...
+}:
 {
   imports = [
-    ./walker.nix
+    # ./walker.nix
     ./hyprland
     ./rofi
     ./hypridle.nix
@@ -10,6 +15,8 @@
     ./swww
     ./waybar
   ];
+
+  home.packages = [ inputs.anyrun.packages.${pkgs.system}.anyrun ];
 
   programs.mangohud.enable = true;
 
