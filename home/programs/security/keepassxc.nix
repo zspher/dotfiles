@@ -1,6 +1,7 @@
 {
   pkgs,
   lib,
+  config,
   ...
 }:
 let
@@ -25,22 +26,27 @@ lib.mkMerge [
     };
   }
   (lib.mkIf fdo {
-
     qt.kde.settings."keepassxc/keepassxc.ini".FdoSecrets.Enabled = true;
     xdg.portal.config.common."org.freedesktop.impl.portal.Secret" = [ "keepassxc" ];
     systemd.user.services.keepassxc = {
       Unit = {
         Description = "KeePassXC";
-        PartOf = [ "graphical-session.target" ];
-
+        PartOf = [
+          config.wayland.systemd.target
+          "tray.target"
+        ];
+        After = [ config.wayland.systemd.target ];
       };
 
       Service = {
         ExecStart = "${pkgs.keepassxc}/bin/keepassxc --minimized";
-        Restart = "on-abort";
+        Restart = "on-failure";
       };
 
-      Install.WantedBy = [ "graphical-session.target" ];
+      Install.WantedBy = [
+        config.wayland.systemd.target
+        "tray.target"
+      ];
     };
   })
 ]
