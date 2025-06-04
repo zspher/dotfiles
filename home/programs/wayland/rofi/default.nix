@@ -11,20 +11,32 @@
     procps
     qimgv
     libsForQt5.kimageformats # avif, xcf, jxl in qimgv
+    rofimoji
+
+    (rofi-wayland.override {
+      plugins = with pkgs; [
+        rofi-calc
+      ];
+    })
   ];
-  programs.rofi.enable = true;
-  programs.rofi.package = pkgs.rofi-wayland-unwrapped;
-  xdg.configFile."rofi/share" = {
-    source = lib.cleanSourceWith {
-      src = ./share;
-      filter =
-        path: type:
-        if config.theme.catppuccin.rofi.enable then builtins.baseNameOf path != "theme.rasi" else true;
+  xdg.configFile = {
+    "rofi/share" = {
+      source = lib.cleanSourceWith {
+        src = ./share;
+        filter =
+          path: type:
+          if config.theme.catppuccin.rofi.enable then builtins.baseNameOf path != "theme.rasi" else true;
+      };
+      recursive = true;
     };
-    recursive = true;
-  };
-  xdg.configFile."rofi/bin" = {
-    source = ./bin;
-    recursive = true;
+    "rofi/bin" = {
+      source = ./bin;
+      recursive = true;
+    };
+    "rofi/config.rasi".source = ./config.rasi;
+    "rofi/themes" = {
+      source = ./themes;
+      recursive = true;
+    };
   };
 }

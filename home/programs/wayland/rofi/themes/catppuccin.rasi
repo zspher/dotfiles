@@ -1,0 +1,13 @@
+* {
+    background:                 #181825;
+    lightbg:                    #1e1e2e;
+    darkbg:                     #11111b;
+    background-transparent:     #1e1e2eee;
+    foreground:                 #cdd6f4;
+    foreground-alt:             #a6adc8;
+    accent:                     #cba6f7;
+    red:                        #f38ba8;
+    green:                      #a6e3a1;
+    blue:                       #89b4fa;
+    selected-normal-background: #313244;
+}

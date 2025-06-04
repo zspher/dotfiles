@@ -1,0 +1,163 @@
+* {
+    font: "CaskaydiaMono Nerd Font 12";
+    background-color:           transparent;
+
+    background:                 #181825;
+    lightbg:                    #1e1e2e;
+    darkbg:                     #11111b;
+    background-transparent:     #1e1e2eee;
+    foreground:                 #cdd6f4;
+    foreground-alt:             #a6adc8;
+    accent:                     #cba6f7;
+    red:                        #f38ba8;
+    green:                      #a6e3a1;
+    blue:                       #89b4fa;
+
+    selected-normal-foreground: var(foreground);
+    selected-normal-background: #313244;
+    separatorcolor:             var(accent);
+}
+
+window {
+    padding:          20px;
+    background-color: var(background);
+    border-radius: 12px;
+}
+mainbox {
+    padding: 0;
+    border:  0;
+    children: [inputbar, message, listview];
+}
+
+message {
+}
+
+textbox {
+    text-color: var(foreground);
+}
+
+inputbar {
+    padding:    8px;
+    margin: 0 0 5px 0;
+    spacing:    1px;
+    text-color: var(foreground);
+    children:   [ prompt, entry, num-filtered-rows, textbox-num-sep, num-rows, case-indicator ];
+
+    background-color: var(lightbg);
+    border-radius: 10px;
+}
+case-indicator {
+    spacing:    0;
+    text-color: var(foreground);
+}
+
+num-filtered-rows, num-rows {
+    text-color: var(foreground-alt);
+    expand:     false;
+}
+
+textbox-num-sep {
+    text-color: var(foreground-alt);
+    expand:     false;
+    str:        "/";
+}
+
+entry {
+    spacing:           0;
+    text-color:        var(foreground);
+    placeholder-color: var(foreground-alt);
+    cursor:            text;
+    placeholder: "search";
+}
+
+prompt {
+    text-color: var(foreground);
+    margin: 0 10px 0 0;
+}
+
+element {
+    padding: 1px ;
+    spacing: 5px ;
+    border:  0;
+    border-radius: 12px;
+    cursor:  pointer;
+    children: [element-icon, element-text, element-index];
+}
+
+
+element normal.normal {
+    background-color: var(background);
+    text-color:       var(foreground);
+}
+element normal.urgent, element alternate.urgent {
+    background-color: var(background);
+    text-color:       var(red);
+}
+element normal.active, element alternate.active {
+    background-color: var(background);
+    text-color:       var(blue);
+}
+element alternate.normal {
+    background-color: var(darkbg);
+    text-color:       var(foreground);
+}
+
+element selected.normal {
+    background-color: var(selected-normal-background);
+    text-color:       var(selected-normal-foreground);
+}
+element selected.urgent {
+    background-color: var(red);
+    text-color:       var(background);
+}
+element selected.active {
+    background-color: var(blue);
+    text-color:       var(background);
+}
+
+element-text {
+    text-color:       inherit;
+    cursor:           inherit;
+    highlight: var(green);
+}
+element-icon {
+    background-color: rgba ( 0, 0, 0, 0 % );
+    padding: 0 4px 0;
+    size:             1.5em ;
+    text-color:       inherit;
+    cursor:           inherit;
+    vertical-align: 0.2;
+}
+element-index {
+    text-color: inherit;
+    cursor:           inherit;
+    vertical-align: 0.5;
+    padding: 0 5px 0 0;
+}
+
+listview {
+    padding:      2px 0px 0px;
+    scrollbar:    true;
+    spacing:      2px ;
+    lines: 10;
+}
+scrollbar {
+    width:        4px;
+    padding:      4px;
+    handle-width: 8px;
+    handle-color: var(foreground);
+    handle-rounded-corners: true;
+}
+sidebar {
+    border-color: var(separatorcolor);
+    border:       2px dash 0px 0px ;
+}
+button {
+    spacing:    0;
+    text-color: var(foreground);
+    cursor:     pointer;
+}
+button selected {
+    background-color: var(selected-normal-background);
+    text-color:       var(selected-normal-foreground);
+}
