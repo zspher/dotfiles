@@ -2,11 +2,11 @@
  *
  * Author : Aditya Shakya (adi1090x)
  * Github : @adi1090x
- * 
+ *
  * Fonts
  *
  **/
 
 * {
-    font: "CaskaydiaMono Nerd Font Mono 11";
+    font: "CaskaydiaMono Nerd Font 11";
 }
