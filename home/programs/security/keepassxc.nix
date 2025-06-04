@@ -23,6 +23,7 @@ lib.mkMerge [
         ShowTrayIcon = true;
         TrayIconAppearance = "monochrome-light";
       };
+      Security.LockDatabaseMinimize = true;
     };
   }
   (lib.mkIf fdo {
