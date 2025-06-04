@@ -1,87 +1,67 @@
-/**
- *
- * Author : Aditya Shakya (adi1090x)
- * Github : @adi1090x
- *
- * Rofi Theme File
- * Rofi Version: 1.7.3
- **/
-
 /*****----- Configuration -----*****/
 configuration {
     show-icons:                 false;
 }
 
 /*****----- Global Properties -----*****/
-@import                          "theme.rasi"
-@import                          "fonts.rasi"
-@import                          "vim.rasi"
+@theme "catppuccin.rasi"
 
 /*****----- Main Window -----*****/
 window {
     location:                    center;
     anchor:                      center;
-    fullscreen:                  false;
     width:                       500px;
-    border-radius:               20px;
+    border-radius:               12px;
+    background-color:            transparent;
     cursor:                      "default";
-    background-color:            @background;
 }
 
 /*****----- Main Box -----*****/
 mainbox {
-    spacing:                     30px;
+    spacing: 30px;
     padding:                     30px;
-    background-color:            transparent;
+    background-color:            var(background);
     children:                    [ "message", "listview" ];
 }
 
 /*****----- Message -----*****/
 message {
-    margin:                      0px;
-    padding:                     20px;
-    border-radius:               20px;
-    background-color:            @background-alt;
-    text-color:                  @foreground;
+    padding:                     15px;
+    border-radius:               12px;
+    text-color:                  var(foreground);
+    background-color: var(lightbg);
 }
+
 textbox {
     background-color:            inherit;
     text-color:                  inherit;
     vertical-align:              0.5;
     horizontal-align:            0.5;
-    placeholder-color:           @foreground;
-    blink:                       true;
-    markup:                      true;
+    placeholder-color:           var(foreground);
 }
 
-/*****----- Listview -----*****/
-listview {
-    columns:                     2;
-    lines:                       1;
-    cycle:                       true;
-    dynamic:                     true;
-    scrollbar:                   false;
-    layout:                      vertical;
-    reverse:                     false;
-    fixed-height:                true;
-    fixed-columns:               true;
 
-    spacing:                     30px;
-    background-color:            transparent;
-    text-color:                  @foreground;
-    cursor:                      "default";
+/*****----- Listview -----*****/
+
+listview {
+    flow: horizontal;
+    columns: 2;
+    scrollbar: false;
+    lines: 1;
+    spacing: 10px;
+    background-color: transparent;
 }
 
 /*****----- Elements -----*****/
 element {
-    padding:                     50px 10px;
+    padding:                     30px 10px;
     border-radius:               20px;
-    background-color:            @background-alt;
-    text-color:                  @foreground;
+    background-color:            var(lightbg);
+    text-color:                  var(foreground);
     cursor:                      pointer;
 }
 element-text {
-    font:                        "CaskaydiaMono Nerd Font Mono 50";
+    font:                        "CaskaydiaMono Nerd Font 40";
     background-color:            transparent;
     text-color:                  inherit;
     cursor:                      inherit;
@@ -89,6 +69,19 @@ element-text {
     horizontal-align:            0.5;
 }
 element selected.normal {
-    background-color:            var(selected);
-    text-color:                  var(background);
+    background-color:            var(selected-normal-background);
 }
+
+element-text selected {
+
+    text-color: var(blue);
+}
+
+element-text {
+    text-color: var(green);
+}
+
+element-text alternate.normal {
+    text-color: var(red);
+}
+

@@ -1,14 +1,4 @@
-/**
- *
- * Author : Aditya Shakya (adi1090x)
- * Github : @adi1090x
- *
- * Rofi Theme File
- * Rofi Version: 1.7.3
- **/
-
-@import                          "vim.rasi"
-@import                          "theme.rasi"
+@theme "catppuccin.rasi"
 
 /*****----- Configuration -----*****/
 configuration {
@@ -18,40 +8,28 @@ configuration {
 /*****----- Global Properties -----*****/
 * {
     /* Resolution : 1920x1080 */
-    mainbox-spacing:             calc(7% - 30px);
-    message-margin:              0 350px;
-    message-padding:             15px;
-    message-border-radius:       15px;
-    listview-spacing:            calc(4%);
-    element-border-radius:       20px;
+    main-border-radius: 12px;
 
-    prompt-font:                 "CaskaydiaMono Nerd Font Mono Bold 72";
+    prompt-font:                 "CaskaydiaMono Nerd Font Mono Bold 50";
     textbox-font:                "CaskaydiaMono Nerd Font Mono 14";
-    element-text-font:           "CaskaydiaMono Nerd Font Mono 70";
-
-    background-window:           gray/5%;
-    background-normal:           @background;
-    background-selected:         @selected;
-    foreground-normal:           @foreground;
-    foreground-selected:         @background;
+    element-text-font:           "CaskaydiaMono Nerd Font Mono 40";
 }
 
 /*****----- Main Window -----*****/
 window {
-    transparency:                "real";
-    location:                    center;
-    anchor:                      center;
-    fullscreen:                  true;
-    cursor:                      "default";
-    background-color:            var(background-window);
+    location: center;
+    anchor: center;
+    background-color: transparent;
 }
 
 /*****----- Main Box -----*****/
 mainbox {
-    enabled:                     true;
-    spacing:                     var(mainbox-spacing);
-    background-color:            transparent;
-    children:                    [ "dummy", "inputbar", "listview", "message", "dummy" ];
+    background-color: transparent;
+    background-color: #181825;
+    width: calc(60%);
+    padding: 40px;
+    border-radius: var(main-border-radius);
+    children: [ "inputbar", "listview", "message" ];
 }
 
 /*****----- Inputbar -----*****/
@@ -68,21 +46,20 @@ dummy {
 prompt {
     enabled:                     true;
     font:                        var(prompt-font);
-    padding:                     15px 30px;
-    border-radius:               var(element-border-radius);
-    background-color:            var(background-normal);
-    text-color:                  @accent;
+    padding:                     10px;
+    border-radius:               var(main-border-radius);
+    background-color:            var(background);
+    text-color:                  var(accent);
 }
 
 /*****----- Message -----*****/
 message {
-    enabled:                     true;
-    margin:                      var(message-margin);
-    padding:                     var(message-padding);
-    border-radius:               var(message-border-radius);
-    background-color:            var(background-normal);
-    text-color:                  var(foreground-normal);
+    padding:                     15px;
+    border-radius:               var(main-border-radius);
+    background-color:            var(lightbg);
+    text-color:                  var(foreground);
 }
+
 textbox {
     font:                        var(textbox-font);
     background-color:            transparent;
@@ -93,30 +70,23 @@ textbox {
 
 /*****----- Listview -----*****/
 listview {
-    enabled:                     true;
-    expand:                      true;
-    columns:                     6;
-    cycle:                       true;
-    scrollbar:                   false;
-    layout:                      vertical;
-    reverse:                     false;
-    fixed-height:                true;
-    fixed-columns:               true;
-
-    spacing:                     var(listview-spacing);
-    padding: 0 100px 0;
-    background-color:            transparent;
-    cursor:                      "default";
+    flow: horizontal;
+    columns: 6;
+    scrollbar: false;
+    lines: 1;
+    spacing: 20px;
+    background-color: transparent;
+    margin: 30px 0;
 }
 
 /*****----- Elements -----*****/
 element {
-    enabled:                     true;
-    border-radius:               var(element-border-radius);
-    background-color:            var(background-normal);
-    text-color:                  var(foreground-normal);
-    cursor:                      pointer;
+    border-radius: var(main-border-radius);
+    background-color: var(lightbg);
+    text-color: var(foreground);
+    cursor: inherit;
 }
+
 element-text {
     font:                        var(element-text-font);
     background-color:            transparent;
@@ -125,8 +95,8 @@ element-text {
     vertical-align:              0.5;
     horizontal-align:            0.5;
 }
-element selected.normal {
-    background-color:            var(background-selected);
-    text-color:                  var(foreground-selected);
-}
 
+element selected.normal {
+    background-color:            var(selected-normal-background);
+    text-color:                  var(blue);
+}

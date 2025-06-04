@@ -9,7 +9,7 @@
 theme="$HOME"/.config/rofi/share/applet.rasi
 
 # Theme Elements
-prompt='Screenshot'
+title='Screenshot'
 mesg="DIR: $HOME/Pictures/Screenshots"
 
 list_col='1'
@@ -17,29 +17,19 @@ list_row='5'
 win_width='400px'
 
 # Options
-layout=$(cat <"$theme" | grep 'USE_ICON' | cut -d'=' -f2)
-if [[ "$layout" == 'NO' ]]; then
-    option_1="󰹑 Capture Desktop"
-    option_2="󰆞 Capture Area"
-    option_3=" Capture Window"
-    option_4="󱇸 Capture in 5s"
-    option_5="󰵱 Capture in 10s"
-else
-    option_1="󰹑"
-    option_2="󰆞"
-    option_3=""
-    option_4="󱇸"
-    option_5="󰵱"
-fi
+option_1="󰹑 capture screen"
+option_2="󰆞 capture area"
+option_3=" capture window"
+option_4="󱇸 capture screen in 5s"
+option_5="󰵱 capture screen in 10s"
 
 # Rofi CMD
 rofi_cmd() {
     rofi -theme-str "window {width: $win_width;}" \
         -theme-str "listview {columns: $list_col; lines: $list_row;}" \
+        -theme-str "entry {placeholder: \"<span weight='bold'>$title</span>\";}" \
         -dmenu \
-        -p "$prompt" \
         -mesg "$mesg" \
-        -markup-rows \
         -theme "$theme"
 }
 
