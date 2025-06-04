@@ -21,6 +21,6 @@
     curl
     gcc
     git
-    gparted
+    kdePackages.partitionmanager
   ];
 }
