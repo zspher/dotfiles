@@ -1,9 +1,13 @@
 * {
-    background:                 var(--base)ff;
-    background-alt:             var(--surface0)ff;
+    background:                 var(--mantle);
+    lightbg:                    var(--base);
+    darkbg:                     var(--crust);
     background-transparent:     var(--base)ee;
-    foreground:                 var(--text)ff;
-    selected:                   var(--blue)ff;
-    accent:                     var(--accent)ff;
-    urgent:                     var(--red)FF;
+    foreground:                 var(--text);
+    foreground-alt:             var(--subtext0);
+    accent:                     var(--accent);
+    red:                        var(--red);
+    green:                      var(--green);
+    blue:                       var(--red);
+    selected-normal-background: var(--surface0);
 }
