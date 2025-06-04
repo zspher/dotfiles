@@ -6,7 +6,7 @@
 }:
 {
   imports = [
-    ./anyrun.nix
+    # ./anyrun.nix
     # ./walker.nix
     ./hyprland
     ./rofi
