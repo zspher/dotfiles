@@ -45,6 +45,7 @@
         #-- c/c++, meson
         vscode-extensions.vadimcn.vscode-lldb.adapter # DAP
         mesonlsp # LSP
+        clang-tools
 
         #-- c#
         roslyn-ls # LSP, formatter
