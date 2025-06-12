@@ -12,7 +12,7 @@
   ];
   nix = {
     enable = true;
-    package = pkgs.lix;
+    package = pkgs.lixPackageSets.latest.lix;
 
     # pin the registry to avoid downloading and evaling a new nixpkgs version every time
     registry = lib.mapAttrs (_: v: { flake = v; }) inputs;
