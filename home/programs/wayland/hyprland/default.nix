@@ -40,8 +40,8 @@ in
 
       general = {
         gaps_in = 0;
-        gaps_out = 0;
-        border_size = 2;
+        gaps_out = "4, 0, 0, 0";
+        border_size = 1;
         "col.active_border" = "rgb($mauveAlpha)";
         "col.inactive_border" = "rgb($mantleAlpha)";
         layout = "dwindle";
