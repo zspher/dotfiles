@@ -12,6 +12,8 @@ window {
     anchor:                      center;
     background-color:            transparent;
     border-radius:               12px;
+    border: 1px solid;
+    border-color: #313244;
 }
 
 /*****----- Main Box -----*****/

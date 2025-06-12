@@ -22,6 +22,8 @@ window {
     padding:          20px;
     background-color: var(background);
     border-radius: 12px;
+    border: 1px solid;
+    border-color: #313244;
 }
 mainbox {
     padding: 0;
