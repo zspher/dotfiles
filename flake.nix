@@ -57,10 +57,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    anyrun = {
-      url = "github:zspher/anyrun/updates";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # anyrun = {
+    #   url = "github:zspher/anyrun/updates";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
 
     catppuccin.url = "github:catppuccin/nix";
     catppuccin-delta = {
