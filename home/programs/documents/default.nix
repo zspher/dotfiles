@@ -1,7 +1,7 @@
 { pkgs, self, ... }:
 {
   imports = [
-    ./dbeaver.nix
+    # ./dbeaver.nix
   ];
   home.packages = with pkgs; [
     anki
