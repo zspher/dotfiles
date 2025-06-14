@@ -13,6 +13,7 @@ in
   wayland.windowManager.hyprland = {
     enable = true;
     package = null;
+    portalPackage = null;
     systemd.variables = [
       "DISPLAY"
       "HYPRLAND_INSTANCE_SIGNATURE"

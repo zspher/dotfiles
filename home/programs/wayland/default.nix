@@ -33,10 +33,9 @@
 
   xdg.portal = {
     xdgOpenUsePortal = true;
-    extraPortals = [ pkgs.kdePackages.xdg-desktop-portal-kde ];
     config.common = {
       default = [
-        "kde"
+        "gtk"
       ];
 
       "org.freedesktop.impl.portal.GlobalShortcuts" = [ "hyprland" ];
