@@ -39,6 +39,10 @@ in
         sensitivity = 0;
       };
 
+      binds = {
+        movefocus_cycles_fullscreen = true;
+      };
+
       general = {
         gaps_in = 0;
         gaps_out = "4, 0, 0, 0";
