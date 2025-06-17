@@ -55,7 +55,7 @@ let
     ]);
 
   documentTypes = {
-    "image/vnd.djvu" = [ "org.kde.okular" ];
+    "image/vnd.djvu+multipage" = [ "org.kde.okular" ];
     "application/pdf" = [ "org.kde.okular" ];
     "application/vnd.openxmlformats-officedocument.wordprocessingml.document" = [ "writer" ];
     "application/epub+zip" = [ "calibre-ebook-viewer" ];
