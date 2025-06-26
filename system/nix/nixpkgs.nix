@@ -45,6 +45,7 @@
               done
             '';
         });
+        rofi-calc = prev.callPackage ../../packages/rofi-calc { };
       })
     ];
     config = {

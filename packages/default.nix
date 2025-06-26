@@ -35,6 +35,7 @@
         shrinkpdf = pkgs.callPackage ./shrinkpdf { };
         markuplint = pkgs.callPackage ./markuplint { };
         cssmodules-language-server = pkgs.callPackage ./cssmodules-language-server { };
+        rofi-calc = pkgs.callPackage ./rofi-calc { };
       };
     };
 }
