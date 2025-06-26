@@ -13,6 +13,7 @@
     ../../programs
     ../../programs/blueman.nix
     ../../programs/container.nix
+    ../../programs/flatpak.nix
     ../../programs/hyprland.nix
     ../../programs/kanata.nix
     ../../programs/pipewire.nix
