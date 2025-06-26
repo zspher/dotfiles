@@ -20,30 +20,6 @@
       #   );
       # })
       (final: prev: rec {
-        calibre = prev.calibre.overrideAttrs (oldAttrs: {
-          patches = oldAttrs.patches ++ [
-            ./calibre-native-dialogs.patch
-          ];
-          preFixup =
-            let
-              popplerArgs = "--prefix PATH : ${prev.poppler-utils.out}/bin";
-            in
-            ''
-              for program in $out/bin/*; do
-                wrapProgram $program \
-                  ''${qtWrapperArgs[@]} \
-                  ''${gappsWrapperArgs[@]} \
-                  --prefix PATH : ${
-                    lib.makeBinPath [
-                      prev.libjpeg
-                      prev.libwebp
-                      prev.optipng
-                      prev.zenity
-                    ]
-                  } \
-                  ${if true then popplerArgs else ""}
-              done
-            '';
         swaynotificationcenter = prev.swaynotificationcenter.overrideAttrs (oldAttrs: {
           mesonBuildType = "release";
         });
