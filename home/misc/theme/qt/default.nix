@@ -11,7 +11,7 @@ let
     Appearance = {
       custom_palette = true;
       icon_theme = config.gtk.iconTheme.name;
-      standard_dialogs = "default";
+      standard_dialogs = "xdgdesktopportal";
       style = "Darkly";
       color_scheme_path = "${config.xdg.configHome}/${qtctVersion}/colors/catppuccin.conf";
     };
