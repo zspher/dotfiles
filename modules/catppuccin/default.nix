@@ -26,7 +26,7 @@ in
     rofi.enable = lib.mkEnableOption "rofi integration";
     swaync.enable = lib.mkEnableOption "swaync integration";
     vesktop.enable = lib.mkEnableOption "webcord integration";
-    walker.enable = lib.mkEnableOption "walker integration";
+    # walker.enable = lib.mkEnableOption "walker integration";
     waybar.enable = lib.mkEnableOption "waybar integration";
   };
 
@@ -71,11 +71,11 @@ in
         (lib.mkIf (cfg.swaync.enable) {
           services.swaync.style = replaceColors ./swaync-template.css;
         })
-        (lib.mkIf (cfg.walker.enable) {
-          xdg.configFile."walker/themes/catppuccin.css".source = replaceColors ./walker-template.css;
-          xdg.configFile."walker/themes/catppuccin.toml".source = replaceColors ./walker-theme.toml;
-          programs.walker.config.theme = "catppuccin";
-        })
+        # (lib.mkIf (cfg.walker.enable) {
+        #   xdg.configFile."walker/themes/catppuccin.css".source = replaceColors ./walker-template.css;
+        #   xdg.configFile."walker/themes/catppuccin.toml".source = replaceColors ./walker-theme.toml;
+        #   programs.walker.config.theme = "catppuccin";
+        # })
         (lib.mkIf (cfg.anyrun.enable) {
           xdg.configFile."anyrun/style.css".source = replaceColors ./anyrun-template.css;
         })
