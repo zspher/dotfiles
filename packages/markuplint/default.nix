@@ -12,7 +12,7 @@ buildNpmPackage (finalAttrs: {
     url = "https://registry.npmjs.org/markuplint/-/markuplint-${finalAttrs.version}.tgz";
     hash = "sha256-mt6qjKf5GoybYTkAduXNbuPxzpbzwyOiLoH0QJh/tyo=";
   };
-  npmDepsHash = "sha256-1w7WlVoDtE4rMrVWHs7gNAv2BwdNGYLd/hV7z8wPyyE=";
+  npmDepsHash = "sha256-fWvvb0wIowHAkkFh0JwaYPtkIvwloJDdVbaF7oDToZA=";
 
   postPatch = ''
     ln -s ${./package-lock.json} package-lock.json
