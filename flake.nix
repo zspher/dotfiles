@@ -62,6 +62,11 @@
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
 
+    rofi-plugins = {
+      url = "github:zspher/rofi-plugins";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     catppuccin.url = "github:catppuccin/nix";
     catppuccin-delta = {
       url = "github:catppuccin/delta";

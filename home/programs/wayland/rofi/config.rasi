@@ -1,5 +1,5 @@
 configuration {
-    combi-modes: "drun,window,emoji:rofimoji";
+    combi-modes: "drun,window,emoji:rofimoji,websearch";
     modes: "combi,calc,run";
 
     display-combi: "🔎";

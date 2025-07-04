@@ -2,6 +2,7 @@
   pkgs,
   lib,
   config,
+  inputs,
   ...
 }:
 {
@@ -15,6 +16,7 @@
 
     (rofi-wayland.override {
       plugins = with pkgs; [
+        inputs.rofi-plugins.packages.${pkgs.system}.rofi-websearch
         rofi-calc
       ];
     })
