@@ -23,7 +23,6 @@
         swaynotificationcenter = prev.swaynotificationcenter.overrideAttrs (oldAttrs: {
           mesonBuildType = "release";
         });
-        rofi-calc = prev.callPackage ../../packages/rofi-calc { };
       })
     ];
     config = {
