@@ -14,6 +14,11 @@
   boot = {
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
+    kernelPackages = pkgs.linuxPackages_latest;
+
+    extraModprobeConfig = ''
+      options nvidia NVreg_UsePageAttributeTable=1
+    '';
 
     initrd.kernelModules = [
       "i915"
