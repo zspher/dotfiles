@@ -2,7 +2,7 @@
 {
   home.packages = with pkgs; [
     # passwords
-    (hashcat.override { cudaSupport = true; })
+    # (hashcat.override { cudaSupport = true; })
 
     # network
     nmap
