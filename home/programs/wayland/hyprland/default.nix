@@ -150,6 +150,8 @@ in
         "float, class:^(net.code\-industry.masterpdfeditor4)$"
         "tile, title:^(.*Master PDF Editor.*)$"
 
+        "noscreenshare 1, class:^(org.keepassxc.KeePassXC)$"
+
         "noblur, xwayland:1, title:" # brave pop-up (i.e. app menu, right click pop-up)
 
         # "immediate, class:^(steam_app_230410)$"
