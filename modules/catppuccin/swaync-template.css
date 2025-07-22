@@ -422,6 +422,7 @@ trough {
 }
 
 .widget-mpris-album-art {
+  -gtk-icon-size: 100px;
   border-radius: 12.6px;
 }
 

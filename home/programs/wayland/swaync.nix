@@ -54,8 +54,7 @@
           text = "Label Text";
         };
         mpris = {
-          image-size = 100;
-          image-radius = 12;
+          loop-carousel = true;
         };
       };
     };
