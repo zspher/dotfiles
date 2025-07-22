@@ -37,9 +37,7 @@
     "fjordLauncher": {
       "inputs": {
         "libnbtplusplus": "libnbtplusplus",
-        "nixpkgs": [
-          "nixpkgs"
-        ]
+        "nixpkgs": ["nixpkgs"]
       },
       "locked": {
         "lastModified": 1750287061,
@@ -57,9 +55,7 @@
     },
     "flake-parts": {
       "inputs": {
-        "nixpkgs-lib": [
-          "nixpkgs"
-        ]
+        "nixpkgs-lib": ["nixpkgs"]
       },
       "locked": {
         "lastModified": 1753121425,
@@ -77,9 +73,7 @@
     },
     "home-manager": {
       "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
+        "nixpkgs": ["nixpkgs"]
       },
       "locked": {
         "lastModified": 1753132348,
@@ -145,9 +139,7 @@
     },
     "rofi-plugins": {
       "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ],
+        "nixpkgs": ["nixpkgs"],
         "rust-overlay": "rust-overlay"
       },
       "locked": {
@@ -178,10 +170,7 @@
     },
     "rust-overlay": {
       "inputs": {
-        "nixpkgs": [
-          "rofi-plugins",
-          "nixpkgs"
-        ]
+        "nixpkgs": ["rofi-plugins", "nixpkgs"]
       },
       "locked": {
         "lastModified": 1752633862,
@@ -199,9 +188,7 @@
     },
     "spicetify-nix": {
       "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ],
+        "nixpkgs": ["nixpkgs"],
         "systems": "systems"
       },
       "locked": {
