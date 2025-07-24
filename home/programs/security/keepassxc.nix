@@ -34,9 +34,11 @@ lib.mkMerge [
         Description = "KeePassXC";
         PartOf = [
           config.wayland.systemd.target
+        ];
+        After = [
+          config.wayland.systemd.target
           "tray.target"
         ];
-        After = [ config.wayland.systemd.target ];
       };
 
       Service = {
