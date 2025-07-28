@@ -1,6 +1,7 @@
 { lib, ... }:
 {
   qt.kde.settings.kdeglobals.General.TerminalApplication = "kitty";
+  xdg.terminal-exec.settings.default = [ "kitty.desktop" ];
 
   programs.kitty = {
     enable = true;

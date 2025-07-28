@@ -85,5 +85,6 @@ in
       enable = true;
       defaultApplications = associations;
     };
+    terminal-exec.enable = true;
   };
 }
