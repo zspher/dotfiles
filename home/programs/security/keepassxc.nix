@@ -42,6 +42,7 @@ lib.mkMerge [
       };
 
       Service = {
+        Environment = "PATH=${config.home.profileDirectory}/bin";
         ExecStart = "${pkgs.keepassxc}/bin/keepassxc --minimized";
         Restart = "on-failure";
       };
