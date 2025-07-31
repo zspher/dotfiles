@@ -1,0 +1,22 @@
+diff --git a/data/ui/mpris_player.blp b/data/ui/mpris_player.blp
+index 19bf20f..fcad65a 100644
+--- a/data/ui/mpris_player.blp
++++ b/data/ui/mpris_player.blp
+@@ -43,7 +43,7 @@ template $SwayNotificationCenterWidgetsMprisMprisPlayer: $Underlay {
+
+         Label title {
+           justify: left;
+-          ellipsize: end;
++          wrap: true;
+           wrap-mode: word_char;
+           xalign: 0;
+           yalign: 0;
+@@ -55,7 +55,7 @@ template $SwayNotificationCenterWidgetsMprisMprisPlayer: $Underlay {
+
+         Label sub_title {
+           justify: left;
+-          ellipsize: end;
++          wrap: true;
+           wrap-mode: word_char;
+           xalign: 0;
+           yalign: 0;

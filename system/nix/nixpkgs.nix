@@ -22,6 +22,9 @@
       (final: prev: rec {
         swaynotificationcenter = prev.swaynotificationcenter.overrideAttrs (oldAttrs: {
           mesonBuildType = "release";
+          patches = [
+            ./swaync-textwrap-mpris.patch
+          ];
         });
       })
     ];
