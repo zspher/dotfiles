@@ -40,7 +40,7 @@ in
     "qt5ct/qt5ct.conf".text = lib.generators.toINI { } (data "qt5ct");
     "qt6ct/qt6ct.conf".text = lib.generators.toINI { } (data "qt6ct");
     "qt6ct/colors/catppuccin.conf".source = ./qt6ct-catppuccin.conf;
-    "qt5ct/colors/catppuccin.conf".source = ./qt5ct-catppuccin.conf;
+    "qt5ct/colors/catppuccin.conf".source = ./qt6ct-catppuccin.conf;
     "darklyrc".text = ''
       [Style]
       AnimationsEnabled=false
