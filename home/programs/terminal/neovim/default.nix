@@ -2,6 +2,7 @@
   pkgs,
   config,
   self,
+  inputs,
   ...
 }:
 {
@@ -63,7 +64,7 @@
 
         #-- JSON, CSS, ESLint JSON
         prettierd # formatter
-        vscode-langservers-extracted # LSP
+        inputs.vscode-langservers-extracted.packages.${pkgs.system}.default # LSP
 
         #-- HTML
         superhtml # LSP
