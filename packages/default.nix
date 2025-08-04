@@ -35,6 +35,8 @@
         shrinkpdf = pkgs.callPackage ./shrinkpdf { };
         markuplint = pkgs.callPackage ./markuplint { };
         cssmodules-language-server = pkgs.callPackage ./cssmodules-language-server { };
+
+        vscode-langservers-extracted = pkgs.callPackage ./vscode-langservers-extracted { };
       };
     };
 }

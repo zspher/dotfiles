@@ -67,11 +67,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    vscode-langservers-extracted = {
-      url = "github:zspher/vscode-langservers-extracted?rev=dev";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     catppuccin = {
       url = "github:catppuccin/nix";
       inputs.nixpkgs.follows = "nixpkgs";

@@ -64,7 +64,7 @@
 
         #-- JSON, CSS, ESLint JSON
         prettierd # formatter
-        inputs.vscode-langservers-extracted.packages.${pkgs.system}.default # LSP
+        self.packages.${pkgs.system}.vscode-langservers-extracted # LSP
 
         #-- HTML
         superhtml # LSP
