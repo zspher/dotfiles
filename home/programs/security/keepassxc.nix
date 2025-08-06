@@ -29,28 +29,28 @@ lib.mkMerge [
   (lib.mkIf fdo {
     qt.kde.settings."keepassxc/keepassxc.ini".FdoSecrets.Enabled = true;
     xdg.portal.config.common."org.freedesktop.impl.portal.Secret" = [ "keepassxc" ];
-    systemd.user.services.keepassxc = {
-      Unit = {
-        Description = "KeePassXC";
-        PartOf = [
-          config.wayland.systemd.target
-        ];
-        After = [
-          config.wayland.systemd.target
-          "tray.target"
-        ];
-      };
-
-      Service = {
-        Environment = "PATH=${config.home.profileDirectory}/bin";
-        ExecStart = "${pkgs.keepassxc}/bin/keepassxc --minimized";
-        Restart = "on-failure";
-      };
-
-      Install.WantedBy = [
-        config.wayland.systemd.target
-        "tray.target"
-      ];
-    };
+    # systemd.user.services.keepassxc = {
+    #   Unit = {
+    #     Description = "KeePassXC";
+    #     PartOf = [
+    #       config.wayland.systemd.target
+    #     ];
+    #     After = [
+    #       config.wayland.systemd.target
+    #       "tray.target"
+    #     ];
+    #   };
+    #
+    #   Service = {
+    #     Environment = "PATH=${config.home.profileDirectory}/bin";
+    #     ExecStart = "${pkgs.keepassxc}/bin/keepassxc --minimized";
+    #     Restart = "on-failure";
+    #   };
+    #
+    #   Install.WantedBy = [
+    #     config.wayland.systemd.target
+    #     "tray.target"
+    #   ];
+    # };
   })
 ]
