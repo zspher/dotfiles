@@ -9,6 +9,11 @@ trough highlight {
   background: var(--text);
 }
 
+slider {
+  min-height: 1px;
+  min-width: 1px;
+}
+
 scale {
   margin: 0 7px;
 }
