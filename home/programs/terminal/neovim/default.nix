@@ -35,7 +35,7 @@
         stylua # formatter
 
         #-- nix
-        nixfmt-rfc-style # formatter
+        nixfmt # formatter
         nil # LSP for code actions only
         nixd # LSP
 

@@ -23,7 +23,7 @@
         {
           devShells.default = pkgs.mkShell {
             packages = with pkgs; [
-              nixfmt-rfc-style
+              nixfmt
               nil
               nixd
             ];
