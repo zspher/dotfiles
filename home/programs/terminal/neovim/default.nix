@@ -18,7 +18,6 @@
       withNodeJs = true;
       extraLuaPackages = luaPkgs: with luaPkgs; [ magick ];
       extraPackages = with pkgs; [
-        python3
         unzip # for mason
         gnumake # required by fzf-telescope
         tree-sitter
@@ -40,6 +39,7 @@
         nixd # LSP
 
         #-- python
+        python3Packages.debugpy
         pyright # LSP
         ruff # linter & formatter via LSP
 
