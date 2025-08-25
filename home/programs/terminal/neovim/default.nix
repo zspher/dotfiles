@@ -63,7 +63,6 @@
         taplo # LSP
 
         #-- JSON, CSS, ESLint JSON
-        prettierd # formatter
         self.packages.${pkgs.system}.vscode-langservers-extracted # LSP
 
         #-- HTML
