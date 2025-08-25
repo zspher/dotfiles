@@ -20,7 +20,6 @@
       extraPackages = with pkgs; [
         unzip # for mason
         gnumake # required by fzf-telescope
-        tree-sitter
         ueberzugpp # for image preview (fzf-lua)
 
         #-- spelling
