@@ -53,8 +53,8 @@
 
         #-- bash
         bash-language-server # LSP
-        shfmt # formatter
-        shellcheck # linter
+        shfmt # formatter (bashls calls this)
+        shellcheck # linter (bashls calls this)
 
         #-- XML
         lemminx # LSP
@@ -79,8 +79,8 @@
         vtsls # LSP
 
         #-- Typst
-        tinymist
-        typstyle
+        tinymist # LSP
+        typstyle # formatter
 
         #-- HTML, tailwind
         emmet-language-server # LSP
