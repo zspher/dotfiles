@@ -34,6 +34,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-old-roslyn-ls.url = "github:nixos/nixpkgs/5a983011e0f4b3b286aaa73e011ce32b1449a528";
     # hyprland = {
     #   url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     #   inputs.nixpkgs.follows = "nixpkgs";

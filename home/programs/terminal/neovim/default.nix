@@ -48,8 +48,7 @@
         clang-tools
 
         #-- c
-        # TODO: uncomment when https://github.com/NixOS/nixpkgs/pull/435341 is merged
-        # roslyn-ls # LSP, formatter
+        roslyn-ls # LSP, formatter
 
         #-- bash
         bash-language-server # LSP
