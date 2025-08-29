@@ -40,6 +40,63 @@
   color: var(--vimium-surface2);
 }
 
+/* search/find hud */
+
+div#hud-container {
+  background: var(--vimium-base);
+  border: 1px solid var(--vimium-text);
+  box-shadow: none;
+}
+
+div#hud-container span#hud-find-input,
+div#hud-container div#hud {
+  color: var(--vimium-text);
+}
+
+div#hud-container .hud-find,
+div#hud-container #search-area {
+  background-color: var(--vimium-base);
+}
+
+::selection {
+  background-color: var(--vimium-peach) !important;
+  color: var(--vimium-mantle) !important;
+}
+
+/* vimium settings */
+
+body.vimium-body header,
+body.vimium-body label,
+body.vimium-body {
+  color: var(--vimium-text);
+  background-color: var(--vimium-base);
+}
+
+body.vimium-body button,
+body.vimium-body footer,
+body.vimium-body textarea,
+body.vimium-body input {
+  scrollbar-color: var(--vimium-surface2) var(--vimium-surface0);
+  background-color: var(--vimium-mantle);
+}
+
+body.vimium-body #wrapper .example {
+  color: var(--vimium-subtext1);
+}
+
+body.vimium-body a {
+  color: var(--vimium-lavender);
+}
+
+body.vimium-body input,
+body.vimium-body button {
+  border-color: var(--vimium-crust);
+}
+
+body.vimium-body button:focus {
+  border-color: var(--vimium-blue);
+}
+
 /* vomnibar */
 
 #vomnibar {
@@ -55,6 +112,7 @@
     transform: translateY(50px);
     opacity: 0;
   }
+
   100% {
     transform: translateY(0);
     opacity: 1;
@@ -120,63 +178,6 @@
   background-color: var(--vimium-surface0);
 }
 
-/* search/find hud */
-
-div#hud-container {
-  background: var(--vimium-base);
-  border: 1px solid var(--vimium-text);
-  box-shadow: none;
-}
-
-div#hud-container span#hud-find-input,
-div#hud-container div#hud {
-  color: var(--vimium-text);
-}
-
-div#hud-container .hud-find,
-div#hud-container #search-area {
-  background-color: var(--vimium-base);
-}
-
-::selection {
-  background-color: var(--vimium-peach) !important;
-  color: var(--vimium-mantle) !important;
-}
-
-/* vimium settings */
-
-body.vimium-body header,
-body.vimium-body label,
-body.vimium-body {
-  color: var(--vimium-text);
-  background-color: var(--vimium-base);
-}
-
-body.vimium-body button,
-body.vimium-body footer,
-body.vimium-body textarea,
-body.vimium-body input {
-  scrollbar-color: var(--vimium-surface2) var(--vimium-surface0);
-  background-color: var(--vimium-mantle);
-}
-
-body.vimium-body #wrapper .example {
-  color: var(--vimium-subtext1);
-}
-
-body.vimium-body a {
-  color: var(--vimium-lavender);
-}
-
-body.vimium-body input,
-body.vimium-body button {
-  border-color: var(--vimium-crust);
-}
-
-body.vimium-body button:focus {
-  border-color: var(--vimium-blue);
-}
-
 /* help dialog */
 
 #dialog {
@@ -204,8 +205,8 @@ body.vimium-body button:focus {
   color: var(--vimium-surface0);
 }
 
-#dialog .key,
-body.vimium-body .key {
+body.vimium-body .key,
+#dialog .key {
   color: var(--vimium-text);
   background: var(--vimium-mantle);
   border-color: var(--vimium-surface1);

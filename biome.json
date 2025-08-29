@@ -1,0 +1,12 @@
+{
+  "linter": {
+    "rules": {
+      "correctness": {
+        "noUnknownTypeSelector": "off",
+        "noUnknownProperty": "off",
+        "noUnknownFunction": "off",
+        "noUnknownPseudoClass": "off"
+      }
+    }
+  }
+}
