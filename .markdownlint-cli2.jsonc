@@ -1,0 +1,8 @@
+{
+	"config": {
+		"no-inline-html": false,
+		"ol-prefix": {
+			"style": "ordered"
+		}
+	}
+}
