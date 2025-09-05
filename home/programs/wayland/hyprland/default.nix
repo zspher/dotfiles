@@ -7,7 +7,6 @@ let
 in
 {
   imports = [
-    ./clipboard.nix
     ./keybinds.nix
   ];
   wayland.windowManager.hyprland = {
