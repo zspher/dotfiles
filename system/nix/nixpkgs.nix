@@ -20,6 +20,9 @@
       #   );
       # })
       (final: prev: rec {
+        bottles-unwrapped = prev.bottles-unwrapped.overrideAttrs (oldAttrs: {
+          propagatedBuildInputs = lib.lists.remove prev.gamescope oldAttrs.propagatedBuildInputs;
+        });
         swaynotificationcenter = prev.swaynotificationcenter.overrideAttrs (oldAttrs: {
           mesonBuildType = "release";
           patches = [

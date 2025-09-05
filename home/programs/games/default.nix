@@ -5,7 +5,7 @@
   ];
   home.packages = with pkgs; [
     # emulators / compatibility layer
-    bottles
+    (bottles.override { removeWarningPopup = true; })
     cemu
 
     inputs.fjordLauncher.packages.${pkgs.system}.fjordlauncher
