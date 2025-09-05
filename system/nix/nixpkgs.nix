@@ -23,6 +23,15 @@
         bottles-unwrapped = prev.bottles-unwrapped.overrideAttrs (oldAttrs: {
           propagatedBuildInputs = lib.lists.remove prev.gamescope oldAttrs.propagatedBuildInputs;
         });
+        wl-clipboard = prev.wl-clipboard.overrideAttrs (oldAttrs: {
+          version = "2.2.2";
+          src = prev.fetchFromGitHub {
+            owner = "bugaevc";
+            repo = "wl-clipboard";
+            rev = "aaa927ee7f7d91bcc25a3b68f60d01005d3b0f7f";
+            hash = "sha256-V8JAai4gZ1nzia4kmQVeBwidQ+Sx5A5on3SJGSevrUU=";
+          };
+        });
         swaynotificationcenter = prev.swaynotificationcenter.overrideAttrs (oldAttrs: {
           mesonBuildType = "release";
           patches = [
