@@ -6,13 +6,13 @@
 
 buildNpmPackage (finalAttrs: {
   pname = "markuplint";
-  version = "4.12.0";
+  version = "4.13.1";
 
   src = fetchurl {
     url = "https://registry.npmjs.org/markuplint/-/markuplint-${finalAttrs.version}.tgz";
-    hash = "sha256-mt6qjKf5GoybYTkAduXNbuPxzpbzwyOiLoH0QJh/tyo=";
+    hash = "sha256-hBkfRrQ7rpPCUbJE1ADnTvkVQieFhoG4oKx+cs/ax3w=";
   };
-  npmDepsHash = "sha256-fWvvb0wIowHAkkFh0JwaYPtkIvwloJDdVbaF7oDToZA=";
+  npmDepsHash = "sha256-iod5htXEzIbfSxmQYwzLut5/vmog1jwVTWCYAX7vVTc=";
 
   postPatch = ''
     ln -s ${./package-lock.json} package-lock.json
