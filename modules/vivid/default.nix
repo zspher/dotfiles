@@ -96,18 +96,17 @@ in
   config = mkIf cfg.enable (mkMerge [
     {
       home.packages = [ cfg.package ];
-      xdg.configFile =
-        {
-          "vivid/filetypes.yml" = mkIf (cfg.filetypes != { }) {
-            source = jsonFormat.generate "vivid-filetypes.yml" cfg.filetypes;
-          };
+      xdg.configFile = {
+        "vivid/filetypes.yml" = mkIf (cfg.filetypes != { }) {
+          source = jsonFormat.generate "vivid-filetypes.yml" cfg.filetypes;
+        };
+      }
+      // mapAttrs' (
+        name: value:
+        nameValuePair "vivid/themes/${name}.yml" {
+          source = jsonFormat.generate "vivid-${name}-theme.yml" value;
         }
-        // mapAttrs' (
-          name: value:
-          nameValuePair "vivid/themes/${name}.yml" {
-            source = jsonFormat.generate "vivid-${name}-theme.yml" value;
-          }
-        ) cfg.themes;
+      ) cfg.themes;
     }
     (mkIf (cfg.theme != null) {
       programs.bash.initExtra = mkIf cfg.enableBashIntegration ''
