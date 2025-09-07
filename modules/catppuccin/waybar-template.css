@@ -15,7 +15,7 @@ tooltip label {
 }
 
 tooltip,
-tooltip>decoration {
+tooltip > decoration {
   box-shadow: none;
   background: var(--base);
   border-radius: 12.6px;
@@ -95,7 +95,7 @@ window#waybar.hidden {
   border-top-right-radius: 12.6px;
 }
 
-.power>label {
+.power > label {
   margin: 0 10px;
 }
 
@@ -200,19 +200,19 @@ window#waybar.hidden {
   transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
 }
 
-#taskbar button box>image {
+#taskbar button box > image {
   padding: 0;
   min-width: 14px;
   min-height: 14px;
   margin: 2px 0;
 }
 
-#taskbar button box>label {
+#taskbar button box > label {
   font-size: 0px;
   color: transparent;
 }
 
-#taskbar button.active box>label {
+#taskbar button.active box > label {
   padding: 1px;
   min-width: 2px;
   min-height: 2px;
@@ -293,34 +293,34 @@ window#waybar.hidden {
   -gtk-icon-theme: "Papirus-Dark";
 }
 
-#tray window>menu {
+#tray window > menu {
   background: var(--base);
 }
 
-#tray window>decoration {
+#tray window > decoration {
   box-shadow: none;
   border: 0.2px var(--mantle) solid;
 }
 
-#tray window>menu,
-#tray window>menu menuitem,
-#tray window>decoration {
+#tray window > menu,
+#tray window > menu menuitem,
+#tray window > decoration {
   border-radius: 12.6px;
 }
 
-#tray window>menu label {
+#tray window > menu label {
   color: var(--text);
 }
 
-#tray>.passive {
+#tray > .passive {
   -gtk-icon-effect: dim;
 }
 
-#tray>.needs-attention {
+#tray > .needs-attention {
   -gtk-icon-effect: highlight;
 }
 
-#tray>.needs-attention>image {
+#tray > .needs-attention > image {
   padding: 2px 5px;
   border-radius: 12.6px;
   background-color: alpha(var(--red), 0.05);
