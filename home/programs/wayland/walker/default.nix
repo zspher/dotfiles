@@ -7,9 +7,6 @@ in
     enable = true;
     runAsService = true;
     config = {
-      elephant = {
-        installService = false;
-      };
       keybinds = {
         next = "ctrl j";
         previous = "ctrl k";

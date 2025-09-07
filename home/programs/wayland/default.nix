@@ -7,7 +7,7 @@
 {
   imports = [
     # ./anyrun.nix
-    ./walker.nix
+    ./walker
     ./hyprland
     ./rofi
     ./hypridle.nix
