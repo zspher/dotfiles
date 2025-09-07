@@ -24,4 +24,7 @@ in
     wl-clipboard
   ];
   wayland.windowManager.hyprland.settings."$runner" = "walker";
+  xdg.configFile."elephant/desktopapplications.toml".text = ''
+    show_actions = true
+  '';
 }
