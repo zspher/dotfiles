@@ -17,7 +17,7 @@
     rofi.enable = true;
     swaync.enable = true;
     vesktop.enable = true;
-    # walker.enable = true;
+    walker.enable = true;
     waybar.enable = true;
   };
   gtk = {
