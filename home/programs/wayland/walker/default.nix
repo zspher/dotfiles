@@ -13,6 +13,12 @@ in
         toggle_exact_search = "ctrl m";
         quick_activate = genList (x: "alt ${toString (x + 1)}") 9;
       };
+      providers.default = [
+        "desktopapplications"
+        "calc"
+        "menus"
+        "websearch"
+      ];
     };
   };
   programs.elephant = {
