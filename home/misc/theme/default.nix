@@ -18,7 +18,7 @@
 
   programs.vivid = {
     enable = true;
-    theme = "catppuccin-${config.catppuccin.flavor}";
+    activeTheme = "catppuccin-${config.catppuccin.flavor}";
   };
 
   theme.catppuccin = {
