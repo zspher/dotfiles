@@ -8,6 +8,6 @@
     (bottles.override { removeWarningPopup = true; })
     cemu
 
-    inputs.fjordLauncher.packages.${pkgs.system}.fjordlauncher
+    inputs.fjordLauncher.packages.${pkgs.stdenv.hostPlatform.system}.fjordlauncher
   ];
 }

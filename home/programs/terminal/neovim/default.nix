@@ -62,11 +62,11 @@
         taplo # LSP
 
         #-- JSON, CSS, ESLint JSON
-        self.packages.${pkgs.system}.vscode-langservers-extracted # LSP
+        self.packages.${pkgs.stdenv.hostPlatform.system}.vscode-langservers-extracted # LSP
 
         #-- HTML
         superhtml # LSP
-        self.packages.${pkgs.system}.markuplint # LSP
+        self.packages.${pkgs.stdenv.hostPlatform.system}.markuplint # LSP
 
         #-- markdown
         marksman # LSP
@@ -84,7 +84,7 @@
         #-- HTML, tailwind
         emmet-language-server # LSP
         tailwindcss-language-server # LSP
-        self.packages.${pkgs.system}.cssmodules-language-server # LSP
+        self.packages.${pkgs.stdenv.hostPlatform.system}.cssmodules-language-server # LSP
 
         #-- YAML
         yaml-language-server

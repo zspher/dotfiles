@@ -10,7 +10,7 @@
     masterpdfeditor4
     obsidian
     kdePackages.okular
-    (self.packages.${pkgs.system}.shrinkpdf)
+    (self.packages.${pkgs.stdenv.hostPlatform.system}.shrinkpdf)
     simple-scan
     vscode-fhs
   ];

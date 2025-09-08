@@ -16,7 +16,7 @@
 
     (rofi-wayland.override {
       plugins = with pkgs; [
-        inputs.rofi-plugins.packages.${pkgs.system}.rofi-websearch
+        inputs.rofi-plugins.packages.${pkgs.stdenv.hostPlatform.system}.rofi-websearch
         rofi-calc
       ];
     })

@@ -2,13 +2,13 @@
 {
   programs.anyrun = {
     enable = true;
-    package = inputs.anyrun.packages.${pkgs.system}.anyrun;
+    package = inputs.anyrun.packages.${pkgs.stdenv.hostPlatform.system}.anyrun;
     config = {
       layer = "top";
       y.fraction = 0.2;
       ignoreExclusiveZones = true;
 
-      plugins = with inputs.anyrun.packages.${pkgs.system}; [
+      plugins = with inputs.anyrun.packages.${pkgs.stdenv.hostPlatform.system}; [
         websearch
         applications
         rink

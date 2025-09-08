@@ -13,7 +13,9 @@
   };
 
   environment.systemPackages = [
-    (self.packages.${pkgs.system}.sddm-corners-theme.override { font = "CaskaydiaMono Nerd Font"; })
+    (self.packages.${pkgs.stdenv.hostPlatform.system}.sddm-corners-theme.override {
+      font = "CaskaydiaMono Nerd Font";
+    })
   ];
 
   systemd.user.tmpfiles.users.${username}.rules = [
