@@ -14,7 +14,6 @@
   boot = {
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
-    kernelPackages = pkgs.linuxPackages_6_15;
 
     extraModprobeConfig = ''
       options nvidia NVreg_UsePageAttributeTable=1
