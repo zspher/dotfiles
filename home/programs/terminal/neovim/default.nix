@@ -47,7 +47,7 @@
         mesonlsp # LSP
         clang-tools
 
-        #-- c
+        #-- c#
         roslyn-ls # LSP, formatter
 
         #-- bash
