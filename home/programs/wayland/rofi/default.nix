@@ -11,7 +11,7 @@
     libnotify
     procps
     qimgv
-    libsForQt5.kimageformats # avif, xcf, jxl in qimgv
+    kdePackages.kimageformats # avif, xcf, jxl in qimgv
     rofimoji
 
     (rofi-wayland.override {
