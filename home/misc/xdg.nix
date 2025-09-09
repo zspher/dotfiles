@@ -55,10 +55,11 @@ let
     ]);
 
   documentTypes = {
-    "image/vnd.djvu+multipage" = [ "org.kde.okular" ];
-    "application/pdf" = [ "org.kde.okular" ];
+    "image/vnd.djvu+multipage" = [ "org.pwmt.zathura" ];
+    "application/pdf" = [ "org.pwmt.zathura" ];
+    "application/epub+zip" = [ "org.pwmt.zathura" ];
+
     "application/vnd.openxmlformats-officedocument.wordprocessingml.document" = [ "writer" ];
-    "application/epub+zip" = [ "calibre-ebook-viewer" ];
   };
 
   # XDG MIME types
