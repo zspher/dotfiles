@@ -8,12 +8,9 @@
   imports = [
     ./qt
   ];
-  theme.catppuccin = {
-    enable = true;
+  catppuccin.custom = {
     # anyrun.enable = true;
     gtk.enable = true;
-    mpv.enable = true;
-    obs-studio.enable = true;
     rofi.enable = true;
     swaync.enable = true;
     vesktop.enable = true;

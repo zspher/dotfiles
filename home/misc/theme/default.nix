@@ -6,6 +6,7 @@
   # the minimum needed for theming (i.e. in a tty: shell, cmdline)
   catppuccin.bat.enable = true;
   catppuccin.btop.enable = true;
+  catppuccin.delta.enable = true;
   catppuccin.fish.enable = true;
   catppuccin.fzf.enable = true;
   catppuccin.lazygit.enable = true;
@@ -19,9 +20,5 @@
   programs.vivid = {
     enable = true;
     activeTheme = "catppuccin-${config.catppuccin.flavor}";
-  };
-
-  theme.catppuccin = {
-    git-delta.enable = true;
   };
 }

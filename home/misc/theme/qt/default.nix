@@ -23,8 +23,7 @@ let
   };
 in
 {
-
-  theme.catppuccin.kde.enable = true;
+  catppuccin.custom.kde.enable = true;
   qt = {
     enable = true;
     style.package = with pkgs; [

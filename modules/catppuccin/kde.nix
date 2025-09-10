@@ -9,11 +9,7 @@ let
     str:
     (lib.toUpper (builtins.substring 0 1 str)) + (builtins.substring 1 (builtins.stringLength str) str);
 
-  cfg = config.theme.catppuccin;
-  ctp = {
-    inherit (config.catppuccin) sources flavor accent;
-  };
-
+  cfg = config.catppuccin;
   importINI =
     file:
     lib.importJSON (
@@ -23,19 +19,18 @@ let
     );
 in
 {
-  options.theme.catppuccin.kde = {
+  options.catppuccin.custom.kde = {
     enable = lib.mkEnableOption "kde integration";
   };
-
   config =
     let
       package = pkgs.catppuccin-kde.override {
-        flavour = [ ctp.flavor ];
-        accents = [ ctp.accent ];
+        flavour = [ cfg.flavor ];
+        accents = [ cfg.accent ];
       };
 
-      accent = upperFirst ctp.accent;
-      flavor = upperFirst ctp.flavor;
+      accent = upperFirst cfg.accent;
+      flavor = upperFirst cfg.flavor;
 
       themeInfo = lib.mkMerge [
         (importINI "${package}/share/color-schemes/Catppuccin${flavor}${accent}.colors")
@@ -43,7 +38,7 @@ in
         { "General".Name = lib.mkForce null; }
       ];
     in
-    lib.mkIf cfg.kde.enable {
+    lib.mkIf cfg.custom.kde.enable {
       home.packages = [
         package # for krita, okular
       ];

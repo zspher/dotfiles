@@ -27,7 +27,7 @@
         src = ./share;
         filter =
           path: type:
-          if config.theme.catppuccin.rofi.enable then builtins.baseNameOf path != "theme.rasi" else true;
+          if config.catppuccin.custom.rofi.enable then builtins.baseNameOf path != "theme.rasi" else true;
       };
       recursive = true;
     };

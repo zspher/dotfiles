@@ -10,6 +10,7 @@
       core.editor = "nvim";
       init.defaultBranch = "main";
       status.short = true;
+      diff.colorMoved = true;
     };
     ignores = [
       ".env"

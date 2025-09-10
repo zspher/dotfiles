@@ -9,11 +9,10 @@
 }:
 {
   imports = [
-    inputs.catppuccin.homeModules.catppuccin
     inputs.spicetify-nix.homeManagerModules.default
     inputs.walker.homeManagerModules.default
     # inputs.hyprland.homeManagerModules.default
-    self.homeModules.catppuccin
+    self.homeModules.catppuccin # requires catppuccin/nix
   ];
   home = {
     inherit username;

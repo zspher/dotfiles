@@ -5,24 +5,14 @@
   inputs,
   ...
 }:
-let
-  cfg = config.theme.catppuccin;
-
-  upperFirst =
-    str:
-    (lib.toUpper (builtins.substring 0 1 str)) + (builtins.substring 1 (builtins.stringLength str) str);
-in
 {
   imports = [
+    inputs.catppuccin.homeModules.catppuccin
     ./kde.nix
   ];
-  options.theme.catppuccin = {
-    enable = lib.mkEnableOption "catppuccin";
+  options.catppuccin.custom = {
     anyrun.enable = lib.mkEnableOption "anyrun";
-    git-delta.enable = lib.mkEnableOption "git delta integration";
     gtk.enable = lib.mkEnableOption "gtk integration";
-    mpv.enable = lib.mkEnableOption "mpv integration";
-    obs-studio.enable = lib.mkEnableOption "obs-studio integration";
     rofi.enable = lib.mkEnableOption "rofi integration";
     swaync.enable = lib.mkEnableOption "swaync integration";
     vesktop.enable = lib.mkEnableOption "webcord integration";
@@ -32,15 +22,12 @@ in
 
   config =
     let
-      ctp = {
-        inherit (config.catppuccin) sources flavor accent;
-      };
-      catppuccin = pkgs.catppuccin.override {
-        inherit (ctp) accent;
-        variant = ctp.flavor;
-      };
+      cfg = config.catppuccin;
+      upperFirst =
+        str:
+        (lib.toUpper (builtins.substring 0 1 str)) + (builtins.substring 1 (builtins.stringLength str) str);
 
-      palette = (lib.importJSON "${ctp.sources.palette}/palette.json").${ctp.flavor}.colors;
+      palette = (lib.importJSON "${cfg.sources.palette}/palette.json").${cfg.flavor}.colors;
       colors = builtins.mapAttrs (color: val: (builtins.substring 1 6 val.hex)) palette;
 
       replaceColors =
@@ -56,39 +43,37 @@ in
             ++ [
               "--replace-quiet"
               "var(--accent)"
-              "${palette.${ctp.accent}.hex}"
+              "${palette.${cfg.accent}.hex}"
             ];
         });
     in
-    lib.mkIf (config.theme.catppuccin.enable) (
+    lib.mkIf (cfg != { }) (
       lib.mkMerge [
-        (lib.mkIf (cfg.rofi.enable) {
+        (lib.mkIf (cfg.custom.rofi.enable) {
           xdg.configFile."rofi/share/theme.rasi".source = replaceColors ./rofi-template.rasi;
         })
-        (lib.mkIf (cfg.waybar.enable) {
+        (lib.mkIf (cfg.custom.waybar.enable) {
           programs.waybar.style = replaceColors ./waybar-template.css;
         })
-        (lib.mkIf (cfg.swaync.enable) {
+        (lib.mkIf (cfg.custom.swaync.enable) {
           services.swaync.style = replaceColors ./swaync-template.css;
         })
-        (lib.mkIf (cfg.walker.enable) {
+        (lib.mkIf (cfg.custom.walker.enable) {
           programs.walker.theme = {
             name = "catppuccin";
             style = builtins.readFile (replaceColors ./walker-template.css);
           };
         })
-        (lib.mkIf (cfg.anyrun.enable) {
+        (lib.mkIf (cfg.custom.anyrun.enable) {
           xdg.configFile."anyrun/style.css".source = replaceColors ./anyrun-template.css;
         })
 
-        (lib.mkIf (cfg.gtk.enable) {
+        (lib.mkIf (cfg.custom.gtk.enable) {
           gtk = {
-
             enable = true;
-
             theme =
               let
-                colorVariants = if ctp.flavor == "latte" then [ "light" ] else [ "dark" ];
+                colorVariants = if cfg.flavor == "latte" then [ "light" ] else [ "dark" ];
                 ctpToCollMap = {
                   mauve = "purple";
                   maroon = "red";
@@ -107,7 +92,7 @@ in
                     ctpToCollMap.${color}
                   else
                     builtins.throw "invalid color: ${color}";
-                ac = ctp.accent;
+                ac = cfg.accent;
               in
               {
                 name = "Colloid-${upperFirst (ctpToColl ac)}-Dark-Catppuccin";
@@ -136,27 +121,18 @@ in
           };
         })
 
-        (lib.mkIf (cfg.obs-studio.enable) {
+        (lib.mkIf (cfg.obs.enable) {
           qt.kde.settings."obs-studio/global.ini".Appearance."Theme" =
-            "com.obsproject.Catppuccin.${upperFirst ctp.flavor}";
+            "com.obsproject.Catppuccin.${upperFirst cfg.flavor}";
         })
 
-        (lib.mkIf (cfg.vesktop.enable) {
+        (lib.mkIf (cfg.custom.vesktop.enable) {
           programs.vesktop.vencord.settings.themeLinks = [
-            "https://catppuccin.github.io/discord/dist/catppuccin-mocha-mauve.theme.css"
+            "https://catppuccin.github.io/discord/dist/catppuccin-${cfg.flavor}-mauve.theme.css"
           ];
         })
 
-        (lib.mkIf (cfg.git-delta.enable) {
-          programs.git = {
-            extraConfig.delta.features = "catppuccin-${ctp.flavor}";
-            includes = [
-              {
-                path = "${inputs.catppuccin-delta}/catppuccin.gitconfig";
-              }
-            ];
-          };
-          # bat cache & catppuccin/bat is needed to theme delta
+        (lib.mkIf (cfg.delta.enable) {
           programs.bat = {
             enable = true;
           };
