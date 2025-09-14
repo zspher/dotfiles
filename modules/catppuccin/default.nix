@@ -137,6 +137,14 @@
             enable = true;
           };
         })
+
+        (lib.mkIf (cfg.zathura.enable) {
+          programs.zathura.options = {
+            recolor = false;
+            render-loading-bg = "#ffffff";
+            highlight-fg = "${palette.base.hex}";
+          };
+        })
       ]
     );
 }
