@@ -7,7 +7,7 @@
 {
   imports = [
     # ./anyrun.nix
-    ./walker
+    # ./walker
     ./hyprland
     ./rofi
     ./hypridle.nix
@@ -29,6 +29,10 @@
   systemd.user.services = {
     kdeconnect.Unit.After = lib.mkForce [ "graphical-session.target" ];
     kdeconnect-indicator.Unit.After = lib.mkForce [ "graphical-session.target" ];
+  };
+  services.copyq = {
+    enable = true;
+    forceXWayland = false;
   };
 
   xdg.portal = {
