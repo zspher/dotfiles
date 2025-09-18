@@ -14,7 +14,7 @@
     kdePackages.kimageformats # avif, xcf, jxl in qimgv
     rofimoji
 
-    (rofi-wayland.override {
+    (rofi.override {
       plugins = with pkgs; [
         inputs.rofi-plugins.packages.${pkgs.stdenv.hostPlatform.system}.rofi-websearch
         rofi-calc
