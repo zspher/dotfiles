@@ -14,7 +14,7 @@ in
       mainBar = {
         layer = "top";
         position = "top";
-        height = 38;
+        height = 39;
         output = [ "*" ];
         modules-left = [
           "group/power"
