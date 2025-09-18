@@ -145,6 +145,10 @@ in
         "$mainMod, mouse:272, movewindow"
         "$mainMod, mouse:273, resizewindow"
       ];
+
+      gesture = [
+        "3, horizontal, workspace"
+      ];
     };
     extraConfig = ''
       # * =========  Resize window  ========= * #

@@ -93,8 +93,6 @@ in
       dwindle.pseudotile = true;
       dwindle.preserve_split = true;
 
-      gestures.workspace_swipe = true;
-
       group = {
         "col.border_active" = "rgb($mauveAlpha)";
         "col.border_inactive" = "rgb($surface0Alpha)";
