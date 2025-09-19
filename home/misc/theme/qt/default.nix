@@ -48,14 +48,4 @@ in
       TransparentDolphinView=false
     '';
   };
-
-  home.activation.genFilesKconfig = lib.hm.dag.entryBefore [ "kconfig" ] ''
-    ${lib.concatMapStrings (
-      x:
-      let
-        path = "${config.xdg.configHome}/${x}";
-      in
-      "[ ! -e ${path} ] && touch ${path}\n"
-    ) (builtins.attrNames config.qt.kde.settings)}
-  '';
 }
