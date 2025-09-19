@@ -12,6 +12,7 @@
   ];
   options.catppuccin.custom = {
     anyrun.enable = lib.mkEnableOption "anyrun";
+    copyq.enable = lib.mkEnableOption "copyq integration";
     gtk.enable = lib.mkEnableOption "gtk integration";
     rofi.enable = lib.mkEnableOption "rofi integration";
     swaync.enable = lib.mkEnableOption "swaync integration";
@@ -144,6 +145,51 @@
             render-loading-bg = "#ffffff";
             highlight-fg = "${palette.base.hex}";
           };
+        })
+
+        (lib.mkIf (cfg.custom.copyq.enable) {
+          qt.kde.settings =
+            let
+              data = {
+                edit_bg = palette.base.hex;
+                edit_fg = palette.text.hex;
+
+                bg = palette.base.hex;
+                alt_bg = palette.base.hex;
+                fg = palette.text.hex;
+
+                find_bg = palette.peach.hex;
+                find_fg = palette.base.hex;
+
+                notes_bg = palette.base.hex;
+                notes_fg = palette.text.hex;
+                notification_bg = palette.base.hex;
+                notification_fg = palette.text.hex;
+
+                sel_fg = palette.text.hex;
+                sel_bg = "#50${colors.overlay0}";
+                hover_item_css = "\"background: #80${colors.overlay1}\"";
+
+                css_template_items = "items";
+                css_template_main_window = "main_window";
+                css_template_menu = "menu";
+                css_template_notification = "notification";
+                font_antialiasing = "true";
+                icon_size = "16";
+
+                num_fg = "default_placeholder_text";
+                num_margin = "2";
+
+                show_number = "true";
+                show_scrollbars = "true";
+                style_main_window = "false";
+                use_system_icons = "false";
+              };
+            in
+            {
+              "copyq/themes/catppuccin.ini".General = data;
+              "copyq/copyq.conf".Theme = data;
+            };
         })
       ]
     );

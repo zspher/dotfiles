@@ -10,6 +10,7 @@
   ];
   catppuccin.custom = {
     # anyrun.enable = true;
+    copyq.enable = true;
     gtk.enable = true;
     rofi.enable = true;
     swaync.enable = true;
