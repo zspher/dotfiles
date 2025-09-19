@@ -58,12 +58,12 @@
         (lib.mkIf (cfg.custom.swaync.enable) {
           services.swaync.style = replaceColors ./swaync-template.css;
         })
-        (lib.mkIf (cfg.custom.walker.enable) {
-          programs.walker.theme = {
-            name = "catppuccin";
-            style = builtins.readFile (replaceColors ./walker-template.css);
-          };
-        })
+        # (lib.mkIf (cfg.custom.walker.enable) {
+        #   programs.walker.theme = {
+        #     name = "catppuccin";
+        #     style = builtins.readFile (replaceColors ./walker-template.css);
+        #   };
+        # })
         (lib.mkIf (cfg.custom.anyrun.enable) {
           xdg.configFile."anyrun/style.css".source = replaceColors ./anyrun-template.css;
         })
