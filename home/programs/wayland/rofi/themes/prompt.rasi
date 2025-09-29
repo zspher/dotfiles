@@ -1,5 +1,5 @@
 * {
-    font: "CaskaydiaMono Nerd Font 12";
+    font: "CaskaydiaMono Nerd Font 11";
     background-color:           transparent;
 
     background:                 #181825;
@@ -12,6 +12,7 @@
     red:                        #f38ba8;
     green:                      #a6e3a1;
     blue:                       #89b4fa;
+    surface:                    #45475a;
 
     selected-normal-foreground: var(foreground);
     selected-normal-background: #313244;
@@ -19,11 +20,12 @@
 }
 
 window {
-    padding:          20px;
+    padding:          15px;
     background-color: var(background);
     border-radius: 12px;
     border: 1px solid;
     border-color: #313244;
+    width: 40%;
 }
 mainbox {
     padding: 0;
@@ -32,6 +34,7 @@ mainbox {
 }
 
 message {
+    text-color: var(foreground);
 }
 
 textbox {
@@ -39,7 +42,7 @@ textbox {
 }
 
 inputbar {
-    padding:    8px;
+    padding:    10px;
     margin: 0 0 5px 0;
     spacing:    1px;
     text-color: var(foreground);
@@ -49,7 +52,6 @@ inputbar {
     border-radius: 10px;
 }
 case-indicator {
-    spacing:    0;
     text-color: var(foreground);
 }
 
@@ -65,11 +67,11 @@ textbox-num-sep {
 }
 
 entry {
-    spacing:           0;
     text-color:        var(foreground);
     placeholder-color: var(foreground-alt);
     cursor:            text;
     placeholder: "search";
+    margin: 0 20px 0 5px;
 }
 
 prompt {
@@ -78,7 +80,7 @@ prompt {
 }
 
 element {
-    padding: 1px ;
+    padding: 6px ;
     spacing: 5px ;
     border:  0;
     border-radius: 12px;
@@ -87,7 +89,7 @@ element {
 }
 
 
-element normal.normal {
+element normal.normal, element alternate.normal {
     background-color: var(background);
     text-color:       var(foreground);
 }
@@ -98,10 +100,6 @@ element normal.urgent, element alternate.urgent {
 element normal.active, element alternate.active {
     background-color: var(background);
     text-color:       var(blue);
-}
-element alternate.normal {
-    background-color: var(darkbg);
-    text-color:       var(foreground);
 }
 
 element selected.normal {
@@ -125,37 +123,32 @@ element-text {
 element-icon {
     background-color: rgba ( 0, 0, 0, 0 % );
     padding: 0 4px 0;
-    size:             1.5em ;
-    text-color:       inherit;
-    cursor:           inherit;
+    size: 1.6em ;
+    text-color: inherit;
+    cursor: inherit;
     vertical-align: 0.2;
 }
+
 element-index {
+    background-color: var(surface);
     text-color: inherit;
-    cursor:           inherit;
+    cursor: inherit;
     vertical-align: 0.5;
-    padding: 0 5px 0 0;
+    padding: 5px 12px;
+    border-radius: 5px;
 }
 
 listview {
     padding:      2px 0px 0px;
-    scrollbar:    true;
-    spacing:      2px ;
+    spacing:      2px;
     lines: 10;
 }
-scrollbar {
-    width:        4px;
-    padding:      4px;
-    handle-width: 8px;
-    handle-color: var(foreground);
-    handle-rounded-corners: true;
-}
+
 sidebar {
     border-color: var(separatorcolor);
     border:       2px dash 0px 0px ;
 }
 button {
-    spacing:    0;
     text-color: var(foreground);
     cursor:     pointer;
 }
