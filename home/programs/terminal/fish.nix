@@ -27,6 +27,11 @@
       set fish_greeting # Disable greeting
     '';
     functions = {
+      delink.body = ''
+        cp --remove-destination $(readlink $argv) $argv
+        chmod u+w $argv
+      '';
+
       fish_user_key_bindings = {
         body = ''
           fish_vi_key_bindings
