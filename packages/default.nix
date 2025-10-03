@@ -37,6 +37,7 @@
         cssmodules-language-server = pkgs.callPackage ./cssmodules-language-server { };
 
         vscode-langservers-extracted = pkgs.callPackage ./vscode-langservers-extracted { };
+        csharp-devkit-wrapper = pkgs.callPackage ./csharp-devkit-wrapper { };
       };
     };
 }
