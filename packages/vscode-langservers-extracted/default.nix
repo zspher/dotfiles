@@ -8,21 +8,21 @@
 }:
 buildNpmPackage {
   pname = "vscode-langservers-extracted";
-  version = "4.10.0";
+  version = "4.11.0";
 
   srcs = [
     (fetchFromGitHub {
-      owner = "hrsh7th";
+      owner = "zspher";
       repo = "vscode-langservers-extracted";
-      rev = "0aff7702529300ef2a65d58a09d688e719e5f91f";
-      hash = "sha256-kt57Zd4acMQ2slkBldgZfhtfybKznAqolZ+6jfCHyFo=";
+      rev = "369d9316e9e6c4bf38e8da72f23cf5aee83466aa";
+      hash = "sha256-LXD3NQ1eJEoY4V9rCGHZM/FWxX0TSis6asUQJkfm7Yo=";
     })
     vscodium.src
   ];
   sourceRoot = "source";
   nativeBuildInputs = [ unzip ];
 
-  npmDepsHash = "sha256-uJ3263YSsrSrZUQ/zQeigAe1NBXyPAblmQ3v9CYb6Dc=";
+  npmDepsHash = "sha256-pnbZS7clblx5X3+qyUB3hes2qA76aSZJxpEe55D0EF8=";
 
   buildPhase =
     let
