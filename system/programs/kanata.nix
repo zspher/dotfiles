@@ -10,7 +10,7 @@
         ;; homerow mod, swapscape
         (defvar
           tap-timeout   200
-          hold-timeout  150
+          hold-timeout  160
           tt $tap-timeout
           ht $hold-timeout
 
@@ -32,7 +32,7 @@
             (on-idle-fakekey to-base tap 20)
           )
 
-          ha (tap-hold-release-keys $tt 200 (multi a @tap) lmet $left-hand-keys)
+          ha (tap-hold-release-keys $tt $ht (multi a @tap) lmet $left-hand-keys)
           hs (tap-hold-release-keys $tt $ht (multi s @tap) lalt $left-hand-keys)
           hd (tap-hold-release-keys $tt $ht (multi d @tap) lctl $left-hand-keys)
           hf (tap-hold-release-keys $tt $ht (multi f @tap) lsft $left-hand-keys)
@@ -40,7 +40,7 @@
           hj (tap-hold-release-keys $tt $ht (multi j @tap) rsft $right-hand-keys)
           hk (tap-hold-release-keys $tt $ht (multi k @tap) rctl $right-hand-keys)
           hl (tap-hold-release-keys $tt $ht (multi l @tap) ralt $right-hand-keys)
-          h; (tap-hold-release-keys $tt 200 (multi ; @tap) rmet $right-hand-keys)
+          h; (tap-hold-release-keys $tt $ht (multi ; @tap) rmet $right-hand-keys)
 
           vu (switch (lalt) (mwheel-up 50 120) break () volu break)
           vd (switch (lalt) (mwheel-down 50 120) break () voldwn break)
