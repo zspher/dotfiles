@@ -21,6 +21,7 @@
         unzip # for mason
         gnumake # required by fzf-telescope
         ueberzugpp # for image preview (fzf-lua)
+        mermaid-cli # mermaid preview
         tree-sitter # needed for nvim-treesitter rewrite
 
         #-- spelling
