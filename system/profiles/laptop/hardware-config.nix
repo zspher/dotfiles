@@ -94,12 +94,9 @@
     extraPackages = with pkgs; [
       libva-vdpau-driver # required by davinci resolve
 
-      intel-media-driver
-      intel-compute-runtime
-      vpl-gpu-rt
-      intel-vaapi-driver
-
-      intel-ocl
+      intel-media-driver # vaapi
+      vpl-gpu-rt # vpl api
+      intel-compute-runtime # opencl
     ];
     extraPackages32 = with pkgs.pkgsi686Linux; [
       intel-media-driver
