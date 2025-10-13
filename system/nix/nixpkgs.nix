@@ -27,6 +27,17 @@
         roslyn-ls = inputs.nixpkgs-old-roslyn-ls.legacyPackages.${prev.system}.roslyn-ls;
 
         # updates because I can't wait
+        zathuraPkgs = prev.zathuraPkgs.overrideScope (
+          selfx: prevx: {
+            zathura_core = prevx.zathura_core.overrideAttrs (oldAttrs: rec {
+              version = "0.5.13";
+              src = prev.fetchurl {
+                url = "https://pwmt.org/projects/zathura/download/zathura-${version}.tar.xz";
+                hash = "sha256-YwIXO81G+JflIJyIOltRrR2rSUbC84YcujdKO4DY88E=";
+              };
+            });
+          }
+        );
       })
     ];
     config = {
