@@ -97,6 +97,7 @@
         texlivePackages.latexindent # formatter
 
         #-- SQL & co
+        sqlite
         sqlcmd
         sqlfluff
 
