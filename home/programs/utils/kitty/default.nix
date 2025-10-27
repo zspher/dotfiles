@@ -63,7 +63,7 @@
 
     keybindings = {
       "ctrl+shift+enter" = "launch --cwd=current --location hsplit --bias 40";
-      "shift+alt+t" = "new_tab_with_cwd";
+      "shift+alt+t" = "launch --cwd=current --type=tab --location=after";
 
       # tab
       "ctrl+space>1" = "goto_tab 1";
