@@ -20,16 +20,11 @@
 
   programs.mangohud.enable = true;
 
-  services.blueman-applet.enable = false;
   services.network-manager-applet.enable = false;
   services.kdeconnect = {
     package = pkgs.kdePackages.kdeconnect-kde;
     enable = true;
     indicator = true;
-  };
-  systemd.user.services = {
-    kdeconnect.Unit.After = lib.mkForce [ "graphical-session.target" ];
-    kdeconnect-indicator.Unit.After = lib.mkForce [ "graphical-session.target" ];
   };
 
   xdg.portal = {
