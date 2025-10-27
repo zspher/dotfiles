@@ -32,11 +32,10 @@ in
       "$mainMod" = "SUPER";
       "$terminal" = "kitty -1 ";
       "$file_manager" = "dolphin";
-      "$notification_manager" = "dms ipc call notifications toggle";
+      "$notification_manager" = "swaync-client -t -sw";
       "$screen_shot" = "~/.config/rofi/bin/screenshot.sh";
-      "$runner" = lib.mkDefault "dms ipc call spotlight toggle";
-      "$power_menu" = "dms ipc call powermenu toggle";
-      "$clipboard_manager" = "dms ipc call clipboard toggle";
+      "$runner" = lib.mkDefault "rofi -show combi";
+      "$power_menu" = "~/.config/rofi/bin/powermenu.sh";
 
       bind = [
         # * === apps === * #
@@ -137,10 +136,10 @@ in
       ];
 
       bindle = [
-        ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
-        ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
-        ", XF86MonBrightnessDown, exec, dms ipc call brightness decrement 5"
-        ", XF86MonBrightnessUp, exec, dms ipc call brightness increment 5"
+        ", XF86AudioLowerVolume, exec, ${volume} -d 5"
+        ", XF86AudioRaiseVolume, exec, ${volume} -i 5"
+        ", XF86MonBrightnessDown, exec, ${brightness} -d 5"
+        ", XF86MonBrightnessUp, exec, ${brightness} -i 5"
       ];
 
       bindm = [

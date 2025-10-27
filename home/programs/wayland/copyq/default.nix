@@ -1,7 +1,7 @@
 { lib, ... }:
 {
   services.copyq = {
-    enable = false;
+    enable = true;
     forceXWayland = false;
   };
 

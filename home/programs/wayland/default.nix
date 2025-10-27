@@ -12,9 +12,9 @@
     ./hyprland
     ./rofi
     ./hypridle.nix
-    # ./hyprlock.nix
+    ./hyprlock.nix
     ./swaync.nix
-    # ./swww
+    ./swww
     ./waybar
   ];
 
