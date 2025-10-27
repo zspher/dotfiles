@@ -10,6 +10,7 @@
 {
   imports = [
     inputs.spicetify-nix.homeManagerModules.default
+    inputs.dankMaterialShell.homeModules.dankMaterialShell.default
     # inputs.walker.homeManagerModules.default
     # inputs.hyprland.homeManagerModules.default
     self.homeModules.catppuccin # requires catppuccin/nix
@@ -31,4 +32,5 @@
       "[ ! -e ${path} ] && touch ${path}\n"
     ) (builtins.attrNames config.qt.kde.settings)}
   '';
+  programs.dankMaterialShell.enable = true;
 }

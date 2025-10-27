@@ -26,6 +26,8 @@ in
 
       exec-once = [
         "${conditional_startup}"
+        "wl-paste --watch cliphist store"
+        "dms run"
       ];
 
       input = {
@@ -159,6 +161,7 @@ in
         "ignorezero, ^(rofi)$"
         "blur, ^(rofi)$"
         "noanim, ^(walker)$"
+        "noanim, ^(quickshell.*)$"
       ];
     };
   };

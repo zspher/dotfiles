@@ -12,16 +12,16 @@
     ./hyprland
     ./rofi
     ./hypridle.nix
-    ./hyprlock.nix
+    # ./hyprlock.nix
     ./swaync.nix
-    ./swww
+    # ./swww
     ./waybar
   ];
 
   programs.mangohud.enable = true;
 
-  services.blueman-applet.enable = true;
-  services.network-manager-applet.enable = true;
+  services.blueman-applet.enable = false;
+  services.network-manager-applet.enable = false;
   services.kdeconnect = {
     package = pkgs.kdePackages.kdeconnect-kde;
     enable = true;
