@@ -32,10 +32,11 @@ in
       "$mainMod" = "SUPER";
       "$terminal" = "kitty -1 ";
       "$file_manager" = "dolphin";
-      "$notification_manager" = "dms ipc call notification toggle";
+      "$notification_manager" = "dms ipc call notifications toggle";
       "$screen_shot" = "~/.config/rofi/bin/screenshot.sh";
       "$runner" = lib.mkDefault "dms ipc call spotlight toggle";
       "$power_menu" = "dms ipc call powermenu toggle";
+      "$clipboard_manager" = "dms ipc call clipboard toggle";
 
       bind = [
         # * === apps === * #
@@ -49,6 +50,7 @@ in
         "CTRL ALT, Delete, exec, $power_menu"
         "$mainMod SHIFT, Q, exit, "
         "$mainMod, P, exec, [float] nwg-displays"
+        "$mainMod, C, exec, $clipboard_manager"
 
         # * === Window Management === * #
         "$mainMod SHIFT, Q, exit,"
@@ -57,7 +59,7 @@ in
         "$mainMod, M, fullscreen, 1" # monocle layout
         # "$mainMod, M, exec, ${hyprtabs}/bin/hyprtabs" # monocle layout
         "$mainMod SHIFT, F, fullscreen, 0" # true fullscreen
-        "$mainMod, C, centerwindow"
+        "$mainMod SHIFT, C, centerwindow"
 
         # Special Workspace
         "$mainMod, A, togglespecialworkspace"
