@@ -131,12 +131,12 @@ in
         ", XF86AudioPlay, exec, playerctl play-pause"
         ", XF86AudioPrev, exec, playerctl previous"
         ", XF86AudioNext, exec, playerctl next"
-        ", XF86AudioMute, exec, ${volume} -m"
+        ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
       ];
 
       bindle = [
-        ", XF86AudioLowerVolume, exec, ${volume} -d 5"
-        ", XF86AudioRaiseVolume, exec, ${volume} -i 5"
+        ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+        ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
         ", XF86MonBrightnessDown, exec, dms ipc call brightness decrement 5"
         ", XF86MonBrightnessUp, exec, dms ipc call brightness increment 5"
       ];
