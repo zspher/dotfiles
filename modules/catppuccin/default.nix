@@ -63,10 +63,6 @@
               weekdays = lib.mkForce "<span color='#${colors.blue}'><b>{}</b></span>";
               today = lib.mkForce "<span color='#${colors.red}'><b><u>{}</u></b></span>";
             };
-            battery = {
-              format-charging = lib.mkForce "<span foreground='#${colors.green}'>{capacity}% {icon}󱐋</span>";
-              format-critical = lib.mkForce "<span foreground='#${colors.red}'>{capacity}% 󱃌 {power} W</span>";
-            };
             cpu.format = lib.mkForce (
               lib.concatStrings [
                 "<span foreground='#${colors.peach}'>{icon0}</span> "
@@ -75,11 +71,6 @@
                 "<span foreground='#${colors.green}'>{icon3}</span>"
               ]
             );
-            temperature.format-icons = lib.mkForce [
-              "<span foreground='#${colors.blue}'></span>"
-              ""
-              "<span foreground='#${colors.red}'></span>"
-            ];
           };
         })
         (lib.mkIf (cfg.custom.swaync.enable) {

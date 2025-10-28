@@ -22,6 +22,22 @@ tooltip > decoration {
   border: 0.2px var(--mantle) solid;
 }
 
+window menu,
+window menu menuitem,
+window decoration {
+  border-radius: 12.6px;
+  color: var(--text);
+}
+
+window menu decoration {
+  box-shadow: none;
+  border: 0.2px var(--mantle) solid;
+}
+
+window menu {
+  background: var(--base);
+}
+
 window#waybar {
   background: transparent;
   transition-property: background-color;
@@ -66,14 +82,13 @@ window#waybar.hidden {
   padding: 0 5px;
 }
 
-#power label,
 #middle label,
 #hardware label,
 #control label {
   margin: 0 5px;
 }
 
-.power > label {
+#power label {
   margin: 0 10px;
 }
 
@@ -198,6 +213,28 @@ window#waybar.hidden {
   border-left: none;
 }
 
+/* battery */
+#battery.charging {
+  color: var(--green);
+}
+
+#battery.warning:not(.charging) {
+  color: var(--peach);
+}
+
+@keyframes blink {
+  50% {
+    color: var(--text);
+    border: 1px solid var(--base);
+  }
+}
+
+#battery.critical:not(.charging) {
+  color: var(--red);
+  border: 1px solid var(--red);
+  animation: blink 2s linear 5;
+}
+
 #wireplumber {
   color: var(--maroon);
 }
@@ -219,27 +256,9 @@ window#waybar.hidden {
   padding-right: 10px;
 }
 
+/* tray */
 #tray {
   -gtk-icon-theme: "Papirus-Dark";
-}
-
-#tray window > menu {
-  background: var(--base);
-}
-
-#tray window > decoration {
-  box-shadow: none;
-  border: 0.2px var(--mantle) solid;
-}
-
-#tray window > menu,
-#tray window > menu menuitem,
-#tray window > decoration {
-  border-radius: 12.6px;
-}
-
-#tray window > menu label {
-  color: var(--text);
 }
 
 #tray > .passive {
