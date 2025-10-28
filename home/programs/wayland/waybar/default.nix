@@ -120,11 +120,11 @@ in
             on-scroll = 1;
             on-click-right = "mode";
             format = {
-              months = "<span color='#cdd6f4'><b>{}</b></span>";
-              days = "<span color='#cdd6f4'><b>{}</b></span>";
-              weeks = "<span color='#89dceb'><b>W{}</b></span>";
-              weekdays = "<span color='#89b4fa'><b>{}</b></span>";
-              today = "<span color='#f38ba8'><b><u>{}</u></b></span>";
+              months = "<b>{}</b>";
+              days = "<b>{}</b>";
+              weeks = "<b>W{}</b>";
+              weekdays = "<b>{}</b>";
+              today = "<b><u>{}</u></b>";
             };
           };
           actions = {
@@ -170,9 +170,9 @@ in
             warning = 30;
             critical = 15;
           };
-          format = "<span>{capacity}% {icon} {power} W</span>";
-          format-charging = "<span foreground='#a6e3a1'>{capacity}% {icon}󱐋</span>";
-          format-critical = "<span foreground='#f38ba8'>{capacity}% 󱃌 {power} W</span>";
+          format = "{capacity}% {icon} {power} W";
+          format-charging = "{capacity}% {icon}󱐋";
+          format-critical = "{capacity}% 󱃌 {power} W";
           format-icons = [
             "󰁺"
             "󰁻"
@@ -213,7 +213,7 @@ in
           on-click = "${getExe pkgs.pavucontrol}";
         };
         cpu = {
-          format = "<span foreground='#fab387'>{icon0}</span> <span foreground='#f9e2af'>{icon1}</span> <span foreground='#f9e2af'>{icon2}</span> <span foreground='#a6e3a1'>{icon3}</span>";
+          format = "{icon0} {icon1} {icon2} {icon3}";
           format-icons = [
             "▁"
             "▂"
@@ -233,9 +233,9 @@ in
           critical-threshold = 80;
           format = "{temperatureC}°C {icon}";
           format-icons = [
-            "<span foreground='#89b4fa'></span>"
+            ""
             ""
-            "<span foreground='#f38ba8'></span>"
+            ""
           ];
         };
         "custom/notification" = {

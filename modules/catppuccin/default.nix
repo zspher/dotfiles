@@ -55,6 +55,32 @@
         })
         (lib.mkIf (cfg.custom.waybar.enable) {
           programs.waybar.style = replaceColors ./waybar-template.css;
+          programs.waybar.settings.mainBar = {
+            clock.calendar.format = {
+              months = lib.mkForce "<span color='#${colors.text}'><b>{}</b></span>";
+              days = lib.mkForce "<span color='#${colors.text}'><b>{}</b></span>";
+              weeks = lib.mkForce "<span color='#${colors.sky}'><b>W{}</b></span>";
+              weekdays = lib.mkForce "<span color='#${colors.blue}'><b>{}</b></span>";
+              today = lib.mkForce "<span color='#${colors.red}'><b><u>{}</u></b></span>";
+            };
+            battery = {
+              format-charging = lib.mkForce "<span foreground='#${colors.green}'>{capacity}% {icon}󱐋</span>";
+              format-critical = lib.mkForce "<span foreground='#${colors.red}'>{capacity}% 󱃌 {power} W</span>";
+            };
+            cpu.format = lib.mkForce (
+              lib.concatStrings [
+                "<span foreground='#${colors.peach}'>{icon0}</span> "
+                "<span foreground='#${colors.yellow}'>{icon1}</span> "
+                "<span foreground='#${colors.yellow}'>{icon2}</span> "
+                "<span foreground='#${colors.green}'>{icon3}</span>"
+              ]
+            );
+            temperature.format-icons = lib.mkForce [
+              "<span foreground='#${colors.blue}'></span>"
+              ""
+              "<span foreground='#${colors.red}'></span>"
+            ];
+          };
         })
         (lib.mkIf (cfg.custom.swaync.enable) {
           services.swaync.style = replaceColors ./swaync-template.css;
