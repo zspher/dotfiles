@@ -14,7 +14,7 @@ in
       mainBar = {
         layer = "top";
         position = "top";
-        height = 39;
+        height = 40;
         output = [ "*" ];
         modules-left = [
           "group/power"
@@ -23,17 +23,12 @@ in
         ];
         modules-center = [
           "privacy"
-          "clock"
-          "idle_inhibitor"
+          "group/middle"
         ];
         modules-right = [
           "battery"
-          "pulseaudio"
-          "cpu"
-          "memory"
-          "temperature"
-          "custom/notification"
-          "tray"
+          "group/hardware"
+          "group/control"
         ];
 
         # * left side * //
@@ -91,11 +86,10 @@ in
         };
 
         "wlr/taskbar" = {
-          format = "{icon}●";
-          icon-size = 11;
+          format = "{icon}";
+          icon-size = 14;
           icon-theme = "Papirus-Dark";
-          markup = true;
-          tooltip-format = "<span size='medium' weight='bold'>{title}</span>\n<small>{app_id}</small>";
+          tooltip-format = "{title}\n{app_id}";
           on-click = "activate";
           on-click-middle = "close";
           ignore-list = [ ];
@@ -103,15 +97,22 @@ in
         };
 
         # * center  * //
+        "group/middle" = {
+          modules = [
+            "clock"
+            "idle_inhibitor"
+          ];
+          orientation = "inherit";
+        };
         privacy = {
           icon-size = 12;
           icon-spacing = 5;
         };
 
         clock = {
-          format = "{:%H:%M | %a %d}";
+          format = "{:%H:%M • %a %d}";
           format-alt = "{:%A %B %d, %Y (%R)}";
-          tooltip-format = "<tt><small>{calendar}</small></tt>";
+          tooltip-format = "<tt>{calendar}</tt>";
           calendar = {
             mode = "month";
             mode-mon-col = 3;
@@ -144,6 +145,24 @@ in
 
         # * left side  * //
 
+        "group/hardware" = {
+          modules = [
+            "wireplumber"
+            "cpu"
+            "memory"
+            "temperature"
+          ];
+          orientation = "inherit";
+        };
+
+        "group/control" = {
+          modules = [
+            "custom/notification"
+            "tray"
+          ];
+          orientation = "inherit";
+        };
+
         battery = {
           bat = "BAT1";
           interval = 10;
@@ -151,7 +170,7 @@ in
             warning = 30;
             critical = 15;
           };
-          format = "<span foreground='#b4befe'>{capacity}% {icon} {power} W</span>";
+          format = "<span>{capacity}% {icon} {power} W</span>";
           format-charging = "<span foreground='#a6e3a1'>{capacity}% {icon}󱐋</span>";
           format-critical = "<span foreground='#f38ba8'>{capacity}% 󱃌 {power} W</span>";
           format-icons = [
@@ -169,7 +188,7 @@ in
           max-length = 25;
         };
 
-        pulseaudio = {
+        wireplumber = {
           scroll-step = 1;
           reverse-scrolling = 1;
           format = "{volume}% {icon} {format_source}";

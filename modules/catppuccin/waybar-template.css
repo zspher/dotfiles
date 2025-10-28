@@ -23,10 +23,9 @@ tooltip > decoration {
 }
 
 window#waybar {
-  background: var(--mantle);
+  background: transparent;
   transition-property: background-color;
   transition-duration: 0.5s;
-  border-bottom: 1px solid var(--surface0);
 }
 
 window#waybar.hidden {
@@ -48,55 +47,44 @@ window#waybar.hidden {
   margin-bottom: 4px;
 }
 
-#battery,
-#clock,
-#cpu,
-#memory,
-#disk,
-#temperature,
-#network,
-#pulseaudio,
-#tray,
+#power,
 #workspaces,
-#custom-notification,
-#idle_inhibitor {
+#taskbar,
+#middle,
+#battery,
+#hardware,
+#control {
   background-color: var(--base);
-  padding: 0 4px;
   margin: 0;
+  padding: 0 10px;
   opacity: 1;
+  border-radius: 12.6px;
 }
 
-/* separators */
-#battery,
-#image.logo,
-#privacy,
-#temperature,
-#workspaces {
-  margin-right: 8px;
-}
-
-/* Left borders*/
-#battery,
 #workspaces,
-#clock,
-#pulseaudio,
-#custom-notification {
-  border-bottom-left-radius: 12.6px;
-  border-top-left-radius: 12.6px;
+#taskbar {
+  padding: 0 5px;
 }
 
-/* Right borders*/
-#battery,
-#workspaces,
-#idle_inhibitor,
-#temperature,
-#tray {
-  border-bottom-right-radius: 12.6px;
-  border-top-right-radius: 12.6px;
+#power label,
+#middle label,
+#hardware label,
+#control label {
+  margin: 0 5px;
 }
 
 .power > label {
   margin: 0 10px;
+}
+
+/* separators */
+#battery,
+#power,
+#privacy,
+#battery,
+#hardware,
+#workspaces {
+  margin-right: 8px;
 }
 
 #custom-power:hover,
@@ -128,51 +116,43 @@ window#waybar.hidden {
 }
 
 /* workspaces & taskbar */
-
-#workspaces button.active box label {
-  transition: padding 200ms;
+#taskbar button.active,
+#taskbar button:hover,
+#workspaces button:hover,
+#workspaces {
+  animation: gradient_f 20s ease-in infinite;
+  transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
 }
 
 #workspaces button {
   box-shadow: inherit;
   text-shadow: inherit;
-  color: var(--text);
-
-  margin: 0 2px;
-  min-width: 0;
-  padding: 0;
-}
-
-#workspaces button box label {
-  font-size: 0.8em;
   color: var(--surface2);
-  border-radius: 100%;
-  min-width: 12px;
-  padding-left: 2px;
-  padding-right: 1.5px;
-  margin: 8px 0;
+
+  min-width: 0;
+  margin: 8px 2px;
+  padding: 0 8px;
+  border-radius: 30%;
   background-color: var(--subtext0);
 }
 
-#workspaces button.active box label {
-  padding-left: 8px;
-  padding-right: 8px;
-  border-radius: 35%;
+#workspaces button.active {
+  transition: padding 200ms;
+  padding: 0 15px;
   background-color: var(--mauve);
   color: var(--base);
-  margin: 7.5px 0;
 }
 
-#workspaces button:hover box label {
+#workspaces button:hover {
   background-color: var(--surface1);
   color: var(--text);
 }
 
-#workspaces button.active:hover box label {
+#workspaces button.active:hover {
   color: var(--text);
 }
 
-#workspaces button.urgent box label {
+#workspaces button.urgent {
   background-color: var(--red);
   color: var(--base);
 }
@@ -182,54 +162,19 @@ window#waybar.hidden {
 }
 
 #taskbar button {
-  background: var(--mantle);
-  margin: 0 2px 0 0;
+  border-radius: 100%;
   min-width: 0;
-  padding: 2px 4px;
+  margin: 2px 2px;
+  padding: 6px;
 }
 
-#taskbar button box {
-  padding: 2px;
+#taskbar button.active:hover,
+#taskbar button.active {
+  background: var(--surface1);
 }
 
-#taskbar button.active box,
-#taskbar button:hover,
-#workspaces button:hover,
-#workspaces {
-  animation: gradient_f 20s ease-in infinite;
-  transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
-}
-
-#taskbar button box > image {
-  padding: 0;
-  min-width: 14px;
-  min-height: 14px;
-  margin: 2px 0;
-}
-
-#taskbar button box > label {
-  font-size: 0px;
-  color: transparent;
-}
-
-#taskbar button.active box > label {
-  padding: 1px;
-  min-width: 2px;
-  min-height: 2px;
-  margin-bottom: 8px;
-
-  font-size: 10px;
-  color: var(--mauve);
-}
-
-#taskbar button {
-  border-radius: 30%;
-}
-
-#taskbar button:hover,
-#taskbar button.active,
-#taskbar button.active:hover {
-  background-color: var(--base);
+#taskbar button:hover {
+  background: var(--surface0);
 }
 
 #privacy-item.screenshare {
@@ -240,13 +185,7 @@ window#waybar.hidden {
   color: var(--yellow);
 }
 
-#clock {
-  padding: 0 5px 0 10px;
-  color: var(--blue);
-}
-
 #idle_inhibitor {
-  padding: 0 10px 0 5px;
   color: var(--mauve);
   font-size: 11px;
   animation: gradient_f 20s ease-in infinite;
@@ -259,37 +198,28 @@ window#waybar.hidden {
   border-left: none;
 }
 
-#battery {
-  padding: 0 10px;
-}
-
-#pulseaudio {
-  padding-left: 10px;
+#wireplumber {
   color: var(--maroon);
 }
 
 #memory {
-  padding-right: 10px;
   color: var(--blue);
 }
 
 #temperature {
-  padding-right: 10px;
   color: var(--mauve);
 }
 
 #temperature.critical {
-  background-color: var(--red);
-  color: var(--base);
+  color: var(--red);
 }
 
 #custom-notification {
   font-size: 12px;
-  padding: 0 12px 0 10px;
+  padding-right: 10px;
 }
 
 #tray {
-  padding: 0 10px 0 0;
   -gtk-icon-theme: "Papirus-Dark";
 }
 
