@@ -167,8 +167,8 @@ in
           bat = "BAT1";
           interval = 10;
           states = {
-            warning = 30;
-            critical = 15;
+            warning = 25;
+            critical = 20;
           };
           format = "{capacity}% {icon} {power} W";
           format-charging = "{capacity}% {icon}󱐋";
