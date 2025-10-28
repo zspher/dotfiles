@@ -51,7 +51,7 @@ in
         };
 
         "image#logo" = {
-          path = "${./icons/nix-catppuccin-logo.svg}";
+          path = "~/.config/waybar/assets/nix-catppuccin-logo.svg";
         };
         "custom/power" = {
           format = "";
@@ -186,6 +186,13 @@ in
             "󰁹"
           ];
           max-length = 25;
+          menu = "on-click";
+          menu-file = "~/.config/waybar/assets/battery_menu.xml";
+          menu-actions = {
+            default = "pkexec pkexec auto-cpufreq --force=reset";
+            powersave = "pkexec pkexec auto-cpufreq --force=powersave";
+            performance = "pkexec pkexec auto-cpufreq --force=performance";
+          };
         };
 
         wireplumber = {
@@ -265,6 +272,10 @@ in
       };
     };
     systemd.enable = true;
+  };
+  xdg.configFile."waybar/assets" = {
+    source = ./assets;
+    recursive = true;
   };
   # FIX: https://github.com/nix-community/home-manager/issues/4099
   systemd.user.services.waybar.Service.Environment =
