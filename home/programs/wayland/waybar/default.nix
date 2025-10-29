@@ -6,6 +6,7 @@
 }:
 let
   inherit (lib.meta) getExe getExe';
+  pkexec = "/run/wrappers/bin/pkexec";
 in
 {
   programs.waybar = {
@@ -189,9 +190,9 @@ in
           menu = "on-click";
           menu-file = "~/.config/waybar/assets/battery_menu.xml";
           menu-actions = {
-            default = "pkexec pkexec auto-cpufreq --force=reset";
-            powersave = "pkexec pkexec auto-cpufreq --force=powersave";
-            performance = "pkexec pkexec auto-cpufreq --force=performance";
+            default = "${pkexec} ${getExe pkgs.auto-cpufreq} --force=reset";
+            powersave = "${pkexec} ${getExe pkgs.auto-cpufreq} --force=powersave";
+            performance = "${pkexec} ${getExe pkgs.auto-cpufreq} --force=performance";
           };
         };
 
