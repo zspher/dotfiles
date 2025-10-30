@@ -7,6 +7,6 @@
     source-sans-pro
     roboto
     corefonts
-    vistafonts
+    vista-fonts
   ];
 }
