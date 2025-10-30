@@ -29,7 +29,10 @@ in
     libqalculate
     wl-clipboard
   ];
-  wayland.windowManager.hyprland.settings."$runner" = "walker";
+  wayland.windowManager.hyprland.settings = {
+    "$runner" = "walker";
+    "$clipboard_manager" = "walker -m 'clipboard'";
+  };
   xdg.configFile."elephant/desktopapplications.toml".text = ''
     show_actions = true
   '';
