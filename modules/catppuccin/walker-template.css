@@ -97,10 +97,14 @@ child:selected .item-box {
   margin-right: 10px;
 }
 
-.keybind-hints {
-  font-size: 12px;
-  opacity: 0.5;
+.keybinds {
   color: var(--text);
+}
+
+.keybind-bind {
+  padding: 5px;
+  border-radius: 5px;
+  background: alpha(var(--overlay0), 0.25);
 }
 
 .preview {
