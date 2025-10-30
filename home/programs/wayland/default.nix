@@ -7,8 +7,8 @@
 {
   imports = [
     # ./anyrun.nix
-    ./copyq
-    # ./walker
+    # ./copyq
+    ./walker
     ./hyprland
     ./rofi
     ./hypridle.nix
@@ -20,7 +20,7 @@
 
   programs.mangohud.enable = true;
 
-  services.network-manager-applet.enable = false;
+  services.network-manager-applet.enable = true;
   services.kdeconnect = {
     package = pkgs.kdePackages.kdeconnect-kde;
     enable = true;

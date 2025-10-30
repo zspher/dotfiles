@@ -8,9 +8,9 @@ in
     runAsService = true;
     config = {
       keybinds = {
-        next = "ctrl j";
-        previous = "ctrl k";
-        toggle_exact_search = "ctrl m";
+        next = [ "ctrl j" ];
+        previous = [ "ctrl k" ];
+        toggle_exact_search = [ "ctrl m" ];
         quick_activate = genList (x: "alt ${toString (x + 1)}") 9;
       };
       providers.default = [
