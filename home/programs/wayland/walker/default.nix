@@ -30,6 +30,13 @@ in
   programs.elephant = {
     enable = true;
     installService = true;
+    providers = [
+      "desktopapplications"
+      "calc"
+      "clipboard"
+      "providerlist"
+      "menus"
+    ];
   };
   home.packages = with pkgs; [
     libqalculate
@@ -38,8 +45,13 @@ in
   wayland.windowManager.hyprland.settings = {
     "$runner" = "walker";
     "$clipboard_manager" = "walker -m 'clipboard'";
+    "$power_menu" = "walker -m 'menus:powermenu'";
   };
   xdg.configFile."elephant/desktopapplications.toml".text = ''
     show_actions = true
   '';
+  xdg.configFile."elephant/menus" = {
+    source = ./menus;
+    recursive = true;
+  };
 }
