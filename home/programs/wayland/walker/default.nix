@@ -8,8 +8,14 @@ in
     runAsService = true;
     config = {
       keybinds = {
-        next = [ "ctrl j" ];
-        previous = [ "ctrl k" ];
+        next = [
+          "ctrl j"
+          "Down"
+        ];
+        previous = [
+          "ctrl k"
+          "Up"
+        ];
         toggle_exact_search = [ "ctrl m" ];
         quick_activate = genList (x: "alt ${toString (x + 1)}") 9;
       };
