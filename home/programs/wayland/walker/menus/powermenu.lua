@@ -14,14 +14,14 @@ function GetEntries()
         {
             Text = "Poweroff",
             Actions = {
-                poweroff = "systemctl poweroff",
+                poweroff = logout_cmds[desktop] .. "&& systemctl poweroff",
             },
             Icon = "system-shutdown-symbolic",
         },
         {
             Text = "Reboot",
             Actions = {
-                reboot = "systemctl reboot",
+                reboot = logout_cmds[desktop] .. "&& systemctl reboot",
             },
             Icon = "system-reboot-symbolic",
         },
