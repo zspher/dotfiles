@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, self, ... }:
 {
   imports = [
     ./kitty
@@ -14,5 +14,8 @@
     playerctl
     qdirstat
     wev
+
+    self.packages.${pkgs.stdenv.hostPlatform.system}.sqlpackage
+
   ];
 }
