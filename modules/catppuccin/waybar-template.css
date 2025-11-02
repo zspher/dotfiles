@@ -131,14 +131,6 @@ window#waybar.hidden {
 }
 
 /* workspaces & taskbar */
-#taskbar button.active,
-#taskbar button:hover,
-#workspaces button:hover,
-#workspaces {
-  animation: gradient_f 20s ease-in infinite;
-  transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
-}
-
 #workspaces button {
   box-shadow: inherit;
   text-shadow: inherit;
@@ -152,7 +144,6 @@ window#waybar.hidden {
 }
 
 #workspaces button.active {
-  transition: padding 200ms;
   padding: 0 15px;
   background-color: var(--mauve);
   color: var(--base);
@@ -203,8 +194,6 @@ window#waybar.hidden {
 #idle_inhibitor {
   color: var(--mauve);
   font-size: 11px;
-  animation: gradient_f 20s ease-in infinite;
-  transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
 }
 
 #idle_inhibitor.activated {
