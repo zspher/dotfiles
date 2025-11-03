@@ -46,6 +46,7 @@ in
     "$runner" = "walker";
     "$clipboard_manager" = "walker -m 'clipboard'";
     "$power_menu" = "walker -m 'menus:powermenu'";
+    "$screen_shot" = "walker -m 'menus:screenshot'";
   };
   xdg.configFile."elephant/desktopapplications.toml".text = ''
     show_actions = true
