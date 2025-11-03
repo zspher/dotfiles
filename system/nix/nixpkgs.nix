@@ -25,6 +25,7 @@
           propagatedBuildInputs = lib.lists.remove prev.gamescope oldAttrs.propagatedBuildInputs;
         });
 
+        # NOTE: for sensitive copy support
         wl-clipboard = prev.wl-clipboard.overrideAttrs (oldAttrs: {
           src = prev.fetchFromGitHub {
             owner = "bugaevc";
@@ -34,6 +35,15 @@
           };
         });
 
+        # FIX: memory leak issues
+        swaynotificationcenter = prev.swaynotificationcenter.overrideAttrs (oldAttrs: {
+          src = prev.fetchFromGitHub {
+            owner = "ErikReider";
+            repo = "SwayNotificationCenter";
+            rev = "0998431754abdb6d8145d62d5a7265db95b867a3";
+            hash = "sha256-ub4mfjCPuG+dwxd7N3ovQiyQ9CG/QL6VG/THSiu1QRo=";
+          };
+        });
       })
     ];
     config = {
