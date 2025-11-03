@@ -1,6 +1,6 @@
 Name = "powermenu"
-NamePretty = "powermenu"
-Icon = "applications-other"
+NamePretty = "Powermenu"
+Icon = "system-shutdown-symbolic"
 
 function GetEntries()
     local logout_cmds = {
@@ -10,7 +10,7 @@ function GetEntries()
     }
 
     local desktop = string.lower(os.getenv("XDG_SESSION_DESKTOP") or "")
-    local entries = {
+    return {
         {
             Text = "Poweroff",
             Actions = {
@@ -54,6 +54,4 @@ function GetEntries()
             Icon = "application-exit-symbolic",
         },
     }
-
-    return entries
 end
