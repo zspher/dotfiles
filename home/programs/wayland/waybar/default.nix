@@ -52,7 +52,8 @@ in
         };
 
         "image#logo" = {
-          path = "~/.config/waybar/assets/nix-catppuccin-logo.svg";
+          # path = "~/.config/waybar/assets/nix-catppuccin-logo.svg";
+          path = "${./assets/nix-catppuccin-logo.svg}";
         };
         "custom/power" = {
           format = "";

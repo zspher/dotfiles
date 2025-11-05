@@ -19,7 +19,6 @@
       #     }
       #   );
       # })
-      inputs.waybar.overlays.default
       (final: prev: rec {
         bottles-unwrapped = prev.bottles-unwrapped.overrideAttrs (oldAttrs: {
           propagatedBuildInputs = lib.lists.remove prev.gamescope oldAttrs.propagatedBuildInputs;
@@ -34,6 +33,8 @@
             hash = "sha256-V8JAai4gZ1nzia4kmQVeBwidQ+Sx5A5on3SJGSevrUU=";
           };
         });
+
+        # inputs.waybar.overlays.default
 
         # FIX: memory leak issues
         swaynotificationcenter = prev.swaynotificationcenter.overrideAttrs (oldAttrs: {

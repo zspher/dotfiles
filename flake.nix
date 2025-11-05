@@ -88,10 +88,5 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.elephant.follows = "elephant";
     };
-
-    waybar = {
-      url = "github:zspher/Waybar/dev";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 }
