@@ -32,6 +32,9 @@
       "vmd"
       "xhci_pci"
     ];
+    blacklistedKernelModules = [
+      "iTCO_wdt"
+    ];
 
     kernelModules = [
       "kvm-intel"
@@ -39,6 +42,7 @@
     kernelParams = [
       "intel_iommu=on"
       "i915.enable_guc=3"
+      "nmi_watchdog=0"
     ];
   };
 
