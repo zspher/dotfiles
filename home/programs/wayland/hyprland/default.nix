@@ -119,6 +119,10 @@ in
         anr_missed_pings = 10;
       };
 
+      workspace = [
+        "8, monitor:eDP-1, default:true"
+      ];
+
       windowrule = [
         "bordercolor rgb($greenAlpha), fullscreen:1"
         "bordercolor rgb($greenAlpha), floating:1"
