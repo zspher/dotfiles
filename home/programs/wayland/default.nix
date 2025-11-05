@@ -8,7 +8,7 @@
   imports = [
     # ./anyrun.nix
     # ./copyq
-    ./walker
+    # ./walker
     ./hyprland
     ./rofi
     ./hypridle.nix
