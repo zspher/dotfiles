@@ -40,16 +40,23 @@ def decrease_brightness(n: float):
 
 
 def notify_brightness(brightness: int):
-    nf = ["notify-send", "-a", "Brightness", "Brightness"]
+    nf = [
+        "notify-send",
+        "-a",
+        "Brightness",
+        "Brightness",
+        "-h",
+        f"int:value:{brightness}",
+        "-h",
+        "STRING:x-canonical-private-synchronous:brightness-notification",
+        "-u",
+        "low",
+    ]
 
     if brightness <= 60:
         nf.extend([f"{brightness}%", "-i", "low-brightness"])
     else:
         nf.extend([f"{brightness}%", "-i", "high-brightness"])
-
-    nf.extend(["-h", f"int:value:{brightness}"])
-    nf.extend(["-h", "STRING:x-canonical-private-synchronous:brightness-notification"])
-    nf.extend(["-u", "low"])
     subprocess.run(nf)
 
 

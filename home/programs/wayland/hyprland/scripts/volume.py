@@ -42,7 +42,16 @@ def mute_volume():
 
 
 def notify_volume(volume: int, message: str | None = None):
-    nf = ["notify-send", "-a", "Volume", "Volume"]
+    nf = [
+        "notify-send",
+        "-a",
+        "Volume",
+        "Volume",
+        "-h",
+        "STRING:x-canonical-private-synchronous:volume-notification",
+        "-u",
+        "low",
+    ]
     if message == "[MUTED]":
         nf.extend(["muted", "-i", "audio-volume-muted"])
     else:
@@ -53,8 +62,6 @@ def notify_volume(volume: int, message: str | None = None):
         else:
             nf.extend([f"{volume}%", "-i", "audio-volume-high"])
         nf.extend(["-h", f"int:value:{volume}"])
-    nf.extend(["-h", "STRING:x-canonical-private-synchronous:volume-notification"])
-    nf.extend(["-u", "low"])
     subprocess.run(nf)
 
 
