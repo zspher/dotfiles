@@ -48,17 +48,17 @@ run_rofi() {
 }
 
 # countdown
+ID=0
 countdown() {
-    local ID=0
     for sec in $(seq "$1" -1 1); do
-        ID=$(notify-send -t 1000 -r "$ID" "Taking shot in : $sec" -p)
+        ID=$(notify-send -u low -r "$ID" "Taking shot in : $sec" -p)
         sleep 1
     done
 }
 
 notify() {
     local action
-    action=$(notify-send -i "$file" "Screenshot Saved" "$file" -A "open")
+    action=$(notify-send -i "$file" "Screenshot Saved" "$file" -A "open" -r "$ID" -u low)
     if [[ $action == "0" ]]; then
         qimgv "$file"
     fi
