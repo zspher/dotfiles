@@ -9,6 +9,7 @@
     # ./anyrun.nix
     # ./copyq
     # ./walker
+    ./cliphist.nix
     ./hyprland
     ./rofi
     ./hypridle.nix

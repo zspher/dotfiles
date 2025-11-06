@@ -2,6 +2,7 @@ configuration {
     combi-modes: "drun,window,websearch";
     modes: "combi,calc";
 
+    display-clipboard: "📋";
     display-combi: "🔎";
     display-calc: "➕";
     display-run: "";

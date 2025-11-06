@@ -35,7 +35,7 @@ in
       "$notification_manager" = "swaync-client -t -sw";
       "$screen_shot" = lib.mkDefault "~/.config/rofi/bin/screenshot.sh";
       "$runner" = lib.mkDefault "rofi -show combi";
-      "$clipboard_manager" = lib.mkDefault "";
+      "$clipboard_manager" = lib.mkDefault "rofi -modes clipboard:cliphist-rofi-img -show clipboard";
       "$power_menu" = lib.mkDefault "~/.config/rofi/bin/powermenu.sh";
 
       bind = [
