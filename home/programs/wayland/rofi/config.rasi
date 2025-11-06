@@ -1,6 +1,6 @@
 configuration {
-    combi-modes: "drun,window,emoji:rofimoji,websearch";
-    modes: "combi,calc,run";
+    combi-modes: "drun,window,websearch";
+    modes: "combi,calc";
 
     display-combi: "🔎";
     display-calc: "➕";

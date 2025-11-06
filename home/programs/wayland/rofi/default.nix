@@ -12,8 +12,6 @@
     procps
     qimgv
     kdePackages.kimageformats # avif, xcf, jxl in qimgv
-    rofimoji
-
     (rofi.override {
       rofi-unwrapped = rofi-unwrapped.override {
         x11Support = false;
