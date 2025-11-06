@@ -15,6 +15,9 @@
     rofimoji
 
     (rofi.override {
+      rofi-unwrapped = rofi-unwrapped.override {
+        x11Support = false;
+      };
       plugins = with pkgs; [
         inputs.rofi-plugins.packages.${pkgs.stdenv.hostPlatform.system}.rofi-websearch
         rofi-calc
