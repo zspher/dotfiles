@@ -7,6 +7,6 @@
     enableGitIntegration = true;
   };
   programs.lazygit.settings = {
-    git.paging.pager = "delta --dark --paging=never";
+    git.pagers = [ { pager = "delta --dark --paging=never"; } ];
   };
 }
