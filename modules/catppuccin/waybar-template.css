@@ -1,13 +1,8 @@
 * {
-  font-family:
-    CaskaydiaMono Nerd Font,
+  font:
+    0.85rem CaskaydiaMono Nerd Font,
     monospace;
-  font-size: 11px;
   min-height: 0;
-  outline-width: 0;
-  outline-offset: 0;
-  border: none;
-  border-radius: 0;
 }
 
 tooltip label {
@@ -191,15 +186,9 @@ window#waybar.hidden {
   color: var(--yellow);
 }
 
-#idle_inhibitor {
-  color: var(--mauve);
-  font-size: 11px;
-}
-
 #idle_inhibitor.activated {
-  background-color: var(--blue);
-  color: shade(var(--crust), 0.9);
-  border-left: none;
+  color: var(--mauve);
+  font-size: 1.1em;
 }
 
 /* battery */
@@ -241,8 +230,7 @@ window#waybar.hidden {
 }
 
 #custom-notification {
-  font-size: 12px;
-  padding-right: 10px;
+  padding-right: 8px;
 }
 
 /* tray */

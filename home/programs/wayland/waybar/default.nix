@@ -140,8 +140,8 @@ in
         idle_inhibitor = {
           format = "{icon}";
           format-icons = {
-            activated = "󰒳";
-            deactivated = "󰰄";
+            activated = "󰰄";
+            deactivated = "󰰅";
           };
         };
 
@@ -267,7 +267,7 @@ in
           tooltip = true;
         };
         tray = {
-          icon-size = 11;
+          icon-size = 12;
           spacing = 10;
           show-passive-items = true;
         };
