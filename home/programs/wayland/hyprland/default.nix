@@ -26,6 +26,7 @@ in
 
       exec-once = [
         "${conditional_startup}"
+        "hyprctl dispatch focusmonitor HDMI-A-1"
       ];
 
       input = {
