@@ -26,7 +26,7 @@
     ../../networking
     # ../../networking/openssh.nix
     ../../networking/syncting.nix
-    ../../networking/tailscale.nix
+    # ../../networking/tailscale.nix
   ];
 
   networking.hostName = "ls-2100";
