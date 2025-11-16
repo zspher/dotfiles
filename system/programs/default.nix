@@ -16,6 +16,8 @@
     dconf.enable = true;
   };
 
+  services.speechd.enable = false;
+
   environment.systemPackages = with pkgs; [
     clang
     curl
