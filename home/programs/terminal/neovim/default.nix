@@ -66,7 +66,7 @@
 
         #-- HTML
         superhtml # LSP
-        self.packages.${pkgs.stdenv.hostPlatform.system}.markuplint # LSP
+        htmlhint # linter
 
         #-- markdown
         marksman # LSP
