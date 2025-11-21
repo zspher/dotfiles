@@ -3,6 +3,8 @@
   services.swaync = {
     enable = true;
     settings = {
+      "$schema" =
+        "https://raw.githubusercontent.com/ErikReider/SwayNotificationCenter/refs/heads/main/src/configSchema.json";
       positionX = "right";
       positionY = "top";
       control-center-layer = "top";
@@ -21,7 +23,6 @@
       cssPriority = "user";
       notification-2fa-action = true;
       notification-inline-replies = false;
-      notification-icon-size = 32;
       notification-body-image-height = 100;
       notification-body-image-width = 200;
       timeout = 8;
