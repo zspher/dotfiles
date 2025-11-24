@@ -8,8 +8,8 @@
         src = pkgs.fishPlugins.puffer.src;
       }
       {
-        name = "pisces";
-        src = pkgs.fishPlugins.pisces.src;
+        name = "autopair";
+        src = pkgs.fishPlugins.autopair.src;
       }
     ];
     shellAbbrs = { };
