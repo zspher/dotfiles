@@ -41,6 +41,8 @@
 
           bind -M insert ctrl-n down-or-search
           bind -M insert ctrl-p up-or-search
+
+          bind -s --preset -M default yy kill-whole-line yank fish_clipboard_copy
         '';
       };
     };
