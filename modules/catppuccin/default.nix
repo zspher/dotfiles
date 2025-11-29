@@ -88,46 +88,44 @@
           xdg.configFile."anyrun/style.css".source = replaceColors ./anyrun-template.css;
         })
 
-        (lib.mkIf (cfg.custom.gtk.enable) {
-          gtk = {
-            enable = true;
-            theme =
-              let
-                colorVariants = if cfg.flavor == "latte" then [ "light" ] else [ "dark" ];
-                ctpToCollMap = {
-                  mauve = "purple";
-                  maroon = "red";
-                  peach = "orange";
+        (lib.mkIf (cfg.custom.gtk.enable) (
+          let
+            ctpToCollMap = {
+              mauve = "purple";
+              maroon = "red";
+              peach = "orange";
 
-                  pink = "pink";
-                  blue = "blue";
-                  teal = "teal";
-                  green = "green";
-                  yellow = "yellow";
-                };
+              pink = "pink";
+              blue = "blue";
+              teal = "teal";
+              green = "green";
+              yellow = "yellow";
+            };
 
-                ctpToColl =
-                  color:
-                  if builtins.hasAttr color ctpToCollMap then
-                    ctpToCollMap.${color}
-                  else
-                    builtins.throw "invalid color: ${color}";
-                ac = cfg.accent;
-              in
-              {
-                name = "Colloid-${upperFirst (ctpToColl ac)}-Dark-Catppuccin";
-                package = pkgs.colloid-gtk-theme.override {
-                  inherit colorVariants;
-                  themeVariants = [ "${ctpToColl ac}" ];
-                  sizeVariants = [ "standard" ];
-                  tweaks = [
-                    "catppuccin"
-                    "black"
-                  ];
-                };
-              };
-          };
-        })
+            ctpToColl =
+              color:
+              if builtins.hasAttr color ctpToCollMap then
+                ctpToCollMap.${color}
+              else
+                builtins.throw "invalid color: ${color}";
+
+            name = "Colloid-${upperFirst (ctpToColl cfg.accent)}-Dark-Catppuccin";
+            package = pkgs.colloid-gtk-theme.override {
+              colorVariants = if cfg.flavor == "latte" then [ "light" ] else [ "dark" ];
+              themeVariants = [ "${ctpToColl cfg.accent}" ];
+              sizeVariants = [ "standard" ];
+              tweaks = [
+                "catppuccin"
+                "black"
+              ];
+            };
+            theme = { inherit package name; };
+          in
+          {
+            gtk.gtk4.theme = theme;
+            gtk.theme = theme;
+          }
+        ))
 
         (lib.mkIf (cfg.mpv.enable) {
           programs.mpv.scriptOpts.uosc = {

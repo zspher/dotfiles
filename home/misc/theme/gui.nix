@@ -19,6 +19,7 @@
     waybar.enable = true;
   };
   gtk = {
+    enable = true;
     font.name = "NotoSans Nerd Font";
     font.size = 10;
 
