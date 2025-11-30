@@ -1,45 +1,30 @@
-# Misc
+<div align="center">
+
+# Dotfiles
+
+<img src="./home/programs/wayland/waybar/assets/nix-catppuccin-logo.svg" alt="NiXOS logo in Catppuccin colorscheme" width=250/>
 
 miscellaneous scripts, configs, and dotfiles (_now with nix_)
 
+![Neovim](https://img.shields.io/badge/Editor-Neovim-a6e3a1?style=flat-square&logo=neovim&logoColor=%23a6e3a1)
+![Static Badge](https://img.shields.io/badge/NixOS-Unstable-89b4fa?style=flat-square&logo=nixos&logoColor=%2389b4fa)
+
+</div>
+
+
 - **Window Manager** • [hyprland](https://github.com/hyprwm/Hyprland)
-- **Shell** • [zsh](https://www.zsh.org) w/ [starship](https://github.com/starship/starship)
+- **Shell** • [fish](http://fishshell.com) w/ [starship](https://github.com/starship/starship)
 - **Terminal** • [kitty](https://github.com/kovidgoyal/kitty)
-- **Panel** • [waybar](https://aur.archlinux.org/packages/waybar-hyprland-git)
+- **Panel** • [waybar](https://github.com/Alexays/Waybar)
 - **Notify Daemon** • [swaync](https://github.com/ErikReider/SwayNotificationCenter)
-- **Launcher** • [anyrun](https://github.com/Kirottu/anyrun)
+- **Launcher** • [rofi](https://github.com/davatorium/rofi)
+- **Theme** • [Catppuccin Mocha](https://github.com/catppuccin/catppuccin)
 
-## Important commands
-
-- view nixos system history
-
-```sh
-nix profile history --profile /nix/var/nix/profiles/system
-```
-
-- delete nixos generations
-
-```sh
-sudo nix profile wipe-history --profile /nix/var/nix/profiles/system
-```
-
-```sh
-sudo nix store gc --debug
-```
-
-- checking installed packages (nixos system, user local, home-manager)
-
-```sh
-nix-store -q -R /run/current-system/sw/
-```
-
-```sh
-nix profile list
-```
-
-```sh
-home-manager packages
-```
+## Files
+- [home/](./home/) - home-manager user configurations
+- [system/](./system/) - NixOS system configurations
+- [modules/](./modules/) - custom nix modules
+- [packages/](./packages/) - custom packages for nix
 
 ## Installation
 
