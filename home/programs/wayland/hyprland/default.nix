@@ -137,6 +137,7 @@ in
         "workspace 3, class:kitty-term"
         "workspace 4 silent, class:vesktop"
         "workspace 10, class:spotify"
+        "workspace unset, initialTitle:^(about:blank - Brave)$"
 
         "float, title:^(Floating Window \- Show Me The Key)$"
         "noborder, title:^(Floating Window \- Show Me The Key)$"
