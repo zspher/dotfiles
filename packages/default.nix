@@ -29,7 +29,7 @@
           config
           ;
       };
-      packages = {
+      packages = rec {
         posy-cursor = pkgs.callPackage ./posy-cursor { };
         sddm-corners-theme = pkgs.callPackage ./sddm-corners-theme { };
         shrinkpdf = pkgs.callPackage ./shrinkpdf { };
@@ -38,6 +38,8 @@
         sqlpackage = pkgs.callPackage ./sqlpackage { };
 
         vscode-langservers-extracted = pkgs.callPackage ./vscode-langservers-extracted { };
+        roslyn-ls = pkgs.callPackage ./roslyn-ls { inherit razor-extensions; };
+        razor-extensions = pkgs.callPackage ./razor-extensions { };
         csharp-devkit-wrapper = pkgs.callPackage ./csharp-devkit-wrapper { };
       };
     };
