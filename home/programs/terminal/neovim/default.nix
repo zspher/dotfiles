@@ -71,7 +71,8 @@
 
         #-- markdown
         marksman # LSP
-        markdownlint-cli2 # linter, formatter
+        # markdownlint-cli2 # linter, formatter
+        prettierd
 
         #-- JSON, JavaScript, TypeScript
         biome # formatter, linter
