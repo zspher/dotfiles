@@ -48,8 +48,7 @@
         clang-tools
 
         #-- c#
-        self.packages.${pkgs.stdenv.hostPlatform.system}.csharp-devkit-wrapper
-        # adds roslyn-ls & rzls
+        roslyn-ls # LSP
 
         #-- bash
         bash-language-server # LSP
