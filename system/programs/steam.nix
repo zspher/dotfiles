@@ -7,10 +7,10 @@
     extraCompatPackages = with pkgs; [
       proton-ge-bin
     ];
-    # package = pkgs.steam.override {
-    #   # FIX: https://github.com/tkashkin/Adwaita-for-Steam/issues/316
-    #   extraEnv.MESA_LOADER_DRIVER_OVERRIDE = "zink";
-    # };
   };
-  programs.gamemode.enable = true;
+  services.ananicy = {
+    enable = true;
+    package = pkgs.ananicy-cpp;
+    rulesProvider = pkgs.ananicy-rules-cachyos;
+  };
 }
