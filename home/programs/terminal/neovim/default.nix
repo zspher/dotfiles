@@ -40,6 +40,7 @@
         #-- python
         python3Packages.debugpy
         pyright # LSP
+        ty # LSP
         ruff # linter & formatter via LSP
 
         #-- c/c++, meson
