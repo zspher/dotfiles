@@ -160,7 +160,8 @@
           programs.zathura.options = {
             recolor = false;
             render-loading-bg = "#ffffff";
-            highlight-fg = "${palette.base.hex}";
+            highlight-color = "rgba(${toString palette.mantle.rgb.r},${toString palette.mantle.rgb.g},${toString palette.mantle.rgb.b},0.5)";
+            highlight-fg = "${palette.yellow.hex}";
           };
         })
 
