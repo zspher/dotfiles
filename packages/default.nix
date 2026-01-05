@@ -38,6 +38,8 @@
         sqlpackage = pkgs.callPackage ./sqlpackage { };
 
         vscode-langservers-extracted = pkgs.callPackage ./vscode-langservers-extracted { };
+        ms-dotnettools = pkgs.callPackage ./ms-dotnettools.csharp { };
+        csharp-tools = pkgs.callPackage ./csharp-tools { inherit ms-dotnettools; };
       };
     };
 }

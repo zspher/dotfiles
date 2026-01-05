@@ -49,7 +49,8 @@
         clang-tools
 
         #-- c#
-        roslyn-ls # LSP
+        # roslyn-ls # LSP
+        self.packages.${pkgs.stdenv.hostPlatform.system}.csharp-tools # LSP
 
         #-- bash
         bash-language-server # LSP
