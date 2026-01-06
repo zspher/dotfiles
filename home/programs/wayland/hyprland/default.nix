@@ -125,46 +125,35 @@ in
       ];
 
       windowrule = [
-        "bordercolor rgb($greenAlpha), fullscreen:1"
-        "bordercolor rgb($greenAlpha), floating:1"
-        "bordercolor rgb($overlay2Alpha), xwayland:1, floating:0, fullscreen:0"
+        "border_color rgb($greenAlpha), match:fullscreen 1"
+        "border_color rgb($greenAlpha), match:float 1"
+        "border_color rgb($overlay2Alpha), match:xwayland 1, match:float 0, match:fullscreen 0"
 
-        "workspace 1 silent, class:obsidian"
-        "workspace 2, class:Brave-browser"
-        "workspace 2, class:brave-browser"
-        "workspace 3, class:Code"
-        "workspace 3, class:code-url-handler"
-        "workspace 3, class:kitty-term"
-        "workspace 4 silent, class:vesktop"
-        "workspace 10, class:spotify"
-        "workspace unset, initialTitle:^(about:blank - Brave)$"
+        "workspace 1 silent, match:class obsidian"
+        "workspace 2, match:class Brave-browser"
+        "workspace 2, match:class brave-browser"
+        "workspace 3, match:class Code"
+        "workspace 3, match:class code-url-handler"
+        "workspace 3, match:class kitty-term"
+        "workspace 4 silent, match:class vesktop"
+        "workspace 10, match:class spotify"
+        "workspace unset, match:initial_title (about:blank - Brave)"
 
-        "float, title:^(Floating Window \- Show Me The Key)$"
-        "noborder, title:^(Floating Window \- Show Me The Key)$"
-        "move 100%-320 100%-200, title:^(Floating Window \- Show Me The Key)$"
-        "nofocus, title:^(Floating Window \- Show Me The Key)$"
-        "noanim, title:^(Floating Window \- Show Me The Key)$"
-        "pin, title:^(Floating Window \- Show Me The Key)$"
+        "float 1, match:class brave-browser, match:title (DevTools.*)"
+        "float 1, match:class org.kde.polkit-kde-authentication-agent-1"
+        "float 1, match:class xdg-desktop-portal-gtk"
+        "float 1, match:title (Unlock Database \- KeePassXC)"
+        "float 1, match:class (net.code\-industry.masterpdfeditor4)"
+        "tile 1, match:title (.*Master PDF Editor.*)"
 
-        "float, class:brave-browser, title:^(DevTools.*)$"
-        "float, class:^(org.kde.polkit-kde-authentication-agent-1)$"
-        "float, class:xdg-desktop-portal-gtk"
-        "float, title:^(Unlock Database \- KeePassXC)$"
-        "float, class:^(net.code\-industry.masterpdfeditor4)$"
-        "tile, title:^(.*Master PDF Editor.*)$"
-
-        "noscreenshare 1, class:^(org.keepassxc.KeePassXC)$"
-
-        "noblur, xwayland:1, title:" # brave pop-up (i.e. app menu, right click pop-up)
+        "no_screen_share 1, match:class (org.keepassxc.KeePassXC)"
 
         # "immediate, class:^(steam_app_230410)$"
       ];
 
       layerrule = [
-        "noanim, ^(rofi)$"
-        "ignorezero, ^(rofi)$"
-        "blur, ^(rofi)$"
-        "noanim, ^(walker)$"
+        "blur 1, no_anim 1, match:namespace rofi"
+        "blur 1, no_anim 1, match:namespace walker"
       ];
     };
   };
