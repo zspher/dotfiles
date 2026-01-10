@@ -16,6 +16,7 @@
     wev
 
     self.packages.${pkgs.stdenv.hostPlatform.system}.sqlpackage
+    self.packages.${pkgs.stdenv.hostPlatform.system}.netpad
 
   ];
 }
