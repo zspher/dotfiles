@@ -18,6 +18,11 @@
     walker.enable = true;
     waybar.enable = true;
   };
+  dconf = {
+    enable = true;
+    # specify dark theme for some applications: electron, gtk stuff
+    settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
+  };
   gtk = {
     enable = true;
     font.name = "NotoSans Nerd Font";
