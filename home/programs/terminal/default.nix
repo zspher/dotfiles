@@ -21,6 +21,7 @@
   home.packages = with pkgs; [
     fd
     ghostscript
+    hurl
     (inxi.override { withRecommends = true; })
     jq
     lsd
