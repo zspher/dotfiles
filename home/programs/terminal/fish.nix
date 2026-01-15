@@ -22,9 +22,10 @@
       ls = "lsd";
       o = "xdg-open";
     };
-    shellInit = '''';
+    shellInit = "";
     interactiveShellInit = ''
       set fish_greeting # Disable greeting
+      set -g fish_key_bindings fish_vi_key_bindings
     '';
     functions = {
       delink.body = ''
@@ -32,19 +33,15 @@
         chmod u+w $argv
       '';
 
-      fish_user_key_bindings = {
-        body = ''
-          fish_vi_key_bindings
+      fish_user_key_bindings.body = ''
+        bind -M insert ctrl-y accept-autosuggestion
+        bind -M insert alt-n forward-word
 
-          bind -M insert ctrl-y accept-autosuggestion
-          bind -M insert alt-n forward-word
+        bind -M insert ctrl-n down-or-search
+        bind -M insert ctrl-p up-or-search
 
-          bind -M insert ctrl-n down-or-search
-          bind -M insert ctrl-p up-or-search
-
-          bind -s --preset -M default yy kill-whole-line yank fish_clipboard_copy
-        '';
-      };
+        bind -s --preset -M default yy kill-whole-line yank fish_clipboard_copy
+      '';
     };
   };
 }
