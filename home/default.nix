@@ -26,9 +26,9 @@
     ${lib.concatMapStrings (
       x:
       let
-        path = "${config.xdg.configHome}/${x}";
+        p = "${config.xdg.configHome}/${x}";
       in
-      "[ ! -e ${path} ] && touch ${path}\n"
+      "[ ! -e ${p} ] && mkdir -p $(dirname ${x}) && touch ${p}\n"
     ) (builtins.attrNames config.qt.kde.settings)}
   '';
 }
