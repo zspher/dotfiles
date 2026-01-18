@@ -16,5 +16,5 @@
     # ../../networking/syncting.nix
     ../../networking/tailscale.nix
   ];
-  networking.hostName = "ns-200";
+  networking.hostName = "ns200";
 }

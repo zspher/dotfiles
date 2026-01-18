@@ -27,5 +27,5 @@
     ../../networking/tailscale.nix
   ];
 
-  networking.hostName = "c-100";
+  networking.hostName = "c100";
 }

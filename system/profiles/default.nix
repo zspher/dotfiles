@@ -13,21 +13,21 @@
       };
     in
     {
-      "c-100" = nixosSystem {
+      "c100" = nixosSystem {
         inherit specialArgs;
         modules = [
           ./pc
           { system.stateVersion = "23.11"; }
         ];
       };
-      "ls-2100" = nixosSystem {
+      "ls2100" = nixosSystem {
         inherit specialArgs;
         modules = [
           ./laptop
           { system.stateVersion = "23.11"; }
         ];
       };
-      "ns-200" = nixosSystem {
+      "ns200" = nixosSystem {
         inherit specialArgs;
         modules = [
           ./pi

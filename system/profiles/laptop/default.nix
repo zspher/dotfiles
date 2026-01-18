@@ -29,5 +29,5 @@
     # ../../networking/tailscale.nix
   ];
 
-  networking.hostName = "ls-2100";
+  networking.hostName = "ls2100";
 }

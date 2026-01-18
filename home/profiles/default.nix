@@ -30,16 +30,16 @@ in
       modules = mods.minimal;
       inherit pkgs extraSpecialArgs;
     };
-    "${username}@ns-200" = homeManagerConfiguration {
+    "${username}@ns200" = homeManagerConfiguration {
       modules = mods.minimal;
       inherit extraSpecialArgs;
       pkgs = inputs.nixpkgs.legacyPackages.aarch64-linux;
     };
-    "${username}@c-100" = homeManagerConfiguration {
+    "${username}@c100" = homeManagerConfiguration {
       modules = mods.full;
       inherit pkgs extraSpecialArgs;
     };
-    "${username}@ls-2100" = homeManagerConfiguration {
+    "${username}@ls2100" = homeManagerConfiguration {
       modules = mods.full ++ [
         ../programs/security/fun-stuff.nix
         ../programs/games
