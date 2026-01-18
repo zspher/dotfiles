@@ -1,7 +1,12 @@
 { ... }:
 {
-  services.avahi.enable = true;
-  services.avahi.nssmdns4 = true;
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    publish.enable = true;
+    publish.domain = true;
+    publish.addresses = true;
+  };
   networking.networkmanager.connectionConfig."connection.mdns" = 2;
   networking.firewall.allowedUDPPorts = [
     5353
