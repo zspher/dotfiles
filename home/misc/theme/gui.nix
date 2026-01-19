@@ -46,4 +46,5 @@
   catppuccin.mpv.enable = true;
   catppuccin.obs.enable = true;
   catppuccin.zathura.enable = true;
+  catppuccin.anki.enable = true;
 }

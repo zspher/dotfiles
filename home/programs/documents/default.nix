@@ -5,7 +5,6 @@
     ./zathura.nix
   ];
   home.packages = with pkgs; [
-    anki
     calibre
     libreoffice-fresh
     masterpdfeditor4
@@ -15,4 +14,6 @@
     vscode-fhs
   ];
   home.sessionVariables.CALIBRE_USE_SYSTEM_THEME = 1;
+
+  programs.anki.enable = true;
 }
