@@ -18,19 +18,19 @@ let
     {
       x86_64-linux = {
         arch = "linux-x64";
-        hash = "sha256-j1/ATOps9uejJnXJ7OTgrJTFY+tF5HxOvxTXsV227EM=";
+        hash = "sha256-91HQj9jfeSRYslgbcKFR51LLelzfPShxnrc3i3mWXJ4=";
       };
       aarch64-linux = {
         arch = "linux-arm64";
-        hash = "sha256-OmHB/34PgTjPMak9kqileQ2RVbLni3bFbzznOIkyA4g=";
+        hash = "sha256-es9VwdAefR7klz7tkcAkcZLPdFIxA82rvs+P6pxn+68=";
       };
       x86_64-darwin = {
         arch = "darwin-x64";
-        hash = "sha256-bcy5C928ulAZSIzcGEGPbOd3GxEnSfoRvCU7KNDNcBU=";
+        hash = "sha256-eCXHQtm6DwwIA+QO0FtHKfhL47ta2Nj0cl+m5tdfcCs=";
       };
       aarch64-darwin = {
         arch = "darwin-arm64";
-        hash = "sha256-FsXAWUB2vLbo/kWJV50CByt7fCOMOIaajL9jAJWfuRs=";
+        hash = "sha256-iJIW1W1AUZ8knvMWnUbACR7Qpndg/hVZWlit/DYO3KE=";
       };
     }
     .${stdenv.hostPlatform.system} or (throw "Unsupported system: ${stdenv.hostPlatform.system}")
@@ -41,8 +41,8 @@ let
   #       ideally should be done at the vscode-extensions level for
   #       everyone to reuse.
   roslyn-copilot = fetchzip {
-    url = "https://roslyn.blob.core.windows.net/releases/Microsoft.VisualStudio.Copilot.Roslyn.LanguageServer-18.0.479-alpha.zip";
-    hash = "sha256-xq66gY3N3/R9bG6XWqLy53T/ExzGdZi3ZBNEzYAeqM8=";
+    url = "https://roslyn.blob.core.windows.net/releases/Microsoft.VisualStudio.Copilot.Roslyn.LanguageServer-18.3.72-alpha.zip";
+    hash = "sha256-Eh1XaF9eCN5saTrIf4NeZZKDeiEvrTo0m+vOiM5QZoI=";
     postFetch = ''
       touch install.Lock
     '';
@@ -52,7 +52,7 @@ vscode-utils.buildVscodeMarketplaceExtension {
   mktplcRef = {
     name = "csharp";
     publisher = "ms-dotnettools";
-    version = "2.110.4";
+    version = "2.112.45";
     inherit (extInfo) hash arch;
   };
 
