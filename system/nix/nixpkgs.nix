@@ -20,6 +20,7 @@
       #   );
       # roslyn-ls = inputs.nixpkgs-old-roslyn-ls.legacyPackages.${prev.system}.roslyn-ls;
       # })
+      inputs.nix-vscode-extensions.overlays.default
       (final: prev: rec {
         bottles-unwrapped = prev.bottles-unwrapped.overrideAttrs (oldAttrs: {
           propagatedBuildInputs = lib.lists.remove prev.gamescope oldAttrs.propagatedBuildInputs;
