@@ -6,23 +6,23 @@
   fetchFromGitHub,
   ...
 }:
-buildNpmPackage {
+buildNpmPackage rec {
   pname = "vscode-langservers-extracted";
-  version = "4.11.0";
+  version = "4.10.7";
 
   srcs = [
     (fetchFromGitHub {
-      owner = "zspher";
+      owner = "zed-industries";
       repo = "vscode-langservers-extracted";
-      rev = "369d9316e9e6c4bf38e8da72f23cf5aee83466aa";
-      hash = "sha256-LXD3NQ1eJEoY4V9rCGHZM/FWxX0TSis6asUQJkfm7Yo=";
+      tag = "v${version}";
+      hash = "sha256-VpCifcSg7H6d03c/BPeW1bHd7xxGff/V3P4pctcJmDY=";
     })
     vscodium.src
   ];
   sourceRoot = "source";
   nativeBuildInputs = [ unzip ];
 
-  npmDepsHash = "sha256-pnbZS7clblx5X3+qyUB3hes2qA76aSZJxpEe55D0EF8=";
+  npmDepsHash = "sha256-G4KROyE0OPdDCEEcZOvQbM/h7PDaBCkrlOrGIoUJ1TY=";
 
   buildPhase =
     let
