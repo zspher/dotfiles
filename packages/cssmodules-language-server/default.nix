@@ -6,15 +6,15 @@
 }:
 buildNpmPackage (finalAttrs: {
   pname = "cssmodules-language-server";
-  version = "1.5.1";
+  version = "1.5.2";
 
   src = fetchFromGitHub {
     owner = "antonk52";
     repo = "cssmodules-language-server";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-MpUZn+UaelnCoyokPszc+Q566zs0BzKFAytWdRuOJ8U=";
+    hash = "sha256-9RZNXdmBP4OK7k/0LuuvqxYGG2fESYTCFNCkAWZQapk=";
   };
-  npmDepsHash = "sha256-qvQtWMGKRU7CcAE/ozv1cr+tlDrdp+PfQrh8ouTmX2A=";
+  npmDepsHash = "sha256-1CnCgut0Knf97+YHVJGUZqnRId/BwHw+jH1YPIrDPCA=";
 
   meta = {
     description = "autocompletion and go-to-defintion for cssmodules";
