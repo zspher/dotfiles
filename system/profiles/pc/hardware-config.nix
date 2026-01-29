@@ -104,6 +104,7 @@
     open = true;
     modesetting.enable = true;
     nvidiaSettings = true;
+    powerManagement.enable = true;
   };
 
   services.fstrim.enable = true; # for ssd
