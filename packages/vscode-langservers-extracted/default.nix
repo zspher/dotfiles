@@ -8,25 +8,25 @@
 }:
 buildNpmPackage rec {
   pname = "vscode-langservers-extracted";
-  version = "4.10.7";
+  version = "4.10.1";
 
   srcs = [
     (fetchFromGitHub {
-      owner = "zed-industries";
+      owner = "zspher";
       repo = "vscode-langservers-extracted";
       tag = "v${version}";
-      hash = "sha256-VpCifcSg7H6d03c/BPeW1bHd7xxGff/V3P4pctcJmDY=";
+      hash = "sha256-H0aGpbgqIEYh+T9OPubpN5/7CP2oBADT44jKu9ZrXkQ=";
     })
     vscodium.src
   ];
   sourceRoot = "source";
   nativeBuildInputs = [ unzip ];
 
-  npmDepsHash = "sha256-G4KROyE0OPdDCEEcZOvQbM/h7PDaBCkrlOrGIoUJ1TY=";
+  npmDepsHash = "sha256-4wJab6o2oKoa/KV5eRBr/bf7bRj208znnU8yHOvwppk=";
 
   buildPhase =
     let
-      extensions = "${vscodium}/lib/vscode/resources/app/extensions";
+      extensions = "../resources/app/extensions";
     in
     ''
       npx babel ${extensions}/css-language-features/server/dist/node \
@@ -40,7 +40,6 @@ buildNpmPackage rec {
 
       npx babel ${extensions}/markdown-language-features/dist \
         --out-dir lib/markdown-language-server/node/
-      mv lib/markdown-language-server/node/serverWorkerMain.js lib/markdown-language-server/node/main.js
 
       cp -r ${vscode-extensions.dbaeumer.vscode-eslint}/share/vscode/extensions/dbaeumer.vscode-eslint/server/out \
       lib/eslint-language-server
