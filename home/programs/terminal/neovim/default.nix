@@ -6,6 +6,7 @@
   ...
 }:
 {
+  xdg.configFile."nvim/init.lua".enable = false;
   xdg.configFile.nvim.source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/configs/nvim";
   programs = {
     neovim = {
@@ -16,7 +17,6 @@
       vimAlias = true;
 
       withNodeJs = true;
-      extraLuaPackages = luaPkgs: with luaPkgs; [ magick ];
       extraPackages = with pkgs; [
         mermaid-cli # mermaid preview
         tree-sitter # needed for nvim-treesitter rewrite
