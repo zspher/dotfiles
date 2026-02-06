@@ -24,6 +24,7 @@ lib.mkMerge [
         TrayIconAppearance = "monochrome-light";
       };
       Security.LockDatabaseMinimize = true;
+      Security.IconDownloadFallback = true;
     };
   }
   (lib.mkIf fdo {
