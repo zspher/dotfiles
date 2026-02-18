@@ -44,7 +44,8 @@
         ruff # linter & formatter via LSP
 
         #-- c/c++, meson
-        nix-vscode-extensions.vscode-marketplace-universal.vadimcn.vscode-lldb.adapter # DAP
+        vscode-extensions.vadimcn.vscode-lldb.adapter # DAP
+        # nix-vscode-extensions.vscode-marketplace-universal.vadimcn.vscode-lldb.adapter # DAP
         mesonlsp # LSP
         clang-tools
 
