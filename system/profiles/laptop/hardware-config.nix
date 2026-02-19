@@ -25,8 +25,6 @@
     initrd.availableKernelModules = [
       "ahci"
       "nvme"
-      "sd_mod"
-      "sdhci_pci"
       "usb_storage"
       "usbhid"
       "vmd"
@@ -34,6 +32,7 @@
     ];
     blacklistedKernelModules = [
       "iTCO_wdt"
+      "sdhci_pci"
     ];
 
     kernelModules = [
