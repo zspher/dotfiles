@@ -34,7 +34,6 @@
 
         #-- nix
         nixfmt # formatter
-        nil # LSP for code actions only
         nixd # LSP
 
         #-- python
