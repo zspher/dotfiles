@@ -36,19 +36,6 @@
           };
         });
 
-        fishPlugins = prev.fishPlugins.overrideScope (
-          selfx: prevx: {
-            puffer = prevx.puffer.overrideAttrs (oldAttrs: rec {
-              version = "1.1.0";
-              src = prev.fetchFromGitHub {
-                owner = "nickeb96";
-                repo = "puffer-fish";
-                rev = "v${version}";
-                hash = "sha256-MdeegvBu/AqvaMu0g1UHKBvfb6SHUiTUiA62h87r/Xg=";
-              };
-            });
-          }
-        );
       })
     ];
     config = {
