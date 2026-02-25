@@ -36,7 +36,30 @@
           };
         });
 
+        # NOTE: get rid of `NO_RESULT_CALLBACK_FOUND` error
+        taplo = prev.taplo.overrideAttrs (
+          finalAttrs: oldAttrs: {
+            pname = "taplo";
+            version = "0.10.0";
+
+            src = prev.fetchFromGitHub {
+              owner = "tamasfe";
+              repo = "taplo";
+              rev = "9ccd6fe7085f787e214cec7b8d2717d52023e4b4";
+              hash = "sha256-+kXOHspC55iE0ClMxqIuUSPIAe4GUZviRPmdhCcHcts=";
+            };
+
+            cargoDeps = oldAttrs.cargoDeps.overrideAttrs (previousAttrs: {
+              vendorStaging = previousAttrs.vendorStaging.overrideAttrs {
+                inherit (finalAttrs) src;
+                outputHash = "sha256-zO4/RW5DTxfhTaY/fhM7GloQ7ugooL5+XwHgcF3SNT8=";
+              };
+            });
+
+          }
+        );
       })
+
     ];
     config = {
       allowUnfree = true;
