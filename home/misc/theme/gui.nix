@@ -36,7 +36,7 @@
   home.pointerCursor = {
     dotIcons.enable = false;
     gtk.enable = true;
-    package = self.packages.${pkgs.stdenv.hostPlatform.system}.posy-cursor;
+    package = pkgs.posy-cursors;
     name = "Posy_Cursor";
     size = 32;
   };

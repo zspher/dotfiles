@@ -30,7 +30,6 @@
           ;
       };
       packages = rec {
-        posy-cursor = pkgs.callPackage ./posy-cursor { };
         sddm-corners-theme = pkgs.callPackage ./sddm-corners-theme { };
         shrinkpdf = pkgs.callPackage ./shrinkpdf { };
         markuplint = pkgs.callPackage ./markuplint { };
