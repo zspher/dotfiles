@@ -6,7 +6,7 @@
   fetchFromGitHub,
   ...
 }:
-buildNpmPackage rec {
+buildNpmPackage (finalAttrs: {
   pname = "vscode-langservers-extracted";
   version = "4.10.1";
 
@@ -14,7 +14,7 @@ buildNpmPackage rec {
     (fetchFromGitHub {
       owner = "zspher";
       repo = "vscode-langservers-extracted";
-      tag = "v${version}";
+      tag = "v${finalAttrs.version}";
       hash = "sha256-H0aGpbgqIEYh+T9OPubpN5/7CP2oBADT44jKu9ZrXkQ=";
     })
     vscodium.src
@@ -44,4 +44,4 @@ buildNpmPackage rec {
       cp -r ${vscode-extensions.dbaeumer.vscode-eslint}/share/vscode/extensions/dbaeumer.vscode-eslint/server/out \
       lib/eslint-language-server
     '';
-}
+})

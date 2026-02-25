@@ -7,13 +7,13 @@
   pillow,
   tkinter,
 }:
-buildPythonPackage rec {
+buildPythonPackage (finalAttrs: {
   pname = "ttkbootstrap";
   version = "1.10.1";
   pyproject = true;
 
   src = fetchPypi {
-    inherit pname version;
+    inherit (finalAttrs) pname version;
     hash = "sha256-U5JVJcQQT540VidQDc7S0Dkq10MksqgUZ6ruP/vhpHQ=";
   };
 
@@ -35,4 +35,4 @@ buildPythonPackage rec {
     license = licenses.mit;
     maintainers = with maintainers; [ zspher ];
   };
-}
+})

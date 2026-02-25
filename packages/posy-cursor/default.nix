@@ -3,14 +3,14 @@
   stdenvNoCC,
   fetchFromGitHub,
 }:
-stdenvNoCC.mkDerivation rec {
+stdenvNoCC.mkDerivation (finalAttrs: {
   pname = "posy-cursors";
   version = "1.6";
 
   src = fetchFromGitHub {
     owner = "simtrami";
     repo = "posy-improved-cursor-linux";
-    rev = "refs/tags/${version}";
+    rev = "refs/tags/${finalAttrs.version}";
     hash = "sha256-i0N/QB5uzqHapMCDl6h6PWPJ4GOAyB1ds9qlqmZacLY=";
   };
 
@@ -27,4 +27,4 @@ stdenvNoCC.mkDerivation rec {
     platforms = platforms.unix;
     maintainers = with maintainers; [ mkez ];
   };
-}
+})
