@@ -149,6 +149,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-dev": {
+      "locked": {
+        "lastModified": 1771827309,
+        "narHash": "sha256-3w7vBYVAzldGj62j5GG8SA1lewSSMIUdGjdXarrDrPQ=",
+        "owner": "zspher",
+        "repo": "nixpkgs",
+        "rev": "23a718a681fed76e349aeef7bfe310b39ea13e15",
+        "type": "github"
+      },
+      "original": {
+        "owner": "zspher",
+        "ref": "dev",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "rofi-plugins": {
       "inputs": {
         "nixpkgs": [
@@ -179,6 +195,7 @@
         "home-manager": "home-manager",
         "nix-vscode-extensions": "nix-vscode-extensions",
         "nixpkgs": "nixpkgs",
+        "nixpkgs-dev": "nixpkgs-dev",
         "rofi-plugins": "rofi-plugins",
         "spicetify-nix": "spicetify-nix"
       }

@@ -55,11 +55,14 @@
                 outputHash = "sha256-zO4/RW5DTxfhTaY/fhM7GloQ7ugooL5+XwHgcF3SNT8=";
               };
             });
-
           }
         );
-      })
 
+        vscode-extensions = prev.vscode-extensions // {
+          vadimcn.vscode-lldb =
+            inputs.nixpkgs-dev.legacyPackages.${prev.stdenv.hostPlatform.system}.vscode-extensions.vadimcn.vscode-lldb;
+        };
+      })
     ];
     config = {
       allowUnfree = true;
