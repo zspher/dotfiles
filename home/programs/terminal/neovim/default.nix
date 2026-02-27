@@ -68,12 +68,10 @@
 
         #-- HTML
         superhtml # LSP
-        htmlhint # linter
 
         #-- markdown
         marksman # LSP
-        # markdownlint-cli2 # linter, formatter
-        prettierd
+        markdownlint-cli2 # linter, formatter
 
         #-- JSON, JavaScript, TypeScript
         biome # formatter, linter
