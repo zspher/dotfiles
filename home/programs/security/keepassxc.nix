@@ -29,7 +29,6 @@ lib.mkMerge [
   }
   (lib.mkIf fdo {
     qt.kde.settings."keepassxc/keepassxc.ini".FdoSecrets.Enabled = true;
-    xdg.portal.config.common."org.freedesktop.impl.portal.Secret" = [ "keepassxc" ];
     # systemd.user.services.keepassxc = {
     #   Unit = {
     #     Description = "KeePassXC";

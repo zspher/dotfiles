@@ -27,18 +27,4 @@
     enable = true;
     indicator = true;
   };
-
-  xdg.portal = {
-    xdgOpenUsePortal = true;
-    config.common = {
-      default = [
-        "gtk"
-      ];
-
-      "org.freedesktop.impl.portal.GlobalShortcuts" = [ "hyprland" ];
-      "org.freedesktop.impl.portal.InputCapture" = [ "hyprland" ];
-      "org.freedesktop.impl.portal.ScreenCast" = [ "hyprland" ];
-      "org.freedesktop.impl.portal.Screenshot" = [ "hyprland" ];
-    };
-  };
 }
