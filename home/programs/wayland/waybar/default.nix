@@ -54,6 +54,9 @@ in
         "image#logo" = {
           # path = "~/.config/waybar/assets/nix-catppuccin-logo.svg";
           path = "${./assets/nix-catppuccin-logo.svg}";
+          # FIX: high cpu due images polling a lot if interval is null
+          # https://github.com/Alexays/Waybar/issues/4835
+          interval = "once";
         };
         "custom/power" = {
           format = "";
