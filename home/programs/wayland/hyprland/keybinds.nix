@@ -1,4 +1,8 @@
-{ pkgs, lib, ... }:
+{
+  pkgs,
+  lib,
+  ...
+}:
 let
   close_window = pkgs.writeShellApplication {
     name = "close-window";
@@ -55,11 +59,11 @@ in
         # * === Window Management === * #
         "$mainMod SHIFT, Q, exit,"
         "$mainMod, Q, exec, ${close_window}/bin/close-window "
-        "$mainMod, F, togglefloating, "
-        "$mainMod, M, fullscreen, 1" # monocle layout
         # "$mainMod, M, exec, ${hyprtabs}/bin/hyprtabs" # monocle layout
         "$mainMod SHIFT, F, fullscreen, 0" # true fullscreen
-        "$mainMod SHIFT, C, centerwindow"
+        "$mainMod, F, togglefloating, "
+        "$mainMod SHIFT, C, centerwindow" # for floating
+        "$mainMod SHIFT, P, pseudo,"
 
         # Special Workspace
         "$mainMod, A, togglespecialworkspace"
@@ -71,9 +75,9 @@ in
         "$mainMod, code:34, changegroupactive, b"
 
         # dwindle
-        "$mainMod SHIFT, P, pseudo,"
-        "$mainMod, T, togglesplit"
+        "$mainMod, T, layoutmsg, togglesplit"
         "$mainMod, S, swapnext"
+        "$mainMod, M, fullscreen, 1" # monocle layout
 
         # pin
         "CTRL ALT, P, pin,"
