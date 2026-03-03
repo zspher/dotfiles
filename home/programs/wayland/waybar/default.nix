@@ -60,27 +60,27 @@ in
         };
         "custom/power" = {
           format = "";
-          on-click = "shutdown now";
-          tooltip-format = "shutdown";
+          on-click = "${getExe' pkgs.systemd "systemctl"} poweroff";
+          tooltip-format = "poweroff";
         };
         "custom/quit" = {
           format = "󰗼";
-          on-click = "hyprctl dispatch exit";
+          on-click = "${getExe' pkgs.hyprland "hyprctl"} dispatch exit";
           tooltip-format = "quit";
         };
         "custom/lock" = {
           format = "󰍁";
-          on-click = "hyprlock";
+          on-click = "${getExe' pkgs.systemd "loginctl"} lock-session";
           tooltip-format = "lock";
         };
         "custom/reboot" = {
           format = "󰜉";
-          on-click = "reboot";
+          on-click = "${getExe' pkgs.systemd "systemctl"} reboot";
           tooltip-format = "reboot";
         };
         "custom/hibernate" = {
           format = "";
-          on-click = "systemctl hibernate";
+          on-click = "${getExe' pkgs.systemd "systemctl"} hibernate";
           tooltip-format = "hibernate";
         };
 
