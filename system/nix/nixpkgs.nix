@@ -59,14 +59,8 @@
         );
 
         # TODO:: remove the ff. when fixed
-        #        - https://github.com/NixOS/nixpkgs/pull/493200
         #        - https://github.com/NixOS/nixpkgs/issues/493843
         #        - https://github.com/NixOS/nixpkgs/issues/493836
-        vscode-extensions = prev.vscode-extensions // {
-          vadimcn.vscode-lldb =
-            inputs.nixpkgs-dev.legacyPackages.${prev.stdenv.hostPlatform.system}.vscode-extensions.vadimcn.vscode-lldb;
-        };
-
         calibre = prev.calibre.overrideAttrs (oldAttrs: {
           installPhase = ''
             export QMAKE="${prev.qt6.qtbase}/bin/qmake"
@@ -74,10 +68,16 @@
           + oldAttrs.installPhase;
         });
 
-        darkly-qt5 = prev.darkly-qt5.override {
-          libsForQt5 = inputs.nixpkgs-stable.legacyPackages.${prev.stdenv.hostPlatform.system}.libsForQt5;
-        };
-
+        libsForQt5 = prev.libsForQt5.overrideScope (
+          selfx: prevx: {
+            kcmutils = prevx.kcmutils.overrideAttrs (oldAttrs: {
+              outputs = [
+                "out"
+                "dev"
+              ];
+            });
+          }
+        );
       })
     ];
     config = {
