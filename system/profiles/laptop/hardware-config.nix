@@ -95,14 +95,9 @@
     enable = true;
     enable32Bit = true;
     extraPackages = with pkgs; [
-      libva-vdpau-driver # required by davinci resolve
-
-      intel-media-driver # vaapi
-      vpl-gpu-rt # vpl api
-      intel-compute-runtime # opencl
-    ];
-    extraPackages32 = with pkgs.pkgsi686Linux; [
       intel-media-driver
+      intel-compute-runtime # opencl
+      vpl-gpu-rt # vpl api
     ];
   };
 
@@ -110,7 +105,6 @@
 
   hardware.nvidia = {
     open = true;
-    modesetting.enable = true;
     nvidiaSettings = true;
     powerManagement.finegrained = true;
 
