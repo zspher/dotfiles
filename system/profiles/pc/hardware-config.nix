@@ -28,6 +28,7 @@
     ];
 
     kernelParams = [
+      "i915.enable_guc=2"
       "intel_iommu=on"
       "nmi_watchdog=0"
     ];
@@ -87,14 +88,8 @@
     enable = true;
     enable32Bit = true;
     extraPackages = with pkgs; [
-      libva-vdpau-driver # required by davinci resolve
-
-      intel-media-driver # vaapi
-      vpl-gpu-rt # vpl api
-      intel-compute-runtime # opencl
-    ];
-    extraPackages32 = with pkgs.pkgsi686Linux; [
       intel-media-driver
+      intel-compute-runtime-legacy1
     ];
   };
 
@@ -102,13 +97,13 @@
 
   hardware.nvidia = {
     open = true;
-    modesetting.enable = true;
     nvidiaSettings = true;
     powerManagement.enable = true;
   };
 
   services.fstrim.enable = true; # for ssd
   services.thermald.enable = true;
+  services.fwupd.enable = true; # firmware
 
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
