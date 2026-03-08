@@ -58,26 +58,6 @@
           }
         );
 
-        # TODO:: remove the ff. when fixed
-        #        - https://github.com/NixOS/nixpkgs/issues/493843
-        #        - https://github.com/NixOS/nixpkgs/issues/493836
-        calibre = prev.calibre.overrideAttrs (oldAttrs: {
-          installPhase = ''
-            export QMAKE="${prev.qt6.qtbase}/bin/qmake"
-          ''
-          + oldAttrs.installPhase;
-        });
-
-        libsForQt5 = prev.libsForQt5.overrideScope (
-          selfx: prevx: {
-            kcmutils = prevx.kcmutils.overrideAttrs (oldAttrs: {
-              outputs = [
-                "out"
-                "dev"
-              ];
-            });
-          }
-        );
         rofi-unwrapped = prev.rofi-unwrapped.overrideAttrs (oldAttrs: {
           patches = [
             ./rofi.patch
