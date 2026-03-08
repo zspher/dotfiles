@@ -35,5 +35,4 @@
     exfat = true;
   };
 
-  xdg.portal.xdgOpenUsePortal = true;
 }
