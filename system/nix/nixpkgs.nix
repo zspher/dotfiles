@@ -78,6 +78,11 @@
             });
           }
         );
+        rofi-unwrapped = prev.rofi-unwrapped.overrideAttrs (oldAttrs: {
+          patches = [
+            ./rofi.patch
+          ];
+        });
       })
     ];
     config = {

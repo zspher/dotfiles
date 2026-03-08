@@ -1,0 +1,14 @@
+diff --git a/source/wayland/display.c b/source/wayland/display.c
+index b730298e..3b345e4f 100644
+--- a/source/wayland/display.c
++++ b/source/wayland/display.c
+@@ -202,6 +202,9 @@ wayland_buffer_pool *display_buffer_pool_new(gint width, gint height) {
+   wayland_buffer_pool *pool;
+   pool = g_new0(wayland_buffer_pool, 1);
+
++  pool->data = data;
++  pool->size = pool_size;
++
+   pool->width = width;
+   pool->height = height;
+
