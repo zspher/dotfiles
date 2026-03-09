@@ -9,7 +9,6 @@
     enable = true;
     theme = "sddm-corners";
     wayland.enable = true;
-    wayland.compositor = "kwin"; # FIX: weston 15.0.0 broken on sddm
     package = pkgs.kdePackages.sddm;
   };
 
