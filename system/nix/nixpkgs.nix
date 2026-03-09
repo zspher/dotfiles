@@ -36,7 +36,7 @@
           };
         });
 
-        # NOTE: get rid of `NO_RESULT_CALLBACK_FOUND` error
+        # FIX: get rid of `NO_RESULT_CALLBACK_FOUND` error
         taplo = prev.taplo.overrideAttrs (
           finalAttrs: oldAttrs: {
             pname = "taplo";
@@ -58,6 +58,7 @@
           }
         );
 
+        # FIX: rofi memory leak when mode switch
         rofi-unwrapped = prev.rofi-unwrapped.overrideAttrs (oldAttrs: {
           patches = [
             ./rofi.patch
