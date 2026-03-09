@@ -101,10 +101,6 @@
 
         #-- zig
         zls
-
-        #-- go
-        delve # debugger
-        gopls # LSP
       ];
     };
   };
