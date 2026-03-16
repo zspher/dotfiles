@@ -40,6 +40,7 @@
         csharp-tools = pkgs.callPackage ./csharp-tools { inherit ms-dotnettools; };
         netpad = pkgs.callPackage ./netpad { };
         vscode-langservers-extracted = pkgs.callPackage ./vscode-langservers-extracted { };
+        barcode-reader-cli = pkgs.callPackage ./barcode-reader-cli { };
       };
     };
 }
