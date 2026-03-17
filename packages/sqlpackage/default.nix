@@ -1,10 +1,10 @@
 { buildDotnetGlobalTool, lib }:
 buildDotnetGlobalTool {
   pname = "sqlpackage";
-  version = "170.3.26-preview";
+  version = "170.3.93";
 
   nugetName = "Microsoft.SqlPackage";
-  nugetHash = "sha256-g734K2sjPL1lLJa/SKgzk1GPf1b1zQnI2NNKkMM5yNo=";
+  nugetHash = "sha256-1VcD54B+OsXXaHG+6J23+Wj316fEinQTd6TwqPZqCso=";
 
   meta = {
     description = "a cross-platform command-line utility for creating and deploying .dacpac and .bacpac packages";
