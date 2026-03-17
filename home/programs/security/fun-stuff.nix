@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ self, pkgs, ... }:
 {
   home.packages = with pkgs; [
     # passwords
@@ -16,5 +16,8 @@
         sigdb
       ]
     ))
+
+    # osint tools
+    self.packages.${pkgs.stdenv.hostPlatform.system}.barcode-reader-cli
   ];
 }

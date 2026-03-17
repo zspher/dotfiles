@@ -36,7 +36,9 @@ in
       pkgs = inputs.nixpkgs.legacyPackages.aarch64-linux;
     };
     "${username}@c100" = homeManagerConfiguration {
-      modules = mods.full;
+      modules = mods.full ++ [
+        ../programs/security/fun-stuff.nix
+      ];
       inherit pkgs extraSpecialArgs;
     };
     "${username}@ls2100" = homeManagerConfiguration {
