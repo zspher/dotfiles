@@ -63,18 +63,6 @@
             ./rofi.patch
           ];
         });
-
-        # FIX: Weston broken on sddm
-        # https://github.com/NixOS/nixpkgs/pull/498269
-        weston = prev.weston.overrideAttrs (oldAttrs: {
-          patches = [
-            (prev.fetchpatch {
-              name = "weston-upstream-assertion-fix.patch";
-              url = "https://gitlab.freedesktop.org/wayland/weston/-/merge_requests/1993.patch";
-              hash = "sha256-705GIM7drTzv0N5Hk5dO18LWBnhhi1VoX8sfITHRYc4=";
-            })
-          ];
-        });
       })
     ];
     config = {
