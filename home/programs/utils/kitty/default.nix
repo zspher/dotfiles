@@ -38,7 +38,7 @@
       window_resize_step_lines = 2;
       window_border_width = "0.5pt";
 
-      enabled_layouts = "splits,all";
+      enabled_layouts = "fat:bias=60,all";
 
       tab_bar_edge = "bottom";
       tab_bar_style = "separator";
@@ -62,8 +62,8 @@
     };
 
     keybindings = {
-      "ctrl+shift+enter" = "launch --cwd=current --location hsplit --bias 40";
-      "shift+alt+t" = "launch --cwd=current --type=tab --location=after";
+      "ctrl+shift+enter" = "launch --cwd=current";
+      "shift+alt+t" = "launch --cwd=current --type=tab";
 
       # tab
       "ctrl+space>1" = "goto_tab 1";
