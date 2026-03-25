@@ -1,5 +1,6 @@
 { config, ... }:
 {
+  xdg.userDirs.setSessionVariables = true;
   home.sessionVariables = {
     CARGO_HOME = "${config.xdg.dataHome}/cargo";
     CUDA_CACHE_PATH = "${config.xdg.cacheHome}/nv";

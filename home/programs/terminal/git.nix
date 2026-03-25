@@ -10,6 +10,7 @@
       status.short = true;
       diff.colorMoved = true;
     };
+    signing.format = "openpgp";
     signing.key = "63A15B00";
     signing.signByDefault = true;
     ignores = [
