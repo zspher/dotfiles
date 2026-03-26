@@ -46,6 +46,10 @@
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
 
+    nixos-raspberrypi = {
+      url = "github:nvmd/nixos-raspberrypi/main";
+    };
+
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs";

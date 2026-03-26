@@ -7,6 +7,7 @@
   flake.nixosConfigurations =
     let
       inherit (inputs.nixpkgs.lib) nixosSystem;
+      inherit (inputs.nixos-raspberrypi.lib) nixosSystemFull;
       inherit (import ../config.nix) username;
       specialArgs = {
         inherit inputs self username;
@@ -31,7 +32,7 @@
         inherit specialArgs;
         modules = [
           ./pi
-          { system.stateVersion = "23.11"; }
+          { system.stateVersion = "25.11"; }
         ];
       };
     };
