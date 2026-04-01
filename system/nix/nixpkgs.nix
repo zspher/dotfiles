@@ -25,16 +25,6 @@
           propagatedBuildInputs = lib.lists.remove prev.gamescope oldAttrs.propagatedBuildInputs;
         });
 
-        # NOTE: for sensitive copy support
-        wl-clipboard = prev.wl-clipboard.overrideAttrs (oldAttrs: {
-          src = prev.fetchFromGitHub {
-            owner = "bugaevc";
-            repo = "wl-clipboard";
-            rev = "aaa927ee7f7d91bcc25a3b68f60d01005d3b0f7f";
-            hash = "sha256-V8JAai4gZ1nzia4kmQVeBwidQ+Sx5A5on3SJGSevrUU=";
-          };
-        });
-
         # FIX: get rid of `NO_RESULT_CALLBACK_FOUND` error
         taplo = prev.taplo.overrideAttrs (
           finalAttrs: oldAttrs: {
