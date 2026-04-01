@@ -142,8 +142,8 @@ in
         "float 1, match:class brave-browser, match:title (DevTools.*)"
         "float 1, match:class org.kde.polkit-kde-authentication-agent-1"
         "float 1, match:class xdg-desktop-portal-gtk"
-        "float 1, match:title (Unlock Database \- KeePassXC)"
-        "float 1, match:class (net.code\-industry.masterpdfeditor4)"
+        "float 1, match:title (Unlock Database - KeePassXC)"
+        "float 1, match:class (net.code-industry.masterpdfeditor4)"
         "tile 1, match:title (.*Master PDF Editor.*)"
 
         "no_screen_share 1, match:class (org.keepassxc.KeePassXC)"
