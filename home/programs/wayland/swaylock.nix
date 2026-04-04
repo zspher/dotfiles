@@ -14,7 +14,7 @@
       datestr = "%b %d, %Y";
       fade-in = 0.1;
       ignore-empty-password = true;
-      image = "$(swww query | awk '{print $NF}')";
+      image = "$(awww query | awk '{print $NF}')";
     };
   };
 }

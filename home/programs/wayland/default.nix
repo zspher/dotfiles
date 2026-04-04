@@ -15,7 +15,7 @@
     ./hypridle.nix
     ./hyprlock.nix
     ./swaync.nix
-    ./swww
+    ./awww
     ./waybar
   ];
 

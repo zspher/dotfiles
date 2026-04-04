@@ -4,9 +4,9 @@
   timeout ? "400",
 }:
 pkgs.writeShellApplication {
-  name = "swww-wallset";
+  name = "awww-wallset";
   runtimeInputs = with pkgs; [
-    swww
+    awww
     fd
   ];
   text = ''
@@ -14,7 +14,7 @@ pkgs.writeShellApplication {
     wallpaperDir="${wallpaperDir}"
     TIMEOUT=${timeout}
 
-    swww-daemon &
+    awww-daemon &
 
     if [ ! -d "$wallpaperDir" ]; then
         mkdir -p "$wallpaperDir"
@@ -27,7 +27,7 @@ pkgs.writeShellApplication {
             WALLPAPER=$(fd . "$wallpaperDir" -tf -d 1 | shuf -n 1)
         else
             PREVWALLPAPER=$WALLPAPER
-            swww img "$WALLPAPER"
+            awww img "$WALLPAPER"
             printf "%s\n" "$WALLPAPER"
             sleep "$TIMEOUT"
         fi

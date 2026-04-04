@@ -5,16 +5,16 @@
   ...
 }:
 let
-  script = import ./swww-wallset.nix { inherit pkgs; };
+  script = import ./awww-wallset.nix { inherit pkgs; };
 in
 {
   home.packages = with pkgs; [
-    swww
+    awww
   ];
 
-  systemd.user.services.swww = {
+  systemd.user.services.awww = {
     Unit = {
-      Description = "swww wallpapers";
+      Description = "awww wallpapers";
       PartOf = [ "graphical-session.target" ];
       After = [ "graphical-session.target" ];
     };
@@ -22,8 +22,8 @@ in
     Service = {
       Type = "notify";
       NotifyAccess = "all";
-      ExecStart = "${script}/bin/swww-wallset";
-      ExecStop = "${lib.getExe pkgs.swww} kill";
+      ExecStart = "${script}/bin/awww-wallset";
+      ExecStop = "${lib.getExe pkgs.awww} kill";
     };
 
     Install = {
