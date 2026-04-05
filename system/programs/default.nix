@@ -17,6 +17,11 @@
   };
 
   services.speechd.enable = false;
+  services.upower = {
+    enable = true;
+    percentageCritical = 5;
+    percentageAction = 4;
+  };
 
   environment.systemPackages = with pkgs; [
     clang

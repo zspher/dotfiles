@@ -4,9 +4,6 @@
     auto-cpufreq
   ];
   services = {
-    upower.enable = true;
-    upower.percentageCritical = 5;
-    upower.percentageAction = 4;
 
     auto-cpufreq.enable = true;
     auto-cpufreq.settings = {
