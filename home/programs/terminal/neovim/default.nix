@@ -21,6 +21,7 @@
         mermaid-cli # mermaid preview
         tree-sitter # needed for nvim-treesitter rewrite
         inotify-tools # better file watching
+        gnumake # for luasnip
 
         #-- spelling
         # harper
