@@ -41,10 +41,11 @@
     size = 32;
   };
 
+  catppuccin.anki.enable = true;
   catppuccin.hyprland.enable = true;
   catppuccin.kitty.enable = true;
   catppuccin.mpv.enable = true;
   catppuccin.obs.enable = true;
+  catppuccin.vicinae.enable = true;
   catppuccin.zathura.enable = true;
-  catppuccin.anki.enable = true;
 }

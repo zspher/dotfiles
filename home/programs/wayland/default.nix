@@ -7,15 +7,16 @@
 {
   imports = [
     # ./anyrun.nix
-    # ./copyq
-    # ./walker
-    ./cliphist.nix
-    ./hyprland
-    ./rofi
-    ./hypridle.nix
-    ./hyprlock.nix
-    ./swaync.nix
     ./awww
+    # ./cliphist.nix
+    # ./copyq
+    ./hypridle.nix
+    ./hyprland
+    ./hyprlock.nix
+    ./rofi
+    ./swaync.nix
+    ./vicinae.nix
+    # ./walker
     ./waybar
   ];
 
