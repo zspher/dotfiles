@@ -17,6 +17,8 @@
       vimAlias = true;
 
       withNodeJs = true;
+      withPython3 = false;
+      withRuby = false;
       extraPackages = with pkgs; [
         mermaid-cli # mermaid preview
         tree-sitter # needed for nvim-treesitter rewrite
