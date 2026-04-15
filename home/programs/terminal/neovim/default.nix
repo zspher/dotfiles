@@ -3,10 +3,11 @@
   config,
   self,
   inputs,
+  lib,
   ...
 }:
 {
-  xdg.configFile."nvim/init.lua".enable = false;
+  xdg.configFile."nvim/init.lua".enable = lib.mkForce false;
   xdg.configFile.nvim.source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/configs/nvim";
   programs = {
     neovim = {
