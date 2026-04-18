@@ -71,6 +71,9 @@
           '';
         });
 
+        # TODO: remove when PR upstreamed
+        #       0.20.12 -> 0.20.13
+        vicinae = inputs.nixpkgs-dev.legacyPackages.${prev.stdenv.hostPlatform.system}.vicinae;
       })
     ];
     config = {
