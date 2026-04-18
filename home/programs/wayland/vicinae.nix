@@ -13,7 +13,7 @@
   wayland.windowManager.hyprland.settings = {
     "$runner" = "vicinae toggle";
     "$clipboard_manager" = "vicinae 'vicinae://launch/clipboard/history'";
-    # "$power_menu" = "vicinae 'vicinae://launch/power'"; # currently broken
+    "$power_menu" = "vicinae 'vicinae://launch/power'";
     # "$screen_shot" = "" # TODO: add extension
   };
 }
