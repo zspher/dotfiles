@@ -2,6 +2,7 @@
 {
   programs.vesktop = {
     enable = true;
+    package = null;
     vencord.settings = {
       autoUpdate = false;
       autoUpdateNotification = false;
