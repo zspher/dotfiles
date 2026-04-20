@@ -5,7 +5,9 @@
     systemd.enable = true;
     settings = {
       fallbacks = [ ];
+      telemetry.system_info = false;
       providers.files.enabled = false;
+      providers.files.autoIndexing = false;
     };
   };
 
