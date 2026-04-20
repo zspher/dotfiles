@@ -38,6 +38,7 @@ in
     "${username}@c100" = homeManagerConfiguration {
       modules = mods.full ++ [
         ../programs/security/fun-stuff.nix
+        ../programs/games
       ];
       inherit pkgs extraSpecialArgs;
     };
