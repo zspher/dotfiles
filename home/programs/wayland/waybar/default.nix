@@ -284,5 +284,5 @@ in
   };
   # FIX: https://github.com/nix-community/home-manager/issues/4099
   systemd.user.services.waybar.Service.Environment =
-    lib.mkForce "PATH=${config.home.profileDirectory}/bin";
+    lib.mkForce "PATH=${config.home.profileDirectory}/bin:/run/current-system/sw/bin";
 }
