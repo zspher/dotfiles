@@ -18,10 +18,11 @@
           executable = "${lib.getBin pkgs.vesktop}/bin/vesktop";
           desktop = "${pkgs.vesktop}/share/applications/vesktop.desktop";
           profile = null;
-          extraArgs =
-            [ ]
-            ++ lib.optional (hostName == "ls2100") "--net=wlo1"
-            ++ lib.optional (hostName == "c100") "--net=wlp4s0";
+          extraArgs = [
+            "--noprofile"
+          ]
+          ++ lib.optional (hostName == "ls2100") "--net=wlo1"
+          ++ lib.optional (hostName == "c100") "--net=wlp4s0";
         };
       };
     };
