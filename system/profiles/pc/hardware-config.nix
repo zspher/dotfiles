@@ -101,6 +101,12 @@
     powerManagement.enable = true;
   };
 
+  # NOTE: fixes instantaneous wakeup after suspending
+  # see: https://wiki.archlinux.org/title/Power_management/Wakeup_triggers#Intel_Haswell_with_LynxPoint(-LP)
+  services.udev.extraRules = ''
+    ACTION=="add", SUBSYSTEM=="pci", KERNEL=="0000:00:14.0", ATTR{power/wakeup}="disabled"
+  '';
+
   services.fstrim.enable = true; # for ssd
   services.thermald.enable = true;
   services.fwupd.enable = true; # firmware
