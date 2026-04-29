@@ -53,27 +53,6 @@
             ./rofi.patch
           ];
         });
-
-        # FIX: discord does not use correct appName
-        #      from https://github.com/NixOS/nixpkgs/pull/505535
-        obsidian = prev.obsidian.overrideAttrs (oldAttrs: {
-          buildInputs = [
-            prev.asar
-            prev.jq
-          ];
-          buildPhase = ''
-            runHook preBuild
-            asar extract resources/app.asar app
-            jq '.desktopName = "obsidian"' app/package.json > package.json
-            mv package.json app/package.json
-            asar pack app resources/app.asar
-            runHook postBuild
-          '';
-        });
-
-        # TODO: remove when PR upstreamed
-        #       0.20.12 -> 0.20.13
-        vicinae = inputs.nixpkgs-dev.legacyPackages.${prev.stdenv.hostPlatform.system}.vicinae;
       })
     ];
     config = {
