@@ -28,7 +28,7 @@
         str:
         (lib.toUpper (builtins.substring 0 1 str)) + (builtins.substring 1 (builtins.stringLength str) str);
 
-      palette = (lib.importJSON "${cfg.sources.palette}/palette.json").${cfg.flavor}.colors;
+      palette = (import ./palette.nix).${cfg.flavor}.colors;
       colors = builtins.mapAttrs (color: val: (builtins.substring 1 6 val.hex)) palette;
 
       replaceColors =
@@ -107,7 +107,7 @@
               if builtins.hasAttr color ctpToCollMap then
                 ctpToCollMap.${color}
               else
-                builtins.throw "invalid color: ${color}";
+                throw "invalid color: ${color}";
 
             name = "Colloid-${upperFirst (ctpToColl cfg.accent)}-Dark-Catppuccin";
             package = pkgs.colloid-gtk-theme.override {
