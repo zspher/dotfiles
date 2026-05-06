@@ -30,6 +30,7 @@
 
       enable_audio_bell = false;
       bell_on_tab = " 🔔 ";
+      notify_on_cmd_finish = "invisible";
 
       remember_window_size = false;
       initial_window_width = "100c";
