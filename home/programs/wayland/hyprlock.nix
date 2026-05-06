@@ -1,16 +1,5 @@
-{
-  config,
-  lib,
-  ...
-}:
+{ ... }:
 let
-  ctp = {
-    inherit (config.catppuccin) sources flavor;
-  };
-  c = builtins.mapAttrs (
-    color: val: (builtins.substring 1 6 val.hex)
-  ) (lib.importJSON "${ctp.sources.palette}/palette.json").${ctp.flavor}.colors;
-
   font_family = "CaskaydiaMono Nerd Font";
 in
 {
@@ -24,22 +13,22 @@ in
 
       background = [
         {
-          color = "rgb(${c.mantle})";
+          color = "$mantle";
           path = "~/Pictures/wall.png";
         }
       ];
 
       input-field = [
         {
-          outer_color = "rgb(${c.${config.catppuccin.accent}})";
-          inner_color = "rgb(${c.base})";
+          outer_color = "$accent";
+          inner_color = "$base";
 
-          font_color = "rgb(${c.text})";
-          placeholder_text = ''<span foreground="##${c.text}" font_family="${font_family}">password</span>'';
+          font_color = "$text";
+          placeholder_text = ''<span foreground="##$textAlpha" font_family="${font_family}">password</span>'';
 
-          check_color = "rgb(${c.overlay0})";
-          fail_color = "rgb(${c.red})";
-          capslock_color = "rgb(${c.yellow})";
+          check_color = "$overlay0";
+          fail_color = "$red";
+          capslock_color = "$yellow";
 
           fade_on_empty = false;
           outline_thickness = 2;
@@ -54,7 +43,7 @@ in
         {
           text = "<span>- $TIME -</span>";
           inherit font_family;
-          color = "rgb(${c.text})";
+          color = "$text";
           font_size = 28;
 
           position = "0, 200";
@@ -62,9 +51,9 @@ in
           valign = "center";
         }
         {
-          text = ''Hi there, <span foreground="##${c.peach}">$USER</span>'';
+          text = ''Hi there, <span foreground="##$peachAlpha">$USER</span>'';
           inherit font_family;
-          color = "rgb(${c.text})";
+          color = "$text";
 
           position = "0, 150";
           halign = "center";
@@ -74,7 +63,7 @@ in
           text = "⁙";
           inherit font_family;
           font_size = 15;
-          color = "rgb(${c.text})";
+          color = "$text";
 
           rotate = 45.0;
           position = "0, 80";
@@ -87,7 +76,7 @@ in
       image = [
         {
           path = "~/.face.icon";
-          border_color = "rgb(${c.crust})";
+          border_color = "$crust";
 
           position = "0, 0";
           size = 150;

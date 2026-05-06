@@ -43,6 +43,10 @@
 
   catppuccin.anki.enable = true;
   catppuccin.hyprland.enable = true;
+  catppuccin.hyprlock = {
+    enable = true;
+    useDefaultConfig = false;
+  };
   catppuccin.kitty.enable = true;
   catppuccin.mpv.enable = true;
   catppuccin.obs.enable = true;
