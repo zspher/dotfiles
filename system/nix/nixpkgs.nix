@@ -53,6 +53,17 @@
             ./rofi.patch
           ];
         });
+
+        # FIX: bottles & lutris-free are broken
+        # https://github.com/NixOS/nixpkgs/issues/513245
+        openldap = prev.openldap.overrideAttrs (oldAttrs: {
+          # doCheck = !prev.stdenv.hostPlatform.isi686;
+          preCheck =
+            oldAttrs.preCheck
+            + lib.optionalString prev.stdenv.hostPlatform.isi686 ''
+              rm -f tests/scripts/test*-sync*
+            '';
+        });
       })
     ];
     config = {
