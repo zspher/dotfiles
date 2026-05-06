@@ -8,9 +8,9 @@
   catppuccin.btop.enable = true;
   catppuccin.delta.enable = true;
   catppuccin.fish.enable = true;
-  catppuccin.fzf.enable = true;
+  catppuccin.fzf.enable = true; # IFD
   catppuccin.lazygit.enable = true;
-  catppuccin.starship.enable = true;
+  catppuccin.starship.enable = true; # IFD
   catppuccin.tmux.enable = true;
 
   home.sessionVariables = {

@@ -41,7 +41,7 @@
     size = 32;
   };
 
-  catppuccin.anki.enable = true;
+  catppuccin.anki.enable = true; # IFD
   catppuccin.hyprland.enable = true;
   catppuccin.hyprlock = {
     enable = true;
