@@ -13,7 +13,7 @@
     ./hypridle.nix
     ./hyprland
     ./hyprlock.nix
-    ./rofi
+    # ./rofi
     ./swaync.nix
     ./vicinae.nix
     # ./walker
