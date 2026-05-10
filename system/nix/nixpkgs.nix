@@ -34,16 +34,16 @@
             src = prev.fetchFromGitHub {
               owner = "tamasfe";
               repo = "taplo";
-              rev = "9ccd6fe7085f787e214cec7b8d2717d52023e4b4";
-              hash = "sha256-+kXOHspC55iE0ClMxqIuUSPIAe4GUZviRPmdhCcHcts=";
+              rev = "b673b44df2773db8673a00df2e7654b769f7fde7";
+              hash = "sha256-z+B0f6+PfLgEWeJodQ9xfzf1cuPPwZFfy/epPCiC4eU=";
             };
 
-            cargoDeps = oldAttrs.cargoDeps.overrideAttrs (previousAttrs: {
-              vendorStaging = previousAttrs.vendorStaging.overrideAttrs {
-                inherit (finalAttrs) src;
-                outputHash = "sha256-zO4/RW5DTxfhTaY/fhM7GloQ7ugooL5+XwHgcF3SNT8=";
-              };
-            });
+            patches = [ ];
+
+            cargoDeps = prev.rustPlatform.fetchCargoVendor {
+              inherit (finalAttrs) src patches;
+              hash = "sha256-9BF+S3QrPtbuWKEbEtqNq1dBAy7l1LDK/aMWL54TcmY=";
+            };
           }
         );
 
