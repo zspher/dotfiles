@@ -55,11 +55,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    fjordLauncher = {
-      url = "github:unmojang/FjordLauncher";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     # anyrun = {
     #   url = "github:zspher/anyrun/updates";
     #   inputs.nixpkgs.follows = "nixpkgs";
