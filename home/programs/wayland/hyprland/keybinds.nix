@@ -156,17 +156,17 @@ in
         "3, horizontal, workspace"
       ];
     };
-    extraConfig = ''
-      # * =========  Resize window  ========= * #
-
-      bind = $mainMod, R, submap, resize
-      submap = resize
-          binde = , H, resizeactive, -20 0
-          binde = , L, resizeactive, 20 0
-          binde = , J, resizeactive, 0 -20
-          binde = , K, resizeactive, 0 20
-      bind = , escape, submap, reset
-      submap = reset
-    '';
+    # extraConfig = ''
+    #   # * =========  Resize window  ========= * #
+    #
+    #   bind = $mainMod, R, submap, resize
+    #   submap = resize
+    #       binde = , H, resizeactive, -20 0
+    #       binde = , L, resizeactive, 20 0
+    #       binde = , J, resizeactive, 0 -20
+    #       binde = , K, resizeactive, 0 20
+    #   bind = , escape, submap, reset
+    #   submap = reset
+    # '';
   };
 }

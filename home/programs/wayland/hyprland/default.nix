@@ -10,6 +10,7 @@ in
     ./keybinds.nix
   ];
   wayland.windowManager.hyprland = {
+    configType = "hyprlang";
     enable = true;
     package = null;
     portalPackage = null;
