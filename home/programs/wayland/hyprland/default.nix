@@ -139,6 +139,7 @@ in
         "workspace 4 silent, match:class vesktop"
         "workspace 10, match:class spotify"
         "workspace unset, match:initial_title (about:blank - Brave)"
+        "workspace unset, match:initial_title (localhost:.* - Brave)"
 
         "float 1, match:class brave-browser, match:title (DevTools.*)"
         "float 1, match:class org.kde.polkit-kde-authentication-agent-1"
