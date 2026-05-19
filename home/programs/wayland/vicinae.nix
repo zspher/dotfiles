@@ -8,6 +8,7 @@
       telemetry.system_info = false;
       providers.files.enabled = false;
       providers.files.autoIndexing = false;
+      providers.snippets.enabled = false;
     };
   };
 
