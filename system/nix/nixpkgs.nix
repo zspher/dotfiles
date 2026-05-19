@@ -64,6 +64,15 @@
               rm -f tests/scripts/test*-sync*
             '';
         });
+
+        grimblast = prev.grimblast.overrideAttrs (oldAttrs: {
+          src = prev.fetchFromGitHub {
+            owner = "zspher";
+            repo = "contrib";
+            rev = "1ec82014b167f709589c6ddd419a098a0fb2bdfb";
+            hash = "sha256-igimsuClLuBwCi9ingeg4U54AeeozFHPppGiRsreXzo=";
+          };
+        });
       })
     ];
     config = {
