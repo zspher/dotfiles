@@ -89,7 +89,6 @@
         #-- HTML, tailwind
         emmet-language-server # LSP
         tailwindcss-language-server # LSP
-        self.packages.${pkgs.stdenv.hostPlatform.system}.cssmodules-language-server # LSP
 
         #-- YAML
         yaml-language-server
