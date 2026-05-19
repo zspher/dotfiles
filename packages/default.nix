@@ -37,7 +37,9 @@
         sqlpackage = pkgs.callPackage ./sqlpackage { };
 
         ms-dotnettools = pkgs.callPackage ./ms-dotnettools.csharp { };
-        csharp-tools = pkgs.callPackage ./csharp-tools { inherit ms-dotnettools; };
+        csharp-tools = pkgs.callPackage ./csharp-tools {
+          ms-dotnettools = pkgs.vscode-extensions.ms-dotnettools.csharp;
+        };
         netpad = pkgs.callPackage ./netpad { };
         vscode-langservers-extracted = pkgs.callPackage ./vscode-langservers-extracted { };
         barcode-reader-cli = pkgs.callPackage ./barcode-reader-cli { };
