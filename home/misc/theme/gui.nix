@@ -12,7 +12,7 @@
     # anyrun.enable = true;
     copyq.enable = true;
     gtk.enable = true;
-    rofi.enable = true;
+    rofi.enable = false;
     swaync.enable = true;
     vesktop.enable = true;
     walker.enable = true;
