@@ -5,5 +5,5 @@ indent_style = space
 trim_trailing_whitespace = true
 charset = utf-8
 
-[*.{nix, css}]
+[*.{nix, css, lua}]
 indent_size = 2
