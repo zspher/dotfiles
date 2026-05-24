@@ -28,7 +28,6 @@
         # FIX: get rid of `NO_RESULT_CALLBACK_FOUND` error
         taplo = prev.taplo.overrideAttrs (
           finalAttrs: oldAttrs: {
-            pname = "taplo";
             version = "0.10.0";
 
             src = prev.fetchFromGitHub {
@@ -73,6 +72,24 @@
             hash = "sha256-igimsuClLuBwCi9ingeg4U54AeeozFHPppGiRsreXzo=";
           };
         });
+
+        tombi = prev.tombi.overrideAttrs (
+          finalAttrs: oldAttrs: {
+            version = "0.11.7";
+
+            src = prev.fetchFromGitHub {
+              owner = "tombi-toml";
+              repo = "tombi";
+              tag = "v${finalAttrs.version}";
+              hash = "sha256-N6O+ZndJY5sedP5BZ456G4ofJWvHmRkzzG+RzL3zhZ8=";
+            };
+
+            cargoDeps = prev.rustPlatform.fetchCargoVendor {
+              inherit (finalAttrs) src;
+              hash = "sha256-wRraQ+2TWuRBcYOoTQpKENeAuzB8LoGwQGJ2RVRt3Xo=";
+            };
+          }
+        );
       })
     ];
     config = {

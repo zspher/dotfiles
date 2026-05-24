@@ -65,7 +65,7 @@
         lemminx # LSP
 
         #-- TOML
-        taplo # LSP
+        tombi # LSP
 
         #-- JSON, CSS, ESLint JSON
         self.packages.${pkgs.stdenv.hostPlatform.system}.vscode-langservers-extracted # LSP
