@@ -90,6 +90,19 @@
             };
           }
         );
+
+        nwg-displays = prev.nwg-displays.overrideAttrs (
+          finalAttrs: oldAttrs: {
+            version = "0.4.3";
+
+            src = prev.fetchFromGitHub {
+              owner = "nwg-piotr";
+              repo = "nwg-displays";
+              tag = "v${finalAttrs.version}";
+              hash = "sha256-f7x6PTsND0eprhqvIdkZdHujcCbkJnqoXIKeE0O/YPE=";
+            };
+          }
+        );
       })
     ];
     config = {
