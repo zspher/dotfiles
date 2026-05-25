@@ -105,9 +105,13 @@ in
         "group/middle" = {
           modules = [
             "clock"
+            "hyprland/submap"
             "idle_inhibitor"
           ];
           orientation = "inherit";
+        };
+        "hyprland/submap" = {
+          format = "• {}";
         };
         privacy = {
           icon-size = 12;
