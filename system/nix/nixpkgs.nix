@@ -75,13 +75,13 @@
 
         tombi = prev.tombi.overrideAttrs (
           finalAttrs: oldAttrs: {
-            version = "0.11.7";
+            version = "1.0.0";
 
             src = prev.fetchFromGitHub {
               owner = "tombi-toml";
               repo = "tombi";
               tag = "v${finalAttrs.version}";
-              hash = "sha256-N6O+ZndJY5sedP5BZ456G4ofJWvHmRkzzG+RzL3zhZ8=";
+              hash = "sha256-4DW4A1JuwEX76i2eMhU7WsDRPimdKec1mY+21dYOxP0=";
             };
 
             cargoDeps = prev.rustPlatform.fetchCargoVendor {
