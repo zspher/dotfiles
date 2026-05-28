@@ -8,6 +8,7 @@
   programs.firejail =
     let
       hostName = config.networking.hostName;
+      vesktop = pkgs.vesktop.override ({ withSystemVencord = true; });
     in
     {
       enable = true;
@@ -15,8 +16,8 @@
         # FIX: no vesktop vc on tailscale up
         #      from: https://github.com/tailscale/tailscale/issues/10396#issuecomment-3871203280
         vesktop = {
-          executable = "${lib.getBin pkgs.vesktop}/bin/vesktop";
-          desktop = "${pkgs.vesktop}/share/applications/vesktop.desktop";
+          executable = "${lib.getExe vesktop}";
+          desktop = "${vesktop}/share/applications/vesktop.desktop";
           profile = null;
           extraArgs = [
             "--noprofile"
