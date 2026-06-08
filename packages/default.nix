@@ -38,7 +38,7 @@
 
         ms-dotnettools = pkgs.callPackage ./ms-dotnettools.csharp { };
         csharp-tools = pkgs.callPackage ./csharp-tools {
-          ms-dotnettools = pkgs.vscode-extensions.ms-dotnettools.csharp;
+          ms-dotnettools = ms-dotnettools;
         };
         netpad = pkgs.callPackage ./netpad { };
         vscode-langservers-extracted = pkgs.callPackage ./vscode-langservers-extracted { };
