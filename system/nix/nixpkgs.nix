@@ -21,10 +21,6 @@
       # roslyn-ls = inputs.nixpkgs-old-roslyn-ls.legacyPackages.${prev.system}.roslyn-ls;
       # })
       (final: prev: {
-        bottles-unwrapped = prev.bottles-unwrapped.overrideAttrs (oldAttrs: {
-          propagatedBuildInputs = lib.lists.remove prev.gamescope oldAttrs.propagatedBuildInputs;
-        });
-
         # FIX: get rid of `NO_RESULT_CALLBACK_FOUND` error
         taplo = prev.taplo.overrideAttrs (
           finalAttrs: oldAttrs: {
@@ -53,17 +49,6 @@
           ];
         });
 
-        # FIX: bottles & lutris-free are broken
-        # https://github.com/NixOS/nixpkgs/issues/513245
-        openldap = prev.openldap.overrideAttrs (oldAttrs: {
-          # doCheck = !prev.stdenv.hostPlatform.isi686;
-          preCheck =
-            oldAttrs.preCheck
-            + lib.optionalString prev.stdenv.hostPlatform.isi686 ''
-              rm -f tests/scripts/test*-sync*
-            '';
-        });
-
         grimblast = prev.grimblast.overrideAttrs (oldAttrs: {
           src = prev.fetchFromGitHub {
             owner = "zspher";
@@ -88,6 +73,15 @@
               inherit (finalAttrs) src;
               hash = "sha256-IgtFNjp8fql01KGCR6h4+QtEm3AxJxsq900ZEwhRWhg=";
             };
+          }
+        );
+
+        zathuraPkgs = prev.zathuraPkgs.overrideScope (
+          selfx: prevx: {
+            # FIX: missing link numbering
+            zathura_core = prevx.zathura_core.overrideAttrs (oldAttrs: {
+              __structuredAttrs = false;
+            });
           }
         );
 
