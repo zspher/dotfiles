@@ -47,6 +47,12 @@
               "${palette.${cfg.accent}.hex}"
             ];
         });
+
+      rgba =
+        color: alpha:
+        "rgba(${toString palette.${color}.rgb.r},${toString palette.${color}.rgb.g},${
+          toString palette.${color}.rgb.b
+        },${toString alpha})";
     in
     lib.mkIf (cfg != { }) (
       lib.mkMerge [
@@ -160,8 +166,9 @@
           programs.zathura.options = {
             recolor = false;
             render-loading-bg = "#ffffff";
-            highlight-color = "rgba(${toString palette.mantle.rgb.r},${toString palette.mantle.rgb.g},${toString palette.mantle.rgb.b},0.5)";
-            highlight-fg = "${palette.yellow.hex}";
+            highlight-active-color = rgba "green" 0.5;
+            highlight-color = rgba "text" 0.4;
+            highlight-fg = "${palette.base.hex}";
           };
         })
 
