@@ -2,6 +2,8 @@
 {
   catppuccin.flavor = "mocha";
   catppuccin.accent = "mauve";
+  catppuccin.enable = true;
+  catppuccin.autoEnable = false;
 
   # the minimum needed for theming (i.e. in a tty: shell, cmdline)
   catppuccin.bat.enable = true;
