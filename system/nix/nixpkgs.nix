@@ -75,34 +75,22 @@
 
         tombi = prev.tombi.overrideAttrs (
           finalAttrs: oldAttrs: {
-            version = "1.0.0";
+            version = "1.1.2";
 
             src = prev.fetchFromGitHub {
               owner = "tombi-toml";
               repo = "tombi";
               tag = "v${finalAttrs.version}";
-              hash = "sha256-4DW4A1JuwEX76i2eMhU7WsDRPimdKec1mY+21dYOxP0=";
+              hash = "sha256-qgYyp8PglhRByajXartyuPgLDK8S5Uik7xABJnI26Bw=";
             };
 
             cargoDeps = prev.rustPlatform.fetchCargoVendor {
               inherit (finalAttrs) src;
-              hash = "sha256-wRraQ+2TWuRBcYOoTQpKENeAuzB8LoGwQGJ2RVRt3Xo=";
+              hash = "sha256-IgtFNjp8fql01KGCR6h4+QtEm3AxJxsq900ZEwhRWhg=";
             };
           }
         );
 
-        nwg-displays = prev.nwg-displays.overrideAttrs (
-          finalAttrs: oldAttrs: {
-            version = "0.4.3";
-
-            src = prev.fetchFromGitHub {
-              owner = "nwg-piotr";
-              repo = "nwg-displays";
-              tag = "v${finalAttrs.version}";
-              hash = "sha256-f7x6PTsND0eprhqvIdkZdHujcCbkJnqoXIKeE0O/YPE=";
-            };
-          }
-        );
       })
     ];
     config = {
