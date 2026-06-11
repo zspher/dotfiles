@@ -30,19 +30,15 @@
           ;
       };
       packages = rec {
+        barcode-reader-cli = pkgs.callPackage ./barcode-reader-cli { };
+        csharp-tools = pkgs.callPackage ./csharp-tools { ms-dotnettools = ms-dotnettools; };
+        cssmodules-language-server = pkgs.callPackage ./cssmodules-language-server { };
+        ms-dotnettools = pkgs.callPackage ./ms-dotnettools.csharp { };
+        netpad = pkgs.callPackage ./netpad { };
         sddm-corners-theme = pkgs.callPackage ./sddm-corners-theme { };
         shrinkpdf = pkgs.callPackage ./shrinkpdf { };
-        markuplint = pkgs.callPackage ./markuplint { };
-        cssmodules-language-server = pkgs.callPackage ./cssmodules-language-server { };
         sqlpackage = pkgs.callPackage ./sqlpackage { };
-
-        ms-dotnettools = pkgs.callPackage ./ms-dotnettools.csharp { };
-        csharp-tools = pkgs.callPackage ./csharp-tools {
-          ms-dotnettools = ms-dotnettools;
-        };
-        netpad = pkgs.callPackage ./netpad { };
         vscode-langservers-extracted = pkgs.callPackage ./vscode-langservers-extracted { };
-        barcode-reader-cli = pkgs.callPackage ./barcode-reader-cli { };
       };
     };
 }
