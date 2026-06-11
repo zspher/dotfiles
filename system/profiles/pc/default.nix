@@ -7,6 +7,7 @@
 
     ../../misc.nix
     ../../security.nix
+    ../../theme.nix
     ../../user.nix
 
     ../../programs
