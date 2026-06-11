@@ -10,13 +10,15 @@
 }:
 let
   # xercesc 3.1 is required
-  xercesc_3_1_4 = xercesc.overrideAttrs (prev: rec {
-    version = "3.1.4";
-    src = fetchurl {
-      url = lib.replaceStrings [ prev.version ] [ version ] prev.src.url;
-      hash = "sha256-yY7trEz4pzsJNmrTScs+8wZA56MInTYNQKPd6T9m7PY=";
-    };
-  });
+  xercesc_3_1_4 = xercesc.overrideAttrs (
+    finalAttrs: oldAttrs: {
+      version = "3.1.4";
+      src = fetchurl {
+        url = lib.replaceStrings [ oldAttrs.version ] [ finalAttrs.version ] oldAttrs.src.url;
+        hash = "sha256-yY7trEz4pzsJNmrTScs+8wZA56MInTYNQKPd6T9m7PY=";
+      };
+    }
+  );
 in
 stdenv.mkDerivation (finalAttrs: {
   pname = "barcode-reader-cli";
