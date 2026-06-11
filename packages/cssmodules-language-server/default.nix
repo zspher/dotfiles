@@ -6,6 +6,7 @@
 }:
 buildNpmPackage (finalAttrs: {
   pname = "cssmodules-language-server";
+  __structuredAttrs = true;
   version = "1.5.2";
 
   src = fetchFromGitHub {

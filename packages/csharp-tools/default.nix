@@ -11,6 +11,7 @@ stdenvNoCC.mkDerivation {
 
   src = ./.;
 
+  __structuredAttrs = true;
   nativeBuildInputs = [
     vscode
   ];

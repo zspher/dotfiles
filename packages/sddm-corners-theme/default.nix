@@ -9,7 +9,7 @@
 stdenvNoCC.mkDerivation {
   pname = "sddm-corners";
   version = "unstable-2024-07-08";
-
+  __structuredAttrs = true;
   src = fetchFromGitHub {
     owner = "zspher";
     repo = "sddm-theme-corners";

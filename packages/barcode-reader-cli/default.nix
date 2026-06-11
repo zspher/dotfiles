@@ -23,6 +23,8 @@ in
 stdenv.mkDerivation (finalAttrs: {
   pname = "barcode-reader-cli";
   version = "12.0.7729";
+
+  __structuredAttrs = true;
   src = fetchurl {
     url = "https://barcode-reader.inliteresearch.com/downloads/12_0_7675.ci11a/BRCLI/linux64/BarcodeReaderCLI.linux.12.0.7729.zip";
     hash = "sha256-OC1lb9f1KNWpgVpVMSsth7AWH1p5yI/tUW/nkjKHHu8=";

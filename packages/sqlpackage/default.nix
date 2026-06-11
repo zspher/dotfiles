@@ -3,6 +3,7 @@ buildDotnetGlobalTool {
   pname = "sqlpackage";
   version = "170.3.93";
 
+  __structuredAttrs = true;
   nugetName = "Microsoft.SqlPackage";
   nugetHash = "sha256-1VcD54B+OsXXaHG+6J23+Wj316fEinQTd6TwqPZqCso=";
 

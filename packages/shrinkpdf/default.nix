@@ -11,6 +11,7 @@ stdenvNoCC.mkDerivation {
   name = "shrinkpdf";
 
   src = builtins.filterSource (name: _: !(lib.hasSuffix ".nix" name)) ./.;
+  __structuredAttrs = true;
 
   strictDeps = true;
   buildInputs = [

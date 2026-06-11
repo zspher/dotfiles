@@ -57,6 +57,7 @@ vscode-utils.buildVscodeMarketplaceExtension {
     inherit (extInfo) hash arch;
   };
 
+  __structuredAttrs = true;
   nativeBuildInputs = lib.optionals stdenv.hostPlatform.isLinux [
     autoPatchelfHook
     jq

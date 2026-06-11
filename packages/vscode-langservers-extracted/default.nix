@@ -10,6 +10,8 @@ buildNpmPackage (finalAttrs: {
   pname = "vscode-langservers-extracted";
   version = "4.10.2";
 
+  __structuredAttrs = true;
+
   srcs = [
     (fetchFromGitHub {
       owner = "zspher";
