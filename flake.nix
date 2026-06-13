@@ -26,6 +26,7 @@
               nixfmt
               nil
               nixd
+              stylua
             ];
           };
           formatter = pkgs.nixfmt;
