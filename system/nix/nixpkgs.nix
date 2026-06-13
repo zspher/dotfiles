@@ -58,24 +58,6 @@
           };
         });
 
-        tombi = prev.tombi.overrideAttrs (
-          finalAttrs: oldAttrs: {
-            version = "1.1.2";
-
-            src = prev.fetchFromGitHub {
-              owner = "tombi-toml";
-              repo = "tombi";
-              tag = "v${finalAttrs.version}";
-              hash = "sha256-qgYyp8PglhRByajXartyuPgLDK8S5Uik7xABJnI26Bw=";
-            };
-
-            cargoDeps = prev.rustPlatform.fetchCargoVendor {
-              inherit (finalAttrs) src;
-              hash = "sha256-IgtFNjp8fql01KGCR6h4+QtEm3AxJxsq900ZEwhRWhg=";
-            };
-          }
-        );
-
         zathuraPkgs = prev.zathuraPkgs.overrideScope (
           selfx: prevx: {
             # FIX: missing link numbering
