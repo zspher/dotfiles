@@ -20,9 +20,12 @@
     settings = {
       fallbacks = [ ];
       telemetry.system_info = false;
-      providers.files.enabled = false;
-      providers.files.autoIndexing = false;
-      providers.snippets.enabled = false;
+      providers = {
+        files.enabled = false;
+        files.autoIndexing = false;
+        snippets.enabled = false;
+        clipboard.entrypoints.history.preferences.defaultAction = "copy";
+      };
     };
   };
 
