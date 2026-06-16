@@ -26,7 +26,7 @@
           finalAttrs: oldAttrs: {
             version = "0.10.0";
 
-            src = prev.fetchFromGitHub {
+            src = final.fetchFromGitHub {
               owner = "tamasfe";
               repo = "taplo";
               rev = "b673b44df2773db8673a00df2e7654b769f7fde7";
@@ -35,7 +35,7 @@
 
             patches = [ ];
 
-            cargoDeps = prev.rustPlatform.fetchCargoVendor {
+            cargoDeps = final.rustPlatform.fetchCargoVendor {
               inherit (finalAttrs) src patches;
               hash = "sha256-9BF+S3QrPtbuWKEbEtqNq1dBAy7l1LDK/aMWL54TcmY=";
             };
@@ -50,7 +50,7 @@
         });
 
         grimblast = prev.grimblast.overrideAttrs (oldAttrs: {
-          src = prev.fetchFromGitHub {
+          src = final.fetchFromGitHub {
             owner = "zspher";
             repo = "contrib";
             rev = "1ec82014b167f709589c6ddd419a098a0fb2bdfb";
