@@ -2,7 +2,6 @@
 {
   programs.vesktop = {
     enable = true;
-    package = pkgs.vesktop.override { withSystemVencord = true; };
     vencord.settings = {
       autoUpdate = false;
       autoUpdateNotification = false;
