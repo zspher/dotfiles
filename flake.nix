@@ -23,13 +23,13 @@
         {
           devShells.default = pkgs.mkShell {
             packages = with pkgs; [
-              nixfmt
+              nixfmt-tree
               nil
               nixd
               stylua
             ];
           };
-          formatter = pkgs.nixfmt;
+          formatter = pkgs.nixfmt-tree;
         };
     };
 
