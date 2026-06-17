@@ -6,7 +6,7 @@
   ];
   home.packages = with pkgs; [
     calibre
-    libreoffice-fresh
+    libreoffice-qt-fresh
     masterpdfeditor4
     obsidian
     (self.packages.${pkgs.stdenv.hostPlatform.system}.shrinkpdf)
