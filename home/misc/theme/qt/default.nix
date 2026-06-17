@@ -12,7 +12,7 @@ let
       custom_palette = true;
       icon_theme = config.gtk.iconTheme.name;
       standard_dialogs = "xdgdesktopportal";
-      style = "Darkly";
+      style = if qtctVersion == "qt5ct" then "kvantum-dark" else "Darkly";
       color_scheme_path = "${config.xdg.configHome}/${qtctVersion}/colors/catppuccin.conf";
     };
 
@@ -27,9 +27,21 @@ in
   qt = {
     enable = true;
     style.package = with pkgs; [
-      # darkly-qt5
+      libsForQt5.qtstyleplugin-kvantum # for keepassxc, masterpdfeditor4
       darkly
     ];
+    kvantum =
+      let
+        accent = config.catppuccin.accent;
+        variant = config.catppuccin.flavor;
+      in
+      {
+        enable = true;
+        settings.General.theme = "catppuccin-${variant}-${accent}";
+        themes = [
+          (pkgs.catppuccin-kvantum.override { inherit accent variant; })
+        ];
+      };
     platformTheme.name = "qtct";
     kde.settings.kdeglobals.Icons.Theme = config.gtk.iconTheme.name;
   };
