@@ -74,6 +74,18 @@
           ];
         });
 
+        darkly = prev.darkly.overrideAttrs (
+          finalAttrs: oldAttrs: {
+            version = "0.5.38";
+            src = final.fetchFromGitHub {
+              owner = "Bali10050";
+              repo = "Darkly";
+              tag = "v${finalAttrs.version}";
+              hash = "sha256-u12imjPk4ZhOen/PgnLiNPML+5NmuKO0Ja4wQKU/Y8E=";
+            };
+          }
+        );
+
         #
       })
     ];
