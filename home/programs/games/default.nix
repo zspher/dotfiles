@@ -14,6 +14,8 @@
       cemu.package = pkgs.cemu;
       pcsx2.package = pkgs.pcsx2;
     };
+    winePackages = with pkgs; [ wine64Packages.full ];
+    protonPackages = [ pkgs.proton-ge-bin ];
   };
 
   programs.prismlauncher = {
