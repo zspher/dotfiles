@@ -25,6 +25,7 @@
         tree-sitter # needed for nvim-treesitter rewrite
         inotify-tools # better file watching
         gnumake # for luasnip
+        self.packages.${pkgs.stdenv.hostPlatform.system}.libtexprintf # latex markdown symbols
 
         #-- spelling
         # harper

@@ -33,6 +33,7 @@
         barcode-reader-cli = pkgs.callPackage ./barcode-reader-cli { };
         csharp-tools = pkgs.callPackage ./csharp-tools { ms-dotnettools = ms-dotnettools; };
         cssmodules-language-server = pkgs.callPackage ./cssmodules-language-server { };
+        libtexprintf = pkgs.callPackage ./libtexprintf { };
         ms-dotnettools = pkgs.callPackage ./ms-dotnettools.csharp { };
         netpad = pkgs.callPackage ./netpad { };
         sddm-corners-theme = pkgs.callPackage ./sddm-corners-theme { };
