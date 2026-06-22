@@ -5,13 +5,16 @@
   ...
 }:
 {
-  imports = [
-    ./keybinds.nix
-  ];
+  imports = [ ];
+
+  wayland.windowManager.hyprland = {
+    enable = true;
+    package = null;
+    configType = "lua";
+  };
 
   xdg.configFile = {
-    "hypr/hyprland.lua".source = ./hyprland.lua;
-    "hypr/catppuccin.lua".source = ./catppuccin.lua;
+    "hypr/hyprland.lua".source = lib.mkForce ./hyprland.lua;
     "hypr/apps.lua".text =
       let
         attrs = lib.filterAttrs (
@@ -28,7 +31,7 @@
         }
         return M
       '';
-    "hypr/.luarc.json" = {
+    "hypr/.luarc.json" = lib.mkForce {
       text = builtins.toJSON {
         workspace.library = [ "${pkgs.hyprland}/share/hypr/stubs" ];
         diagnostics.globals = [ "hl" ];

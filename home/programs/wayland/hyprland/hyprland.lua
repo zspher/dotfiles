@@ -1,4 +1,4 @@
-local ctp = require "catppuccin"
+local ctp = require "themes.catppuccin"
 local apps = require "apps"
 
 -- apps
@@ -15,7 +15,8 @@ local power_menu = apps.power_menu or "~/.config/rofi/bin/powermenu.sh"
 hl.bind("CTRL+SHIFT+escape", hl.dsp.exec_cmd(terminal .. " btop"))
 hl.bind("CTRL+ALT+T", hl.dsp.exec_cmd(terminal .. " --class kitty-term"))
 hl.bind("ALT+SPACE", hl.dsp.exec_cmd(runner))
-hl.bind("SUPER+E", hl.dsp.exec_cmd(file_manager))
+-- needs uwsm since udisks mount won't work otherwise
+hl.bind("SUPER+E", hl.dsp.exec_cmd("uwsm app -- " .. file_manager))
 hl.bind("SUPER+N", hl.dsp.exec_cmd(notification_manager))
 hl.bind("SUPER+SHIFT+S", hl.dsp.exec_cmd(screenshot))
 hl.bind("CTRL+ALT+Delete", hl.dsp.exec_cmd(power_menu))
@@ -229,7 +230,6 @@ hl.env("QT_QPA_PLATFORM", "wayland")
 
 -- startup
 hl.on("hyprland.start", function()
-  hl.exec_cmd "/nix/store/2r0s13qpds22r2dv2dgqrm73n1780mbf-conditional_startup"
   hl.dsp.focus { monitor = "HDMI-A-1" }
 
   hl.exec_cmd(
@@ -238,6 +238,7 @@ hl.on("hyprland.start", function()
       .. "HYPRLAND_INSTANCE_SIGNATURE"
       .. "WAYLAND_DISPLAY"
       .. "XDG_CURRENT_DESKTOP"
+      .. "XDG_SESSION_TYPE"
       .. "QT_QPA_PLATFORM"
   )
   if tonumber(os.date "%H") < 12 then hl.exec_cmd "obsidian" end
