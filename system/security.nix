@@ -8,6 +8,7 @@
 
   security = {
     polkit.enable = true;
+    polkit.enablePkexecWrapper = true;
     # useful for pipewire
     rtkit.enable = true;
 
