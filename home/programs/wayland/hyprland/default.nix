@@ -11,6 +11,7 @@
     enable = true;
     package = null;
     configType = "lua";
+    portalPackage = pkgs.xdg-desktop-portal-hyprland;
   };
 
   xdg.configFile = {
