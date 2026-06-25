@@ -53,8 +53,8 @@
           src = final.fetchFromGitHub {
             owner = "zspher";
             repo = "contrib";
-            rev = "1ec82014b167f709589c6ddd419a098a0fb2bdfb";
-            hash = "sha256-igimsuClLuBwCi9ingeg4U54AeeozFHPppGiRsreXzo=";
+            rev = "af596a3ae5c2ff594bdc36e74d04ad4719444a76";
+            hash = "sha256-881P0wflMS4dMxgZjyYbXhUjoEX9ISQGorb0CQqP/YI=";
           };
         });
 
@@ -82,6 +82,18 @@
               repo = "Darkly";
               tag = "v${finalAttrs.version}";
               hash = "sha256-u12imjPk4ZhOen/PgnLiNPML+5NmuKO0Ja4wQKU/Y8E=";
+            };
+          }
+        );
+
+        vicinae = prev.vicinae.overrideAttrs (
+          finalAttrs: oldAttrs: {
+            version = "0.22.0";
+            src = final.fetchFromGitHub {
+              owner = "vicinaehq";
+              repo = "vicinae";
+              tag = "v${finalAttrs.version}";
+              hash = "sha256-f1d88cdqe1PfeuzY90JIRCoHKLV1Uuakc4TpSNvNBKA=";
             };
           }
         );
