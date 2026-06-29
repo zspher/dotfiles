@@ -9,7 +9,6 @@
     enable = true;
     theme = "sddm-corners";
     wayland.enable = true;
-    package = pkgs.kdePackages.sddm;
   };
 
   environment.systemPackages = [
