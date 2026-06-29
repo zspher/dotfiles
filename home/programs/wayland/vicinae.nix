@@ -22,9 +22,10 @@
       telemetry.system_info = false;
       providers = {
         files.enabled = false;
-        files.autoIndexing = false;
+        files.preferences.autoIndexing = false;
         snippets.enabled = false;
         clipboard.entrypoints.history.preferences.defaultAction = "copy";
+        power.entrypoints.logout.preferences.customProgram = "uwsm stop";
       };
     };
   };
