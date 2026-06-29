@@ -20,13 +20,8 @@ stdenvNoCC.mkDerivation {
   dontWrapQtApps = true;
 
   propagatedBuildInputs = with kdePackages; [
-    qtsvg
+    qtsvg.out
   ];
-
-  postFixup = ''
-    mkdir -p $out/nix-support
-    echo ${kdePackages.qtsvg} >> $out/nix-support/propagated-user-env-packages
-  '';
 
   installPhase = ''
     runHook preInstall
