@@ -286,6 +286,7 @@ local window_rules = {
   { match = { class = "Unlock Database - KeePassXC" }, float = true },
   { match = { class = "net.code-industry.masterpdfeditor4" }, float = true },
   { match = { class = ".*Master PDF Editor.*" }, tile = true },
+  { match = { class = "gimp", title = "Search Actions" }, float = true },
 }
 for _, x in ipairs(window_rules) do
   hl.window_rule(x)
