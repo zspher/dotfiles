@@ -68,6 +68,7 @@
           }
         );
 
+        # FIX: vc DTLS connection issue
         vesktop = prev.vesktop.overrideAttrs (oldAttrs: {
           patches = oldAttrs.patches ++ [
             ./vesktop-dtls-fix.patch
@@ -82,18 +83,6 @@
               repo = "Darkly";
               tag = "v${finalAttrs.version}";
               hash = "sha256-u12imjPk4ZhOen/PgnLiNPML+5NmuKO0Ja4wQKU/Y8E=";
-            };
-          }
-        );
-
-        vicinae = prev.vicinae.overrideAttrs (
-          finalAttrs: oldAttrs: {
-            version = "0.22.0";
-            src = final.fetchFromGitHub {
-              owner = "vicinaehq";
-              repo = "vicinae";
-              tag = "v${finalAttrs.version}";
-              hash = "sha256-f1d88cdqe1PfeuzY90JIRCoHKLV1Uuakc4TpSNvNBKA=";
             };
           }
         );
