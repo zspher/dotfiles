@@ -49,15 +49,6 @@
           ];
         });
 
-        grimblast = prev.grimblast.overrideAttrs (oldAttrs: {
-          src = final.fetchFromGitHub {
-            owner = "zspher";
-            repo = "contrib";
-            rev = "af596a3ae5c2ff594bdc36e74d04ad4719444a76";
-            hash = "sha256-881P0wflMS4dMxgZjyYbXhUjoEX9ISQGorb0CQqP/YI=";
-          };
-        });
-
         zathuraPkgs = prev.zathuraPkgs.overrideScope (
           selfx: prevx: {
             # FIX: missing link numbering
