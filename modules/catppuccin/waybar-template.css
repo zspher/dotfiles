@@ -70,6 +70,7 @@ window#waybar.hidden {
   padding: 0 10px;
   opacity: 1;
   border-radius: 12.6px;
+  border: 1px solid var(--surface0);
 }
 
 #workspaces,
@@ -160,6 +161,7 @@ window#waybar.hidden {
 
 #taskbar.empty {
   background: transparent;
+  border: none;
 }
 
 #taskbar button {
