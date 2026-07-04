@@ -6,7 +6,7 @@
     in
     {
       enable = true;
-      changeDirWidgetOptions = [ skipDirs ];
-      fileWidgetOptions = [ skipDirs ];
+      changeDirWidget.options = [ skipDirs ];
+      fileWidget.options = [ skipDirs ];
     };
 }
