@@ -1,0 +1,23 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index de7ed6a..e70ac2d 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -34,7 +34,7 @@ if (CRYPTOPP_INCLUDE_DIR AND CRYPTOPP_STATIC_LIB AND CRYPTOPP_STATIC_LIB MATCHES
+ else()
+     set(CRYPTOPP_USE_STATIC OFF)
+     find_package(PkgConfig REQUIRED)
+-    pkg_check_modules(CRYPTOPP REQUIRED libcrypto++)
++    pkg_check_modules(CRYPTOPP REQUIRED libcryptopp)
+ endif()
+
+ file(STRINGS "${CMAKE_SOURCE_DIR}/src/odin4.cpp" ODIN_VERSION_LINE REGEX "#define ODIN4_VERSION")
+@@ -151,4 +151,7 @@ foreach(target ${ODIN4_ALL_TARGETS})
+             target_link_options(${target} PRIVATE "-pie")
+         endif()
+     endif()
+-endforeach()
+\ No newline at end of file
++endforeach()
++
++install(TARGETS odin4 RUNTIME DESTINATION bin)
++install(TARGETS odin4_shared LIBRARY DESTINATION lib)

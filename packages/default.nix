@@ -36,6 +36,7 @@
         libtexprintf = pkgs.callPackage ./libtexprintf { };
         ms-dotnettools = pkgs.callPackage ./ms-dotnettools.csharp { };
         netpad = pkgs.callPackage ./netpad { };
+        odin4 = pkgs.callPackage ./odin4 { };
         sddm-corners-theme = pkgs.callPackage ./sddm-corners-theme { };
         shrinkpdf = pkgs.callPackage ./shrinkpdf { };
         sqlpackage = pkgs.callPackage ./sqlpackage { };
