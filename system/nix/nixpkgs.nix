@@ -49,16 +49,6 @@
           ];
         });
 
-        zathuraPkgs = prev.zathuraPkgs.overrideScope (
-          selfx: prevx: {
-            # FIX: missing link numbering
-            # wait for https://github.com/NixOS/nixpkgs/pull/511330
-            zathura_core = prevx.zathura_core.overrideAttrs (oldAttrs: {
-              __structuredAttrs = false;
-            });
-          }
-        );
-
         # FIX: vc DTLS connection issue
         vesktop = prev.vesktop.overrideAttrs (oldAttrs: {
           patches = oldAttrs.patches ++ [
