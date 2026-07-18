@@ -34,6 +34,7 @@
     gtk2.configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
   };
   home.pointerCursor = {
+    enable = true;
     dotIcons.enable = false;
     gtk.enable = true;
     package = pkgs.posy-cursors;
