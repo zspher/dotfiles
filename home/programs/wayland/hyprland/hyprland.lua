@@ -2,7 +2,6 @@ local ctp = require "themes.catppuccin"
 local apps = require "apps"
 
 -- apps
--- My long comment block {{{
 local terminal = apps.terminal or "kitty -1"
 local file_manager = apps.file_manager or "dolphin"
 local notification_manager = apps.notification_manager or "swaync-client -t -sw"
@@ -216,6 +215,7 @@ hl.config {
   misc = {
     force_default_wallpaper = 0,
     anr_missed_pings = 10,
+    vrr = 3,
   },
 }
 
@@ -287,6 +287,10 @@ local window_rules = {
   { match = { class = "net.code-industry.masterpdfeditor4" }, float = true },
   { match = { class = ".*Master PDF Editor.*" }, tile = true },
   { match = { class = "gimp", title = "Search Actions" }, float = true },
+
+  { match = { class = "obsidian" }, focus_on_activate = true }, -- for web clipper
+  { match = { class = "steam_app_.*" }, content = "game" },
+  { match = { class = "Minecraft.*" }, content = "game" },
 }
 for _, x in ipairs(window_rules) do
   hl.window_rule(x)
@@ -295,6 +299,5 @@ end
 hl.layer_rule { match = { namespace = "rofi" }, blur = true, no_anim = true }
 hl.layer_rule { match = { namespace = "walker" }, blur = true, no_anim = true }
 
-local monitors = package.searchpath("monitors", package.path)
-    and require "monitors"
+local _ = package.searchpath("monitors", package.path) and require "monitors"
   or nil
