@@ -82,6 +82,8 @@
         biome # formatter, linter
         vscode-js-debug # DAP
         vtsls # LSP
+        vue-language-server
+        typescript-go # LSP
 
         #-- Typst
         tinymist # LSP
