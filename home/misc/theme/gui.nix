@@ -8,16 +8,6 @@
   imports = [
     ./qt
   ];
-  catppuccin.custom = {
-    # anyrun.enable = true;
-    copyq.enable = true;
-    gtk.enable = true;
-    rofi.enable = false;
-    swaync.enable = true;
-    vesktop.enable = true;
-    walker.enable = true;
-    waybar.enable = true;
-  };
   dconf = {
     enable = true;
     # specify dark theme for some applications: electron, gtk stuff
@@ -33,6 +23,8 @@
 
     gtk2.configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
   };
+  catppuccin.custom.gtk.enable = true;
+
   home.pointerCursor = {
     enable = true;
     dotIcons.enable = false;
@@ -41,16 +33,4 @@
     name = "Posy_Cursor";
     size = 32;
   };
-
-  catppuccin.anki.enable = true; # IFD
-  catppuccin.hyprland.enable = true;
-  catppuccin.hyprlock = {
-    enable = true;
-    useDefaultConfig = false;
-  };
-  catppuccin.kitty.enable = true;
-  catppuccin.mpv.enable = true;
-  catppuccin.obs.enable = true;
-  catppuccin.vicinae.enable = true;
-  catppuccin.zathura.enable = true;
 }

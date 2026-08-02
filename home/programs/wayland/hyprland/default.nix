@@ -39,4 +39,5 @@
       };
     };
   };
+  catppuccin.hyprland.enable = true;
 }

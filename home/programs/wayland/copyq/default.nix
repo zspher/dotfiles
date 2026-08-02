@@ -10,4 +10,5 @@
     close_on_unfocus = false;
     maxitems = 50;
   };
+  catppuccin.custom.copyq.enable = true;
 }

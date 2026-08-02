@@ -18,4 +18,5 @@
       tmuxPlugins.yank
     ];
   };
+  catppuccin.tmux.enable = true;
 }

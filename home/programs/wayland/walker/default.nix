@@ -55,4 +55,5 @@ in
     source = ./menus;
     recursive = true;
   };
+  catppuccin.custom.walker.enable = true;
 }

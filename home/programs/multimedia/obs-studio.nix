@@ -4,4 +4,5 @@
     enable = true;
     plugins = [ pkgs.obs-studio-plugins.obs-backgroundremoval ];
   };
+  catppuccin.obs.enable = true;
 }

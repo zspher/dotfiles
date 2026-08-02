@@ -87,4 +87,8 @@ in
       ];
     };
   };
+  catppuccin.hyprlock = {
+    enable = true;
+    useDefaultConfig = false;
+  };
 }

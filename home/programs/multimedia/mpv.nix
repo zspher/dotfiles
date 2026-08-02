@@ -16,4 +16,5 @@
       mpvScripts.sponsorblock
     ];
   };
+  catppuccin.mpv.enable = true;
 }

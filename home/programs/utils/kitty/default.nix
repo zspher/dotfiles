@@ -89,4 +89,5 @@
       "ctrl+alt+g" = "toggle_layout grid";
     };
   };
+  catppuccin.kitty.enable = true;
 }

@@ -60,4 +60,5 @@
       };
     };
   };
+  catppuccin.custom.swaync.enable = true;
 }

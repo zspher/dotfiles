@@ -44,4 +44,5 @@
       '';
     };
   };
+  catppuccin.fish.enable = true;
 }

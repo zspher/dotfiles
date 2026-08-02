@@ -42,4 +42,5 @@
       recursive = true;
     };
   };
+  catppuccin.custom.rofi.enable = false;
 }

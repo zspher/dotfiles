@@ -38,4 +38,5 @@
       };
     };
   };
+  catppuccin.custom.vesktop.enable = true;
 }

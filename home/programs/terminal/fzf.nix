@@ -9,4 +9,5 @@
       changeDirWidget.options = [ skipDirs ];
       fileWidget.options = [ skipDirs ];
     };
+  catppuccin.fzf.enable = true; # IFD
 }

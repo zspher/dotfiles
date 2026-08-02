@@ -161,6 +161,7 @@
         })
 
         (lib.mkIf (cfg.delta.enable) {
+          catppuccin.bat.enable = true;
           programs.bat = {
             enable = true;
           };

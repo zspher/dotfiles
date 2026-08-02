@@ -28,4 +28,5 @@
       };
     };
   };
+  catppuccin.starship.enable = true; # IFD
 }

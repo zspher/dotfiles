@@ -286,4 +286,5 @@ in
     source = ./assets;
     recursive = true;
   };
+  catppuccin.custom.waybar.enable = true;
 }

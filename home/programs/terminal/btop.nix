@@ -6,4 +6,5 @@
       vim_keys = true;
     };
   };
+  catppuccin.btop.enable = true;
 }

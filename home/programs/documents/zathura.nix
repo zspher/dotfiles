@@ -8,4 +8,6 @@
       synctex-editor-command = "${pkgs.texlab}/bin/texlab inverse-search -i %{input} -l %{line}";
     };
   };
+
+  catppuccin.zathura.enable = true;
 }

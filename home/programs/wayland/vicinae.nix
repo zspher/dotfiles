@@ -60,4 +60,6 @@ in
     "$power_menu" = "vicinae 'vicinae://launch/power'";
     "$screenshot" = "vicinae 'vicinae://launch/@zspher/screenshot/screenshot'";
   };
+
+  catppuccin.vicinae.enable = true;
 }
