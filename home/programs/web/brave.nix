@@ -9,6 +9,7 @@
       { id = "dbepggeogbaibhgnhhndojpepiihcmeb"; } # vimium
       { id = "oemmndcbldboiebfnladdacbdfmadadm"; } # pdf viewer
       { id = "bkkmolkhemgaeaeggcmfbghljjjoofoh"; } # catppuccin mocha
+      { id = "cnjifjpddelmedmihgijeibhnjfabmlf"; } # obsidian webclipper
     ];
     commandLineArgs = [
       "--password-store=basic" # to remove kwallet popup
