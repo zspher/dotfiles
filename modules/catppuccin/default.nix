@@ -13,6 +13,7 @@
   options.catppuccin.custom = {
     anyrun.enable = lib.mkEnableOption "anyrun";
     copyq.enable = lib.mkEnableOption "copyq integration";
+    easyeffects.enable = lib.mkEnableOption "easyeffects integration";
     gtk.enable = lib.mkEnableOption "gtk integration";
     rofi.enable = lib.mkEnableOption "rofi integration";
     swaync.enable = lib.mkEnableOption "swaync integration";
@@ -48,13 +49,16 @@
             ];
         });
 
-      rgba =
-        color: alpha:
-        "rgba(${toString palette.${color}.rgb.r},${toString palette.${color}.rgb.g},${
-          toString palette.${color}.rgb.b
-        },${toString alpha})";
+      rgb =
+        color:
+        let
+          c = palette.${color}.rgb;
+        in
+        "${toString c.r},${toString c.g},${toString c.b}";
+
+      rgba = color: alpha: "rgba(${rgb color},${toString alpha})";
     in
-    lib.mkIf (cfg != { }) (
+    lib.mkIf (cfg != { } && cfg.enable) (
       lib.mkMerge [
         (lib.mkIf (cfg.custom.rofi.enable) {
           xdg.configFile."rofi/share/theme.rasi".source = replaceColors ./rofi-template.rasi;
@@ -216,6 +220,21 @@
               "copyq/copyq.conf".Theme = data;
             };
         })
+
+        (lib.mkIf (cfg.custom.easyeffects.enable) {
+          xdg.configFile."easyeffects/db/graphrc".text = lib.generators.toINI { } {
+            Graph = {
+              colorTheme = "userDefined";
+              backgroundColor = rgb "base";
+              borderColors = rgb "${cfg.accent}";
+              labelBackgroundColor = rgb "mantle";
+              labelTextColor = rgb "text";
+              plotAreaBackgroundColor = rgb "base";
+              seriesColors = rgb "${cfg.accent}";
+            };
+          };
+        })
       ]
     );
+
 }
