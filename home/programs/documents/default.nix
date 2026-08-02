@@ -3,9 +3,9 @@
   imports = [
     # ./dbeaver.nix
     ./zathura.nix
+    ./calibre.nix
   ];
   home.packages = with pkgs; [
-    calibre
     libreoffice-qt-fresh
     masterpdfeditor4
     obsidian
