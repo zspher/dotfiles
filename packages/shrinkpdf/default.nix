@@ -7,7 +7,7 @@
   ghostscript,
 }:
 
-stdenvNoCC.mkDerivation {
+stdenvNoCC.mkDerivation (finalAttrs: {
   name = "shrinkpdf";
 
   src = builtins.filterSource (name: _: !(lib.hasSuffix ".nix" name)) ./.;
@@ -27,8 +27,6 @@ stdenvNoCC.mkDerivation {
 
   installPhase = ''
     installBin shrinkpdf
-    # installManPage nixos-firewall-tool.1
-    # installShellCompletion nixos-firewall-tool.{bash,fish}
   '';
 
   # Skip shellcheck if GHC is not available, see writeShellApplication.
@@ -46,4 +44,4 @@ stdenvNoCC.mkDerivation {
     platforms = platforms.linux;
     mainProgram = "shrinkpdf";
   };
-}
+})
