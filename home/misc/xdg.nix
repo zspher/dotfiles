@@ -57,7 +57,7 @@ let
   documentTypes = {
     "image/vnd.djvu+multipage" = [ "org.pwmt.zathura" ];
     "application/pdf" = [ "org.pwmt.zathura" ];
-    "application/epub+zip" = [ "org.pwmt.zathura" ];
+    "application/epub+zip" = [ "calibre-ebook-viewer" ];
 
     "application/vnd.openxmlformats-officedocument.wordprocessingml.document" = [ "writer" ];
   };
