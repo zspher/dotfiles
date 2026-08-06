@@ -108,9 +108,6 @@ miscellaneous scripts, configs, and dotfiles (_now with nix_)
   - [ ] update dark reader to new ui
   - [ ] import stylus styles
 - [ ] run Adwaita-for-steam install script
-- [ ] select catppuccin theme from obs
-- [ ] theme webcord
-- [ ] keepassxc enable theme & settings
-- [ ] copyq disable saving keepassxc passwords
+- [ ] calibre viewer set vim keybinds
 
 </details>
