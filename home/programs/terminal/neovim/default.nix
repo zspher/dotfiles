@@ -46,6 +46,7 @@
         pyright # LSP
         ty # LSP
         ruff # linter & formatter via LSP
+        self.packages.${pkgs.stdenv.hostPlatform.system}.django-language-server # LSP
 
         #-- c/c++, meson
         vscode-extensions.vadimcn.vscode-lldb.adapter # DAP

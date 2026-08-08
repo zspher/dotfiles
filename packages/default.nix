@@ -33,6 +33,7 @@
         barcode-reader-cli = pkgs.callPackage ./barcode-reader-cli { };
         csharp-tools = pkgs.callPackage ./csharp-tools { ms-dotnettools = ms-dotnettools; };
         cssmodules-language-server = pkgs.callPackage ./cssmodules-language-server { };
+        django-language-server = pkgs.callPackage ./django-language-server { };
         libtexprintf = pkgs.callPackage ./libtexprintf { };
         ms-dotnettools = pkgs.callPackage ./ms-dotnettools.csharp { };
         netpad = pkgs.callPackage ./netpad { };
