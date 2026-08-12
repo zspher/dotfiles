@@ -7,7 +7,7 @@
     enableGitIntegration = true;
   };
   programs.lazygit.settings = {
-    git.pagers = [ { pager = "delta --dark --paging=never"; } ];
+    git.diffRenderers = [ { command = "delta --dark --paging=never"; } ];
   };
   catppuccin.delta.enable = true;
 }
