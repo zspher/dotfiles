@@ -18,7 +18,5 @@
   # scanners
   hardware.sane = {
     enable = true;
-    extraBackends = [ pkgs.utsushi ];
   };
-  services.udev.packages = [ pkgs.utsushi ];
 }
