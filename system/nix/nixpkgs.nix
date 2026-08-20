@@ -50,21 +50,51 @@
         });
 
         # FIX: vc DTLS connection issue
-        vesktop = prev.vesktop.overrideAttrs (oldAttrs: {
-          patches = oldAttrs.patches ++ [
-            ./vesktop-dtls-fix.patch
-          ];
-        });
-
-        darkly = prev.darkly.overrideAttrs (
+        vesktop = prev.vesktop.overrideAttrs (
           finalAttrs: oldAttrs: {
-            version = "0.5.38";
+            version = "1.6.7";
             src = final.fetchFromGitHub {
-              owner = "Bali10050";
-              repo = "Darkly";
-              tag = "v${finalAttrs.version}";
-              hash = "sha256-u12imjPk4ZhOen/PgnLiNPML+5NmuKO0Ja4wQKU/Y8E=";
+              owner = "Vencord";
+              repo = "Vesktop";
+              rev = "v${finalAttrs.version}";
+              hash = "sha256-Y74FIqcY26Dizz+DoY+r8caOfX+4/VmiEbmhcOpMHqE=";
             };
+
+            pnpmDeps = final.fetchPnpmDeps {
+              inherit (finalAttrs)
+                pname
+                version
+                src
+                patches
+                ;
+              pnpm = final.pnpm_11;
+              fetcherVersion = 4;
+              hash = "sha256-AK+ZbylpG7iKWKsIA0nfFfZYP7HaTCTSeDbNUFx/iY4=";
+            };
+          }
+        );
+
+        vicinae = prev.vicinae.overrideAttrs (
+          finalAttrs: oldAttrs: {
+            version = "0.25.0";
+            src = final.fetchFromGitHub {
+              owner = "vicinaehq";
+              repo = "vicinae";
+              tag = "v${finalAttrs.version}";
+              hash = "sha256-sK5o7d3Toq38F5uGwx+x6D/ZP6rxTPcjrDlR40WDt9c=";
+            };
+
+            apiDeps = final.fetchNpmDeps {
+              src = "${finalAttrs.src}/src/typescript/api";
+              hash = "sha256-4FEaBDJK9abcgz+vptuL4wQ8zhp+wpLbbR4Y79BVhEg=";
+            };
+
+            extensionManagerDeps = final.fetchNpmDeps {
+              src = "${finalAttrs.src}/src/typescript/extension-manager";
+              hash = "sha256-pEgqFgvdz7Bcc+LznCI+KlD1XEfUuWFWjS24MJ7sx3k=";
+            };
+
+            buildInputs = oldAttrs.buildInputs ++ [ final.qt6.qttools ];
           }
         );
 
