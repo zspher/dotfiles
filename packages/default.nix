@@ -34,6 +34,7 @@
         csharp-tools = pkgs.callPackage ./csharp-tools { ms-dotnettools = ms-dotnettools; };
         cssmodules-language-server = pkgs.callPackage ./cssmodules-language-server { };
         django-language-server = pkgs.callPackage ./django-language-server { };
+        django-template-lsp = pkgs.callPackage ./django-template-lsp { };
         libtexprintf = pkgs.callPackage ./libtexprintf { };
         ms-dotnettools = pkgs.callPackage ./ms-dotnettools.csharp { };
         netpad = pkgs.callPackage ./netpad { };
