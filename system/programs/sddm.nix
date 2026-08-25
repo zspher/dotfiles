@@ -2,6 +2,7 @@
   pkgs,
   self,
   username,
+  lib,
   ...
 }:
 {
@@ -9,18 +10,23 @@
     enable = true;
     theme = "sddm-corners";
     wayland.enable = true;
-    wayland.compositor = "kwin";
-    settings.Theme = {
-      CursorTheme = "Posy_Cursor";
-      CursorSize = 24;
+    settings = {
+      Theme = {
+        CursorTheme = "Posy_Cursor";
+        CursorSize = 24;
+      };
+      Wayland.CompositorCommand = "${lib.getExe pkgs.cage} -s -d";
     };
+    extraPackages = with pkgs; [
+      cage
+    ];
   };
 
-  environment.systemPackages = [
+  environment.systemPackages = with pkgs; [
+    posy-cursors
     (self.packages.${pkgs.stdenv.hostPlatform.system}.sddm-corners-theme.override {
       font = "CaskaydiaMono Nerd Font";
     })
-    pkgs.posy-cursors
   ];
 
   systemd.user.tmpfiles.users.${username}.rules = [
