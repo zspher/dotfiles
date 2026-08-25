@@ -49,31 +49,6 @@
           ];
         });
 
-        # FIX: vc DTLS connection issue
-        vesktop = prev.vesktop.overrideAttrs (
-          finalAttrs: oldAttrs: {
-            version = "1.6.7";
-            src = final.fetchFromGitHub {
-              owner = "Vencord";
-              repo = "Vesktop";
-              rev = "v${finalAttrs.version}";
-              hash = "sha256-Y74FIqcY26Dizz+DoY+r8caOfX+4/VmiEbmhcOpMHqE=";
-            };
-
-            pnpmDeps = final.fetchPnpmDeps {
-              inherit (finalAttrs)
-                pname
-                version
-                src
-                patches
-                ;
-              pnpm = final.pnpm_11;
-              fetcherVersion = 4;
-              hash = "sha256-AK+ZbylpG7iKWKsIA0nfFfZYP7HaTCTSeDbNUFx/iY4=";
-            };
-          }
-        );
-
         vicinae = prev.vicinae.overrideAttrs (
           finalAttrs: oldAttrs: {
             version = "0.25.0";
