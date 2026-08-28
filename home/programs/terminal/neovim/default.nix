@@ -51,7 +51,6 @@
 
         #-- c/c++, meson
         vscode-extensions.vadimcn.vscode-lldb.adapter # DAP
-        # nix-vscode-extensions.vscode-marketplace-universal.vadimcn.vscode-lldb.adapter # DAP
         mesonlsp # LSP
         clang-tools
 
@@ -71,7 +70,7 @@
         tombi # LSP
 
         #-- JSON, CSS, ESLint JSON
-        self.packages.${pkgs.stdenv.hostPlatform.system}.vscode-langservers-extracted # LSP
+        vscode-langservers-extracted # LSP
 
         #-- HTML
         superhtml # LSP

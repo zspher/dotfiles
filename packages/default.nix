@@ -32,17 +32,16 @@
       packages = rec {
         barcode-reader-cli = pkgs.callPackage ./barcode-reader-cli { };
         csharp-tools = pkgs.callPackage ./csharp-tools { ms-dotnettools = ms-dotnettools; };
-        cssmodules-language-server = pkgs.callPackage ./cssmodules-language-server { };
+        cssmodules-language-server = pkgs.callPackage ./cssmodules-language-server { }; # unused
         django-language-server = pkgs.callPackage ./django-language-server { };
         django-template-lsp = pkgs.callPackage ./django-template-lsp { };
         libtexprintf = pkgs.callPackage ./libtexprintf { };
         ms-dotnettools = pkgs.callPackage ./ms-dotnettools.csharp { };
-        netpad = pkgs.callPackage ./netpad { };
-        odin4 = pkgs.callPackage ./odin4 { };
+        netpad = pkgs.callPackage ./netpad { }; # unused
+        odin4 = pkgs.callPackage ./odin4 { }; # unused
         sddm-corners-theme = pkgs.callPackage ./sddm-corners-theme { };
         shrinkpdf = pkgs.callPackage ./shrinkpdf { };
-        sqlpackage = pkgs.callPackage ./sqlpackage { };
-        vscode-langservers-extracted = pkgs.callPackage ./vscode-langservers-extracted { };
+        sqlpackage = pkgs.callPackage ./sqlpackage { }; # locked for now
       };
     };
 }
