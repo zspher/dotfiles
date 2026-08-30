@@ -12,6 +12,7 @@
     hyprpicker
     inkscape
     qimgv
+    satty
     timg
   ];
 }
