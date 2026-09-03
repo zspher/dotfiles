@@ -108,7 +108,16 @@
 
         #-- zig
         zls
+
+        #-- java
+        jdt-language-server
       ];
     };
   };
+  # java deps
+  xdg.dataFile."nvim/java/debug".source =
+    "${pkgs.vscode-extensions.vscjava.vscode-java-debug}/share/vscode/extensions/vscjava.vscode-java-debug/";
+  xdg.dataFile."nvim/java/test".source =
+    "${pkgs.vscode-extensions.vscjava.vscode-java-test}/share/vscode/extensions/vscjava.vscode-java-test/";
+  xdg.dataFile."nvim/java/lombok.jar".source = "${pkgs.lombok.out}/share/java/lombok.jar";
 }
