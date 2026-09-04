@@ -39,9 +39,9 @@ let
   # check version in: https://github.com/dotnet/vscode-csharp/blob/main/package.json
   roslyn-copilot = fetchzip {
     url = "https://roslyn.blob.core.windows.net/releases/Microsoft.VisualStudio.Copilot.Roslyn.LanguageServer-18.3.72-alpha.zip";
-    hash = "sha256-Eh1XaF9eCN5saTrIf4NeZZKDeiEvrTo0m+vOiM5QZoI=";
+    hash = "sha256-vzowJOPp/VVeWkPihvWX2jvTrbFMZMtgX03eLezdanE=";
     postFetch = ''
-      touch install.Lock
+      touch "$out/install.Lock"
     '';
   };
 in
