@@ -257,7 +257,7 @@ local window_rules = {
     border_color = ctp.overlay2,
   },
 
-  { match = { class = "obsidian" }, workspace = "1 silent" },
+  { match = { class = "md.Obsidian" }, workspace = "1 silent" },
   { match = { class = "[Bb]rave-browser" }, workspace = "2" },
   { match = { class = "Code" }, workspace = "3" },
   { match = { class = "code-url-handler" }, workspace = "3" },
@@ -288,7 +288,7 @@ local window_rules = {
   { match = { class = ".*Master PDF Editor.*" }, tile = true },
   { match = { class = "gimp", title = "Search Actions" }, float = true },
 
-  { match = { class = "obsidian" }, focus_on_activate = true }, -- for web clipper
+  { match = { class = "md.Obsidian" }, focus_on_activate = true }, -- for web clipper
   { match = { class = "steam_app_.*" }, content = "game" },
   { match = { class = "Minecraft.*" }, content = "game" },
 }
