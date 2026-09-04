@@ -111,6 +111,9 @@
 
         #-- java
         jdt-language-server
+
+        #-- dart
+        dart
       ];
     };
   };
