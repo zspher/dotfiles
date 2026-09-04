@@ -16,5 +16,6 @@
     wev
 
     self.packages.${pkgs.stdenv.hostPlatform.system}.sqlpackage
+    jetbrains.idea # TODO: remove after class
   ];
 }
