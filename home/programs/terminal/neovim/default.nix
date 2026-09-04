@@ -64,7 +64,7 @@
         shellcheck # linter (bashls calls this)
 
         #-- XML
-        lemminx # LSP
+        self.packages.${pkgs.stdenv.hostPlatform.system}.lemminx-maven-ext # LSP
 
         #-- TOML
         tombi # LSP

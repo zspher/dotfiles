@@ -35,6 +35,7 @@
         cssmodules-language-server = pkgs.callPackage ./cssmodules-language-server { }; # unused
         django-language-server = pkgs.callPackage ./django-language-server { };
         django-template-lsp = pkgs.callPackage ./django-template-lsp { };
+        lemminx-maven-ext = pkgs.callPackage ./lemminx-maven-ext { };
         libtexprintf = pkgs.callPackage ./libtexprintf { };
         ms-dotnettools = pkgs.callPackage ./ms-dotnettools.csharp { };
         netpad = pkgs.callPackage ./netpad { }; # unused
