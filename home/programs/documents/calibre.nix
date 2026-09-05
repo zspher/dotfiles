@@ -9,6 +9,7 @@
       pkgs.fetchurl {
         url = "https://github.com/elementdavv/calibre_vimstyle/archive/refs/tags/v0.1.0.zip";
         hash = "sha256-1U85d0ZPmKhZa3bvtkpEJwYHEkwB1rqVsu2Ai8IHzWo=";
+        name = "calibre-vimstyle";
       }
     );
     onChange = ''
