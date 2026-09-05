@@ -12,15 +12,22 @@
   qt.kde.settings."baloofilerc"."Basic Settings"."Indexing-Enabled" = false;
 
   # to fix `open with` in non-kde DEs
-  home.activation.fixOpenWith = config.lib.dag.entryAfter [ "writeBoundary" ] ''
-    menu_dir=${config.xdg.configHome}/menus
-    if [[ ! -e "$menu_dir/applications.menu" ]]; then
-      mkdir -p "$menu_dir"
-      cp -f "${pkgs.kdePackages.plasma-workspace}/etc/xdg/menus/plasma-applications.menu" \
-        "$menu_dir/applications.menu"
+  home.activation.fixOpenWith =
+    let
+      plasmaApplicationsMenu = pkgs.runCommandLocal "plasma-applications-menu" { } ''
+        mkdir -p $out
+        cp ${pkgs.kdePackages.plasma-workspace}/etc/xdg/menus/plasma-applications.menu \
+          $out/applications.menu
+      '';
+    in
+    config.lib.dag.entryAfter [ "writeBoundary" ] ''
+      menu_dir=${config.xdg.configHome}/menus
+      if [[ ! -e "$menu_dir/applications.menu" ]]; then
+        mkdir -p "$menu_dir"
+        cp -f "${plasmaApplicationsMenu}/plasma-applications.menu" "$menu_dir/applications.menu"
 
-      rm ${config.xdg.cacheHome}/ksycoca6_*
-      run ${pkgs.kdePackages.kservice}/bin/kbuildsycoca6
-    fi
-  '';
+        rm ${config.xdg.cacheHome}/ksycoca6_*
+        run ${pkgs.kdePackages.kservice}/bin/kbuildsycoca6
+      fi
+    '';
 }
