@@ -13,7 +13,7 @@ let
   importINI =
     file:
     lib.importJSON (
-      pkgs.runCommand "INItoJSON" { nativeBuildInputs = [ pkgs.jc ]; } ''
+      pkgs.runCommandLocal "INItoJSON" { nativeBuildInputs = [ pkgs.jc ]; } ''
         jc --ini < ${file} > $out
       ''
     );
