@@ -43,6 +43,7 @@
         sddm-corners-theme = pkgs.callPackage ./sddm-corners-theme { };
         shrinkpdf = pkgs.callPackage ./shrinkpdf { };
         sqlpackage = pkgs.callPackage ./sqlpackage { }; # locked for now
+        gradle-language-server = pkgs.callPackage ./gradle-language-server { };
       };
     };
 }

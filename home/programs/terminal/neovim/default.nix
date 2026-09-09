@@ -111,6 +111,7 @@
 
         #-- java
         jdt-language-server
+        self.packages.${pkgs.stdenv.hostPlatform.system}.gradle-language-server # LSP
 
         #-- dart
         dart
