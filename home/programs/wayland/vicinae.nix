@@ -27,13 +27,13 @@ in
       })
       (config.lib.vicinae.mkExtension {
         name = "screenshot";
-        npmDepsHash = "sha256-Xf6EnmZ/mzm3BMoMQORAR65WrItgpwdQq+1saQY1sIM=";
+        npmDepsHash = "sha256-3ncbor/fOxaEORhf4MU1c9MqALVn0lAQjB8iVVCFkKQ=";
         src =
           pkgs.fetchFromGitHub {
             owner = "zspher";
             repo = "vicinae_extensions";
-            rev = "cc5a7d813e35";
-            hash = "sha256-xnfIcUrw9lYliLp+gorgBi5HN3Hb3Vy/Bv59kDOFeTk=";
+            rev = "c64a806301a8";
+            hash = "sha256-h4BbonoNSa5ci9THiSBkQCxI1G3DRUQblsTddaBAYtU=";
           }
           + "/screenshot";
       })
