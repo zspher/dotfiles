@@ -257,7 +257,7 @@ local window_rules = {
     border_color = ctp.overlay2,
   },
 
-  { match = { class = "md.Obsidian" }, workspace = "1 silent" },
+  { match = { class = "md.*Obsidian" }, workspace = "1 silent" },
   { match = { class = "[Bb]rave-browser" }, workspace = "2" },
   { match = { class = "Code" }, workspace = "3" },
   { match = { class = "code-url-handler" }, workspace = "3" },
