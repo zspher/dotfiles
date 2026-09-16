@@ -10,4 +10,14 @@
     ];
   };
   programs.virt-manager.enable = true;
+  networking.firewall.interfaces."virbr*".allowedUDPPorts = [
+    53 # DNS
+    67 # DHCPv4
+    547 # DHCPv6
+  ];
+  networking.firewall.interfaces."virbr*".allowedTCPPorts = [
+    53 # DNS
+
+    1433 # Sql server
+  ];
 }
