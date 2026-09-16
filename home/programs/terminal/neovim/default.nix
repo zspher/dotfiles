@@ -84,7 +84,7 @@
         vscode-js-debug # DAP
         vtsls # LSP
         vue-language-server
-        typescript-go # LSP
+        typescript # LSP
 
         #-- Typst
         tinymist # LSP
