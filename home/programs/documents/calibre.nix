@@ -7,8 +7,8 @@
   xdg.configFile."calibre/plugins/Vimstyle.zip" = {
     source = (
       pkgs.fetchurl {
-        url = "https://github.com/elementdavv/calibre_vimstyle/archive/refs/tags/v0.1.0.zip";
-        hash = "sha256-1U85d0ZPmKhZa3bvtkpEJwYHEkwB1rqVsu2Ai8IHzWo=";
+        url = "https://github.com/elementdavv/calibre_vimstyle/releases/download/v0.1.0/Vimstyle_0.1.0.zip";
+        hash = "sha256-XK+/aP9Ah7J/qb/dH9VlSnXUd6ppGeD4PwoRZmHO5Cg=";
         name = "calibre-vimstyle";
       }
     );
