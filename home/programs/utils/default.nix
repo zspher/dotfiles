@@ -4,6 +4,7 @@
     ./kitty
     ./dolphin.nix
     ./wakatime.nix
+    ./idea.nix # TODO: remove after class
   ];
   home.packages = with pkgs; [
     kdePackages.ark
@@ -16,6 +17,5 @@
     wev
 
     self.packages.${pkgs.stdenv.hostPlatform.system}.sqlpackage
-    jetbrains.idea # TODO: remove after class
   ];
 }
