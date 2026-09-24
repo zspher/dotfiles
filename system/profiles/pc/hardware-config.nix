@@ -9,6 +9,7 @@
     ../../hardware
     ../../hardware/bluetooth.nix
     ../../hardware/printer-scanner.nix
+    ../../hardware/obs-virtual-camera.nix
   ];
   boot = {
     loader.systemd-boot.enable = true;
