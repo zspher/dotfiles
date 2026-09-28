@@ -136,6 +136,19 @@ hl.gesture {
   action = "workspace",
 }
 
+local obs_binds = {
+  "CTRL+F1", -- Start/Stop Recording
+  "CTRL+F2", -- Pause/Unpause Recording
+  "ALT+F1", -- Scene 1
+  "ALT+F2", -- Scene 2
+  "ALT+F3", -- Scene 3
+  "ALT+F4", -- Scene 4
+}
+
+for _, x in ipairs(obs_binds) do
+  hl.bind(x, hl.dsp.pass { window = "class:^(com\\.obsproject\\.Studio)$" })
+end
+
 -- submaps
 hl.bind("SUPER+R", hl.dsp.submap "resize")
 hl.define_submap("resize", function()
