@@ -13,7 +13,6 @@
     simple-scan
     vscode-fhs
   ];
-  home.sessionVariables.CALIBRE_USE_SYSTEM_THEME = 1;
 
   programs.anki.enable = true;
   catppuccin.anki.enable = true; # IFD

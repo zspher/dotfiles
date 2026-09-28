@@ -3,6 +3,7 @@
   programs.calibre = {
     enable = true;
   };
+  home.sessionVariables.CALIBRE_USE_SYSTEM_THEME = 1;
 
   xdg.configFile."calibre/plugins/Vimstyle.zip" = {
     source = (
