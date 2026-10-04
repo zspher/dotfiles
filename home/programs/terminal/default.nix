@@ -25,6 +25,7 @@
     (inxi.override { withRecommends = true; })
     jq
     lsd
+    opencode
     ripgrep
     rsync
     xdg-utils
