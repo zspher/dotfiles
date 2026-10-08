@@ -15,6 +15,7 @@ in
 
     enabledExtensions = with spicePkgs.extensions; [
       adblock
+      keyboardShortcut
     ];
   };
 }
