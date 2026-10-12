@@ -16,6 +16,7 @@
     ./starship.nix
     ./tealdeer.nix
     ./tmux.nix
+    ./opencode.nix
     # ./zsh
   ];
   home.packages = with pkgs; [
@@ -25,7 +26,6 @@
     (inxi.override { withRecommends = true; })
     jq
     lsd
-    opencode
     ripgrep
     rsync
     xdg-utils
