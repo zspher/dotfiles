@@ -23,7 +23,7 @@
     ../../programs/vm.nix
 
     ../../networking
-    ../../networking/openssh.nix
+    # ../../networking/openssh.nix
     ../../networking/syncting.nix
     ../../networking/tailscale.nix
   ];
