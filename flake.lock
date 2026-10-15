@@ -20,22 +20,6 @@
         "type": "github"
       }
     },
-    "catppuccin-delta": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1780528848,
-        "narHash": "sha256-lztkxX9O41YossvRzpR7tqxMhDNT1Efy2JvkCwtsiXQ=",
-        "owner": "catppuccin",
-        "repo": "delta",
-        "rev": "011516f5d14f66b771b3e716f29c77231e008c74",
-        "type": "github"
-      },
-      "original": {
-        "owner": "catppuccin",
-        "repo": "delta",
-        "type": "github"
-      }
-    },
     "flake-parts": {
       "inputs": {
         "nixpkgs-lib": [
@@ -92,74 +76,13 @@
         "type": "github"
       }
     },
-    "nixpkgs-dev": {
-      "locked": {
-        "lastModified": 1779591676,
-        "narHash": "sha256-VneVfxvViKB2fUri47hAQace8u5Jq1glKBzkieEcClw=",
-        "owner": "zspher",
-        "repo": "nixpkgs",
-        "rev": "509878c3cebcbcc803bdafc551a84146f4c4e3ae",
-        "type": "github"
-      },
-      "original": {
-        "owner": "zspher",
-        "ref": "dev",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "rofi-plugins": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ],
-        "rust-overlay": "rust-overlay"
-      },
-      "locked": {
-        "lastModified": 1774228089,
-        "narHash": "sha256-/ZH/1dJOGNt6i5HLB62F/5IODw5lFjahJNP3Z5RFI28=",
-        "owner": "zspher",
-        "repo": "rofi-plugins",
-        "rev": "3176472da6c5027d568a1eedab93f19bad65de38",
-        "type": "github"
-      },
-      "original": {
-        "owner": "zspher",
-        "repo": "rofi-plugins",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "catppuccin": "catppuccin",
-        "catppuccin-delta": "catppuccin-delta",
         "flake-parts": "flake-parts",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
-        "nixpkgs-dev": "nixpkgs-dev",
-        "rofi-plugins": "rofi-plugins",
         "spicetify-nix": "spicetify-nix"
-      }
-    },
-    "rust-overlay": {
-      "inputs": {
-        "nixpkgs": [
-          "rofi-plugins",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1763865987,
-        "narHash": "sha256-DJpzM8Jz3B0azJcAoF+YFHr8rEbxYLJ0wy1kWZ29HOw=",
-        "owner": "oxalica",
-        "repo": "rust-overlay",
-        "rev": "042d905c01a6eec3bcae8530dacb19cda9758a63",
-        "type": "github"
-      },
-      "original": {
-        "owner": "oxalica",
-        "repo": "rust-overlay",
-        "type": "github"
       }
     },
     "spicetify-nix": {
