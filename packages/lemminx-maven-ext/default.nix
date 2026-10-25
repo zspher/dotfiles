@@ -33,7 +33,7 @@ maven.buildMavenPackage (finalAttrs: {
     hash = "sha256-8GqNVOU58LKlQxIrXaeFtKllVSv5RpqHynZCjBKEl9o=";
   };
 
-  mvnHash = "sha256-whRbzFqCF2GsjGQoZ7cuhVn2x7F7f9Fq709oFkNsivU=";
+  mvnHash = "sha256-cSOXSp4UFwHDW3gx5vnhWTCr91AtlU6diao0/jTpoE0=";
   mvnJdk = jdk17_headless;
   mvnGoal = "verify";
   doCheck = false;
