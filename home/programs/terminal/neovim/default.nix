@@ -106,6 +106,7 @@
         sqlite
         sqlcmd
         sqlfluff
+        sqlcl
 
         #-- zig
         zls
