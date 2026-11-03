@@ -37,14 +37,12 @@ in
     };
     "${username}@c100" = homeManagerConfiguration {
       modules = mods.full ++ [
-        ../programs/security/fun-stuff.nix
         ../programs/games
       ];
       inherit pkgs extraSpecialArgs;
     };
     "${username}@ls2100" = homeManagerConfiguration {
       modules = mods.full ++ [
-        ../programs/security/fun-stuff.nix
         ../programs/games
         # ../programs/multimedia/davinci-resolve.nix
       ];
