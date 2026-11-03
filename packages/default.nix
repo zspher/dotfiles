@@ -30,7 +30,6 @@
           ;
       };
       packages = rec {
-        barcode-reader-cli = pkgs.callPackage ./barcode-reader-cli { };
         csharp-tools = pkgs.callPackage ./csharp-tools { ms-dotnettools = ms-dotnettools; };
         cssmodules-language-server = pkgs.callPackage ./cssmodules-language-server { }; # unused
         django-language-server = pkgs.callPackage ./django-language-server { };

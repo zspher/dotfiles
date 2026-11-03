@@ -18,6 +18,5 @@
     # ))
 
     # osint tools
-    self.packages.${pkgs.stdenv.hostPlatform.system}.barcode-reader-cli
   ];
 }
