@@ -56,7 +56,7 @@ hl.bind("SUPER+SHIFT+A", function()
 end)
 
 hl.bind("SUPER+G", hl.dsp.group.toggle())
-hl.bind("SUPER+I", hl.dsp.group.lock_active())
+hl.bind("SUPER+I", hl.dsp.group.lock())
 hl.bind("SUPER+TAB", hl.dsp.group.next())
 hl.bind("SUPER+SHIFT+TAB", hl.dsp.group.prev())
 
