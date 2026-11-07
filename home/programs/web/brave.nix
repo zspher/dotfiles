@@ -1,7 +1,11 @@
-{ ... }:
+{ inputs, pkgs, ... }:
+let
+  brave = inputs.brave.packages.${pkgs.stdenv.hostPlatform.system}.brave;
+in
 {
   programs.brave = {
     enable = true;
+    package = brave; # TODO: remove when upstream changes
     extensions = [
       { id = "eimadpbcbfnmbkopoojfekhnkhdbieeh"; } # dark reader
       { id = "oboonakemofpalcgghocfoadofidjkkk"; } # keepassxc

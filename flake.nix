@@ -47,6 +47,11 @@
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
 
+    brave = {
+      url = "git+https://codeberg.org/buckley310/brave-browser-nix?ref=main";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs";
