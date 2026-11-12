@@ -40,4 +40,5 @@
     };
   };
   catppuccin.hyprland.enable = true;
+  catppuccin.hyprtoolkit.enable = true;
 }
