@@ -12,8 +12,5 @@ in
 
 {
   programs.opencode.enable = true;
-  programs.opencode.cli = {
-    theme.name = themeName;
-  };
-  # catppuccin.opencode.enable = true; # TODO: remove when catppuccin/nix updates
+  catppuccin.opencode.enable = true;
 }
