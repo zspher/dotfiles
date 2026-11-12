@@ -33,7 +33,7 @@ stdenvNoCC.mkDerivation {
       mkdir -p $out/lib
       mkdir -p $out/share
 
-      ln -s ${root}/.roslyn/Microsoft.CodeAnalysis.LanguageServer $out/bin/Microsoft.CodeAnalysis.LanguageServer
+      ln -s ${root}/.roslyn/roslyn-language-server $out/bin/roslyn-language-server
 
       ln -s ${root}/.debugger/vsdbg-ui $out/bin/vsdbg-ui
       cp $src/vsdbgsignature.js $out/share
