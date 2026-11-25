@@ -1,11 +1,16 @@
-{ pkgs, lib, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 {
   programs.calibre = {
     enable = true;
   };
   home.sessionVariables.CALIBRE_USE_SYSTEM_THEME = 1;
 
-  xdg.configFile."calibre/plugins/Vimstyle.zip" = {
+  xdg.configFile."calibre/dl/Vimstyle.zip" = {
     source = (
       pkgs.fetchurl {
         url = "https://github.com/elementdavv/calibre_vimstyle/releases/download/v0.1.0/Vimstyle_0.1.0.zip";
@@ -13,8 +18,12 @@
         name = "calibre-vimstyle";
       }
     );
-    onChange = ''
-      ${lib.getExe' pkgs.calibre "calibre-customize"} --enable-plugin=Vimstyle
-    '';
+    onChange =
+      let
+        fl = "${config.xdg.configHome}/calibre/dl/Vimstyle.zip";
+      in
+      ''
+        ${lib.getExe' pkgs.calibre "calibre-customize"} -a ${fl}
+      '';
   };
 }
