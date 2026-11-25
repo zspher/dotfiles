@@ -22,13 +22,21 @@
   programs.home-manager.enable = true;
 
   # create `qt.kde.settings` files if not present
-  home.activation.genFilesKconfig = lib.hm.dag.entryBefore [ "kconfig" ] ''
-    ${lib.concatMapStrings (
-      x:
-      let
-        p = "${config.xdg.configHome}/${x}";
-      in
-      "[ ! -e ${p} ] && mkdir -p $(dirname ${x}) && touch ${p}\n"
-    ) (builtins.attrNames config.qt.kde.settings)}
-  '';
+  home.activation.genFilesKconfig =
+    let
+      mkStub =
+        x:
+        let
+          p = lib.escapeShellArg "${config.xdg.configHome}/${x}";
+        in
+        ''
+          if [ ! -e ${p} ]; then
+            run mkdir -p "$(dirname ${p})"
+            run touch ${p}
+          fi
+        '';
+    in
+    lib.hm.dag.entryBefore [ "kconfig" ] ''
+      ${lib.concatMapStrings mkStub (builtins.attrNames config.qt.kde.settings)}
+    '';
 }
