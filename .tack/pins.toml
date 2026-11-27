@@ -1,0 +1,24 @@
+[tack]
+recomposable = true
+
+[shorturls]
+# gh = "github:{path}"
+
+[all_follow]
+nixpkgs = "nixpkgs"
+# nixpkgs = ["nixpkgs-stable", "nixpkgs-unstable"]
+
+[inputs.nixpkgs]
+url = "github:nixos/nixpkgs/nixos-unstable"
+
+[inputs.flake-parts]
+url = "github:hercules-ci/flake-parts"
+
+[inputs.home-manager]
+url = "github:nix-community/home-manager"
+
+[inputs.catppuccin]
+url = "github:catppuccin/nix"
+
+[inputs.spicetify-nix]
+url = "github:Gerg-L/spicetify-nix"

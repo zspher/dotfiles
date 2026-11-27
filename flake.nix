@@ -1,7 +1,12 @@
 {
   description = "IZBV personal dotfiles";
   outputs =
-    inputs:
+    { self, ... }@args:
+    let
+      inputs = (import ./.tack) { overrides = args.tackOverrides or { }; } // {
+        inherit self;
+      };
+    in
     inputs.flake-parts.lib.mkFlake { inherit inputs; } {
       debug = true;
       systems = [
@@ -27,64 +32,10 @@
               nil
               nixd
               stylua
+              tack
             ];
           };
           formatter = pkgs.nixfmt-tree;
         };
     };
-
-  inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    # nixpkgs-dev.url = "github:zspher/nixpkgs/dev";
-    # nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.11";
-    # hyprland = {
-    #   url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-
-    # nix-vscode-extensions = {
-    #   url = "github:nix-community/nix-vscode-extensions";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-
-    flake-parts = {
-      url = "github:hercules-ci/flake-parts";
-      inputs.nixpkgs-lib.follows = "nixpkgs";
-    };
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    # anyrun = {
-    #   url = "github:zspher/anyrun/updates";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-
-    # rofi-plugins = {
-    #   url = "github:zspher/rofi-plugins";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-
-    catppuccin = {
-      url = "github:catppuccin/nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    spicetify-nix = {
-      url = "github:Gerg-L/spicetify-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    # elephant = {
-    #   url = "github:abenz1267/elephant";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-    # walker = {
-    #   url = "github:abenz1267/walker";
-    #   # url = "github:zspher/walker/dev";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    #   inputs.elephant.follows = "elephant";
-    # };
-  };
 }
