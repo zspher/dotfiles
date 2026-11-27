@@ -30,13 +30,13 @@
           p = lib.escapeShellArg "${config.xdg.configHome}/${x}";
         in
         ''
-          if [ ! -e ${p} ]; then
+          if [[ ! -e ${p} ]]; then
             run mkdir -p "$(dirname ${p})"
             run touch ${p}
           fi
         '';
     in
-    lib.hm.dag.entryBefore [ "kconfig" ] ''
+    lib.hm.dag.entryBetween [ "kconfig" ] [ "writeBoundary" ] ''
       ${lib.concatMapStrings mkStub (builtins.attrNames config.qt.kde.settings)}
     '';
 }
