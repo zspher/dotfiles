@@ -106,7 +106,7 @@
               peach = "orange";
 
               pink = "pink";
-              blue = "blue";
+              blue = "default";
               teal = "teal";
               green = "green";
               yellow = "yellow";
@@ -118,11 +118,13 @@
                 ctpToCollMap.${color}
               else
                 throw "invalid color: ${color}";
-
-            name = "Colloid-${upperFirst (ctpToColl cfg.accent)}-Dark-Catppuccin";
+            colloidVariant = ctpToColl cfg.accent;
+            colloidSuffix = lib.optionalString (colloidVariant != "default") "-${upperFirst colloidVariant}";
+            colorVariant = if cfg.flavor == "latte" then "light" else "dark";
+            name = "Colloid${colloidSuffix}-${upperFirst colorVariant}-Catppuccin";
             package = pkgs.colloid-gtk-theme.override {
-              colorVariants = if cfg.flavor == "latte" then [ "light" ] else [ "dark" ];
-              themeVariants = [ "${ctpToColl cfg.accent}" ];
+              colorVariants = [ colorVariant ];
+              themeVariants = [ colloidVariant ];
               sizeVariants = [ "standard" ];
               tweaks = [
                 "catppuccin"
@@ -156,7 +158,7 @@
 
         (lib.mkIf (cfg.custom.vesktop.enable) {
           programs.vesktop.vencord.settings.themeLinks = [
-            "https://catppuccin.github.io/discord/dist/catppuccin-${cfg.flavor}-mauve.theme.css"
+            "https://catppuccin.github.io/discord/dist/catppuccin-${cfg.flavor}-${cfg.accent}.theme.css"
           ];
         })
 
