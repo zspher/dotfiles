@@ -22,12 +22,24 @@ in
     VAGRANT_HOME = "${config.xdg.dataHome}/vagrant";
   };
 
-  home.activation.genXDGdirs = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-    ${lib.concatMapStrings (x: "[ ! -e ${x} ] && mkdir -p $(dirname ${x})") [
-      DOTNET_CLI_HOME
-      "${config.xdg.configHome}/mozilla"
-      "${config.xdg.configHome}/ipython"
-      "${config.xdg.configHome}/pulse"
-    ]}
-  '';
+  home.activation.genXDGdirs =
+    let
+      mkDir =
+        x:
+        let
+          escaped = lib.escapeShellArg x;
+        in
+        ''
+          [[ ! -e ${escaped} ]] && run mkdir -p ${escaped}
+        '';
+      dirs = [
+        DOTNET_CLI_HOME
+        "${config.xdg.configHome}/mozilla"
+        "${config.xdg.configHome}/ipython"
+        "${config.xdg.configHome}/pulse"
+      ];
+    in
+    lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+      ${lib.concatMapStrings mkDir dirs}
+    '';
 }
