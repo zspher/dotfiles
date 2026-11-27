@@ -23,8 +23,8 @@
     {
       source = "${plasmaApplicationsMenu}/applications.menu";
       onChange = ''
-        rm ${config.xdg.cacheHome}/ksycoca6_*
-        run ${pkgs.kdePackages.kservice}/bin/kbuildsycoca6
+        rm -f ${config.xdg.cacheHome}/ksycoca6_*
+        ${pkgs.kdePackages.kservice}/bin/kbuildsycoca6
       '';
     };
 }
